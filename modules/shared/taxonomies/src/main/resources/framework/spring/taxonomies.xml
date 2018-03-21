@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:customize="http://www.coremedia.com/2007/coremedia-spring-beans-customization"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.coremedia.com/2007/coremedia-spring-beans-customization
+                           http://www.coremedia.com/2007/coremedia-spring-beans-customization.xsd
+                           http://www.springframework.org/schema/util
+                           http://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+  <context:property-placeholder ignore-unresolvable="true"
+                                location="classpath:framework/spring/open-calais-semantic.properties"/>
+
+  <import resource="classpath:com/coremedia/cap/common/uapi-services.xml"/>
+  <import resource="classpath:com/coremedia/rest/cap/cap-rest-service.xml"/>
+  <import resource="classpath:com/coremedia/blueprint/base/settings/impl/bpbase-settings-services.xml"/>
+
+
+
+  <util:constant id="sem.id" static-field="com.coremedia.blueprint.taxonomies.semantic.SemanticEntity.ID"/>
+  <util:constant id="sem.name" static-field="com.coremedia.blueprint.taxonomies.semantic.SemanticEntity.NAME"/>
+  <util:constant id="sem.type" static-field="com.coremedia.blueprint.taxonomies.semantic.SemanticEntity.TYPE"/>
+
+
+  <bean id="abstractSemanticService" class="com.coremedia.blueprint.taxonomies.semantic.service.AbstractSemanticService"
+        abstract="true">
+    <property name="documentProperties">
+      <list>
+        <value>title</value>
+        <value>teaserTitle</value>
+        <value>detailText</value>
+        <value>teaserText</value>
+      </list>
+    </property>
+  </bean>
+
+  <bean id="calaisService" class="com.coremedia.blueprint.taxonomies.semantic.service.opencalais.CalaisService"
+        parent="abstractSemanticService">
+    <property name="apiKey" value="${semantic.service.opencalais.api.key}"/>
+    <property name="apiUrl" value="${semantic.service.opencalais.api.url}"/>
+    <property name="cache" ref="cache"/>
+    <property name="groupingKey" value="_uri"/>
+    <property name="semanticProperties">
+      <map>
+        <entry key-ref="sem.id" value="_uri"/>
+        <entry key-ref="sem.name" value="name"/>
+        <entry key-ref="sem.type" value="_type"/>
+        <entry key="typeRef" value="_typeReference"/>
+        <entry key="relevance" value="relevance"/>
+      </map>
+    </property>
+    <property name="settingsService" ref="settingsService"/>
+    <property name="sitesService" ref="sitesService"/>
+  </bean>
+
+  <bean id="semanticService"
+        class="com.coremedia.blueprint.taxonomies.semantic.service.SemanticServiceStrategy">
+    <property name="serviceId" value="semantic"/>
+    <property name="semanticService" ref="calaisService"/>
+    <property name="contentRepository" ref="contentRepository"/>
+    <property name="solrSearchService" ref="solrSearchService"/>
+    <property name="referencePropertyName" value="externalReference"/>
+    <property name="nameMatchingPropertyName" value="value"/>
+  </bean>
+
+  <util:list id="semanticServiceStrategies">
+  </util:list>
+
+
+  <!--The CM taxonomy node strategy beans working on folders with parent and child properties on the CMTaxonomy content type. -->
+  <bean id="strategyResolver" class="com.coremedia.blueprint.taxonomies.strategy.TaxonomyResolverImpl" scope="prototype">
+    <property name="contentRepository" ref="contentRepository"/>
+    <property name="solrSearchService" ref="solrSearchService"/>
+    <property name="sitesService" ref="sitesService"/>
+    <property name="siteConfigPath" value="Options/" />
+    <property name="globalConfigPath" value="${studio.globalConfigurationPath}" />
+    <property name="aliasMapping">
+      <map>
+        <entry key="Query" value="Subject"/>
+        <entry key="QueryLocation" value="Location"/>
+      </map>
+    </property>
+    <property name="contentType" value="CMTaxonomy"/>
+  </bean>
+
+  <bean id="nameMatching" class="com.coremedia.blueprint.taxonomies.semantic.service.matching.NameMatchingStrategy">
+    <property name="serviceId" value="nameMatching"/>
+    <property name="contentRepository" ref="contentRepository"/>
+  </bean>
+
+  <!-- Strategy aggregator -->
+  <customize:append id="semanticStrategyExamplesCustomizer" bean="semanticServiceStrategies" order="1000">
+    <list>
+      <ref bean="nameMatching"/>
+      <ref bean="semanticService"/>
+    </list>
+  </customize:append>
+
+</beans>

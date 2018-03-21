@@ -1,0 +1,14 @@
+// default cta button is white...
+.cm-cta-button {
+  white-space: normal; //overwrite bootstraps nowrap for CTAs with long text
+  transition: all $transition-duration ease;
+  @include transparent-button(palette(white), palette(grey, darker));
+  // button macro lacks styling...
+  padding: $padding-base-vertical $padding-base-horizontal;
+  font-weight: $btn-font-weight;
+}
+
+// but cta button in teaser overlay with default teaser style is gray...
+.cm-teaser-overlay__cta-button {
+  @include transparent-button(palette(grey, darker), palette(white));
+}

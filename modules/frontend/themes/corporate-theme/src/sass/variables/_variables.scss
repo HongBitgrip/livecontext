@@ -1,0 +1,48 @@
+// Corporation Variables
+
+// Namespace/Prefix
+$prefix: "cm-";
+
+//Header
+$logo-size-mobile: 50px;
+$logo-size: 60px;
+$top-clearance-mobile: 70px;
+$top-clearance: 90px;
+
+$header-color-bg: rgba(palette(black), 0.65);
+
+// Buttons
+$button-border: 2px;
+
+// Overlay Icons
+$overlay-size: 90px;
+
+// Carousel
+$carousel-height: 40px;
+
+// Animations
+$transition-duration: 0.35s;
+
+//Search
+$search-height: 50px;
+$search-width: 300px;
+$search-small-width: 250px;
+
+$dimmer-opacity: 0.7;
+
+//
+// Breakpoints
+// =====================================================================================================================
+//
+// Hold our breakpoint aliases and conditions in a list.
+// These can be invoked later on via the `breakpoint()` mixin the breakpoint are defined in the mixins class
+// breakpoints vars are defined in the bootstrap variables class under modules
+//
+$breakpoints: (
+        "xs": "screen and (max-width: #{$screen-xs-max})",
+        "sm": "screen and (min-width: #{$screen-sm-min}) and (max-width: #{$screen-sm-max})",
+        "sm-and-up": "screen and (min-width: #{$screen-sm-min})",
+        "md": "screen and (min-width: #{$screen-md-min})",
+        "lg": "screen and (min-width: #{$screen-lg-min})",
+        "pt": "print"
+) !default;

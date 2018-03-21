@@ -1,0 +1,110 @@
+.cm-placement-highlighting-blue,
+.cm-placement-highlighting-green,
+.cm-placement-highlighting-orange {
+  border-radius: 2px;
+  position: relative;
+  padding: 0;
+}
+.cm-placement-highlighting-blue {
+  /* Available Filled Placement: */
+  /*box-shadow: inset 2px 0 0 0 #1972C6;
+  outline: 1px solid #1972C6;*/
+}
+.cm-placement-highlighting-green {
+  /* Available Empty Placement: */
+  background: #F2FBE5;
+  border: 1px solid #7ED900;
+  box-shadow: inset 3px 0 0 0 #7ED900;
+  color: #403E3E;
+}
+.cm-placement-highlighting-orange {
+  /* Unavailable Placement: */
+  background: #FEF6E8;
+  border: 1px solid #F1A20E;
+  box-shadow: inset 2px 0 0 0 #F1A20E;
+}
+
+.cm-placement-border-left,
+.cm-placement-border-right,
+.cm-placement-border-top,
+.cm-placement-border-bottom {
+  position: absolute;
+  background-color: #1972C6;
+  z-index: 10;
+  margin-bottom: 0;
+}
+
+.cm-placement-border-left,
+.cm-placement-border-right {
+  top: 0;
+  height: 100%;
+}
+
+.cm-placement-border-left {
+  left: 0;
+  width: 2px;
+}
+
+.cm-placement-border-right {
+  right: 0;
+  width: 1px;
+}
+
+.cm-placement-border-top,
+.cm-placement-border-bottom {
+  left: 0;
+  width: 100%;
+  height: 1px;
+}
+
+.cm-placement-border-top {
+  top: 0;
+}
+
+.cm-placement-border-bottom {
+  bottom: 0;
+}
+
+.cm-placement-highlighting-blue-overlay,
+.cm-placement-highlighting-green-overlay,
+.cm-placement-highlighting-orange-overlay {
+  font-weight: bold;
+  left: 1px;
+  padding-left: 3px;
+  padding-right: 3px;
+  position: absolute;
+  top: 0;
+  z-index: 10;
+  width: initial;
+}
+.cm-placement-highlighting-orange-overlay,
+.cm-placement-highlighting-blue-overlay {
+  border-style: solid;
+  border-width: 1px;
+}
+.cm-placement-highlighting-green-overlay {
+  background: #F2FBE5;
+  box-shadow: inset 0 0 0 1px #7ED900;
+}
+.cm-placement-highlighting-orange-overlay {
+  background: #FEF6E8;
+  border-color: #F1A20E;
+}
+.cm-placement-highlighting-blue-overlay {
+  background: #E8F1F9;
+  border-color: #1972C6;
+}
+
+.cm-placement-highlighting-green-text {
+  text-align: left;
+}
+
+.cm-placement-highlighting-blue-overlay,
+.cm-placement-highlighting-green-overlay,
+.cm-placement-highlighting-orange-overlay,
+.cm-placement-highlighting-green,
+.cm-placement-highlighting-orange {
+  font-family: "Segoe UI", "Trebuchet MS", "Lucida Grande", Helvetica, sans-serif;
+  font-size: 12px;
+  line-height: 1.4;
+}

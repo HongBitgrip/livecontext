@@ -1,0 +1,49 @@
+//
+// Fonts
+// =====================================================================================================================
+//
+// Defines global font-size variables using SASS font-format maps.
+//
+$font-formats: (
+  h1: (
+    mobile-small: 30px,
+    mobile: 40px,
+    base : 60px
+  ),
+  h2: (
+    mobile-small: 28px,
+    mobile: 28px,
+    base : 40px
+  ),
+  h3: (
+    mobile-small: 22px,
+    mobile: 22px,
+    base : 30px
+  ),
+  h4: (
+    mobile-small: 20px,
+    mobile: 20px,
+    base : 24px
+  ),
+  p: (
+    mobile-small: 15px,
+    mobile: 18px,
+    base : 18px
+  ),
+);
+
+//
+//  @function: font-format
+//  @param: {string} The base font-size ( h1 | h2 ...) name.
+//  @param: {string} The font-size shade, if ommmited the function returns the base font-size.
+//  @description: Returns the font-size value of our global heading.
+//  @example:
+//  ```
+//    font-format(h1)
+//    font-format(h1, mobile)
+//    font-format(h3, mobile)
+//  ```
+//
+@function font-format($size, $value: 'base') {
+  @return map-get(map-get($font-formats, $size), $value);
+}

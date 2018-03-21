@@ -1,0 +1,21 @@
+// Details
+// =====================================================================================================================
+
+.#{$cm-details-prefix} {
+  @include spacer($brand-primary);
+
+  // product detail page
+  &--product {
+    .cm-details {
+
+      // h1 for seo, but should look like h2
+      &__headline {
+        font-size: font-format(h2, mobile);
+
+        @include breakpoint(sm-and-up) {
+          font-size: font-format(h2);
+        }
+      }
+    }
+  }
+}

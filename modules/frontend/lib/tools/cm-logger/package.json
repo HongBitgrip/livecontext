@@ -1,0 +1,24 @@
+{
+  "author": {
+    "name": "CoreMedia",
+    "url": "http://www.coremedia.com"
+  },
+  "name": "@coremedia/cm-logger",
+  "private": true,
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=8"
+  },
+  "dependencies": {
+    "chalk": "2.1.0",
+    "date-fns": "1.29.0",
+    "log-symbols": "2.1.0"
+  },
+  "devDependencies": {
+    "jest": "22.0.4"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "main": "src/index.js"
+}

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <import resource="classpath:/com/coremedia/cache/cache-services.xml"/>
+  <import resource="classpath:/com/coremedia/ecommerce/studio/rest/cache.xml"/>
+  <import resource="classpath:/framework/spring/lc-ecommerce-connection.xml"/>
+
+  <import resource="classpath:/com/coremedia/rest/cap/cap-rest-search-service.xml"/>
+  <import resource="classpath:/framework/spring/lc-asset-services.xml"/>
+  <import resource="validators.xml"/>
+
+  <bean id="assetPictureInvalidationWriteInterceptor"
+        class="com.coremedia.livecontext.studio.asset.AssetInvalidationWriteInterceptor">
+    <property name="type" value="CMPicture"/>
+    <property name="interceptingSubtypes" value="true"/>
+    <property name="commerceCacheInvalidationSource" ref="commerceInvalidationSource"/>
+  </bean>
+  <bean id="assetPictureInvalidationWritePostProcessor"
+        class="com.coremedia.livecontext.studio.asset.AssetInvalidationWritePostProcessor">
+    <property name="type" value="CMPicture"/>
+    <property name="postProcessingSubtypes" value="true"/>
+    <property name="commerceCacheInvalidationSource" ref="commerceInvalidationSource"/>
+  </bean>
+  <bean id="assetSpinnerInvalidationWriteInterceptor"
+        class="com.coremedia.livecontext.studio.asset.SpinnerAssetInvalidationWriteInterceptor">
+    <property name="type" value="CMSpinner"/>
+    <property name="interceptingSubtypes" value="true"/>
+    <property name="assetReadSettingsHelper" ref="assetReadSettingsHelper"/>
+    <property name="assetWriteSettingsHelper" ref="assetWriteSettingsHelper"/>
+    <property name="contentRepository" ref="contentRepository"/>
+    <property name="commerceCacheInvalidationSource" ref="commerceInvalidationSource"/>
+  </bean>
+  <bean id="assetSpinnerInvalidationWritePostProcessor"
+        class="com.coremedia.livecontext.studio.asset.AssetInvalidationWritePostProcessor">
+    <property name="type" value="CMSpinner"/>
+    <property name="postProcessingSubtypes" value="true"/>
+    <property name="commerceCacheInvalidationSource" ref="commerceInvalidationSource"/>
+  </bean>
+
+  <bean id="assetVideoInvalidationWriteInterceptor"
+        class="com.coremedia.livecontext.studio.asset.AssetInvalidationWriteInterceptor">
+    <property name="type" value="CMVideo"/>
+    <property name="interceptingSubtypes" value="true"/>
+    <property name="commerceCacheInvalidationSource" ref="commerceInvalidationSource"/>
+  </bean>
+  <bean id="assetVideoInvalidationWritePostProcessor"
+        class="com.coremedia.livecontext.studio.asset.AssetInvalidationWritePostProcessor">
+    <property name="type" value="CMVideo"/>
+    <property name="postProcessingSubtypes" value="true"/>
+    <property name="commerceCacheInvalidationSource" ref="commerceInvalidationSource"/>
+  </bean>
+
+  <bean id="assetDownloadInvalidationWriteInterceptor"
+        class="com.coremedia.livecontext.studio.asset.AssetInvalidationWriteInterceptor">
+    <property name="type" value="CMDownload"/>
+    <property name="interceptingSubtypes" value="true"/>
+    <property name="commerceCacheInvalidationSource" ref="commerceInvalidationSource"/>
+  </bean>
+  <bean id="assetDownloadInvalidationWritePostProcessor"
+        class="com.coremedia.livecontext.studio.asset.AssetInvalidationWritePostProcessor">
+    <property name="type" value="CMDownload"/>
+    <property name="postProcessingSubtypes" value="true"/>
+    <property name="commerceCacheInvalidationSource" ref="commerceInvalidationSource"/>
+  </bean>
+
+  <bean id="assetInvalidationRepositoryListener"
+        class="com.coremedia.livecontext.studio.asset.AssetInvalidationRepositoryListener">
+  </bean>
+
+  <bean id="pictureUploadXmpDataInterceptor"
+        class="com.coremedia.livecontext.studio.asset.BlobUploadXmpDataInterceptor">
+    <property name="priority" value="1"/>
+    <property name="type" value="CMPicture"/>
+    <property name="blobProperty" value="data"/>
+    <property name="assetHelper" ref="assetHelper"/>
+  </bean>
+
+  <bean id="videoUploadXmpDataInterceptor" class="com.coremedia.livecontext.studio.asset.BlobUploadXmpDataInterceptor">
+    <property name="priority" value="1"/>
+    <property name="type" value="CMVideo"/>
+    <property name="blobProperty" value="data"/>
+    <property name="assetHelper" ref="assetHelper"/>
+  </bean>
+
+  <bean id="studioAssetSearchService" class="com.coremedia.livecontext.studio.asset.StudioAssetSearchService">
+    <property name="contentRepository" ref="contentRepository"/>
+    <property name="searchService" ref="solrSearchService"/>
+    <property name="cache" ref="cache"/>
+    <property name="cacheForInSeconds" value="${livecontext.assetService.searchCacheDurationInSeconds}"/>
+  </bean>
+
+  <bean id="studioAssetCacheCapacityConfigurer" class="com.coremedia.cache.CacheCapacityConfigurer" init-method="init">
+    <property name="cache" ref="cache"/>
+    <property name="capacities">
+      <map>
+        <entry key="com.coremedia.livecontext.studio.asset.StudioAssetSearchService.SolrQueryCacheKey" value="100"/>
+      </map>
+    </property>
+  </bean>
+
+</beans>

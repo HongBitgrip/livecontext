@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ | There are several appenders available:
+ | * file
+ | * console
+ | * logstash-tcp logged to ${log.logstash.destination}
+ | * logstash-file (json file, logged to ${log.file}-json.log
+-->
+<configuration scan="true" scanPeriod="30 seconds">
+
+  <property name="log.dir" value="target/logs"/>
+
+  <property name="log.pattern" value="%d{yyyy-MM-dd HH:mm:ss} %-7([%level]) %logger [%X{tenant}] - %message \\(%thread\\)%n" />
+
+  <if condition='!isDefined("application.name")'>
+    <then>
+      <property name="application.name" value="${project.build.finalName}" />
+    </then>
+  </if>
+
+  <include resource="logging-common.xml"/>
+
+  <!-- uncomment to see all View Lookups. Produces _massive_ log output(!) -->
+  <!--
+   | <logger name="com.coremedia.objectserver.view" additivity="false" level="debug">
+   |   <appender-ref ref="${log.appender:-file}"/>
+   | </logger>
+   -->
+
+  <logger name="com.coremedia" additivity="false" level="info">
+    <appender-ref ref="${log.appender:-file}"/>
+  </logger>
+
+  <logger name="hox" additivity="false" level="info">
+    <appender-ref ref="${log.appender:-file}"/>
+  </logger>
+
+  <logger name="cap" additivity="false" level="info">
+    <appender-ref ref="${log.appender:-file}"/>
+  </logger>
+
+  <!-- Avoid frequent ERRORs and WARNs from pdfbox when parsing text from PDFs for indexing -->
+  <logger name="org.apache.pdfbox.pdmodel.font" additivity="false" level="off"/>
+  <!-- Avoid warning from Apache Tika 1.15 about missing library (TIKA-2389) -->
+  <logger name="org.apache.tika.parser.image.ImageParser" additivity="false" level="error"/>
+
+  <root level="warn">
+    <appender-ref ref="${log.appender:-file}"/>
+  </root>
+
+</configuration>

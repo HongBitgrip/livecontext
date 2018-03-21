@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMViewtype folder="/Sites/Hybris Apparel/Germany/German/Options/Viewtypes/CMExternalProduct" name="tiles-layout-portrait" xmlns:cmexport="http://www.coremedia.com/2012/cmexport" translationState="up-to-date">
+<locale>de-DE</locale>
+<master>
+<link href="../../../../../United%20Kingdom/English/Options/Viewtypes/CMExternalProduct/tiles-layout-portrait.xml" path="/Sites/Hybris%20Apparel/United%20Kingdom/English/Options/Viewtypes/CMExternalProduct/tiles-layout-portrait"/>
+</master>
+<description>Zeigt eine Sammlung in einem Fliesen-Layout (Hochformat).</description>
+<layout>tiles-layout-portrait</layout>
+</CMViewtype>

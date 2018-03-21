@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.coremedia.blueprint</groupId>
+    <artifactId>blueprint-parent</artifactId>
+    <version>1-SNAPSHOT</version>
+    <relativePath>../blueprint-parent/pom.xml</relativePath>
+  </parent>
+
+  <artifactId>modules</artifactId>
+  <packaging>pom</packaging>
+
+  <description>Modules like CAE, Studio and component libraries</description>
+
+  <modules>
+    <module>cae</module>
+    <module>studio</module>
+    <module>shared</module>
+    <module>cmd-tools</module>
+    <module>server</module>
+    <module>search</module>
+    <module>ecommerce</module>
+    <module>extensions</module>
+    <module>editor-components</module>
+    <module>elastic-worker</module>
+    <module>frontend</module>
+  </modules>
+
+  <profiles>
+    <profile>
+      <id>default-extensions</id>
+      <activation>
+        <property>
+          <name>!dev-extensions</name>
+        </property>
+      </activation>
+      <modules>
+        <module>extension-config</module>
+      </modules>
+    </profile>
+
+    <!--
+      Use an alternative set of extensions, for development purposes.
+    -->
+    <profile>
+      <id>dev-extensions</id>
+      <activation>
+        <property>
+          <name>dev-extensions</name>
+        </property>
+      </activation>
+      <modules>
+        <module>../workspace-configuration/extensions/tool/extension-config</module>
+      </modules>
+    </profile>
+  </profiles>
+</project>

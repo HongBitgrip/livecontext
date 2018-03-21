@@ -1,0 +1,19 @@
+// Variables
+
+// Colors
+$hybris-text: #154259;
+$hybris-price: #19212b;
+$hybris-orange: #cc7205;
+$hybris-hover: #154259;
+
+//Bootstrap
+$grid-gutter-width: 0;
+
+// Breakpoints
+$breakpoints: (
+        "xs": "only screen and (max-width: 599px)",
+        "sm": "only screen and (min-width: 600px) and (max-width: 1023px)",
+        "sm-and-up": "only screen and (min-width: 600px)",
+        "md": "only screen and (min-width: 1024px)",
+        "lg": "only screen and (min-width: 1400px)"
+) !default;

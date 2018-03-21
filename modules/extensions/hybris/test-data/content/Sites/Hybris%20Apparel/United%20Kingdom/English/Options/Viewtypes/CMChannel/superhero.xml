@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMViewtype folder="/Sites/Hybris Apparel/United Kingdom/English/Options/Viewtypes/CMChannel" name="superhero" xmlns:cmexport="http://www.coremedia.com/2012/cmexport">
+<locale>en-GB</locale>
+<master>
+</master>
+<description></description>
+<layout>superhero</layout>
+</CMViewtype>

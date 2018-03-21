@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+  <import resource="classpath:/com/coremedia/cap/multisite/multisite-services.xml"/>
+  <import resource="classpath:/framework/spring/lc-ecommerce-connection.xml"/>
+
+  <bean id="commerceTreeRelation" class="com.coremedia.livecontext.tree.CommerceTreeRelation"/>
+
+  <bean name="externalChannelContentTreeRelation"
+        class="com.coremedia.livecontext.tree.ExternalChannelContentTreeRelation"/>
+
+  <bean id="categoryAugmentationService" class="com.coremedia.blueprint.base.livecontext.ecommerce.common.AugmentationServiceImpl">
+    <property name="sitesService" ref="sitesService"/>
+    <property name="index" ref="catalogExternalChannelIndex"/>
+  </bean>
+
+  <bean id="catalogExternalChannelIndex" class="com.coremedia.blueprint.base.util.CacheableContentStringPropertyIndex">
+    <constructor-arg index="0" name="contentRepository" ref="contentRepository"/>
+    <constructor-arg index="1" name="contentType" value="CMExternalChannel"/>
+    <constructor-arg index="2" name="property" value="externalId"/>
+    <constructor-arg index="3" name="cache" ref="cache"/>
+  </bean>
+
+  <bean id="externalPageAugmentationService" class="com.coremedia.blueprint.base.livecontext.ecommerce.common.AugmentationServiceImpl">
+    <property name="sitesService" ref="sitesService"/>
+    <property name="index" ref="externalPagelIndex"/>
+  </bean>
+
+  <bean id="externalPagelIndex"
+        class="com.coremedia.blueprint.base.util.ContentStringPropertyIndex">
+    <constructor-arg index="0" name="contentRepository" ref="contentRepository"/>
+    <constructor-arg index="1" name="contentType" value="CMExternalPage"/>
+    <constructor-arg index="2" name="property" value="externalId"/>
+  </bean>
+
+  <!-- external/augmented product -->
+
+  <bean id="productAugmentationService"
+        class="com.coremedia.blueprint.base.livecontext.ecommerce.common.AugmentationServiceImpl">
+    <property name="sitesService" ref="sitesService"/>
+    <property name="index" ref="externalProductIndex"/>
+  </bean>
+
+  <bean id="externalProductIndex"
+        class="com.coremedia.blueprint.base.util.CacheableContentStringPropertyIndex">
+    <constructor-arg index="0" name="contentRepository" ref="contentRepository"/>
+    <constructor-arg index="1" name="contentType" value="CMExternalProduct"/>
+    <constructor-arg index="2" name="property" value="externalId"/>
+    <constructor-arg index="3" name="cache" ref="cache"/>
+  </bean>
+
+  <!-- /external product -->
+
+</beans>

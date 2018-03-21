@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.coremedia.blueprint</groupId>
+    <artifactId>modules</artifactId>
+    <version>1-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>server</artifactId>
+  <packaging>pom</packaging>
+
+  <modules>
+    <module>contentserver-blueprint-component</module>
+
+    <module>content-management-server-blueprint-component</module>
+    <module>content-management-server-blueprint-config</module>
+    <module>content-management-server-webapp</module>
+
+    <module>content-management-server-watchdog-blueprint-component</module>
+    <module>content-management-server-watchdog-blueprint-config</module>
+    <module>content-management-server-watchdog-webapp</module>
+
+    <module>master-live-server-blueprint-component</module>
+    <module>master-live-server-blueprint-config</module>
+    <module>master-live-server-webapp</module>
+
+    <module>replication-live-server-blueprint-component</module>
+    <module>replication-live-server-blueprint-config</module>
+    <module>replication-live-server-webapp</module>
+
+    <module>workflowserver-blueprint-component</module>
+    <module>workflowserver-blueprint-config</module>
+    <module>workflow-server-webapp</module>
+
+    <module>user-changes-blueprint-component</module>
+    <module>user-changes-webapp</module>
+  </modules>
+</project>
+

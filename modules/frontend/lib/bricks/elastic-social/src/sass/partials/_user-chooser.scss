@@ -1,0 +1,37 @@
+.#{$cm-user-chooser} {
+
+  &__button {
+    cursor: pointer;
+  }
+
+  &__icon {
+    font-size: 10px;
+  }
+
+  &__items {
+    list-style: none;
+    position: absolute;
+    top: 2*$cm-user-chooser-padding-base-vertical+$cm-user-chooser-line-height;
+    left: 0;
+    padding: 0;
+    background-color: #ffffff;
+    z-index: 1;
+  }
+
+  &__item {
+    padding: $cm-user-chooser-padding-base-vertical $cm-user-chooser-padding-base-horizontal;
+  }
+
+  @include breakpoint(sm-and-up) {
+    &__items {
+      top: $cm-user-chooser-items-top;
+      background-color: $cm-user-chooser-items-background-color;
+    }
+
+    &__item {
+      padding: 0 $cm-user-chooser-padding-base-horizontal;
+      white-space: nowrap;
+      line-height: 2;
+    }
+  }
+}

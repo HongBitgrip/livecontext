@@ -1,0 +1,12 @@
+<%- if @restart_services %>
+<%- @restart_services.each do |service| -%>
+ service <%= service %> stop || echo "service <%= service %> may already be stopped"
+<%- end -%>
+<%- end -%>
+
+/usr/bin/getent group <%= @service_group %> || /usr/sbin/groupadd <%= @service_group %>
+/usr/bin/getent passwd <%= @service_group_user %> || /usr/sbin/useradd -G <%= @service_group %> -c "user to run tools" -r -s /bin/bash -d <%= @base_dir %> -M -N <%= @service_group_user %>
+<%- if @service_user -%>
+/usr/bin/getent passwd <%= @service_user %> || /usr/sbin/useradd -G <%= @service_group %> -c "system user to run service <%= @service_name %>" -M -s /sbin/nologin -d <%= @service_dir %> -r <%= @service_user %>
+<%- end -%>
+

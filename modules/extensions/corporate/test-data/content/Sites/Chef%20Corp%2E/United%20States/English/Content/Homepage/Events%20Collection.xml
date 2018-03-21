@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMCollection folder="/Sites/Chef Corp./United States/English/Content/Homepage" name="Events Collection" xmlns:cmexport="http://www.coremedia.com/2012/cmexport">
+<locale>en-US</locale>
+<master>
+</master>
+<viewtype>
+</viewtype>
+<linkedSettings>
+<link href="../../Options/Settings/First%20Item%20as%20Header.xml" path="/Sites/Chef%20Corp%2E/United%20States/English/Options/Settings/First%20Item%20as%20Header"/>
+</linkedSettings>
+<resourceBundles2>
+</resourceBundles2>
+<segment></segment>
+<title></title>
+<htmlTitle></htmlTitle>
+<keywords></keywords>
+<htmlDescription></htmlDescription>
+<subjectTaxonomy>
+</subjectTaxonomy>
+<locationTaxonomy>
+</locationTaxonomy>
+<contexts>
+</contexts>
+<teaserTitle>Events</teaserTitle>
+<pictures>
+</pictures>
+<related>
+</related>
+<items>
+<link href="Events%20Teaser.xml" path="/Sites/Chef%20Corp%2E/United%20States/English/Content/Homepage/Events%20Teaser"/>
+</items>
+</CMCollection>

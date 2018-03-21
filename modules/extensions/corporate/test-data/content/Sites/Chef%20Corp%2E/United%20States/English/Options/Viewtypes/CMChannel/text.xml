@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMViewtype folder="/Sites/Chef Corp./United States/English/Options/Viewtypes/CMChannel" name="text" xmlns:cmexport="http://www.coremedia.com/2012/cmexport">
+<locale>en-US</locale>
+<master>
+</master>
+<description>Displays content as a text only without image teaser.</description>
+<icon md5="d68286ad604df88f0fd7a000bad5e647" size="34147" href="../../../../../../../__blob/d68286ad604df88f0fd7a000bad5e647.blob" mimetype="image/png"/>
+<layout>text</layout>
+</CMViewtype>

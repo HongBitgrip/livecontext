@@ -1,0 +1,23 @@
+
+<%- protocol =  @params[:protocol].nil? ? 'http' : @params[:protocol] -%>
+
+ProxyPassInterpolateEnv On
+ProxyPreserveHost On
+<%- if @params[:ssl] -%>
+  SSLProxyEngine On
+  RequestHeader set X-Forwarded-Proto "https"
+  <%- if node['apache']['version'] == '2.4' && !@params[:ssl_proxy_verify] -%>
+    SSLProxyVerify none
+    SSLProxyCheckPeerCN off
+    SSLProxyCheckPeerName off
+  <%- end -%>
+<%- end -%>
+
+
+SetEnvIf Remote_Addr "(.*)" devaddr=$1
+
+ProxyPass /<%= @params[:servlet_context] %> http://${devaddr}:<%= @params[:local_webapp_port] %>/<%= @params[:servlet_context] %> interpolate
+ProxyPassReverse /<%= @params[:servlet_context] %> http://${devaddr}:<%= @params[:local_webapp_port] %>/<%= @params[:servlet_context] %> interpolate
+ProxyPassReverseCookiePath /<%= @params[:servlet_context] %> /
+
+ProxyPass / http://${devaddr}:<%= @params[:local_webapp_port] %><%= @params[:servlet_context].empty? ? '/' : "/#{@params[:servlet_context]}/" %><%= "#{@params[:default_servlet]}/" unless @params[:default_servlet].to_s.empty? %> interpolate

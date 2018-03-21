@@ -1,0 +1,20 @@
+.#{$cm-carousel-prefix} {
+  margin: 0;
+
+  &-inner > .item {
+    padding: 0;
+    margin: 0;
+    display: none;
+
+    a.btn,
+    a.btn:hover {
+      color: #fff;
+    }
+  }
+
+  &-inner > .active,
+  &-inner > .next,
+  &-inner > .prev {
+    display: block;
+  }
+}

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMHTML folder="/Sites/Hybris Apparel/United Kingdom/English/Navigation/Site-Wide" name="UGC Upload" xmlns:cmexport="http://www.coremedia.com/2012/cmexport">
+<locale>en-GB</locale>
+<master>
+</master>
+<viewtype>
+</viewtype>
+<linkedSettings>
+</linkedSettings>
+<resourceBundles2>
+</resourceBundles2>
+<segment></segment>
+<title></title>
+<htmlTitle></htmlTitle>
+<keywords></keywords>
+<htmlDescription></htmlDescription>
+<subjectTaxonomy>
+</subjectTaxonomy>
+<locationTaxonomy>
+</locationTaxonomy>
+<contexts>
+</contexts>
+<teaserTitle></teaserTitle>
+<pictures>
+</pictures>
+<related>
+</related>
+<alt></alt>
+<copyright></copyright>
+<description></description>
+<data grammarName="coremedia-richtext-1.0"><div xmlns="http://www.coremedia.com/2003/richtext-1.0" xmlns:xlink="http://www.w3.org/1999/xlink"><p>&lt;div class="cm-comments" id="cm-comments-1-1vv07nyqbo5r9z2b8wf6bie0d" data-cm-refreshable-fragment="{&amp;quot;url&amp;quot;: &amp;quot;/blueprint/servlet/dynamic/fragment/comments/apparelhomepage/75456/75334&amp;quot;}"&gt;<br/>      &lt;h3 class="cm-comments__title cm-heading3"&gt;<br/>There is one comment.      &lt;/h3&gt;</p><p>  &lt;div data-cm-notification="{&amp;quot;path&amp;quot;: &amp;quot;&amp;quot;}" class="cm-notification cm-notification--inactive cm-comments__notification"&gt;<br/>    &lt;span class="cm-notification__text"&gt;<br/>    <br/>    &lt;/span&gt;<br/>  &lt;/div&gt;</p><p>      &lt;div class="cm-comments__toolbar cm-toolbar cm-toolbar--comments cm-toolbar--inactive"&gt;<br/>&lt;button type="button" data-cm-button--comment="{&amp;quot;replyTo&amp;quot;: &amp;quot;&amp;quot;}" class="cm-button cm-button--with-text"&gt;<br/>  <br/>  &lt;span class="cm-button__text"&gt;Write a Comment...&lt;/span&gt;<br/>&lt;/button&gt;<br/>      &lt;/div&gt;&lt;div class="cm-comments__new-comment cm-new-comment cm-new-comment--active"&gt;<br/>&lt;form method="post" enctype="multipart/form-data" class="cm-new-comment__form cm-form" action="/blueprint/servlet/dynamic/fragment/comments/apparelhomepage/75456/75334" data-cm-es-ajax-form=""&gt;<br/>&lt;div data-cm-notification="{&amp;quot;path&amp;quot;: &amp;quot;&amp;quot;}" class="cm-notification cm-notification--inactive cm-form__notification"&gt;<br/>&lt;span class="cm-notification__text"&gt;<br/>&lt;/span&gt;<br/>&lt;/div&gt;<br/>&lt;input type="hidden" name="_CSRFToken" value=""&gt;<br/>&lt;input type="hidden" name="replyTo" value=""&gt;<br/>&lt;fieldset class="cm-form__fieldset cm-fieldset"&gt;<br/>&lt;div class="cm-fieldset__item cm-field cm-field--detail"&gt;<br/>&lt;div data-cm-notification="{&amp;quot;path&amp;quot;: &amp;quot;comment&amp;quot;}" class="cm-notification cm-notification--inactive cm-field__notification"&gt;<br/>&lt;span class="cm-notification__text"&gt;<br/>&lt;/span&gt;<br/>&lt;/div&gt;<br/>&lt;label for="cm-new-comment__textarea-2-aa86ztq9s3o3xf9u20skxqx93" class="cm-field__name"&gt;Your comment&lt;/label&gt;<br/>&lt;textarea name="comment" class="cm-field__value cm-textarea" id="cm-new-comment__textarea-2-aa86ztq9s3o3xf9u20skxqx93" required="" placeholder="Please enter a comment text."&gt;&lt;/textarea&gt;<br/>&lt;/div&gt;<br/>&lt;span class="btn btn-default btn-file"&gt;<br/>&lt;label for="cm-new-comment__upload-3-78y82m0gs7bxxkknloawq00yd" class="cm-field__name"&gt;Upload Image:&lt;/label&gt;<br/>&lt;input type="file" name="image" id="cm-new-comment__upload-3-78y82m0gs7bxxkknloawq00yd" accept="image/*"&gt;<br/>&lt;/span&gt;<br/>&lt;div class="cm-fieldset__item cm-button-group cm-button-group--default"&gt;<br/>&lt;button type="submit" data-cm-button--submit="" class="cm-button-group__button cm-button cm-button--with-text"&gt;<br/>&lt;span class="cm-button__text"&gt;Submit&lt;/span&gt;<br/>&lt;/button&gt;<br/>&lt;button type="button" data-cm-button--cancel="" class="cm-button-group__button cm-button--secondary cm-button cm-button--with-text"&gt;<br/>&lt;span class="cm-button__text"&gt;Cancel&lt;/span&gt;<br/>&lt;/button&gt;<br/>&lt;/div&gt;<br/>&lt;/fieldset&gt;<br/>&lt;/form&gt;</p><p><br/></p><p><br/></p><p><br/></p><p><br/>&lt;/div&gt;<br/>&lt;!-- BEGIN com.coremedia.blueprint.elastic.social.cae.controller.CommentsResult@5020d386 commentForm FreemarkerView[template=/jar:id:contentproperty:/Themes/hybris/templates/hybris&amp;#8211;templates.jar/archive!/META&amp;#8211;INF/resources/WEB&amp;#8211;INF/templates/hybris/com.coremedia.blueprint.elastic.social.cae.controller/CommentsResult.commentForm.ftl] --&gt;<br/>&lt;!-- END com.coremedia.blueprint.elastic.social.cae.controller.CommentsResult@5020d386 commentForm FreemarkerView[template=/jar:id:contentproperty:/Themes/hybris/templates/hybris&amp;#8211;templates.jar/archive!/META&amp;#8211;INF/resources/WEB&amp;#8211;INF/templates/hybris/com.coremedia.blueprint.elastic.social.cae.controller/CommentsResult.commentForm.ftl] --&gt;<br/>     <br/>&lt;/div&gt;</p></div></data>
+</CMHTML>

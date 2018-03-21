@@ -1,0 +1,9 @@
+<%- if @params[:ssl] -%>
+  SSLProxyEngine On
+  RequestHeader set X-Forwarded-Proto "https"
+<%- end -%>
+
+  ProxyPreserveHost On
+  ProxyPass /<%= @params[:servlet_context] %> http://<%= @params[:servlet_host] %>:<%= @params[:servlet_port] %>/<%= @params[:servlet_context] %>
+  ProxyPassReverse /<%= @params[:servlet_context] %> http://<%= @params[:servlet_host] %>:<%= @params[:servlet_port] %>/<%= @params[:servlet_context] %>
+  ProxyPassReverseCookiePath /<%= @params[:servlet_context] %> /

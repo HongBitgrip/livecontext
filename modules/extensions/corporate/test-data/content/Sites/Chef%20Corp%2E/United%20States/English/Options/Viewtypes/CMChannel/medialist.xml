@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMViewtype folder="/Sites/Chef Corp./United States/English/Options/Viewtypes/CMChannel" name="medialist" xmlns:cmexport="http://www.coremedia.com/2012/cmexport">
+<locale>en-US</locale>
+<master>
+</master>
+<description>Displays multiple items as a list with small preview images.</description>
+<icon md5="4f1e422e5be7e4780477d4e5d2df6b3d" size="34147" href="../../../../../../../__blob/4f1e422e5be7e4780477d4e5d2df6b3d.blob" mimetype="image/png"/>
+<layout>medialist</layout>
+</CMViewtype>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <import resource="classpath:/framework/spring/livecontext-hybris-default-config.xml"/>
+
+  <!-- Hybris WebServices API REST Connector -->
+  <bean id="hybrisRestConnector" class="com.coremedia.livecontext.ecommerce.hybris.rest.HybrisRestConnector"/>
+
+  <!-- Hybris REST Connector PreviewServices -->
+  <bean id="hybrisRestConnectorPreviewServices" class="com.coremedia.livecontext.ecommerce.hybris.rest.HybrisRestConnector" parent="hybrisRestConnector">
+    <property name="basePath" value="/previewwebservices/v1"/>
+  </bean>
+
+  <bean id="hybrisOAuthConnector" class="com.coremedia.livecontext.ecommerce.hybris.rest.OAuthConnector">
+    <property name="protocol" value="${livecontext.hybris.protocol.ssl}"/>
+    <property name="port" value="${livecontext.hybris.port.ssl}"/>
+    <property name="user" value="${livecontext.hybris.user}"/>
+    <property name="password" value="${livecontext.hybris.password}"/>
+  </bean>
+
+  <!-- Hybris OCC API REST Connector -->
+  <bean id="hybrisOccRestConnector" class="com.coremedia.livecontext.ecommerce.hybris.rest.HybrisRestConnector">
+    <property name="basePath" value="${livecontext.hybris.rest.occ.basePath}"/>
+    <property name="apiVersion" value="${livecontext.hybris.rest.occ.apiVersion}"/>
+  </bean>
+
+  <!-- Hybris Storefront REST Connector -->
+  <bean id="hybrisStorefrontRestConnector" class="com.coremedia.livecontext.ecommerce.hybris.rest.HybrisRestConnector">
+    <property name="basePath" value="${livecontext.hybris.rest.storefront.basePath}"/>
+  </bean>
+
+  <!-- Hybris REST Resources -->
+  <bean id="abstractHybrisResource" abstract="true"
+        class="com.coremedia.livecontext.ecommerce.hybris.rest.resources.AbstractHybrisResource">
+    <property name="connector" ref="hybrisRestConnector"/>
+    <property name="occConnector" ref="hybrisOccRestConnector"/>
+  </bean>
+
+  <bean id="hybrisCatalogResource" parent="abstractHybrisResource"
+        class="com.coremedia.livecontext.ecommerce.hybris.rest.resources.CatalogResource"/>
+
+  <bean id="hybrisStoreConfigResource"
+        class="com.coremedia.livecontext.ecommerce.hybris.rest.resources.StoreConfigResource"/>
+
+  <bean id="hybrisInvalidationResource"
+        class="com.coremedia.livecontext.ecommerce.hybris.event.InvalidationResource">
+    <property name="connector" ref="hybrisStorefrontRestConnector"/>
+  </bean>
+
+</beans>

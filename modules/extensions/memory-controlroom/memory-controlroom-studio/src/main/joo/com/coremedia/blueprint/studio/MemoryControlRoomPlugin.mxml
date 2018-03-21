@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local:MemoryControlRoomPluginBase
+        xmlns:fx="http://ns.adobe.com/mxml/2009"
+        xmlns:local="com.coremedia.blueprint.studio.*">
+  <fx:Script><![CDATA[
+    private var config:MemoryControlRoomPlugin;
+
+    public native function MemoryControlRoomPlugin(config:MemoryControlRoomPlugin = null);
+    ]]></fx:Script>
+
+  <local:rules>
+  </local:rules>
+
+</local:MemoryControlRoomPluginBase>

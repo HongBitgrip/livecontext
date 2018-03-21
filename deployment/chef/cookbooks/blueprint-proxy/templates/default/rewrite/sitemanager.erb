@@ -1,0 +1,7 @@
+  RewriteRule ^/<%= @params[:servlet_context] %>/(.*) /<%= @params[:servlet_context] %>/$1 [PT,L]
+
+  RewriteRule ^/<%= @params[:cms_context] %>/(.*) <%= @params[:cms_ior_url] %> [P,L]
+
+  RewriteRule ^/<%= @params[:wfs_context] %>/(.*) <%= @params[:wfs_ior_url] %> [P,L]
+
+  RewriteRule ^/(.*) /<%= @params[:servlet_context] %>/$1 [PT,L]

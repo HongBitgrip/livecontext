@@ -1,0 +1,27 @@
+!tape
+name: hy_testFindAllSegments
+interactions:
+- recorded: 2016-11-29T15:07:10.581Z
+  request:
+    method: GET
+    uri: http://hybrishost:9001/ws410/rest/usergroups/
+    headers:
+      Accept: application/json
+      Accept-Encoding: gzip,deflate
+      Accept-Language: en
+      Authorization: Basic YWRtaW46bmltZGE=
+      Content-Type: application/json
+      Host: hybrishost:9001
+      Proxy-Connection: Keep-Alive
+      User-Agent: Apache-HttpClient/4.3.2 (java 1.5)
+  response:
+    status: 200
+    headers:
+      Content-Type: application/json;charset=UTF-8
+      Date: Tue, 29 Nov 2016 15:07:10 GMT
+      ETag: '"-643764987"'
+      Last-Modified: Wed, 16 Nov 2016 18:46:30 GMT
+      Server: Apache-Coyote/1.1
+      Set-Cookie: _hybris.tenantID_=""; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/, JSESSIONID=9523234FDE182217E4E72704FDB80D09; Path=/ws410/; HttpOnly
+      X-Frame-Options: SAMEORIGIN
+    body: '{"@uri":"http://hybrishost:9001/ws410/rest/usergroups/","usergroup":[{"@uid":"admingroup","@pk":"8796093054981","@uri":"http://hybrishost:9001/ws410/rest/usergroups/admingroup"},{"@uid":"employeegroup","@pk":"8796093087749","@uri":"http://hybrishost:9001/ws410/rest/usergroups/employeegroup"},{"@uid":"customergroup","@pk":"8796093120517","@uri":"http://hybrishost:9001/ws410/rest/usergroups/customergroup"},{"@uid":"vjdbcReportsGroup","@pk":"8796093153285","@uri":"http://hybrishost:9001/ws410/rest/usergroups/vjdbcReportsGroup"},{"@uid":"cockpitgroup","@pk":"8796093186053","@uri":"http://hybrishost:9001/ws410/rest/usergroups/cockpitgroup"},{"@uid":"cmsmanagergroup","@pk":"8796093218821","@uri":"http://hybrishost:9001/ws410/rest/usergroups/cmsmanagergroup"},{"@uid":"marketingManagerGroup","@pk":"8796093251589","@uri":"http://hybrishost:9001/ws410/rest/usergroups/marketingManagerGroup"},{"@uid":"backofficeadmingroup","@pk":"8796093284357","@uri":"http://hybrishost:9001/ws410/rest/usergroups/backofficeadmingroup"},{"@type":"csAgentGroupDTO","@uid":"csagentmanagergroup","@pk":"8796093317125","@uri":"http://hybrishost:9001/ws410/rest/csagentgroups/csagentmanagergroup"},{"@type":"csAgentGroupDTO","@uid":"fraudAgentGroup","@pk":"8796093349893","@uri":"http://hybrishost:9001/ws410/rest/csagentgroups/fraudAgentGroup"},{"@uid":"regulargroup","@pk":"8796093382661","@uri":"http://hybrishost:9001/ws410/rest/usergroups/regulargroup"},{"@uid":"customermanagergroup","@pk":"8796093415429","@uri":"http://hybrishost:9001/ws410/rest/usergroups/customermanagergroup"},{"@uid":"customersupportadministratorrole","@pk":"8796093448197","@uri":"http://hybrishost:9001/ws410/rest/backofficeroles/customersupportadministratorrole"},{"@uid":"customersupportmanagerrole","@pk":"8796093480965","@uri":"http://hybrishost:9001/ws410/rest/backofficeroles/customersupportmanagerrole"},{"@uid":"customersupportagentrole","@pk":"8796093513733","@uri":"http://hybrishost:9001/ws410/rest/backofficeroles/customersupportagentrole"},{"@uid":"customersupportadministratorgroup","@pk":"8796093546501","@uri":"http://hybrishost:9001/ws410/rest/usergroups/customersupportadministratorgroup"},{"@type":"csAgentGroupDTO","@uid":"customersupportmanagergroup","@pk":"8796093579269","@uri":"http://hybrishost:9001/ws410/rest/csagentgroups/customersupportmanagergroup"},{"@type":"csAgentGroupDTO","@uid":"customersupportagentgroup","@pk":"8796093612037","@uri":"http://hybrishost:9001/ws410/rest/csagentgroups/customersupportagentgroup"},{"@uid":"productmanagergroup","@pk":"8796093644805","@uri":"http://hybrishost:9001/ws410/rest/usergroups/productmanagergroup"},{"@uid":"customerservicegroup","@pk":"8796093677573","@uri":"http://hybrishost:9001/ws410/rest/usergroups/customerservicegroup"},{"@uid":"csagentgroup","@pk":"8796093710341","@uri":"http://hybrishost:9001/ws410/rest/usergroups/csagentgroup"},{"@uid":"analyticsperspectivegroup","@pk":"8796093743109","@uri":"http://hybrishost:9001/ws410/rest/usergroups/analyticsperspectivegroup"},{"@uid":"employeePromotionGroup","@pk":"8796093775877","@uri":"http://hybrishost:9001/ws410/rest/usergroups/employeePromotionGroup"},{"@uid":"webservicegroup","@pk":"8796125888517","@uri":"http://hybrishost:9001/ws410/rest/usergroups/webservicegroup"}]}'

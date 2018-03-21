@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMFolderProperties folder="/Sites/Chef Corp./Germany/German/Options/Settings/Templates/CMChannel/Detail Page with Sidebar" name="_folderProperties" xmlns:cmexport="http://www.coremedia.com/2012/cmexport" translationState="up-to-date">
+<locale>de-DE</locale>
+<master>
+<link href="../../../../../../../United%20States/English/Options/Settings/Templates/CMChannel/Detail%20Page%20with%20Sidebar/_folderProperties.xml" path="/Sites/Chef%20Corp%2E/United%20States/English/Options/Settings/Templates/CMChannel/Detail%20Page%20with%20Sidebar/_folderProperties"/>
+</master>
+<contexts>
+<link href="New%20Detail%20Pag4af7603d.xml" path="/Sites/Chef%20Corp%2E/Germany/German/Options/Settings/Templates/CMChannel/Detail%20Page%20with%20Sidebar/New%20Detail%20Page%20With%20Sidebar"/>
+</contexts>
+</CMFolderProperties>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:customize="http://www.coremedia.com/2007/coremedia-spring-beans-customization"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.coremedia.com/2007/coremedia-spring-beans-customization http://www.coremedia.com/2007/coremedia-spring-beans-customization.xsd">
+
+  <import resource="classpath:com/coremedia/rest/cap/cap-rest-service.xml"/>
+  <import resource="classpath:META-INF/coremedia/bpbase-studio-rest.xml"/>
+  <import resource="classpath:/com/coremedia/blueprint/base/links/bpbase-urlpathformatting.xml"/>
+
+  <bean id="catalogProductValidator" parent="contentTypeValidator" class="com.coremedia.catalog.studio.lib.validators.CatalogProductValidator">
+    <property name="contentType" value="CMProduct"/>
+  </bean>
+
+  <bean id="catalogCategoryValidator" parent="contentTypeValidator" class="com.coremedia.catalog.studio.lib.validators.CatalogCategoryValidator">
+    <property name="contentType" value="CMCategory"/>
+    <property name="liveContextSettingName" value="LiveContext"/>
+  </bean>
+
+  <bean id="cmCategorySegmentValidator" class="com.coremedia.blueprint.base.rest.validators.ChannelSegmentValidator">
+    <property name="connection" ref="connection"/>
+    <property name="contentType" value="CMCategory"/>
+    <property name="urlPathFormattingHelper" ref="urlPathFormattingHelper"/>
+  </bean>
+
+  <bean id="cmCategoryNavigationValidator"
+        class="com.coremedia.blueprint.base.rest.validators.ChannelNavigationValidator">
+    <property name="connection" ref="connection"/>
+    <property name="contentType" value="CMCategory"/>
+    <property name="channelLoopCode" value="category_loop"/>
+  </bean>
+
+  <bean id="cmCategoryReferrerValidator"
+        class="com.coremedia.blueprint.base.rest.validators.ChannelReferrerValidator">
+    <property name="connection" ref="connection"/>
+    <property name="contentType" value="CMCategory"/>
+    <property name="duplicateReferrerCode" value="duplicate_category_parent"/>
+  </bean>
+
+  <customize:append bean="teasablePicturesPredicateExcludeSubtypes" id="cmproductMediaEnabler">
+    <list>
+      <value>CMProduct</value>
+    </list>
+  </customize:append>
+</beans>

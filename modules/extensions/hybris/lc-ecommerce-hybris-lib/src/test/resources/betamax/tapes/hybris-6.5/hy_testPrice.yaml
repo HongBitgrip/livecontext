@@ -1,0 +1,27 @@
+!tape
+name: hy_testPrice
+interactions:
+- recorded: 2016-11-29T17:22:32.995Z
+  request:
+    method: GET
+    uri: http://hybrishost:9001/ws410/rest/pricerows/8796104557599
+    headers:
+      Accept: application/json
+      Accept-Encoding: gzip,deflate
+      Accept-Language: en
+      Authorization: Basic YWRtaW46bmltZGE=
+      Content-Type: application/json
+      Host: hybrishost:9001
+      Proxy-Connection: Keep-Alive
+      User-Agent: Apache-HttpClient/4.3.2 (java 1.5)
+  response:
+    status: 200
+    headers:
+      Content-Type: application/json;charset=UTF-8
+      Date: Tue, 29 Nov 2016 17:22:32 GMT
+      ETag: '"1344476633"'
+      Last-Modified: Wed, 16 Nov 2016 18:23:26 GMT
+      Server: Apache-Coyote/1.1
+      Set-Cookie: _hybris.tenantID_=""; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/, JSESSIONID=F5AB23FCB2CA8E0709801FDCEC0B031E; Path=/ws410/; HttpOnly
+      X-Frame-Options: SAMEORIGIN
+    body: '{"@pk":"8796104557599","@uri":"http://hybrishost:9001/ws410/rest/pricerows/8796104557599","comments":null,"creationtime":"2016-11-16T18:23:26.061Z","modifiedtime":"2016-11-16T18:23:26.061Z","productId":"300938","productMatchQualifier":"-1","userMatchQualifier":"0","currency":{"@isocode":"JPY","@pk":"8796093186081","@uri":"http://hybrishost:9001/ws410/rest/currencies/JPY"},"giveAwayPrice":"false","matchValue":"5","minqtd":"1","net":"false","price":"9720.0","unit":{"@code":"pieces","@pk":"8796093054986","@uri":"http://hybrishost:9001/ws410/rest/units/pieces"},"unitFactor":"1"}'

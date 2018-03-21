@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local:ListPanelBase
+        xmlns:fx="http://ns.adobe.com/mxml/2009"
+        xmlns:local="com.coremedia.blueprint.studio.externallibrary.*"
+        xmlns:exml="http://www.jangaroo.net/exml/0.8"
+        xmlns="exml:ext.config"
+        xmlns:editor="exml:com.coremedia.cms.editor.sdk.config"
+        id_="externalLibraryItemListPanel"
+        store="{getExternalDataStore()}">
+  <fx:Metadata>
+    [ResourceBundle('com.coremedia.blueprint.studio.ExternalLibraryStudioPlugin')]
+  </fx:Metadata>
+  <fx:Script><![CDATA[
+    import com.coremedia.ui.data.ValueExpression;
+    import com.coremedia.ui.skins.TableViewSkin;
+
+    public static const xtype:String = "com.coremedia.blueprint.studio.config.externallibrary.listPanel";
+
+    private var config:ListPanel;
+
+    public native function ListPanel(config:ListPanel = null);
+
+    [Bindable]
+    public var filterValueExpression:ValueExpression;
+
+    [Bindable]
+    public var dataSourceValueExpression:ValueExpression;
+
+    [Bindable]
+    public var selectedValueExpression:ValueExpression;
+    ]]></fx:Script>
+
+  <local:plugins>
+    <editor:PersistColumnConfigurationPlugin storeId="externalLibrary"/>
+  </local:plugins>
+  <local:columns>
+    <GridColumn stateId="date"
+                width="100"
+                header="{resourceManager.getString('com.coremedia.blueprint.studio.ExternalLibraryStudioPlugin', 'ExternalLibraryWindow_list_column_date')}"
+                sortable="true"
+                resizable="true"
+                dataIndex="createdAt"/>
+    <GridColumn stateId="title"
+                width="300"
+                header="{resourceManager.getString('com.coremedia.blueprint.studio.ExternalLibraryStudioPlugin', 'ExternalLibraryWindow_list_column_title')}"
+                sortable="true"
+                resizable="true"
+                renderer="{renderTitle}"
+                dataIndex="name"
+                flex="1"/>
+  </local:columns>
+  <local:selModel>
+    <selection_RowModel mode="MULTI"/>
+  </local:selModel>
+  <local:view>
+    <GridView ui="{TableViewSkin.LIGHT.getSkin()}"
+              emptyText="{resourceManager.getString('com.coremedia.blueprint.studio.ExternalLibraryStudioPlugin', 'ExternalLibraryWindow_list_empty')}"
+              deferEmptyText="false"/>
+  </local:view>
+
+</local:ListPanelBase>

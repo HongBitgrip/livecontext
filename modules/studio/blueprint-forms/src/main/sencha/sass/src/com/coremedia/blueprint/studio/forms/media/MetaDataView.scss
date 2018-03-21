@@ -1,0 +1,19 @@
+@if $cm-include-meta-data-view {
+  $_block: "meta-data-view";
+  $_label_element: $_block + "__label";
+  $_text_element: $_block + "__text";
+
+  .#{$_block} {
+    display: flex;
+    padding: $cm-grid-25 0;
+    .#{$_label_element} {
+      min-width: $cm-meta-data-view-label-width;
+      white-space: nowrap;
+      font-size: $form-label-font-size;
+      line-height: $form-label-line-height;
+    }
+    .#{$_text_element} {
+      @include  cm-ellipsis;
+    }
+  }
+}

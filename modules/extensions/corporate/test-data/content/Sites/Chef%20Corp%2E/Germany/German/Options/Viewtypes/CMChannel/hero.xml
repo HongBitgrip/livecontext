@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMViewtype folder="/Sites/Chef Corp./Germany/German/Options/Viewtypes/CMChannel" name="hero" xmlns:cmexport="http://www.coremedia.com/2012/cmexport" translationState="up-to-date">
+<locale>de-DE</locale>
+<master>
+<link href="../../../../../United%20States/English/Options/Viewtypes/CMChannel/hero.xml" path="/Sites/Chef%20Corp%2E/United%20States/English/Options/Viewtypes/CMChannel/hero"/>
+</master>
+<description>Zeigt Inhalt als Held Banner.</description>
+<icon md5="3c8dfb4e80fd9ec28c7144e21e36328e" size="34147" href="../../../../../../../__blob/3c8dfb4e80fd9ec28c7144e21e36328e.blob" mimetype="image/png"/>
+<layout>hero</layout>
+</CMViewtype>

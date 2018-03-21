@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.coremedia.blueprint</groupId>
+    <artifactId>modules</artifactId>
+    <version>1-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>frontend</artifactId>
+  <packaging>pom</packaging>
+
+  <!-- dependencies needed for code-completion in IDEs only -->
+  <dependencies>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>cae-extension-dependencies</artifactId>
+      <version>${project.version}</version>
+      <type>pom</type>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+
+  <properties>
+    <yarnCacheFolder/>
+  </properties>
+
+  <profiles>
+    <!-- use -DskipThemes to ignore frontend generation -->
+    <profile>
+      <id>development-themes</id>
+      <activation>
+        <property>
+          <name>!skipThemes</name>
+          <value>!true</value>
+        </property>
+      </activation>
+      <build>
+        <plugins>
+          <!-- clean node and node_modules in all themes -->
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-clean-plugin</artifactId>
+            <configuration>
+              <filesets>
+                <fileset>
+                  <directory>${project.basedir}</directory>
+                  <includes>
+                    <include>node/**</include>
+                  </includes>
+                  <followSymlinks>false</followSymlinks>
+                </fileset>
+              </filesets>
+            </configuration>
+          </plugin>
+          <!-- build themes and copy everything to the target folder -->
+          <plugin>
+            <groupId>com.github.eirslett</groupId>
+            <artifactId>frontend-maven-plugin</artifactId>
+            <configuration>
+              <environmentVariables>
+                <YARN_CACHE_FOLDER>${yarnCacheFolder}</YARN_CACHE_FOLDER>
+              </environmentVariables>
+            </configuration>
+            <executions>
+              <execution>
+                <id>install-node-and-yarn</id>
+                <goals>
+                  <goal>install-node-and-yarn</goal>
+                </goals>
+              </execution>
+              <execution>
+                <id>install-node-modules</id>
+                <goals>
+                  <goal>yarn</goal>
+                </goals>
+                <configuration>
+                  <!--
+                    - do not print out any non errors as the maven-frontend-plugin does not distinct error levels
+                    - do not animate progress to avoid polluting the maven log
+                  -->
+                  <arguments>install --loglevel=error --no-progress</arguments>
+                </configuration>
+              </execution>
+              <execution>
+                <id>build-themes</id>
+                <goals>
+                  <goal>yarn</goal>
+                </goals>
+                <phase>install</phase>
+                <configuration>
+                  <!--
+                    - set node environment to production
+                    - run build script
+                    - do not print out any non errors as the maven-frontend-plugin does not distinct error levels
+                    - make sure that the npm-client is set to yarn
+                  -->
+                  <arguments>--production run build --loglevel=error --npm-client=yarn</arguments>
+                </configuration>
+              </execution>
+              <execution>
+                <id>run-tests</id>
+                <goals>
+                  <goal>yarn</goal>
+                </goals>
+                <phase>test</phase>
+                <configuration>
+                  <!--
+                    - run test script
+                    - do not print out any non errors as the maven-frontend-plugin does not distinct error levels
+                    - make sure that the npm-client is set to yarn
+                  -->
+                  <arguments>test --loglevel=error --npm-client=yarn</arguments>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
+    <!-- use -DskipContent to ignore content creation -->
+    <profile>
+      <id>create-test-data</id>
+      <activation>
+        <property>
+          <name>!skipContent</name>
+          <value>!true</value>
+        </property>
+      </activation>
+      <dependencies>
+        <dependency>
+          <groupId>${project.groupId}</groupId>
+          <artifactId>theme-importer-lib</artifactId>
+          <version>${project.version}</version>
+          <!-- Why optional? Otherwise the logback.xml which is part of the theme-importer-lib will screw up logging of the cae-preview-webapp -->
+          <optional>true</optional>
+        </dependency>
+      </dependencies>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>exec-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>import-themes</id>
+                <phase>install</phase>
+                <goals>
+                  <goal>exec</goal>
+                </goals>
+                <configuration>
+                  <executable>${env.JAVA_HOME}/bin/java</executable>
+                  <arguments>
+                    <argument>${theme-importer.argument.folder}</argument>
+                    <argument>${theme-importer.argument.export-path}</argument>
+                    <argument>-classpath</argument>
+                    <!-- automatically creates the classpath using all project dependencies,
+                         also adding the project build directory -->
+                    <classpath/>
+                    <argument>${theme-importer.argument.runner}</argument>
+                  </arguments>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+
+</project>

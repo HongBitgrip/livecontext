@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.coremedia.blueprint</groupId>
+    <artifactId>modules</artifactId>
+    <version>1-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>ecommerce</artifactId>
+  <packaging>pom</packaging>
+
+  <description>E-Commerce Features</description>
+
+  <modules>
+    <module>ec-cae-lib</module>
+    <module>ec-common</module>
+    <module>ec-contentbeans</module>
+    <module>ec-doctypes</module>
+    <module>ec-studio</module>
+    <module>ec-studio-lib</module>
+    <module>ec-studio-model</module>
+    <module>ec-studio-test-helper</module>
+    <module>ec-test-util</module>
+    <module>lc-ecommerce-webapp-component</module>
+  </modules>
+</project>

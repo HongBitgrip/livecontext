@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMCollection folder="/Sites/Chef Corp./United States/English/Content/Homepage/Company/Careers" name="Job External Link Collection" xmlns:cmexport="http://www.coremedia.com/2012/cmexport">
+<locale>en-US</locale>
+<master>
+</master>
+<viewtype>
+<link href="../../../../Options/Viewtypes/CMChannel/claim.xml" path="/Sites/Chef%20Corp%2E/United%20States/English/Options/Viewtypes/CMChannel/claim"/>
+</viewtype>
+<linkedSettings>
+</linkedSettings>
+<resourceBundles2>
+</resourceBundles2>
+<segment></segment>
+<title></title>
+<htmlTitle></htmlTitle>
+<keywords></keywords>
+<htmlDescription></htmlDescription>
+<subjectTaxonomy>
+</subjectTaxonomy>
+<locationTaxonomy>
+</locationTaxonomy>
+<contexts>
+</contexts>
+<teaserTitle></teaserTitle>
+<pictures>
+</pictures>
+<related>
+</related>
+<items>
+<link href="Job%20Offers%20USA.xml" path="/Sites/Chef%20Corp%2E/United%20States/English/Content/Homepage/Company/Careers/Job%20Offers%20USA"/>
+<link href="Job%20Offers%20Germany.xml" path="/Sites/Chef%20Corp%2E/United%20States/English/Content/Homepage/Company/Careers/Job%20Offers%20Germany"/>
+</items>
+</CMCollection>

@@ -1,0 +1,29 @@
+
+<%- protocol =  @params[:protocol].nil? ? 'http' : @params[:protocol] -%>
+
+  ProxyPreserveHost On
+<%- if @params[:ssl] -%>
+  SSLProxyEngine On
+  RequestHeader set X-Forwarded-Proto "https"
+<%- end -%>
+
+<%- if @params[:cluster].size > 1 -%>
+  # the trailing "e" is no typo
+  Header add Set-Cookie "ROUTEID=.%{BALANCER_WORKER_ROUTE}e; path=/" env=BALANCER_ROUTE_CHANGED
+  <%- servlet_url = "balancer://#{@application_name}-cluster/#{@params[:servlet_context]}" -%>
+  <Proxy balancer://<%= @application_name %>-cluster>
+   <%- @params[:cluster].keys.sort.each do |member| -%>
+    BalancerMember <%= protocol %>://<%= @params[:cluster][member]['host'] %>:<%= @params[:cluster][member]['port'].to_s %> route=<%= member %><%- if @params[:cluster][member]['params'] -%><%- @params[:cluster][member]['params'].keys.sort.each do |k| -%> <%= "#{k}=#{@params[:cluster][member]['params'][k]}" %> <%- end -%><%- end -%>
+   <%- end -%>
+    ProxySet stickysession=ROUTEID
+  </Proxy>
+<%- else -%>
+  <%- member = @params[:cluster].keys.first -%>
+  <%- proxy_params = @params[:cluster][member]['params'] ? @params[:cluster][member]['params'].sort.map{ |k, v| "#{k}=#{v}" }.join(' ') : '' -%>
+  <%- servlet_url = "#{protocol}://#{@params[:cluster][member]['host']}:#{@params[:cluster][member]['port']}/#{@params[:servlet_context]}" -%>
+<%- end -%>
+
+  ProxyPass /<%= @params[:servlet_context] %> <%= servlet_url %> <%= proxy_params || '' %>
+  ProxyPassReverse /<%= @params[:servlet_context] %> <%= servlet_url %>
+  ProxyPassReverseCookiePath /<%= @params[:servlet_context] %> /
+  ProxyPass / <%= servlet_url %><%= "/" unless @params[:servlet_context].empty? %><%- if @params[:default_servlet] -%><%= @params[:default_servlet] %>/ <%- end %><%= proxy_params || '' %>

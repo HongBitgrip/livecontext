@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<!--
+ | tokens:
+ |- shutdown_port
+ |- max_threads
+ |- min_threads
+ |- http_port
+ |- ajp_port
+ |- jvm_route
+ |- jmx_remote (hash)
+    |- registry_port
+    |- server_port
+    `- use_local_ports
+-->
+
+<Server port="<%= @shutdown_port %>" shutdown="SHUTDOWN">
+  <Listener className="org.apache.catalina.startup.VersionLoggerListener" />
+  <Listener className="org.apache.catalina.core.JreMemoryLeakPreventionListener" />
+  <Listener className="org.apache.catalina.mbeans.GlobalResourcesLifecycleListener" />
+  <Listener className="org.apache.catalina.core.ThreadLocalLeakPreventionListener" />
+
+  <%- if @jmx_remote -%>
+  <Listener className="org.apache.catalina.mbeans.JmxRemoteLifecycleListener"
+            rmiRegistryPortPlatform="<%= @jmx_remote_registry_port %>"
+            rmiServerPortPlatform="<%= @jmx_remote_server_port %>"
+            useLocalPorts="<%= @jmx_remote_use_local_ports %>"/>
+  <%- end -%>
+
+  <Service name="Catalina">
+
+    <Executor name="tomcatThreadPool" namePrefix="catalina-exec-"
+        maxThreads="<%= @max_threads %>" minSpareThreads="<%= @min_threads %>"/>
+
+    <Connector executor="tomcatThreadPool"
+               port="<%= @http_port %>" protocol="HTTP/1.1"
+               connectionTimeout="20000"
+               URIEncoding="UTF-8"
+               bindOnInit="false"/>
+
+    <% if @ajp_port -%>
+    <Connector executor="tomcatThreadPool"
+               port="<%= @ajp_port %>"
+               protocol="AJP/1.3"
+               URIEncoding="UTF-8"/>
+    <% end -%>
+
+    <Engine name="Catalina" defaultHost="localhost" startStopThreads="0" <%- if @jvm_route %> jvmRoute="<%= @jvm_route %>" <%- end %>>
+
+      <Host name="localhost"  appBase="webapps"
+            unpackWARs="false" autoDeploy="false" failCtxIfServletStartFails="true">
+
+        <% if @access_log -%>
+        <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs"
+               prefix="localhost_access_log." suffix=".txt"
+               pattern="%h %l %u %t &quot;%r&quot; %s %b" resolveHosts="false"/>
+        <% end -%>
+
+        <Valve className="org.apache.catalina.valves.RemoteIpValve" protocolHeader="x-forwarded-proto" />
+
+      </Host>
+    </Engine>
+  </Service>
+</Server>

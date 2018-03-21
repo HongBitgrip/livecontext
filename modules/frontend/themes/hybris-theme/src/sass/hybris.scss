@@ -1,0 +1,68 @@
+/*! CoreMedia Blueprint - Theme Hybris */
+
+// ### VARIABLES ###
+
+// Own variables (need to be loaded first, so default values can be overridden)
+// @see http://sass-lang.com/documentation/file.SASS_REFERENCE.html#Variable_Defaults___default
+
+@import "variables/variables";
+@import "variables/hero";
+@import "variables/teaser";
+@import "variables/quickinfo";
+@import "variables/shoppable-video";
+
+// Dependency variables
+
+@import "~@coremedia/brick-360-spinner/src/sass/variables";
+@import "~@coremedia/brick-hero-teaser/src/sass/variables";
+@import "~@coremedia/brick-default-teaser/src/sass/variables";
+@import "~@coremedia/brick-responsive-images/src/sass/variables";
+@import "~@coremedia/brick-pdp-augmentation/src/sass/variables";
+@import "~@coremedia/brick-livecontext/src/sass/variables";
+@import "~@coremedia/brick-elastic-social/src/sass/variables";
+@import "~@coremedia/brick-shoppable-video/src/sass/variables";
+@import "~@coremedia/brick-video/src/sass/variables";
+@import "~@coremedia/brick-image-maps/src/sass/variables";
+@import "~@coremedia/brick-quick-info/src/sass/variables";
+@import "~@coremedia/brick-generic-templates/src/sass/variables";
+@import "~@coremedia/brick-dynamic-include/src/sass/variables";
+@import "~@coremedia/brick-bootstrap/src/sass/variables";
+@import "~@coremedia/sass-utils/src/variables";
+
+// ### PARTIALS ###
+
+// excludes
+
+@import "~@coremedia/brick-bootstrap/src/sass/partials/bootstrap-sass?exclude";
+
+// Dependency partials
+
+@import "~@coremedia/sass-utils/src/partials";
+@import "~@coremedia/brick-bootstrap/src/sass/partials";
+@import "~@coremedia/brick-dynamic-include/src/sass/partials";
+@import "~@coremedia/brick-generic-templates/src/sass/partials";
+@import "~@coremedia/brick-quick-info/src/sass/partials";
+@import "~@coremedia/brick-image-maps/src/sass/partials";
+@import "~@coremedia/brick-video/src/sass/partials";
+@import "~@coremedia/brick-shoppable-video/src/sass/partials";
+@import "~@coremedia/brick-elastic-social/src/sass/partials";
+@import "~@coremedia/brick-livecontext/src/sass/partials";
+@import "~@coremedia/brick-pdp-augmentation/src/sass/partials";
+@import "~@coremedia/brick-responsive-images/src/sass/partials";
+@import "~@coremedia/brick-default-teaser/src/sass/partials";
+@import "~@coremedia/brick-hero-teaser/src/sass/partials";
+@import "~@coremedia/brick-360-spinner/src/sass/partials";
+
+// Own partials
+
+@import "partials/teaser";
+@import "partials/hero";
+@import "partials/cta";
+@import "partials/grids";
+@import "partials/detail";
+@import "partials/carousel";
+@import "partials/quickinfo";
+@import "partials/imagemap";
+@import "partials/shoppable-video";
+@import "partials/pdp";
+@import "partials/fixes";

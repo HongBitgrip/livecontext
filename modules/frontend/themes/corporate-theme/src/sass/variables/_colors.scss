@@ -1,0 +1,53 @@
+//
+// Colors
+// =====================================================================================================================
+//
+// @section: colors
+// @description: Defines global color variables using SASS color maps.
+//
+$palettes: (
+    blue: (
+        base : #568da8
+    ),
+    green:(
+        base : #56a85e
+    ),
+    orange:(
+        base : #ff9a33,
+        dark: #c58c29
+    ),
+    red: (
+        lighter: #b06e6e,
+        light: #b04747,
+        base : #e30613
+    ),
+    white: (
+        base : #ffffff
+    ),
+    black: (
+        base : #000000
+    ),
+    grey: (
+        lighter : #eeeeee,
+        light : #777777,
+        base : #555555,
+        dark : #444444,
+        darker : #333333
+    )
+);
+
+//
+//  @function: palette
+//  @param: {string} The base color name.
+//  @param: {string} The color shade, if ommmited the function returns the base color.
+//  @description: Returns the color value of our global palette.
+//  @example:
+//  ```
+//    palette(blue)
+//    palette(blue, dark)
+//    palette(grey, light)
+//  ```
+//
+@function palette($palette, $tone: 'base') {
+  @return map-get(map-get($palettes, $palette), $tone);
+}

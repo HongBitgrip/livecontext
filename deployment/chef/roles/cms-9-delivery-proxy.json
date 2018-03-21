@@ -1,0 +1,10 @@
+{
+  "name": "cms-9-delivery-proxy",
+  "chef_type": "role",
+  "json_class": "Chef::Role",
+  "description": "The role for the wcs delivery proxy node",
+  "run_list": [
+    "role[base]",
+    "recipe[blueprint-cms-9::delivery-proxy]"
+  ]
+}

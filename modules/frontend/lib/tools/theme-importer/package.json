@@ -1,0 +1,20 @@
+{
+  "author": {
+    "name": "CoreMedia",
+    "url": "http://www.coremedia.com"
+  },
+  "name": "@coremedia/theme-importer",
+  "private": true,
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=8"
+  },
+  "dependencies": {
+    "@coremedia/cm-logger": "^1.0.0",
+    "@coremedia/tool-utils": "^1.0.0",
+    "@coremedia/zipper": "^1.0.0",
+    "amazon-cognito-identity-js": "1.23.0",
+    "request": "2.81.0"
+  },
+  "main": "src/index.js"
+}

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.coremedia.blueprint</groupId>
+    <artifactId>extensions</artifactId>
+    <version>1-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>lc</artifactId>
+  <packaging>pom</packaging>
+
+  <modules>
+    <module>lc-contentbeans-api</module>
+    <module>lc-contentbeans-impl</module>
+    <module>lc-cae</module>
+    <module>lc-preview-cae</module>
+    <module>lc-caefeeder-component</module>
+    <module>lc-contentfeeder-component</module>
+    <module>lc-server</module>
+    <module>lc-feeder-lib</module>
+    <module>lc-services-api</module>
+    <module>lc-services-lib</module>
+    <module>lc-studio</module>
+    <module>lc-studio-test-helper</module>
+    <module>lc-studio-lib</module>
+    <module>lc-ecommerce-api-tests</module>
+  </modules>
+</project>

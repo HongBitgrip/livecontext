@@ -1,0 +1,73 @@
+.#{$cm-hero-prefix} {
+  position: relative;
+
+  &__picture-box {
+    @include aspect-ratio-box(4, 3);
+
+    @include breakpoint(sm-and-up) {
+      @include aspect-ratio-box(16, 9);
+    }
+  }
+
+  &__picture {
+    background: $cm-hero-picture-background-color;
+    @include stretch-absolute();
+  }
+
+  &__dimmer {
+    display: #{$cm-hero-dimmer-display};
+    @include dimmer($cm-hero-dimmer-opacity);
+  }
+
+  &__caption {
+    @include caption($cm-hero-caption-bottom);
+    padding: 0 8%;
+    // disable any pointer events, so e.g. when the overlay is placed over a link, the link can be clicked
+    pointer-events: none;
+  }
+
+  &__cta > .cm-cta-button {
+    // make ctas clickable again
+    pointer-events: auto;
+  }
+
+  &__cta,
+  &__text,
+  &__headline {
+    margin-top: 0;
+    margin-bottom: $cm-hero-padding-base-horizontal;
+
+    @include breakpoint(sm-and-up) {
+      margin-bottom: $cm-hero-padding-large-horizontal;
+    }
+  }
+
+  &__headline,
+  &__text {
+    color: $cm-hero-headline-color;
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.3);
+  }
+
+  &--video {
+    .#{$cm-hero-prefix}__text {
+      display: none;
+
+      @include breakpoint(sm-and-up) {
+        display: block;
+      }
+    }
+  }
+
+  &__popup-opener {
+    display: block;
+  }
+
+  &__play {
+    @include center-absolute;
+    z-index: 1;
+
+    @include breakpoint(xs) {
+      max-width: 25%; // make sure there is space for headline
+    }
+  }
+}

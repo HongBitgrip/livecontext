@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE Watchdog SYSTEM "classpath:xml/coremedia-watchdog.dtd">
+
+<Watchdog>
+
+  <!-- Watch a CoreMedia Content Server -->
+  <Component name="WatchContentServer" startAction="WS-CorbaQuery">
+    <ServerQuery name="WS-CorbaQuery" url="http://localhost:41080/coremedia/ior" user="watchdog" password="watchdog"/>
+    <ServerQuery name="WS-CorbaReQuery" url="http://localhost:41080/coremedia/ior" user="watchdog" password="watchdog"/>
+    <DB name="WS-CheckDB" propertyFile="corem/sql.properties"/>
+    <Script name="WS-RestartServer" command="command to restart the contentserver" timeout="60" interval="600" events="3"/>
+    <Script name="WS-Abort" command="echo watchdog: watch contentserver: abort" timeout="10"/>
+
+    <Edge from="WS-CorbaQuery" to="WS-CorbaQuery" code="ok" delay="60"/>
+    <Edge from="WS-CorbaQuery" to="WS-CorbaQuery" code="no_licenses" delay="60"/>
+    <Edge from="WS-CorbaQuery" to="WS-Abort" code="invalid_login" delay="0"/>
+    <Edge from="WS-CorbaQuery" to="WS-CheckDB" code="error" delay="0"/>
+
+    <Edge from="WS-CheckDB" to="WS-CorbaReQuery" code="ok" delay="0"/>
+    <Edge from="WS-CheckDB" to="WS-Abort" code="no_jdbc_driver" delay="0"/>
+    <Edge from="WS-CheckDB" to="WS-CheckDB" code="error" delay="60"/>
+
+    <Edge from="WS-CorbaReQuery" to="WS-CorbaQuery" code="ok" delay="60"/>
+    <Edge from="WS-CorbaReQuery" to="WS-CorbaQuery" code="no_licenses" delay="60"/>
+    <Edge from="WS-CorbaReQuery" to="WS-Abort" code="invalid_login" delay="0"/>
+    <Edge from="WS-CorbaReQuery" to="WS-RestartServer" code="error" delay="0"/>
+
+    <Edge from="WS-RestartServer" to="WS-CorbaQuery" code="ok" delay="60"/>
+    <Edge from="WS-RestartServer" to="WS-Abort" code="respawning_too_fast" delay="0"/>
+    <Edge from="WS-RestartServer" to="WS-Abort" code="error" delay="0"/>
+  </Component>
+
+</Watchdog>

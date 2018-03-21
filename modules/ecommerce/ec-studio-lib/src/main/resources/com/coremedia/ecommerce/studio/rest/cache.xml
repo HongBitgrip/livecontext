@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <!-- livecontext -->
+  <import resource="classpath:/framework/spring/livecontext-cache.xml"/>
+
+  <!-- activate this for active commerce cache invalidation -->
+  <bean id="commerceInvalidationSource" class="com.coremedia.ecommerce.studio.rest.cache.CommerceCacheInvalidationSource">
+    <property name="id" value="commerceInvalidationSource"/>
+    <property name="capacity" value="${studio.rest.eventsCache.capacity:10000}"/>
+  </bean>
+
+</beans>

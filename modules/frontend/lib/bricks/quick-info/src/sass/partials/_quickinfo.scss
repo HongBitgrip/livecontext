@@ -1,0 +1,128 @@
+/**
+ * Quickinfo
+ * ---------------------------------------------------------------------------------------------------------------------
+ *
+ * Basic styles to allow functionality to work
+ */
+
+/**
+ * quickinfo is not visible by default (display: none is not used due to technical reasons)
+ */
+
+.#{$cm-quickinfo-prefix} {
+  visibility: hidden;
+  background-color: $cm-quickinfo-background-color;
+  display: flex;
+  flex-direction: column;
+
+  @include breakpoint("sm-and-up") {
+    width: $cm-quickinfo-width;
+    flex-direction: row;
+  }
+
+  &__container {
+    flex: 1;
+  }
+
+  @include breakpoint("xs") {
+    &__parent--active {
+      z-index: 1;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+    padding: $cm-quickinfo-content-padding;
+  }
+
+  &__text {
+    flex: 1;
+  }
+
+  &__picture-link {
+    width: 100%;
+  }
+
+  &__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+  }
+
+  &__title {
+    flex: 1;
+  }
+
+  &__close {
+    background: none;
+    border: none;
+    margin-left: 6px;
+    & i {
+      margin: 0;
+      font-size: 1rem;
+    }
+  }
+
+  &__picture-box {
+    @include aspect-ratio-box($cm-quickinfo-mobile-image-aspect-ratio-x, $cm-quickinfo-mobile-image-aspect-ratio-y);
+    @include breakpoint("sm-and-up") {
+      @include aspect-ratio-box($cm-quickinfo-image-aspect-ratio-x, $cm-quickinfo-image-aspect-ratio-y);
+    }
+  }
+
+  &__picture {
+    @include stretch-absolute();
+  }
+
+  &--no-image {
+    @include breakpoint("xs") {
+      .content-container {
+        top: 0;
+      }
+    }
+  }
+
+  &--active {
+    visibility: visible;
+  }
+
+  &__switch {
+    position: absolute;
+    top: 50%;
+    height: 50px;
+    width: 50px;
+    margin-top: -25px;
+    background: no-repeat center center transparent;
+    border: none;
+
+    &:focus {
+      border: none;
+      outline: none;
+    }
+
+    @include breakpoint("xs") {
+      display: none;
+    }
+
+    &--prev {
+      left: -50px;
+      background-image: url("../../img/left.svg");
+
+      &:hover {
+        background-image: url("../../img/left-hover.svg");
+      }
+    }
+
+    &--next {
+      right: -50px;
+      background-image: url("../../img/right.svg");
+
+      &:hover {
+        background-image: url("../../img/right-hover.svg");
+      }
+    }
+  }
+}

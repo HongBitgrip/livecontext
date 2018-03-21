@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMSite folder="/Sites/Chef Corp./United States/English/Content" name="Corporate [Site]" xmlns:cmexport="http://www.coremedia.com/2012/cmexport">
+<locale>en-US</locale>
+<master>
+</master>
+<id>abffe57734feeee</id>
+<name>Chef Corp.</name>
+<root>
+<link href="Homepage/Chef%20Corp%2E%20USA%20Home%20Page.xml" path="/Sites/Chef%20Corp%2E/United%20States/English/Content/Homepage/Chef%20Corp%2E%20USA%20Home%20Page"/>
+</root>
+<siteManagerGroup>manager-c-en-US</siteManagerGroup>
+<linkedSettings>
+<link href="../Options/Settings/SiteSettings.xml" path="/Sites/Chef%20Corp%2E/United%20States/English/Options/Settings/SiteSettings"/>
+</linkedSettings>
+</CMSite>

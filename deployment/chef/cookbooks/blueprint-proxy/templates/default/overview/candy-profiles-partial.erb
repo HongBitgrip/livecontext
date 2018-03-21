@@ -1,0 +1,88 @@
+<p>To use remote configuration of the locally started webapps, use the following maven profiles:
+<ul>
+  <li>candy-preview - use this profile in the cae-preview-webapp Maven module to automatically configure the local preview CAE </br>
+    <code>mvn tomcat7:run -Pcandy-preview -Dinstallation.host=<%= @host %></code>
+    <button class="js-copy-candy-preview-btn">copy to clipboard</button>
+  </li>
+  <li>
+    candy-studio - use this profile in the studio-webapp Maven module to automatically configure the local Studio </br>
+    <code>mvn tomcat7:run -Pcandy-studio -Dinstallation.host=<%= @host %></code>
+    <button class="js-copy-candy-studio-btn">copy to clipboard</button>
+  </li>
+  <li>
+    candy-studio-preview - use this profile in the studio-webapp Maven module to automatically configure the local
+    Studio to use a locally started preview. Start the preview locally using candy-preview profile </br>
+    <code>mvn tomcat7:run -Pcandy-studio-preview -Dinstallation.host=<%= @host %></code>
+    <button class="js-copy-candy-studio-preview-btn">copy to clipboard</button>
+  </li>
+</ul>
+</p>
+
+<h3>Extra Studio Candy</h3>
+<p>
+  To run the Studio Sencha app locally but use the Studio REST API from the test system, run <code>sencha web start</code> from within
+  the workspace. Depending on the path location you've started the Sencha server, you need to add the file path to the <code>/target/app</code>
+  folder of the <code>studio-app</code> module as URL suffix.
+</p>
+<p>
+  If for example you've started the Sencha server in the root of the workspace, you need to open:
+<ul>
+  <li><a href="https://candy-studio-client.<%= @host %>/modules/studio/studio-app/target/app" target="_blank">https://candy-studio-client.<%= @host %>/modules/studio/studio-app/target/app</a></li>
+</ul>
+</p>
+
+<p>
+  If you want to test the build state of the <code>studio-app</code> module, you need to start the Sencha server from within the
+  <code>modules/studio/studio-app/target/app/build/jangaroo-app</code> folder and open:
+<ul>
+  <li><a href="https://candy-studio-client.<%= @host %>" target="_blank">https://candy-studio-client.<%= @host %></a></li>
+</ul>
+</p>
+
+<script>
+  function copyTextToClipboard(text) {
+    var textArea = document.createElement("textarea");
+
+    textArea.style.position = 'fixed';
+    textArea.style.top = 0;
+    textArea.style.left = 0;
+    textArea.style.width = '2em';
+    textArea.style.height = '2em';
+    textArea.style.padding = 0;
+    textArea.style.border = 'none';
+    textArea.style.outline = 'none';
+    textArea.style.boxShadow = 'none';
+    textArea.style.background = 'transparent';
+    textArea.value = text;
+
+    document.body.appendChild(textArea);
+
+    textArea.select();
+
+    try {
+      var successful = document.execCommand('copy');
+      var msg = successful ? 'successful' : 'unsuccessful';
+      console.log('Copying text command was ' + msg);
+    } catch (err) {
+      console.log('Oops, unable to copy');
+    }
+
+    document.body.removeChild(textArea);
+  }
+
+  // define button selectors
+  var copyCandyPreview = document.querySelector('.js-copy-candy-preview-btn'),
+    copyCandyStudio = document.querySelector('.js-copy-candy-studio-btn');
+  copyCandyStudioPreview = document.querySelector('.js-copy-candy-studio-preview-btn');
+
+  copyCandyPreview.addEventListener('click', function(event) {
+    copyTextToClipboard('mvn tomcat7:run -Pcandy-preview -Dinstallation.host=<%= @host %>');
+  });
+  copyCandyStudio.addEventListener('click', function(event) {
+    copyTextToClipboard('mvn tomcat7:run -Pcandy-studio -Dinstallation.host=<%= @host %>');
+  });
+  copyCandyStudioPreview.addEventListener('click', function(event) {
+    copyTextToClipboard('mvn tomcat7:run -Pcandy-studio-preview -Dinstallation.host=<%= @host %>');
+  });
+
+</script>

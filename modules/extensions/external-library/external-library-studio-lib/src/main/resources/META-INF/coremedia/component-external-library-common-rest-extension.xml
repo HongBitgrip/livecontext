@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <import resource="classpath:/com/coremedia/cap/common/uapi-services.xml"/>
+  <import resource="classpath:META-INF/coremedia/bpbase-studio-rest.xml"/>
+
+  <bean id="externalLibraryService" class="com.coremedia.blueprint.studio.rest.ExternalLibraryResource" scope="prototype">
+    <property name="capConnection" ref="connection" />
+    <property name="cache" ref="cache"/>
+    <property name="configurationService" ref="configurationService"/>
+  </bean>
+
+  <bean id="rssProvider" class=" com.coremedia.blueprint.studio.externallibraryproviders.RSSExternalLibraryProvider" scope="prototype">
+    <property name="mimeTypeService" ref="mimeTypeService"/>
+    <property name="maxImages" value="5" />
+  </bean>
+
+  <bean id="youTubeVideoProvider" class="com.coremedia.blueprint.studio.externallibraryproviders.YouTubeVideoProvider" scope="prototype" />
+
+</beans>

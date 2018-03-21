@@ -1,0 +1,137 @@
+//
+// Generates the heading
+// Type are based on bootstraps heading, @see https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/_type.scss
+//  @example:
+// ```
+//  @include headings;
+// ```
+//
+// Will generate from the headings array which is defined in the base/headings.
+// If you need a new heading like h4 just added it to the heading array in the base/headings.
+//
+//   h1, .h1 {
+//     font-size: 40px;
+//     font-size: 60px;
+//   }
+//
+//   h2, .h2 {
+//     font-size: 28px;
+//     font-size: 40px;
+//   }
+//
+//   h3, .h3 {
+//     font-size: 22px;
+//     font-size: 30px;
+//   }
+//
+//   p, .p {
+//     font-size: 18px;
+//     font-size: 18px;
+//   }
+//
+//
+@mixin headings() {
+  @each $h, $size in $font-formats {
+    #{$h}, .#{$h} {
+      font-size: map-get($size, mobile);
+      @include breakpoint(xs) {
+        font-size: map-get($size, mobile-small);
+      }
+      @include breakpoint(sm-and-up) {
+        font-size: map-get($size, base);
+      }
+    }
+  }
+}
+
+// Fixes "flickering" of rendering if translate is used in combination with transparent backgrounds.
+//
+// @param pseudoElement use pseudoElement to apply the fix (::before will be used). Defaults to false
+//
+// Important:
+// If pseudoElement is set to true it will be positioned absolute. Make sure you have a non static element in DOM to
+// allow proper posititioning of the pseudoElement.
+@mixin flickeringFix($pseudoElement:false) {
+  @if $pseudoElement == false {
+    background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0)); /* CMS-4270 prevents flickering in Firefox */
+  } @else {
+    &::before {
+      content: "";
+      position: absolute; top: 0; left: 0; right: 0;  bottom: 0;
+      z-index: -1;
+      pointer-events: none;
+      margin: -80px 0 -10px 0;
+      @include flickeringFix();
+    }
+  }
+}
+
+//
+// Creates the button layout, choice between a button or textlink
+//
+// @param: {string} The color for the text.
+// @param: {string} The color for the hover effect.
+// @param: {boolean} If it should be a textlink.
+// @description: Returns button layout variant
+// @example:
+// ```
+//   @include transparent-button(#fff, #000, true | false(default))
+// ```
+//
+@mixin transparent-button($color, $hover, $isTextLink: false) {
+  color: $color;
+  background-color: transparent;
+
+  @if $isTextLink == true {
+    border: none;
+  } @else {
+    border: $button-border solid $color;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $hover;
+
+    @if $isTextLink == true {
+      background-color: transparent;
+    } @else {
+      background-color: $color;
+      border-color: $color;
+    }
+  }
+  &:active {
+    background-image: none;
+  }
+}
+
+//
+// Add a small arrow to a box
+//
+@mixin arrow($position: right, $color: palette(white)) {
+  position: absolute;
+
+  //attach to the right
+  @if $position == right {
+    top: 50%;
+    left: 100%;
+  // attach to the top
+  } @else if $position == top {
+    top: 0;
+    left: 50%;
+  // default: attach to the left
+  } @else {
+    top: 50%;
+    left: 0;
+  }
+
+  display: block;
+  margin-left: -$padding-base-vertical;
+  margin-top: -$padding-base-vertical;
+  background-color: $color;
+  width: 2*$padding-base-vertical;
+  height: 2*$padding-base-vertical;
+  content: "";
+  transform: rotate(45deg);
+}
+

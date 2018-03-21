@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.coremedia.blueprint</groupId>
+    <artifactId>search</artifactId>
+    <version>1-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>caefeeder-live-webapp</artifactId>
+  <packaging>war</packaging>
+
+  <description>
+    To start the caefeeder-live-webapp run: mvn tomcat7:run
+  </description>
+
+  <properties>
+    <development-properties.dir>${project.basedir}/../../../workspace-configuration/development-properties/default</development-properties.dir>
+    <logging-properties.dir>${project.basedir}/../../../workspace-configuration/logging</logging-properties.dir>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>caefeeder-live-blueprint-component</artifactId>
+      <version>${project.version}</version>
+      <scope>runtime</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <finalName>caefeeder</finalName>
+
+    <plugins>
+      <!--
+         invoke "mvn tomcat7:run" for running this webapp locally
+      -->
+      <plugin>
+        <groupId>org.apache.tomcat.maven</groupId>
+        <artifactId>tomcat7-maven-plugin</artifactId>
+        <configuration>
+          <path>/${project.build.finalName}</path>
+          <port>40880</port>
+          <systemProperties>
+            <propertieslocations>classpath:/caefeeder-live.properties</propertieslocations>
+          </systemProperties>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

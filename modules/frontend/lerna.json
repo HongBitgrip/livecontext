@@ -1,0 +1,14 @@
+{
+  "lerna": "2.7.1",
+  "packages": [
+    "lib/bricks/*",
+    "lib/js/*",
+    "lib/sass/*",
+    "lib/tools/*",
+    "themes/*"
+  ],
+  "npmClient": "yarn",
+  "hoist": true,
+  "concurrency": 1,
+  "version": "0.0.0"
+}

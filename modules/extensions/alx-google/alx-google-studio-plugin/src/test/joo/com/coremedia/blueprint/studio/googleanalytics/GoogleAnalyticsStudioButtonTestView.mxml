@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Viewport xmlns:fx="http://ns.adobe.com/mxml/2009"
+          xmlns:exml="http://www.jangaroo.net/exml/0.8"
+          xmlns="exml:ext.config"
+          xmlns:gai="exml:com.coremedia.blueprint.studio.config.googleanalytics">
+  <fx:Script><![CDATA[
+    public static const xtype:String = "com.coremedia.blueprint.studio.config.googleanalytics.googleAnalyticsStudioButtonTestView";
+
+    private var config:GoogleAnalyticsStudioButtonTestView;
+
+    public native function GoogleAnalyticsStudioButtonTestView(config:GoogleAnalyticsStudioButtonTestView = null);
+    ]]></fx:Script>
+
+  <items>
+    <gai:GoogleAnalyticsReportPreviewButton/>
+  </items>
+
+</Viewport>

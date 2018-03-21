@@ -1,0 +1,19 @@
+//Default sass file for all *.teaser.ftl.
+
+//default variables - to override, copy the variable to your sass file and set the value
+
+// the default css class. It needs to match the css class set as a param in your template including the brick's teaser.ftl
+$cm-teasable-prefix: "cm-teasable" !default;
+// the headline color
+$cm-teasable-headline-color: #000000 !default;
+// the dimmer color which lays on top of the image
+$cm-teasable-dimmer-background-color: #000000 !default;
+// set this variable to "none" to not display the dimmer
+$cm-teasable-dimmer-display: block !default;
+// The default background color for the image. This color is being displayed until the image has been loaded from the server.
+$cm-teasable-picture-background-color: transparent !default;
+// The default padding for mobile
+$cm-teasable-padding-base-horizontal: 15px !default;
+// The default padding for tablet and desktop
+$cm-teasable-padding-large-vertical: 30px !default;
+$cm-teasable-padding-large-horizontal: 45px !default;

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.coremedia.blueprint</groupId>
+    <artifactId>cae</artifactId>
+    <version>1-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>cae-preview-webapp</artifactId>
+  <packaging>war</packaging>
+
+  <description>
+    CAE webapp for to be used in a content management environment for preview purposes.
+  </description>
+
+  <properties>
+    <development-properties.dir>${project.basedir}/../../../workspace-configuration/development-properties/default</development-properties.dir>
+    <logging-properties.dir>${project.basedir}/../../../workspace-configuration/logging</logging-properties.dir>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>cae-preview-blueprint-component</artifactId>
+      <version>${project.version}</version>
+      <scope>runtime</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <finalName>blueprint</finalName>
+    <plugins>
+      <!--
+         invoke "mvn tomcat7:run" for running this webapp locally using a tomcat
+      -->
+      <plugin>
+        <groupId>org.apache.tomcat.maven</groupId>
+        <artifactId>tomcat7-maven-plugin</artifactId>
+        <configuration>
+          <ajpPort>40909</ajpPort>
+          <path>/${project.build.finalName}</path>
+          <port>40980</port>
+          <warSourceDirectory>${project.basedir}/src/main/webapp</warSourceDirectory>
+          <!-- enable Tomcat to reload resources (=templates) while running -->
+          <contextFile>${project.basedir}/src/main/servletengine/tomcat-context.xml</contextFile>
+          <systemProperties>
+            <coremedia.blueprint.project.directory>${project.basedir}/../../../</coremedia.blueprint.project.directory>
+            <propertieslocations>classpath:/cae-preview.properties,classpath:/hybris.properties</propertieslocations>
+          </systemProperties>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <profiles>
+    <profile>
+      <id>candy-preview</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.tomcat.maven</groupId>
+            <artifactId>tomcat7-maven-plugin</artifactId>
+            <configuration>
+              <systemProperties>
+                <propertieslocations>http://overview.${installation.host}/candy-preview.properties
+                </propertieslocations>
+              </systemProperties>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+
+</project>

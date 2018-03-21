@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMArticle folder="/Sites/Chef Corp./Germany/German/Content/Site-Wide/Footer/Contact Us" name="Contact Us Article" xmlns:cmexport="http://www.coremedia.com/2012/cmexport" translationState="up-to-date">
+<locale>de-DE</locale>
+<master>
+<link href="../../../../../../United%20States/English/Content/Site-Wide/Footer/Contact%20Us/Contact%20Us%20Article.xml" path="/Sites/Chef%20Corp%2E/United%20States/English/Content/Site-Wide/Footer/Contact%20Us/Contact%20Us%20Article"/>
+</master>
+<viewtype>
+</viewtype>
+<linkedSettings>
+</linkedSettings>
+<resourceBundles2>
+</resourceBundles2>
+<segment>contact-us</segment>
+<title>Kontaktieren Sie uns</title>
+<htmlTitle></htmlTitle>
+<keywords>Coremedia Kontakt</keywords>
+<htmlDescription></htmlDescription>
+<subjectTaxonomy>
+</subjectTaxonomy>
+<locationTaxonomy>
+</locationTaxonomy>
+<contexts>
+</contexts>
+<teaserTitle>Kontaktieren Sie uns</teaserTitle>
+<teaserText grammarName="coremedia-richtext-1.0"><div xmlns="http://www.coremedia.com/2003/richtext-1.0" xmlns:xlink="http://www.w3.org/1999/xlink"><p>Welche Innovationen nutzen Sie, um den Markt zu erobern?</p><p>Rufen Sie die Coremedia Infoline an +49-40-325 587-587</p><p/><p/></div></teaserText>
+<detailText grammarName="coremedia-richtext-1.0"><div xmlns="http://www.coremedia.com/2003/richtext-1.0" xmlns:xlink="http://www.w3.org/1999/xlink"><p class="p--heading-2">Welche Innovationen nutzen Sie, um den Markt zu erobern?</p><p>Kontaktieren Sie unsere Technologie-Experten. Wir freuen uns, von Ihnen zu hören! Gerne erklären wir Ihnen, wie Sie mit Hilfe unserer Digital Experience Management Lösungen Ihren Unternehmenserfolg steigern können.<br/></p><p class="p--heading-3">Kontaktieren Sie uns. Rufen Sie die Coremedia Infoline an <br/><a xlink:href="http://tel:+49-40-325587-587" xlink:show="replace" xlink:type="simple"><strong>+49-40-325 587-587</strong></a></p><p/><p/></div></detailText>
+<pictures>
+</pictures>
+<notSearchable>1</notSearchable>
+<related>
+</related>
+</CMArticle>

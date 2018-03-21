@@ -1,0 +1,15 @@
+{
+  "name": "lc3-sap-hybris-preview-proxy",
+  "chef_type": "role",
+  "json_class": "Chef::Role",
+  "description": "The role for the preview proxy",
+  "run_list": [
+    "recipe[blueprint-lc3-sap-hybris::shop-preview-proxy]"
+  ],
+  "env_run_lists": {
+    "development": [
+      "recipe[blueprint-lc3-sap-hybris::shop-preview-proxy]",
+      "recipe[blueprint-lc3-sap-hybris::candy-shop-preview-proxy]"
+    ]
+  }
+}

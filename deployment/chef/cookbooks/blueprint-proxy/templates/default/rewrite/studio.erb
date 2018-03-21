@@ -1,0 +1,6 @@
+
+  RewriteCond %{HTTPS} off
+  RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
+  <%- unless @params[:servlet_context].empty? -%>
+  RewriteRule ^/$ /<%= @params[:servlet_context] %>/$1 [R=301,L]
+  <%- end -%>

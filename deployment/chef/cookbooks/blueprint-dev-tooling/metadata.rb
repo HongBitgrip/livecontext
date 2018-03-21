@@ -1,0 +1,18 @@
+name 'blueprint-dev-tooling'
+maintainer 'The Authors'
+maintainer_email 'you@example.com'
+license 'all_rights'
+description 'Installs/Configures blueprint'
+long_description 'Installs/Configures blueprint'
+version '1.0.0'
+
+depends 'blueprint-base'
+depends 'blueprint-yum'
+depends 'blueprint-mysql'
+depends 'blueprint-postgresql'
+depends 'blueprint-mongodb'
+depends 'blueprint-tomcat'
+depends 'blueprint-tools'
+
+depends 'fpm-tng', '~> 0.1.7'
+depends 'chef-sugar', '~> 3.0'

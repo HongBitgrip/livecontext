@@ -1,0 +1,141 @@
+/*
+Grid
+========================================================================================================================
+
+Contains styling definitions for all content types as cm-grid.
+- cm-grid
+- cm-grid--corporate-homepage
+- cm-grid--corporate-detailpage
+- cm-grid--corporate-detailpage--sidebar
+- cm-grid--with-superhero
+- cm-grid--disabled-scrolling
+- cm-javascript
+*/
+
+.#{$prefix}grid {
+  margin-top: $top-clearance-mobile;
+
+  @include breakpoint(sm-and-up) {
+    margin-top: $top-clearance;
+  }
+
+  // is triggerd by js
+  &--disabled-scrolling {
+    overflow: hidden;
+    @include breakpoint(md) {
+      overflow: visible;
+    }
+  }
+
+  /* special header if superhero teaser is present */
+  &--with-superhero {
+    margin-top: 0;
+
+    .#{$prefix}header {
+      background: none;
+      margin-top: 0;
+      transition: all $transition-duration ease(in-out-quad);
+
+      // hide search on superhero
+      @include breakpoint(sm-and-up) {
+        &__search {
+          display: none;
+        }
+      }
+
+      &--open,
+      &--scrolled {
+        background: $header-color-bg;
+        transition: all $transition-duration ease(in-out-quad);
+
+        // show search on superhero in open and scrolled header
+        @include breakpoint(sm-and-up) {
+          .#{$prefix}header__search {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+
+  /* gaps and superhero teasers do not work in rows with multiple columns */
+  &--corporate-detailpage--sidebar {
+    /* row containing placement main and placement sidebar */
+    .#{$prefix}row:nth-child(4) {
+      @include center-margin(x);
+      max-width: $screen-max;
+    }
+
+    /* text in teaser with smaller font, because of less space (10cols instead 12cols, 'cause sidebar */
+    @include breakpoint(sm-and-up) {
+      .#{$prefix}teasable__text {
+        font-size: $font-size-small;
+      }
+    }
+  }
+
+  //  rows with multi column layouts, e.g. sidebar need a max width container to stay inside the grid
+  .#{$prefix}multicolumn {
+    max-width: $screen-max;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+// sticky sidebar
+.#{$prefix}sticky {
+  @include breakpoint(md) {
+    &.affix {
+      position: fixed;
+      top: $padding-large-vertical;
+    }
+
+    &.affix-top,
+    &.affix-bottom {
+      position: absolute;
+    }
+  }
+
+  &--offset {
+    // main and sidebar are growing same way (in bootstrap 12 columns grid)
+    @include breakpoint(md) {
+      left: percentage(10/12); // move sidebar to right, because main has width of 10 cols = 83,33% ~ max 1000px
+    }
+    // if screen is bigger than max-screen-width (1200px), main and sidebar should not growing, but sidebar is still
+    // growing, caused by position fixed. in this case, width is fixed and position is relative to browser window.
+    @include breakpoint(lg) {
+      left: 50%; // set to center of screen (moved 6 cols)
+      margin-left: $screen-max/2; // move to right for 6 cols ~ 600px
+      width: $screen-max/12*2; // sidebar has width of 2 cols, = 16,66% ~ 200px
+      transform: translateX(-100%); // move to left, 100% of width itself
+    }
+  }
+
+  &--no-sticky {
+    // resetting affix behavior
+    position: static;
+  }
+}
+
+// full height rows and cols for tablets and desktops
+@include breakpoint(sm-and-up) {
+  .#{$prefix}row--full-height {
+    display: table;
+    width: 100%;
+    height: 100%;
+    /* fix overflow */
+    table-layout: fixed;
+  }
+
+  .#{$prefix}col--full-height {
+    height: 100%;
+    display: table-cell;
+    float: none;
+    vertical-align: top; // needed for firefox
+  }
+}
+
+// need for templates from basic theme
+.#{$prefix}aspect-ratio-box__content {
+  @include stretch-absolute();
+}

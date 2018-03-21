@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMTaxonomy folder="/Settings/Taxonomies/Subject" name="Blog" xmlns:cmexport="http://www.coremedia.com/2012/cmexport">
+<locale></locale>
+<master>
+</master>
+<viewtype>
+</viewtype>
+<linkedSettings>
+</linkedSettings>
+<resourceBundles2>
+</resourceBundles2>
+<segment></segment>
+<title></title>
+<htmlTitle></htmlTitle>
+<keywords></keywords>
+<htmlDescription></htmlDescription>
+<subjectTaxonomy>
+</subjectTaxonomy>
+<locationTaxonomy>
+</locationTaxonomy>
+<contexts>
+</contexts>
+<teaserTitle></teaserTitle>
+<pictures>
+</pictures>
+<related>
+</related>
+<value>Blog</value>
+<children>
+<link href="Cooking.xml" path="/Settings/Taxonomies/Subject/Cooking"/>
+<link href="Culture.xml" path="/Settings/Taxonomies/Subject/Culture"/>
+<link href="Gadget.xml" path="/Settings/Taxonomies/Subject/Gadget"/>
+<link href="Beauty.xml" path="/Settings/Taxonomies/Subject/Beauty"/>
+</children>
+<externalReference></externalReference>
+</CMTaxonomy>

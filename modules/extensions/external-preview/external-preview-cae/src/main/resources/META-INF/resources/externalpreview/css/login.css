@@ -1,0 +1,130 @@
+body {
+    overflow-y: auto !important;
+    background-image: url(../images/login-screen.svg) !important;
+    background-color: #2771C5;
+    background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+}
+
+.cm-icon {
+    height: 300px;
+    width: 260px;
+    margin-right: 120px;
+    margin-left: auto;
+    background: transparent url(../images/coremedia-logo.png) no-repeat center 109px;
+}
+
+.content-container {
+    height: 150px;
+    width: 238px;
+    margin-right: 120px;
+    margin-left: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 12px 10px 12px 12px;
+    -moz-border-radius: 2px; /* firefox rounded corners */
+    -webkit-border-radius: 2px; /* webkit rounded corners */
+    border-radius: 2px; /* ie9 rounded corners */
+}
+
+.title {
+    color: rgba(255, 255, 255, 1);
+    font: bold 16px/16px 'Segoe UI', 'Trebuchet MS', 'Lucida Grande', Helvetica, sans-serif;
+}
+
+.content {
+    margin: 15px auto;
+}
+
+label {
+    color: rgba(255, 255, 255, 1);
+    font: normal 12px/16px 'Segoe UI', 'Trebuchet MS', 'Lucida Grande', Helvetica, sans-serif;
+}
+
+input {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 3px 3px 3px 12px;
+    width: 100%;
+    border: 1px solid #bcbcbc;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    background-color: #FFF;
+    font-size: 24px;
+    letter-spacing: 42px;
+}
+
+input::-ms-clear {
+    display: none; /* removes the "x" (clear textfield) in the textfield for IE */
+}
+
+button {
+    position: relative !important;
+    float: right;
+    left: inherit !important;
+    top: 36px;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 1);
+    margin-right: 2px;
+    letter-spacing: 0.04em;
+    font: bold 12px/16px 'Segoe UI', 'Trebuchet MS', 'Lucida Grande', Helvetica, sans-serif;
+    border: none;
+    background-color: rgba(39, 113, 197, 1);
+    -moz-border-radius: 2px; /* firefox rounded corners */
+    -webkit-border-radius: 2px; /* webkit rounded corners */
+    border-radius: 2px; /* ie9 rounded corners */
+    min-width: 68px;
+    height: 26px;
+    overflow: visible;
+}
+
+button:hover {
+    transition: box-shadow 0.03s, background-color 0.03s;
+    -webkit-transition: box-shadow 0.03s, background-color 0.03s;
+    background-color: rgba(65, 137, 221, 1);
+}
+
+button:active {
+    transition: box-shadow 0.03s, background-color 0.03s;
+    -webkit-transition: box-shadow 0.03s, background-color 0.03s;
+    background-color: rgba(10, 66, 131, 1);
+}
+
+button .error-text {
+    display: none;
+    width: 220px;
+    background-color: #ffe7e1;
+    border: 1px solid #ff3300;
+    text-align: center;
+    -moz-border-radius: 4px; /* firefox rounded corners */
+    -webkit-border-radius: 4px; /* webkit rounded corners */
+    border-radius: 4px; /* ie9 rounded corners */
+    padding: 2px 0;
+    position: absolute;
+    z-index: 1;
+    top: 20px;
+    right: 90%;
+    color: #000;
+    font: normal 12px 'Segoe UI', 'Trebuchet MS', 'Lucida Grande', Helvetica, sans-serif;
+}
+
+/** responsive design */
+@media screen and (max-width: 480px) {
+    .optional-text {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .content-container {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .cm-icon {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

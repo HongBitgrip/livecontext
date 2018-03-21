@@ -1,0 +1,17 @@
+{
+  "name": "@coremedia/js-responsive-images",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "jquery": "3.2.1",
+    "imagesloaded": "4.1.3",
+    "@coremedia/js-logger": "^1.0.0"
+  },
+  "devDependencies": {
+    "jsdoc-to-markdown": "3.0.0"
+  },
+  "scripts": {
+    "apidoc": "jsdoc2md src/*.js > API.md"
+  },
+  "main": "src/index.js"
+}

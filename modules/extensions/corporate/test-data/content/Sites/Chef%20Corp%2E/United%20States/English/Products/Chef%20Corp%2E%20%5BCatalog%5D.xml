@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMCategory folder="/Sites/Chef Corp./United States/English/Products" name="Chef Corp. [Catalog]" xmlns:cmexport="http://www.coremedia.com/2012/cmexport">
+<locale>en-US</locale>
+<master>
+</master>
+<viewtype>
+</viewtype>
+<linkedSettings>
+</linkedSettings>
+<resourceBundles2>
+</resourceBundles2>
+<segment>catalog</segment>
+<title>Irrelevant, just to avoid validation issues</title>
+<htmlTitle></htmlTitle>
+<keywords></keywords>
+<htmlDescription></htmlDescription>
+<subjectTaxonomy>
+</subjectTaxonomy>
+<locationTaxonomy>
+</locationTaxonomy>
+<contexts>
+</contexts>
+<teaserTitle></teaserTitle>
+<pictures>
+</pictures>
+<related>
+</related>
+<children>
+<link href="Blenders%20and%20Food%20Processors/Blenders%20and%20Food%20Processors.xml" path="/Sites/Chef%20Corp%2E/United%20States/English/Products/Blenders%20and%20Food%20Processors/Blenders%20and%20Food%20Processors"/>
+<link href="ChefWave/ChefWave.xml" path="/Sites/Chef%20Corp%2E/United%20States/English/Products/ChefWave/ChefWave"/>
+<link href="Cooling%20and%20Storage/Cooling%20and%20Storage.xml" path="/Sites/Chef%20Corp%2E/United%20States/English/Products/Cooling%20and%20Storage/Cooling%20and%20Storage"/>
+<link href="Hoods%20and%20Extractors/Hoods%20and%20Extractors.xml" path="/Sites/Chef%20Corp%2E/United%20States/English/Products/Hoods%20and%20Extractors/Hoods%20and%20Extractors"/>
+<link href="Ranges%20and%20Ovens/Ranges%20and%20Ovens.xml" path="/Sites/Chef%20Corp%2E/United%20States/English/Products/Ranges%20and%20Ovens/Ranges%20and%20Ovens"/>
+</children>
+<hidden>1</hidden>
+<hiddenInSitemap>1</hiddenInSitemap>
+<javaScript>
+</javaScript>
+<css>
+</css>
+<theme>
+</theme>
+<placement>
+<Struct xmlns="http://www.coremedia.com/2008/struct" xmlns:xlink="http://www.w3.org/1999/xlink">
+<StructProperty Name="placements_2">
+<Struct>
+<LinkProperty Name="layout" LinkType="coremedia:///cap/contenttype/Document_" xlink:href="coremedia:///cap/resources/../Options/Settings/Pagegrid/Layouts/Detail%20Page%20with%20Sidebar.xml" cmexport:path="/Sites/Chef%20Corp%2E/United%20States/English/Options/Settings/Pagegrid/Layouts/Detail%20Page%20with%20Sidebar"/>
+<StructProperty Name="placements">
+<Struct>
+</Struct>
+</StructProperty>
+</Struct>
+</StructProperty>
+<StructListProperty Name="placements">
+<Struct>
+<LinkListProperty Name="items" LinkType="coremedia:///cap/contenttype/CMTeasable">
+<Link xlink:href="coremedia:///cap/resources/../Content/Site-Wide/Category/Category%20Header.xml" cmexport:path="/Sites/Chef%20Corp%2E/United%20States/English/Content/Site-Wide/Category/Category%20Header"/>
+</LinkListProperty>
+<LinkProperty Name="section" LinkType="coremedia:///cap/contenttype/CMSymbol" xlink:href="coremedia:///cap/resources/../Options/Settings/Pagegrid/Placements/above.xml" cmexport:path="/Sites/Chef%20Corp%2E/United%20States/English/Options/Settings/Pagegrid/Placements/above"/>
+</Struct>
+<Struct>
+<LinkListProperty Name="items" LinkType="coremedia:///cap/contenttype/CMTeasable">
+<Link xlink:href="coremedia:///cap/resources/../Content/Site-Wide/Category/Category%20List.xml" cmexport:path="/Sites/Chef%20Corp%2E/United%20States/English/Content/Site-Wide/Category/Category%20List"/>
+<Link xlink:href="coremedia:///cap/resources/../Content/Site-Wide/Category/Product%20List.xml" cmexport:path="/Sites/Chef%20Corp%2E/United%20States/English/Content/Site-Wide/Category/Product%20List"/>
+</LinkListProperty>
+<LinkProperty Name="section" LinkType="coremedia:///cap/contenttype/CMSymbol" xlink:href="coremedia:///cap/resources/../Options/Settings/Pagegrid/Placements/main.xml" cmexport:path="/Sites/Chef%20Corp%2E/United%20States/English/Options/Settings/Pagegrid/Placements/main"/>
+</Struct>
+</StructListProperty>
+</Struct>
+</placement>
+<header>
+</header>
+<footer>
+</footer>
+<categoryName></categoryName>
+<displayName></displayName>
+</CMCategory>

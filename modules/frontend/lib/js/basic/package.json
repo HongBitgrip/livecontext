@@ -1,0 +1,22 @@
+{
+  "name": "@coremedia/js-basic",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "jquery": "3.2.1",
+    "@coremedia/js-jquery-utils": "^1.0.0",
+    "@coremedia/js-logger": "^1.0.0",
+    "@coremedia/js-node-decoration-service": "^1.0.0",
+    "@coremedia/js-utils": "^1.0.0"
+  },
+  "devDependencies": {
+    "babel-preset-env": "1.6.0",
+    "jest": "22.0.4",
+    "jsdoc-to-markdown": "3.0.0"
+  },
+  "scripts": {
+    "apidoc": "jsdoc2md src/*.js > API.md",
+    "test": "jest"
+  },
+  "main": "src/index.js"
+}

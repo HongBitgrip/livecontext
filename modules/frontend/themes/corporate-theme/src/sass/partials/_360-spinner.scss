@@ -1,0 +1,52 @@
+/*
+360° Spinner
+========================================================================================================================
+
+Contains styling definitions for all content types as cm-spinner.
+- cm-spinner
+*/
+
+.#{$prefix}spinner {
+  &__canvas {
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  &__images {
+    display: block;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__image {
+    @include stretch-absolute();
+    visibility: hidden;
+
+    &.current-image {
+      visibility: visible;
+    }
+  }
+
+  &__picture {
+    @include stretch-absolute();
+  }
+
+  &__icon {
+    display: inline-block;
+    @include center-absolute();
+    width: $overlay-size;
+    height: $overlay-size;
+    background: url("../../img/button_spinner.png") no-repeat center center;
+    background-size: contain;
+  }
+}
+
+//default sizes
+.#{$prefix}details--spinner {
+  &__images,
+  &__picture-box {
+    @include aspect-ratio-box(4, 3);
+  }
+}

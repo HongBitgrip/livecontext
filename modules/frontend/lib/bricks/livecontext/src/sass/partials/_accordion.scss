@@ -1,0 +1,74 @@
+/* accordion */
+.cm-collection--accordion {
+  list-style: none;
+  padding: 0 20px;
+  & > .cm-collection__item {
+    margin-bottom: 10px;
+  }
+}
+
+.cm-accordion-item {
+  &__header {
+    padding: 10px;
+    color: #373737;
+    transition: background-color 0.3s ease-in-out 0s;
+    font-size: 0;
+
+    & > i {
+      display: inline-block;
+      width: 15px;
+      font-size: 0.8rem;
+      box-sizing: border-box;
+    }
+
+    & > span {
+      display: inline-block;
+      width: 100%;
+      margin-left: -15px;
+      padding-left: 21px;
+      font-size: 1.33333rem;
+      box-sizing: border-box;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    & > .icon-arrow-down {
+      display: none;
+    }
+
+    &--active > .icon-arrow-right {
+      display: none;
+    }
+
+    &--active > .icon-arrow-down {
+      display: inline-block;
+    }
+  }
+
+  &__content {
+    display: none;
+    padding: 10px 10px 0 100px;
+    border-bottom: 1px solid #919191;
+
+    @include breakpoint(sm, landscape) {
+      padding-left: 73px;
+    }
+    @include breakpoint(sm, portrait) {
+      padding-left: 63px;
+    }
+
+    @include breakpoint(xs) {
+      padding-left: 33px;
+    }
+
+    &--active {
+      display: block;
+    }
+  }
+
+  a {
+    text-decoration: underline;
+  }
+}

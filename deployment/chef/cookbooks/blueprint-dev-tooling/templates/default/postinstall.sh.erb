@@ -1,0 +1,7 @@
+chown -R <%= @install_user %>:<%= @install_group %> <%= @install_dir %>
+
+<%- if @restart_services %>
+<%- @restart_services.reverse.each do |service| -%>
+ service <%= service %> start || echo "could not restart service <%= service %>"
+<%- end -%>
+<%- end -%>

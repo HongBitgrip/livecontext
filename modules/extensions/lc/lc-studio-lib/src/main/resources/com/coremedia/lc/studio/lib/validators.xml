@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <import resource="classpath:/framework/spring/lc-ecommerce-connection.xml"/>
+  <import resource="classpath:/framework/spring/lc-ecommerce-services.xml"/>
+  <import resource="classpath:/META-INF/coremedia/lc-services.xml"/>
+  <import resource="classpath:/com/coremedia/cache/cache-services.xml"/>
+  <import resource="classpath:/com/coremedia/cae/uapi-services.xml"/>
+  <import resource="classpath:/com/coremedia/blueprint/base/multisite/bpbase-multisite-services.xml"/>
+  <import resource="classpath:/com/coremedia/blueprint/base/links/bpbase-urlpathformatting.xml"/>
+
+  <bean id="catalogLinkValidator" abstract="true" class="com.coremedia.lc.studio.lib.validators.CatalogLinkValidator">
+    <property name="connection" ref="connection"/>
+    <property name="validatingSubtypes" value="true"/>
+    <property name="propertyName" value="externalId"/>
+    <property name="sitesService" ref="sitesService"/>
+    <property name="commerceConnectionInitializer" ref="commerceConnectionInitializer"/>
+  </bean>
+
+  <bean id="productTeaserExternalIdValidator" parent="catalogLinkValidator" class="com.coremedia.lc.studio.lib.validators.CatalogLinkValidator">
+    <property name="contentType" value="CMProductTeaser"/>
+  </bean>
+
+  <bean id="marketingSpotExternalIdValidator" parent="catalogLinkValidator" class="com.coremedia.lc.studio.lib.validators.CatalogLinkValidator">
+    <property name="contentType" value="CMMarketingSpot"/>
+  </bean>
+
+  <bean id="productListExternalIdValidator" parent="catalogLinkValidator" class="com.coremedia.lc.studio.lib.validators.CatalogLinkValidator">
+    <property name="contentType" value="CMProductList"/>
+    <property name="optional" value="true"/>
+  </bean>
+
+  <bean id="externalChannelExternalIdValidator" parent="catalogLinkValidator" class="com.coremedia.lc.studio.lib.validators.ExternalChannelValidator">
+    <property name="contentType" value="CMExternalChannel"/>
+  </bean>
+
+  <bean id="externalPageExternalIdValidator" parent="catalogLinkValidator" class="com.coremedia.lc.studio.lib.validators.ExternalPageValidator">
+    <property name="contentType" value="CMExternalPage"/>
+  </bean>
+
+  <bean id="productListSupportedValidator" class="com.coremedia.lc.studio.lib.validators.IsLiveContextTypeValidator">
+    <property name="connection" ref="connection"/>
+    <property name="validatingSubtypes" value="true"/>
+    <property name="sitesService" ref="sitesService"/>
+    <property name="commerceConnectionInitializer" ref="commerceConnectionInitializer"/>
+    <property name="contentType" value="CMProductList"/>
+  </bean>
+
+  <bean id="productListIndexValidator" class="com.coremedia.rest.cap.validators.StructLinkListIndexValidator">
+    <property name="connection" ref="connection"/>
+    <property name="contentType" value="CMProductList"/>
+    <property name="propertyName" value="extendedItems"/>
+    <property name="listPropertyName" value="links"/>
+    <property name="indexPropertyName" value="index"/>
+    <property name="maxLengthPropertyName" value="maxLength"/>
+  </bean>
+
+  <bean id="externalPagePartOfNavigationValidator" class="com.coremedia.lc.studio.lib.validators.ExternalPagePartOfNavigationValidator">
+    <property name="contentType" value="CMExternalPage"/>
+    <property name="connection" ref="connection"/>
+    <property name="sitesService" ref="sitesService" />
+  </bean>
+
+  <bean id="cmExternalChannelSegmentValidator" class="com.coremedia.blueprint.base.rest.validators.ChannelSegmentValidator">
+    <property name="connection" ref="connection"/>
+    <property name="contentType" value="CMExternalChannel"/>
+    <property name="urlPathFormattingHelper" ref="urlPathFormattingHelper"/>
+  </bean>
+
+  <bean id="segmentFormatValidator" class="com.coremedia.lc.studio.lib.validators.SegmentFormatValidator">
+    <property name="connection" ref="connection"/>
+    <property name="validatingSubtypes" value="true"/>
+    <property name="contentType" value="CMChannel"/>
+    <property name="propertyName" value="segment"/>
+    <property name="fallbackPropertyName" value="title"/>
+    <property name="sitesService" ref="sitesService"/>
+    <property name="commerceConnectionInitializer" ref="commerceConnectionInitializer"/>
+  </bean>
+
+  <bean id="cmExternalChannelNavigationValidator"
+        class="com.coremedia.blueprint.base.rest.validators.ChannelNavigationValidator">
+    <property name="connection" ref="connection"/>
+    <property name="contentType" value="CMExternalChannel"/>
+  </bean>
+
+  <bean id="cmExternalChannelReferrerValidator"
+        class="com.coremedia.blueprint.base.rest.validators.ChannelReferrerValidator">
+    <property name="connection" ref="connection"/>
+    <property name="contentType" value="CMExternalChannel"/>
+  </bean>
+
+  <bean abstract="true" id="abstractUniqueExternalIdValidator"
+        class="com.coremedia.blueprint.base.rest.validators.UniqueInSiteStringValidator">
+    <constructor-arg index="0" name="contentRepository" ref="contentRepository"/>
+    <constructor-arg index="2" name="property" value="externalId"/>
+    <constructor-arg index="4" name="sitesService" ref="sitesService"/>
+    <property name="validatingSubtypes" value="true"/>
+  </bean>
+
+  <bean id="catalogExternalPageIndex"
+        class="com.coremedia.blueprint.base.util.ContentStringPropertyIndex">
+    <constructor-arg index="0" name="contentRepository" ref="contentRepository"/>
+    <constructor-arg index="1" name="contentType" value="CMExternalPage"/>
+    <constructor-arg index="2" name="property" value="externalId"/>
+  </bean>
+
+  <bean id="externalPageUniqueExternalIdValidator"
+        parent="abstractUniqueExternalIdValidator"
+        class="com.coremedia.blueprint.base.rest.validators.UniqueInSiteStringValidator">
+    <constructor-arg index="1" name="contentType" value="CMExternalPage"/>
+    <constructor-arg index="3" name="lookupFunction" value="#{catalogExternalPageIndex.createContentsByValueFunction()}"/>
+  </bean>
+
+  <bean id="externalChannelUniqueExternalIdValidator"
+        parent="abstractUniqueExternalIdValidator"
+        class="com.coremedia.blueprint.base.rest.validators.UniqueInSiteStringValidator">
+    <constructor-arg index="1" name="contentType" value="CMExternalChannel"/>
+    <constructor-arg index="3" name="lookupFunction" value="#{catalogExternalChannelIndex.createContentsByValueFunction()}"/>
+  </bean>
+
+</beans>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local:CatalogObjectActionBase
+        xmlns:fx="http://ns.adobe.com/mxml/2009"
+        xmlns:local="com.coremedia.ecommerce.studio.action.*"
+        xmlns:exml="http://www.jangaroo.net/exml/0.8"
+        xmlns="exml:ext.config">
+  <fx:Script><![CDATA[
+    import com.coremedia.ui.data.ValueExpression;
+
+    private var config:CatalogObjectAction;
+
+    public native function CatalogObjectAction(config:CatalogObjectAction = null);
+
+    /**
+     * A value expression evaluating to a catalog object to be processed
+     * or to an array of catalog objects to be processed.
+     */
+    [Bindable]
+    public var catalogObjectExpression:ValueExpression;
+    ]]></fx:Script>
+  <fx:Declarations>
+    <!---
+     The name of the context variable to be injected to the catalog object property.
+     The context value should be a catalog object or an array of them.
+    -->
+    <fx:String id="catalogObjectVariableName"/>
+  </fx:Declarations>
+
+</local:CatalogObjectActionBase>

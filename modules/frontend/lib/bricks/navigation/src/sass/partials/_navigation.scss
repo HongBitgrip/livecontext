@@ -1,0 +1,64 @@
+.#{$cm-navigation-prefix} {
+
+  &-item {
+    &.open &__list {
+      @include breakpoint("sm-and-down") {
+        display: block;
+      }
+      // this fix prevents the menu to be shown when opened in mobile and then switched to desktop
+      @include breakpoint("md") {
+        display: none;
+      }
+    }
+
+    &__list {
+      list-style-type: none;
+      padding: 0;
+      a {
+        padding: 10px 15px;
+        display: inline-block;
+      }
+    }
+  }
+
+  @include breakpoint("sm-and-down") {
+    .#{$cm-navigation-prefix}-list__label {
+      display: none;
+    }
+  }
+
+  @include breakpoint(md) {
+    position: absolute !important;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    top: $cm-navigation-header-height;
+
+    & > &-item__list,
+    & > &-item__list > &-item {
+      display: inline-block;
+      position: static;
+    }
+
+    & > &-item__list > .cm-navigation-item > .cm-navigation-item__list {
+      left: 0;
+      display: flex !important;
+
+      & > li {
+        flex: 1;
+        position: static;
+
+        & > a {
+          display: block;
+        }
+
+        .cm-navigation-item__list {
+          position: static;
+          border: none;
+          box-shadow: none;
+          border-radius: 0;
+        }
+      }
+    }
+  }
+}

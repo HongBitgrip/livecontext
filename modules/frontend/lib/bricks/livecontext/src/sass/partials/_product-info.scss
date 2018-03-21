@@ -1,0 +1,38 @@
+/* --- product information ------------------------------------------------------------------------------------------ */
+.cm-product-info {
+  display: table;
+  font-size: 0; /* remove whitespace */
+
+  &__title,
+  &__pricing {
+    display: table-cell;
+    font-size: 1rem; /* reset font */
+    vertical-align: top;
+
+    & > * {
+      padding: 0.3rem 0.40rem;
+
+      @include breakpoint(md) {
+        padding: 0.5rem 0.933333rem;
+      }
+
+      @include breakpoint(sm) {
+        padding: 0.36rem 0.50em;
+      }
+    }
+  }
+
+  &__title > * {
+    margin: 0;
+  }
+
+  &__pricing {
+    text-align: right;
+  }
+
+}
+
+// make sure shop now buttons are always clickable
+.cm-button-group--shopnow {
+  pointer-events: auto;
+}

@@ -1,0 +1,30 @@
+{
+  "author": {
+    "name": "CoreMedia",
+    "url": "http://www.coremedia.com"
+  },
+  "description": "CoreMedia scripts for the frontend workspace.",
+  "name": "@coremedia/cm-cli",
+  "private": true,
+  "version": "2.0.0",
+  "engines": {
+    "node": ">=8"
+  },
+  "bin": {
+    "cm": "./bin/cm-cli.js"
+  },
+  "dependencies": {
+    "@coremedia/cm-logger": "^1.0.0",
+    "@coremedia/theme-importer": "^1.0.0",
+    "@coremedia/tool-utils": "^1.0.0",
+    "inquirer": "5.0.0",
+    "mkdirp": "0.5.1",
+    "yargs": "10.0.3"
+  },
+  "devDependencies": {
+    "jest": "22.0.4"
+  },
+  "scripts": {
+    "test": "jest"
+  }
+}

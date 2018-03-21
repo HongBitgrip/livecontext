@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMViewtype folder="/Sites/Chef Corp./Germany/German/Options/Viewtypes/CMPlaceholder" name="search" xmlns:cmexport="http://www.coremedia.com/2012/cmexport" translationState="up-to-date">
+<locale>de-DE</locale>
+<master>
+<link href="../../../../../United%20States/English/Options/Viewtypes/CMPlaceholder/search.xml" path="/Sites/Chef%20Corp%2E/United%20States/English/Options/Viewtypes/CMPlaceholder/search"/>
+</master>
+<description></description>
+<icon md5="9063448017d3a57e6a9afd50cb0bd7c9" size="34147" href="../../../../../../../__blob/9063448017d3a57e6a9afd50cb0bd7c9.blob" mimetype="image/png"/>
+<layout>search</layout>
+</CMViewtype>

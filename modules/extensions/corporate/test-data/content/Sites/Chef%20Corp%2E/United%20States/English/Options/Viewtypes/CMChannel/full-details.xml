@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMViewtype folder="/Sites/Chef Corp./United States/English/Options/Viewtypes/CMChannel" name="full-details" xmlns:cmexport="http://www.coremedia.com/2012/cmexport">
+<locale>en-US</locale>
+<master>
+</master>
+<description>Displays content with full detail, e.g. as a full article with bodytext, instead of a teaser.</description>
+<icon md5="43e4c0c804a871fdb51b7f4e2f55d6f1" size="34147" href="../../../../../../../__blob/43e4c0c804a871fdb51b7f4e2f55d6f1.blob" mimetype="image/png"/>
+<layout>full-details</layout>
+</CMViewtype>

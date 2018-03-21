@@ -1,0 +1,22 @@
+{
+  "name": "@coremedia/brick-hero-teaser",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@coremedia/brick-bootstrap": "^1.0.0",
+    "@coremedia/sass-utils": "^1.0.0",
+    "@coremedia/brick-cta": "^1.0.0",
+    "@coremedia/brick-default-teaser": "^1.0.0",
+    "@coremedia/brick-generic-templates": "^1.0.0"
+  },
+  "devDependencies": {
+    "jsdoc-to-markdown": "3.0.0"
+  },
+  "scripts": {
+    "apidoc": "jsdoc2md src/js/*.js > API.md"
+  },
+  "main": "src/js/index.js",
+  "coremedia": {
+    "type": "brick"
+  }
+}

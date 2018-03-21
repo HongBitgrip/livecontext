@@ -1,0 +1,27 @@
+<ruleset version="1.0+">
+  <!--
+   |  This is an example deployment ruleset for the CoreMedia SiteManager. You cannot use this definition unchanged.
+   |
+   |  It is IMPORTANT to understand the consequences of using run as action permission.
+   |  Please visit the documentations below to define a rules matching your companies security policies.
+   |
+   |  - To get started with deployment rulesets, see https://blogs.oracle.com/java-platform-group/entry/introducing_deployment_rule_sets
+   |  - To see how to configure this deployment ruleset, see http://docs.oracle.com/javase/8/docs/technotes/guides/deploy/deployment_rules.html
+   |
+   |  IMPORTANT NOTICE
+   |  You cannot sign this jar with a selfsigned certificate. Only the application jars can be signed with a self signed certificate. The
+   |  DeploymentRuleSet.jar must be signed with a valid certificat.
+   -->
+  <rule>
+    <id location="*.192.168.252.100.xip.io"/>
+    <action permission="run"/>
+  </rule>
+  <rule>
+    <id>
+      <!-- Insecure Rule for our self signed test certificate. Use only for testing only-->
+      <certificate hash="D75ADF7FE517CA378F73FBF3D2A83842FE9361A72224DE809F96665C37788725"/>
+    </id>
+    <action permission="run"/>
+  </rule>
+
+</ruleset>

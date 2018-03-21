@@ -1,0 +1,215 @@
+/*
+Teaser
+========================================================================================================================
+
+Contains styling definitions for all content types as cm-teasable.
+- cm-teasable
+*/
+
+.#{$prefix}teasable {
+  /* leave 10% space to the left and right */
+  $relative-text-content-width: 80%;
+
+  background-color: $brand-primary;
+  font-size: $font-size-base;
+
+  &__picture-box {
+    @include aspect-ratio-box(16, 9);
+
+    @include breakpoint(sm) {
+      @include aspect-ratio-box(1, 1);
+    }
+    @include breakpoint(md) {
+      @include aspect-ratio-box(16, 9);
+    }
+  }
+
+  &__picture {
+    @include stretch-absolute();
+  }
+
+  &__text-content-box {
+
+    @include breakpoint(sm) {
+      @include aspect-ratio-box(1, 1, visible);
+    }
+
+    @include breakpoint(md) {
+      @include aspect-ratio-box(16, 9, visible);
+    }
+
+    &:hover {
+      .#{$prefix}teasable__headline {
+        transform: translate3d(0, 5px, 0);
+        & > span {
+          &:after {
+            opacity: 1;
+            width: 100%;
+          }
+        }
+      }
+
+      .#{$prefix}teasable__cta {
+        transform: translate3d(0, -5px, 0);
+      }
+    }
+
+    /* little arrow between image and text */
+    &::after {
+      @include arrow(top, $brand-primary);
+
+      @include breakpoint(sm-and-up) {
+        @include arrow(right, $brand-primary);
+      }
+    }
+  }
+
+  &--video.#{$prefix}teasable--no-image {
+    .#{$prefix}teasable__popup-opener {
+      height: $overlay-size;
+      margin-bottom: $padding-base-horizontal;
+    }
+  }
+
+  // disable hover on video, since there is no c2a-button
+  &--video &__text-content-box {
+
+    &:hover {
+      .#{$prefix}teasable__headline {
+        transform: none;
+        & > span {
+          &:after {
+            display: none
+          }
+        }
+      }
+    }
+  }
+
+  &__text-content {
+    padding: $line-height-computed 0;
+    width: $relative-text-content-width;
+    text-align: center;
+
+    @include breakpoint(xs) {
+      @include center-margin(x);
+    }
+
+    // IMPORTANT this is a fix for a bug in the browser which renderes the text blurry therefore the XY position must be 50.1%
+    // only need if translation other objects, which parent object has a translate.
+    @include breakpoint(sm-and-up) {
+      position: absolute;
+      bottom: 50%;
+      right: 50%;
+      transform: translateX(50.1%) translateY(50.1%);
+    }
+  }
+
+  &__headline,
+  &__text {
+    color: palette(white);
+  }
+
+  /* reset element margins */
+  &__headline,
+  &__text,
+  &__cta {
+    margin: 0;
+  }
+
+  /* headline does always exist */
+  &__text,
+  &__cta {
+    margin-top: $line-height-computed;
+  }
+
+  &__headline {
+    transition: all $transition-duration ease(in-out-quad);
+    position: relative;
+    @include flickeringFix();
+
+    & > span {
+      display: inline-block;
+      @include flickeringFix(true);
+
+      &:after {
+        content: '';
+        position: relative;
+        display: block;
+        bottom: 0;
+        margin: 0 auto -5px auto;
+        width: 0;
+        opacity: 0;
+        height: 1px;
+        height: 0.09rem;
+        background-color: palette(white);
+        transition: opacity $transition-duration ease(in-out-quad), width $transition-duration ease(in-out-quad);
+      }
+    }
+  }
+
+  &__cta {
+    transition: all $transition-duration ease(in-out-quad);
+  }
+
+  &--no-image {
+    /* if no image exists absolute width of text-content is doubled */
+
+    /* => x-coordinate of text-box has to be doubled for tablet and desktop */
+    .#{$prefix}teasable__text-content-box {
+      @include breakpoint(sm) {
+        @include aspect-ratio-box(2, 1);
+      }
+      @include breakpoint(md) {
+        @include aspect-ratio-box(32, 9);
+      }
+    }
+
+    /* => leave half the space to the left and right */
+    .#{$prefix}teasable__text-content {
+      width: 50% + $relative-text-content-width / 2;
+    }
+  }
+
+  /* alternative layout for teasers */
+  &--alternative {
+    background-color: palette(white);
+
+    .#{$prefix}teasable__text,
+    .#{$prefix}teasable__headline {
+      color: palette(grey, darker);
+    }
+
+    .#{$prefix}teasable__headline {
+      & > span {
+        &:after {
+          background-color: palette(grey, darker);
+        }
+      }
+    }
+
+    .#{$prefix}teasable__text-content-box {
+      &:after {
+        /* little arrow between image and text */
+        @include arrow(top, palette(white));
+
+        @include breakpoint(sm-and-up) {
+          @include arrow(left, palette(white));
+        }
+      }
+    }
+  }
+
+  &__popup-opener {
+    display: block;
+    position: relative;
+  }
+
+  &__play {
+    transform: translate(50%, 80%); // a little higher for spacing
+
+    &.cm-play-button{
+      @include center-absolute();
+    }
+  }
+}

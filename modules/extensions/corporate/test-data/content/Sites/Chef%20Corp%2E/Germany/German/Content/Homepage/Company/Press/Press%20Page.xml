@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMChannel folder="/Sites/Chef Corp./Germany/German/Content/Homepage/Company/Press" name="Press Page" xmlns:cmexport="http://www.coremedia.com/2012/cmexport" translationState="up-to-date">
+<locale>de-DE</locale>
+<master>
+<link href="../../../../../../United%20States/English/Content/Homepage/Company/Press/Press%20Page.xml" path="/Sites/Chef%20Corp%2E/United%20States/English/Content/Homepage/Company/Press/Press%20Page"/>
+</master>
+<viewtype>
+</viewtype>
+<linkedSettings>
+</linkedSettings>
+<resourceBundles2>
+</resourceBundles2>
+<segment>press</segment>
+<title>Presse</title>
+<htmlTitle></htmlTitle>
+<keywords></keywords>
+<htmlDescription>Find all Chef Corp. Media / Press Relations news, updates and events.</htmlDescription>
+<subjectTaxonomy>
+<link href="../../../../../../../../Settings/Taxonomies/Subject/Press.xml" path="/Settings/Taxonomies/Subject/Press"/>
+</subjectTaxonomy>
+<locationTaxonomy>
+</locationTaxonomy>
+<contexts>
+</contexts>
+<teaserTitle></teaserTitle>
+<teaserText grammarName="coremedia-richtext-1.0"><div xmlns="http://www.coremedia.com/2003/richtext-1.0" xmlns:xlink="http://www.w3.org/1999/xlink"><p>Pressemitteilungen und Veranstaltungshinweise.  </p></div></teaserText>
+<pictures>
+<link href="../../../../Assets/Pictures/Company/Press%20Picture.xml" path="/Sites/Chef%20Corp%2E/Germany/German/Assets/Pictures/Company/Press%20Picture"/>
+</pictures>
+<related>
+</related>
+<children>
+<link href="Contacts/Press%20Contacts%20Page.xml" path="/Sites/Chef%20Corp%2E/Germany/German/Content/Homepage/Company/Press/Contacts/Press%20Contacts%20Page"/>
+<link href="News/News%20Page.xml" path="/Sites/Chef%20Corp%2E/Germany/German/Content/Homepage/Company/Press/News/News%20Page"/>
+<link href="Events/Events%20Page.xml" path="/Sites/Chef%20Corp%2E/Germany/German/Content/Homepage/Company/Press/Events/Events%20Page"/>
+</children>
+<javaScript>
+</javaScript>
+<css>
+</css>
+<theme>
+</theme>
+<placement>
+<Struct xmlns="http://www.coremedia.com/2008/struct" xmlns:xlink="http://www.w3.org/1999/xlink">
+<StructProperty Name="placements_2">
+<Struct>
+<LinkProperty Name="layout" LinkType="coremedia:///cap/contenttype/Document_" xlink:href="coremedia:///cap/resources/../../../../Options/Settings/Pagegrid/Layouts/Detail%20Page%20with%20Sidebar.xml" cmexport:path="/Sites/Chef%20Corp%2E/Germany/German/Options/Settings/Pagegrid/Layouts/Detail%20Page%20with%20Sidebar"/>
+<StructProperty Name="placements">
+<Struct>
+</Struct>
+</StructProperty>
+</Struct>
+</StructProperty>
+<StructListProperty Name="placements">
+<Struct>
+<LinkListProperty Name="items" LinkType="coremedia:///cap/contenttype/CMTeasable">
+<Link xlink:href="coremedia:///cap/resources/Contacts/Press%20Contacts%20Page.xml" cmexport:path="/Sites/Chef%20Corp%2E/Germany/German/Content/Homepage/Company/Press/Contacts/Press%20Contacts%20Page"/>
+<Link xlink:href="coremedia:///cap/resources/News/News%20Page.xml" cmexport:path="/Sites/Chef%20Corp%2E/Germany/German/Content/Homepage/Company/Press/News/News%20Page"/>
+<Link xlink:href="coremedia:///cap/resources/Press%20News%20Three%20Item%20Query%20List.xml" cmexport:path="/Sites/Chef%20Corp%2E/Germany/German/Content/Homepage/Company/Press/Press%20News%20Three%20Item%20Query%20List"/>
+<Link xlink:href="coremedia:///cap/resources/Events/Events%20Page.xml" cmexport:path="/Sites/Chef%20Corp%2E/Germany/German/Content/Homepage/Company/Press/Events/Events%20Page"/>
+<Link xlink:href="coremedia:///cap/resources/Press%20Events%20Four%20Item%20Query%20List.xml" cmexport:path="/Sites/Chef%20Corp%2E/Germany/German/Content/Homepage/Company/Press/Press%20Events%20Four%20Item%20Query%20List"/>
+</LinkListProperty>
+<LinkProperty Name="section" LinkType="coremedia:///cap/contenttype/CMSymbol" xlink:href="coremedia:///cap/resources/../../../../Options/Settings/Pagegrid/Placements/main.xml" cmexport:path="/Sites/Chef%20Corp%2E/Germany/German/Options/Settings/Pagegrid/Placements/main"/>
+</Struct>
+<Struct>
+<LinkListProperty Name="items" LinkType="coremedia:///cap/contenttype/CMTeasable">
+<Link xlink:href="coremedia:///cap/resources/Contacts/Bernd%20Schirmann.xml" cmexport:path="/Sites/Chef%20Corp%2E/Germany/German/Content/Homepage/Company/Press/Contacts/Bernd%20Schirmann"/>
+<Link xlink:href="coremedia:///cap/resources/Contacts/Ulf%20Burstedt.xml" cmexport:path="/Sites/Chef%20Corp%2E/Germany/German/Content/Homepage/Company/Press/Contacts/Ulf%20Burstedt"/>
+<Link xlink:href="coremedia:///cap/resources/Contacts/Tanja%20Heisterkamp.xml" cmexport:path="/Sites/Chef%20Corp%2E/Germany/German/Content/Homepage/Company/Press/Contacts/Tanja%20Heisterkamp"/>
+</LinkListProperty>
+<LinkProperty Name="viewtype" LinkType="coremedia:///cap/contenttype/CMViewtype" xlink:href="coremedia:///cap/resources/../../../../Options/Viewtypes/CMChannel/claim-circle.xml" cmexport:path="/Sites/Chef%20Corp%2E/Germany/German/Options/Viewtypes/CMChannel/claim-circle"/>
+<LinkProperty Name="section" LinkType="coremedia:///cap/contenttype/CMSymbol" xlink:href="coremedia:///cap/resources/../../../../Options/Settings/Pagegrid/Placements/sidebar.xml" cmexport:path="/Sites/Chef%20Corp%2E/Germany/German/Options/Settings/Pagegrid/Placements/sidebar"/>
+</Struct>
+<Struct>
+<LinkListProperty Name="items" LinkType="coremedia:///cap/contenttype/CMTeasable">
+<Link xlink:href="coremedia:///cap/resources/Press%20Teaser.xml" cmexport:path="/Sites/Chef%20Corp%2E/Germany/German/Content/Homepage/Company/Press/Press%20Teaser"/>
+</LinkListProperty>
+<LinkProperty Name="viewtype" LinkType="coremedia:///cap/contenttype/CMViewtype" xlink:href="coremedia:///cap/resources/../../../../Options/Viewtypes/CMChannel/hero.xml" cmexport:path="/Sites/Chef%20Corp%2E/Germany/German/Options/Viewtypes/CMChannel/hero"/>
+<LinkProperty Name="section" LinkType="coremedia:///cap/contenttype/CMSymbol" xlink:href="coremedia:///cap/resources/../../../../Options/Settings/Pagegrid/Placements/above.xml" cmexport:path="/Sites/Chef%20Corp%2E/Germany/German/Options/Settings/Pagegrid/Placements/above"/>
+</Struct>
+</StructListProperty>
+</Struct>
+</placement>
+<header>
+</header>
+<footer>
+</footer>
+</CMChannel>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <import resource="livecontext-hybris-services.xml"/>
+  <import resource="classpath:/framework/spring/livecontext-cache.xml"/>
+
+  <bean name="hybrisAbstractCommerceBean" scope="prototype" abstract="true"
+        class="com.coremedia.livecontext.ecommerce.hybris.beans.AbstractHybrisCommerceBean">
+    <property name="commerceBeanFactory" ref="hybrisCommerceBeanFactory"/>
+    <property name="catalogService" ref="hybrisCatalogService"/>
+    <property name="defaultLocale" value="en_US"/>
+    <property name="commerceCache" ref="hybrisCommerceCache"/>
+    <property name="catalogResource" ref="hybrisCatalogResource"/>
+  </bean>
+
+  <bean name="hybrisCommerceBeanFactory:category" parent="hybrisAbstractCommerceBean"
+        class="com.coremedia.livecontext.ecommerce.hybris.beans.CategoryImpl" scope="prototype">
+  </bean>
+
+  <bean name="hybrisCommerceBeanFactory:product" parent="hybrisAbstractCommerceBean"
+        class="com.coremedia.livecontext.ecommerce.hybris.beans.ProductImpl" scope="prototype">
+    <property name="priceService" ref="hybrisPriceService"/>
+  </bean>
+
+  <bean name="hybrisCommerceBeanFactory:sku" parent="hybrisAbstractCommerceBean"
+        class="com.coremedia.livecontext.ecommerce.hybris.beans.ProductVariantImpl" scope="prototype">
+    <property name="priceService" ref="hybrisPriceService"/>
+  </bean>
+
+  <bean name="hybrisCommerceBeanFactory:segment" parent="hybrisAbstractCommerceBean"
+        class="com.coremedia.livecontext.ecommerce.hybris.beans.SegmentImpl" scope="prototype">
+  </bean>
+
+</beans>

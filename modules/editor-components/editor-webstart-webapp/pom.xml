@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.coremedia.blueprint</groupId>
+    <artifactId>editor-components</artifactId>
+    <version>1-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>editor-webstart-webapp</artifactId>
+  <packaging>coremedia-webstart-application</packaging>
+
+  <properties>
+    <sign.skip>false</sign.skip>
+    <!--
+    | to verify that you are using the correct keystore, you should move these properties
+    | to your settings.xml
+    -->
+    <sign.keystore>${project.basedir}/webstart.keystore</sign.keystore>
+    <sign.verbose>false</sign.verbose>
+    <sign.verify>false</sign.verify>
+    <sign.alias>coremedia</sign.alias>
+    <sign.storepass>coremedia</sign.storepass>
+    <sign.keypass>coremedia</sign.keypass>
+
+    <!--
+      | Location of the Site Manager user manual.
+      |
+      | If your editors are supposed to work in internet-restricted environments,
+      | you must host the manuals inhouse (e.g. add them to the webstart webapp) and
+      | adjust this url accordingly.
+    -->
+    <cms.editor.manuals.base.url>https://documentation.coremedia.com/editor-user/${cms.version}</cms.editor.manuals.base.url>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>editor</artifactId>
+      <version>${project.version}</version>
+      <type>coremedia-application</type>
+      <scope>runtime</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <finalName>editor-webstart</finalName>
+    <plugins>
+      <plugin>
+        <artifactId>maven-deploy-plugin</artifactId>
+        <configuration>
+          <!-- reactivate globally deactivated skip, this is not a RPM-->
+          <skip>false</skip>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>com.coremedia.maven</groupId>
+        <artifactId>coremedia-application-maven-plugin</artifactId>
+        <extensions>true</extensions>
+        <configuration>
+          <overlays>
+            <overlay>
+              <groupId>${project.groupId}</groupId>
+              <artifactId>editor</artifactId>
+              <excludes>
+                <exclude>bin/**</exclude>
+              </excludes>
+            </overlay>
+          </overlays>
+          <!--
+           | since the editor artifact is not skinny we cannot use the version.xml
+           | if you prefer to use the version.xml you have to make the editor module in the development-workspace
+           | skinny and add here a dependency to the pom type of the editor artifact. Then you can set
+           | useVersionXml to true or remove the option completely. Be aware that if you do that dependencyManagement
+           | in the deploymentWorkspace can affect the versions of the jars in this artifact and the constellation may
+           | differ to the constellation of the editor in the development-workspace.
+          -->
+          <useVersionsXml>false</useVersionsXml>
+          <signConfig>
+            <alias>${sign.alias}</alias>
+            <keystore>${sign.keystore}</keystore>
+            <keypass>${sign.keypass}</keypass>
+            <storepass>${sign.storepass}</storepass>
+            <verbose>${sign.verbose}</verbose>
+            <verify>${sign.verify}</verify>
+            <skip>${sign.skip}</skip>
+          </signConfig>
+          <!--
+           | The template will be generated as a file with the name ${project.build.finalName}, which will also be used
+           | as the name attribute in the generated jnlp file. Be aware that this path has to be a relative path.
+           -->
+          <jnlpTemplate>src/main/jnlp/editor.jnlp.vm</jnlpTemplate>
+          <mainClassArtifact>com.coremedia.cms:cap-editor</mainClassArtifact>
+          <mainClass>hox.corem.editor.Editor</mainClass>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

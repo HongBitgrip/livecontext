@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMCollection folder="/Sites/Chef Corp./Germany/German/Options/Settings/Templates/CMChannel/Detail Page with Sidebar" name="Sidebar Collection" xmlns:cmexport="http://www.coremedia.com/2012/cmexport" translationState="up-to-date">
+<locale>de-DE</locale>
+<master>
+<link href="../../../../../../../United%20States/English/Options/Settings/Templates/CMChannel/Detail%20Page%20with%20Sidebar/Sidebar%2f9e90eee.xml" path="/Sites/Chef%20Corp%2E/United%20States/English/Options/Settings/Templates/CMChannel/Detail%20Page%20with%20Sidebar/Sidebar%20Collection"/>
+</master>
+<viewtype>
+</viewtype>
+<linkedSettings>
+</linkedSettings>
+<resourceBundles2>
+</resourceBundles2>
+<segment></segment>
+<title></title>
+<htmlTitle></htmlTitle>
+<keywords></keywords>
+<htmlDescription></htmlDescription>
+<subjectTaxonomy>
+</subjectTaxonomy>
+<locationTaxonomy>
+</locationTaxonomy>
+<contexts>
+</contexts>
+<teaserTitle>Beispiel Titel</teaserTitle>
+<teaserText grammarName="coremedia-richtext-1.0"><div xmlns="http://www.coremedia.com/2003/richtext-1.0" xmlns:xlink="http://www.w3.org/1999/xlink"><p> Beispieltext </p> </div></teaserText>
+<pictures>
+</pictures>
+<related>
+</related>
+<items>
+<link href="New%20Sidebar%20Teaser.xml" path="/Sites/Chef%20Corp%2E/Germany/German/Options/Settings/Templates/CMChannel/Detail%20Page%20with%20Sidebar/New%20Sidebar%20Teaser"/>
+<link href="New%20Sidebar%20Teaser.xml" path="/Sites/Chef%20Corp%2E/Germany/German/Options/Settings/Templates/CMChannel/Detail%20Page%20with%20Sidebar/New%20Sidebar%20Teaser"/>
+<link href="New%20Sidebar%20Teaser.xml" path="/Sites/Chef%20Corp%2E/Germany/German/Options/Settings/Templates/CMChannel/Detail%20Page%20with%20Sidebar/New%20Sidebar%20Teaser"/>
+</items>
+</CMCollection>

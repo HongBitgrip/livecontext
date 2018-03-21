@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMFolderProperties folder="/Sites/Chef Corp./United States/English/Content/Homepage/Company/Careers" name="_folderProperties" xmlns:cmexport="http://www.coremedia.com/2012/cmexport">
+<locale>en-US</locale>
+<master>
+</master>
+<contexts>
+<link href="Careers%20Page.xml" path="/Sites/Chef%20Corp%2E/United%20States/English/Content/Homepage/Company/Careers/Careers%20Page"/>
+</contexts>
+</CMFolderProperties>

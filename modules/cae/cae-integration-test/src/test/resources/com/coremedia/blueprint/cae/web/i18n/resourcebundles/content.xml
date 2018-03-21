@@ -1,0 +1,129 @@
+<content>
+  <folder id="1" name="">
+    <folder id="11" name="Sites">
+      <folder id="111" name="Media">
+        <document id="10" type="CMChannel" name="ParentChannel">
+          <version number="1">
+            <linkProperty name="children">
+              <link id="16"/>
+            </linkProperty>
+            <linkProperty name="resourceBundles2">
+              <link id="2"/>
+            </linkProperty>
+          </version>
+        </document>
+        <document id="16" type="CMChannel" name="SubChannel">
+          <version number="1">
+            <linkProperty name="children">
+              <link id="20"/>
+            </linkProperty>
+          </version>
+        </document>
+        <document id="20" type="CMChannel" name="SubSubChannel">
+          <version number="1">
+            <linkProperty name="resourceBundles2">
+              <link id="4"/>
+              <link id="6"/>
+            </linkProperty>
+          </version>
+        </document>
+        <document id="210" type="CMChannel" name="ParentChannelForTheme">
+          <version number="1">
+            <stringProperty name="locale" value="en"/>
+            <linkProperty name="children">
+              <link id="216"/>
+            </linkProperty>
+            <linkProperty name="theme">
+              <link id="222"/>
+            </linkProperty>
+          </version>
+        </document>
+        <document id="216" type="CMChannel" name="SubChannelForTheme">
+          <version number="1">
+            <stringProperty name="locale" value="en-gb"/>
+            <linkProperty name="children">
+              <link id="220"/>
+              <link id="224"/>
+            </linkProperty>
+          </version>
+        </document>
+        <document id="220" type="CMChannel" name="SubSubChannelForTheme">
+          <version number="1">
+            <stringProperty name="locale" value="en-gb-europe"/>
+          </version>
+        </document>
+        <document id="224" type="CMChannel" name="SubChannelForThemeOverride">
+          <version number="1">
+            <stringProperty name="locale" value="en-gb"/>
+            <linkProperty name="resourceBundles2">
+              <link id="8"/>
+            </linkProperty>
+            <linkProperty name="children">
+              <link id="226"/>
+            </linkProperty>
+          </version>
+        </document>
+        <document id="226" type="CMChannel" name="SubSubChannelForThemeOverride">
+          <version number="1">
+            <stringProperty name="locale" value="en-gb-europe"/>
+          </version>
+        </document>
+        <document name="Theme" id="222" type="CMTheme">
+          <version number="1">
+            <linkProperty name="resourceBundles">
+              <link id="108"/>
+            </linkProperty>
+          </version>
+        </document>
+        <document id="30" type="CMArticle" name="a1">
+          <version number="1">
+          </version>
+        </document>
+        <document id="2" name="bundle10" type="CMResourceBundle">
+          <version number="1">
+            <markupProperty name="localizations" url="bundle10.xml" grammar="coremedia-struct-2008"/>
+          </version>
+        </document>
+        <document id="4" name="bundle20" type="CMResourceBundle">
+          <version number="1">
+            <markupProperty name="localizations" url="bundle20.xml" grammar="coremedia-struct-2008"/>
+          </version>
+        </document>
+        <document id="6" name="bundle20a" type="CMResourceBundle">
+          <version number="1">
+            <markupProperty name="localizations" url="bundle20a.xml" grammar="coremedia-struct-2008"/>
+          </version>
+        </document>
+        <document id="8" name="bundle8" type="CMResourceBundle">
+          <version number="1">
+            <markupProperty name="localizations" url="bundle8.xml" grammar="coremedia-struct-2008"/>
+          </version>
+        </document>
+        <document id="108" name="bundle_en" type="CMResourceBundle">
+          <version number="1">
+            <stringProperty name="locale" value="en"/>
+            <markupProperty name="localizations" url="bundle_en.xml" grammar="coremedia-struct-2008"/>
+          </version>
+        </document>
+        <document id="110" name="bundle_en_gb" type="CMResourceBundle">
+          <version number="1">
+            <linkProperty name="master">
+              <link id="108"/>
+            </linkProperty>
+            <stringProperty name="locale" value="en-gb"/>
+            <markupProperty name="localizations" url="bundle_en_gb.xml" grammar="coremedia-struct-2008"/>
+          </version>
+        </document>
+        <document id="112" name="bundle_en_gb_europe" type="CMResourceBundle">
+          <version number="1">
+            <linkProperty name="master">
+              <link id="110"/>
+            </linkProperty>
+            <stringProperty name="locale" value="en-gb-europe"/>
+            <markupProperty name="localizations" url="bundle_en_gb_europe.xml" grammar="coremedia-struct-2008"/>
+          </version>
+        </document>
+      </folder>
+    </folder>
+  </folder>
+</content>

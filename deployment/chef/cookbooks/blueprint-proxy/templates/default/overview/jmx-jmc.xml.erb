@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<server_model>
+<%- services = [
+'content-management-server',
+'master-live-server',
+'workflow-server',
+'content-feeder',
+'user-changes',
+'elastic-worker',
+'caefeeder-preview',
+'caefeeder-live',
+'cae-preview',
+'studio',
+'cae-live'
+ ]
+-%>
+<%- host = node['blueprint']['hostname'] %>
+<%- services.each do |service| -%>
+<%- port_prefix = node['blueprint']['tomcat'][service]['port_prefix'] %>
+  <server>
+    <jmx_service_url>service:jmx:rmi://<%= host %>:<%= port_prefix %>98/jndi/rmi://<%= host %>:<%= port_prefix %>99/jmxrmi</jmx_service_url>
+    <server_name><%= service %></server_name>
+    <server_path><%= host %></server_path>
+  </server>
+<%- end -%>
+  <server>
+    <jmx_service_url>service:jmx:rmi:///jndi/rmi://<%= host %>:40099/jmxrmi</jmx_service_url>
+    <server_name>Solr</server_name>
+    <server_path><%= host %></server_path>
+  </server>
+</server_model>

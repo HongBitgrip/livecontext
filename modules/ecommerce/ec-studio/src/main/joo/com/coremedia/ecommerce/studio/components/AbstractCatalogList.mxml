@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GridPanel xmlns:fx="http://ns.adobe.com/mxml/2009"
+           xmlns:exml="http://www.jangaroo.net/exml/0.8"
+           xmlns="exml:ext.config"
+           xmlns:ui="exml:com.coremedia.ui.config"
+           xmlns:editor="exml:com.coremedia.cms.editor.sdk.config">
+  <fx:Script><![CDATA[
+    import com.coremedia.ecommerce.studio.dragdrop.CatalogDragDropVisualFeedback;
+    import com.coremedia.ui.data.ValueExpression;
+    import com.coremedia.ui.skins.TableViewSkin;
+
+    public static const xtype:String = "com.coremedia.ecommerce.studio.config.abstractCatalogList";
+
+    private var config:AbstractCatalogList;
+
+    /**
+     * A value expression that specifies where to set the multiply selected items. This is mandatory.
+     */
+    [Bindable]
+    public var selectedItemsValueExpression:ValueExpression;
+
+    public native function AbstractCatalogList(config:AbstractCatalogList = null);
+    ]]></fx:Script>
+  <fx:Declarations>
+    <!---
+     The named drag drop group to which this grid belong to
+    -->
+    <fx:String id="ddGroup"/>
+
+  </fx:Declarations>
+
+  <plugins>
+    <ui:BindSelectionPlugin selectedValues="{config.selectedItemsValueExpression}"/>
+  </plugins>
+  <selModel>
+    <selection_RowModel mode="MULTI"/>
+  </selModel>
+  <view>
+    <GridView ui="{TableViewSkin.LIGHT.getSkin()}" stripeRows="true" trackOver="true" loadMask="true"
+              deferEmptyText="false">
+      <plugins>
+        <plugin_GridViewDragDrop copy="true"
+                                 enableDrop="false"
+                                 ddGroup="{config.ddGroup}">
+          <dragZone>
+            <editor:LinkListViewDragZone
+                    htmlFeedback="{CatalogDragDropVisualFeedback.getHtmlFeedback}"
+                    ddGroups="{['ContentLinkDD']}"
+            />
+          </dragZone>
+        </plugin_GridViewDragDrop>
+      </plugins>
+    </GridView>
+  </view>
+
+</GridPanel>

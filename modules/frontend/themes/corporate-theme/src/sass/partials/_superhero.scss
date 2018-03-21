@@ -1,0 +1,62 @@
+/*
+Superhero
+========================================================================================================================
+
+Contains styling definitions for all content types as cm-superhero.
+- cm-superhero
+*/
+
+.#{$prefix}superhero {
+  position: relative;
+  // fixed the glitch in the responsive image
+  height: 100%; height: 100vh;
+  width: 100%; width: 100vw;
+
+  &__dimmer {
+    @include dimmer($dimmer-opacity);
+  }
+
+  &__caption {
+    @include caption(3%);
+  }
+
+  &__cta,
+  &__text,
+  &__headline {
+    color: palette(white);
+    margin-top: 0;
+    margin-bottom: $padding-large-horizontal;
+  }
+
+  &__headline,
+  &__text {
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.3);
+  }
+
+  &__text {
+    font-size: font-format(h4, mobile);
+
+    @include breakpoint(sm-and-up) {
+      font-size: font-format(h4);
+    }
+  }
+
+  &__picture-box {
+    // fixed the glitch in the responsive image
+    // therefore use vh and vw and not %
+    height: 100%; height: 100vh;
+    width: 100%; width: 100vw;
+  }
+
+  &__picture {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    @include stretch-absolute();
+
+    // hide icon on superheroes
+    &.cm-image--missing {
+      background: $brand-primary none;
+    }
+  }
+}

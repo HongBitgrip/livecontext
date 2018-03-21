@@ -1,0 +1,30 @@
+/*
+Buttons
+========================================================================================================================
+
+Contains styling definitions for all content types as cm-button.
+- cm-button
+- cm-button--primary
+- cm-button--white
+*/
+
+.#{$prefix}button {
+  white-space: normal; //overwrite bootstraps nowrap for CTAs with long text
+  transition: all $transition-duration ease;
+  @include transparent-button(palette(grey, darker), palette(white));
+
+  //primary button with white hover
+  &--primary {
+    @include transparent-button($brand-primary, palette(white));
+  }
+
+  //white button with grey-darker hover
+  &--white {
+    @include transparent-button(palette(white), palette(grey, darker))
+  }
+
+  &--secondary {
+    border: none;
+    text-decoration: underline;
+  }
+}

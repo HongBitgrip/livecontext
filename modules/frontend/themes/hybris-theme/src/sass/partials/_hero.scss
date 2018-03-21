@@ -1,0 +1,64 @@
+.#{$cm-hero-prefix} {
+
+  &__picture-box {
+    @include aspect-ratio-box(3, 4);
+
+    @include breakpoint(xs, landscape) {
+      @include aspect-ratio-box(3, 1);
+    }
+
+    @include breakpoint(sm-and-up) {
+      @include aspect-ratio-box(16, 9);
+    }
+
+    @include breakpoint(md) {
+      @include aspect-ratio-box(5, 2);
+    }
+
+    @include breakpoint(lg) {
+      @include aspect-ratio-box(3, 1);
+    }
+  }
+
+  &__dimmer {
+    background: linear-gradient(to bottom, rgba(238, 238, 238, 0) 50%, rgba(51, 51, 51, 0.65) 100%);
+  }
+
+  &__text {
+    font-size: 1.8rem;
+    line-height: 1.4;
+    text-shadow: 1px 1px 1px #333;
+  }
+
+  &__headline {
+    text-transform: uppercase;
+    font-weight: bold;
+    line-height: 1;
+    background-color: transparent;
+    padding: 1rem 0;
+    text-shadow: 1px 1px 3px #333;
+
+    @include breakpoint(sm-and-up) {
+      font-size: 4rem;
+    }
+  }
+
+  &__info {
+    text-align: center;
+    width: 100%;
+
+    .cm-product-info__title {
+      display: none;
+    }
+
+    .cm-product-info__pricing {
+      text-align: center;
+
+      .cm-price {
+        color: $cm-hero-headline-color;
+        text-shadow: 1px 1px 3px #333;
+        font-size: 3rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:utils="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+  <import resource="classpath:/com/coremedia/cap/common/uapi-services.xml"/>
+  <import resource="classpath:/com/coremedia/rest/cap/cap-rest-service.xml"/>
+  <import resource="classpath:/com/coremedia/blueprint/base/pagegrid/bpbase-pagegrid-configuration.xml"/>
+
+  <bean id="pdpPlacementsStructFormatAdapterChannel" class="com.coremedia.blueprint.base.pagegrid.rest.PlacementsStructFormatAdapter">
+    <property name="connection" ref="connection"/>
+    <property name="contentType" value="CMChannel"/>
+    <property name="property" value="pdpPagegrid"/>
+    <property name="placementListToMapAdapter">
+      <bean parent="structListToMapAdapter">
+        <property name="structListPropertyName">
+          <utils:constant static-field="com.coremedia.blueprint.base.pagegrid.PageGridContentKeywords.PLACEMENTS_STRUCT_LIST_PROPERTY_NAME"/>
+        </property>
+        <property name="structMapPropertyPath">
+          <utils:constant static-field="com.coremedia.blueprint.base.pagegrid.PageGridContentKeywords.PLACEMENTS_STRUCT_PROPERTY_PATH"/>
+        </property>
+        <property name="linkPropertyName">
+          <utils:constant static-field="com.coremedia.blueprint.base.pagegrid.PageGridContentKeywords.SECTION_PROPERTY_NAME"/>
+        </property>
+      </bean>
+    </property>
+  </bean>
+
+  <bean id="pdpPlacementsStructFormatAdapterProduct" class="com.coremedia.blueprint.base.pagegrid.rest.PlacementsStructFormatAdapter">
+    <property name="connection" ref="connection"/>
+    <property name="contentType" value="CMExternalProduct"/>
+    <property name="property" value="pdpPagegrid"/>
+    <property name="placementListToMapAdapter">
+      <bean parent="structListToMapAdapter">
+        <property name="structListPropertyName">
+          <utils:constant static-field="com.coremedia.blueprint.base.pagegrid.PageGridContentKeywords.PLACEMENTS_STRUCT_LIST_PROPERTY_NAME"/>
+        </property>
+        <property name="structMapPropertyPath">
+          <utils:constant static-field="com.coremedia.blueprint.base.pagegrid.PageGridContentKeywords.PLACEMENTS_STRUCT_PROPERTY_PATH"/>
+        </property>
+        <property name="linkPropertyName">
+          <utils:constant static-field="com.coremedia.blueprint.base.pagegrid.PageGridContentKeywords.SECTION_PROPERTY_NAME"/>
+        </property>
+      </bean>
+    </property>
+  </bean>
+
+</beans>

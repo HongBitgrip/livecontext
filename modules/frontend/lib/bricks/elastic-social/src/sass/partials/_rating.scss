@@ -1,0 +1,126 @@
+//ratings
+.cm-ratings {
+  &-average {
+    &__header {
+      margin-bottom: 0.5rem;
+    }
+
+    &__text,
+    &__votes {
+      display: inline-block;
+      margin: 0 5px;
+      vertical-align: top;
+      line-height: 1;
+    }
+
+    &__rating {
+      display: inline-block;
+      position: relative;
+      height: 20px;
+      width: 100px;
+      margin-right: 5px;
+
+      @include breakpoint(sm) {
+        display: block;
+      }
+    }
+
+    &__stars--back,
+    &__stars--front {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: repeat-x top left url("../../img/star-red-inactive.png") transparent;
+    }
+
+    &__stars--front {
+      background-image: url("../../img/star-red-active.png");
+    }
+  }
+}
+
+//rating
+.cm-rating {
+  display: inline-block;
+  vertical-align: middle;
+
+  &-bar {
+    border: 1px solid $cm-rating-statistics-border-color;
+    background-color: $cm-rating-statistics-background-color;
+    box-shadow: inset 0 1px 2px $cm-rating-statistics-border-color;
+    text-align: left;
+    height: 19px;
+
+    &__filled {
+      height: 100%;
+      background-color: $cm-rating-statistics-color;
+    }
+  }
+
+  &-statistics {
+    display: table;
+    border: none;
+    max-width: 50%;
+    margin-bottom: 15px;
+
+    @include breakpoint(sm) {
+      width: 100%;
+    }
+  }
+
+  &-statistic {
+    display: table-row;
+
+    &__column {
+      display: table-cell;
+      vertical-align: middle;
+      white-space: nowrap;
+
+      &--rating-bar {
+        width: 100%;
+        padding: 0 10px;
+      }
+    }
+  }
+
+  &-indicator {
+    font-size: 0;
+    float: right;
+    vertical-align: middle;
+
+    &:before {
+      vertical-align: middle;
+      content: ""; /* has to be set */
+      display: block;
+      width: 20px;
+      height: 20px;
+      background-image: url("../../img/star-red-inactive.png");
+    }
+
+    &--active:before,
+    .cm-rating &--active ~ &:before {
+      content: ""; /* has to be set */
+      background-image: url("../../img/star-red-active.png");
+    }
+
+    .cm-field input[name="rating"]:checked ~ &:before,
+    .cm-field input[name="rating"] ~ &:hover:before,
+    .cm-field input[name="rating"] + &:hover ~ &:before {
+      content: ""; /* has to be set */
+      background-image: url("../../img/star-red-active.png");
+    }
+  }
+
+  &__votes {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 2px;
+    line-height: 1;
+  }
+
+  .cm-ratings-average__rating {
+    @include breakpoint(sm) {
+      display: inline-block;
+    }
+  }
+}

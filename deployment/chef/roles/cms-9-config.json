@@ -1,0 +1,14 @@
+{
+  "name": "cms-9-config",
+  "chef_type": "role",
+  "json_class": "Chef::Role",
+  "description": "The role for the CMS-9 config",
+  "env_run_lists": {
+    "kitchen": [
+      "recipe[blueprint-cms-9::test-data-config]"
+    ],
+    "development": [
+      "recipe[blueprint-cms-9::test-data-config]"
+    ]
+  }
+}

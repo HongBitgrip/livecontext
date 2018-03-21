@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMGallery folder="/Sites/Chef Corp./Germany/German/Assets/Videos/Restaurant Videos" name="Jacob's Recipe - A short documentary Gallery" xmlns:cmexport="http://www.coremedia.com/2012/cmexport" translationState="up-to-date">
+<locale>de-DE</locale>
+<master>
+<link href="../../../../../United%20States/English/Assets/Videos/Restaurant%20Videos/Jacob%27s%20Recipe%20-%20A%20short%20docume37591d11.xml" path="/Sites/Chef%20Corp%2E/United%20States/English/Assets/Videos/Restaurant%20Videos/Jacob%27s%20Recipe%20-%20A%20short%20documentary%20Gallery"/>
+</master>
+<viewtype>
+</viewtype>
+<linkedSettings>
+</linkedSettings>
+<resourceBundles2>
+</resourceBundles2>
+<segment></segment>
+<title>Jakobs Rezept - Ein kurzer Dokumentarfilm</title>
+<htmlTitle></htmlTitle>
+<keywords></keywords>
+<htmlDescription></htmlDescription>
+<subjectTaxonomy>
+</subjectTaxonomy>
+<locationTaxonomy>
+</locationTaxonomy>
+<contexts>
+</contexts>
+<teaserTitle>Jakobs Rezept</teaserTitle>
+<teaserText grammarName="coremedia-richtext-1.0"><div xmlns="http://www.coremedia.com/2003/richtext-1.0" xmlns:xlink="http://www.w3.org/1999/xlink"><p>Entedecken Sie die Galerie über Jacob Kenedy - ein junger, aber erfahrener Londoner Koch.</p></div></teaserText>
+<detailText grammarName="coremedia-richtext-1.0"><div xmlns="http://www.coremedia.com/2003/richtext-1.0" xmlns:xlink="http://www.w3.org/1999/xlink"><p>Entedecken Sie die Galerie über Jacob Kenedy - ein junger, aber erfahrener Londoner Koch. Im Jahr 2008 eröffnete er seinen Traum-Restaurant Bocca di Lupo mit seinem Geschäftspartner Victor Hugo.</p></div></detailText>
+<pictures>
+<link href="Jacob%27s%20Recipe%20-%20A%20short%20documentary%20P361d6aea.xml" path="/Sites/Chef%20Corp%2E/Germany/German/Assets/Videos/Restaurant%20Videos/Jacob%27s%20Recipe%20-%20A%20short%20documentary%20Pictures/Jacobs%20Recipe%2010%20Picture"/>
+</pictures>
+<related>
+</related>
+<items>
+<link href="Jacob%27s%20Recipe%20-%20A%20short%20documentary%20Pc350784c.xml" path="/Sites/Chef%20Corp%2E/Germany/German/Assets/Videos/Restaurant%20Videos/Jacob%27s%20Recipe%20-%20A%20short%20documentary%20Pictures/Jacobs%20Recipe%2001%20Picture"/>
+<link href="Jacob%27s%20Recipe%20-%20A%20short%20documentary%20P361d6aea.xml" path="/Sites/Chef%20Corp%2E/Germany/German/Assets/Videos/Restaurant%20Videos/Jacob%27s%20Recipe%20-%20A%20short%20documentary%20Pictures/Jacobs%20Recipe%2010%20Picture"/>
+<link href="Jacob%27s%20Recipe%20-%20A%20short%20documentary%20Pcb021dab.xml" path="/Sites/Chef%20Corp%2E/Germany/German/Assets/Videos/Restaurant%20Videos/Jacob%27s%20Recipe%20-%20A%20short%20documentary%20Pictures/Jacobs%20Recipe%2011%20Picture"/>
+<link href="Jacob%27s%20Recipe%20-%20A%20short%20documentary%20P5fe6d06c.xml" path="/Sites/Chef%20Corp%2E/Germany/German/Assets/Videos/Restaurant%20Videos/Jacob%27s%20Recipe%20-%20A%20short%20documentary%20Pictures/Jacobs%20Recipe%2012%20Picture"/>
+<link href="Jacob%27s%20Recipe%20-%20A%20short%20documentary%20Pf4cb832d.xml" path="/Sites/Chef%20Corp%2E/Germany/German/Assets/Videos/Restaurant%20Videos/Jacob%27s%20Recipe%20-%20A%20short%20documentary%20Pictures/Jacobs%20Recipe%2013%20Picture"/>
+<link href="Jacob%27s%20Recipe%20-%20A%20short%20documentary%20P1e94e8af.xml" path="/Sites/Chef%20Corp%2E/Germany/German/Assets/Videos/Restaurant%20Videos/Jacob%27s%20Recipe%20-%20A%20short%20documentary%20Pictures/Jacobs%20Recipe%2015%20Picture"/>
+<link href="Jacob%27s%20Recipe%20-%20A%20short%20documentary%20Pb3799b70.xml" path="/Sites/Chef%20Corp%2E/Germany/German/Assets/Videos/Restaurant%20Videos/Jacob%27s%20Recipe%20-%20A%20short%20documentary%20Pictures/Jacobs%20Recipe%2016%20Picture"/>
+<link href="Jacob%27s%20Recipe%20-%20A%20short%20documentary%20P485e4e31.xml" path="/Sites/Chef%20Corp%2E/Germany/German/Assets/Videos/Restaurant%20Videos/Jacob%27s%20Recipe%20-%20A%20short%20documentary%20Pictures/Jacobs%20Recipe%2017%20Picture"/>
+</items>
+</CMGallery>

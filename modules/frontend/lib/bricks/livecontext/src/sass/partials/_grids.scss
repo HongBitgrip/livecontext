@@ -1,0 +1,275 @@
+//styles
+.cm-collection-- {
+  &tiles- {
+
+    &50-50- {
+      &portrait {
+        .cm-teasable__picture-box {
+          @include aspect-ratio-box(3, 4);
+
+          .cm-teasable__picture-box__content {
+            @include stretch-absolute();
+          }
+        }
+      }
+
+      &landscape {
+        .cm-teasable__picture-box {
+          @include aspect-ratio-box(16, 9);
+
+          .cm-teasable__picture-box__content {
+            @include stretch-absolute();
+          }
+        }
+      }
+    }
+
+    &landscape {
+      .cm-teasable__picture-box {
+        @include aspect-ratio-box(4, 3);
+
+        .cm-teasable__picture-box__content {
+          @include stretch-absolute();
+        }
+      }
+    }
+
+    &portrait {
+      .cm-teasable__picture-box {
+        @include aspect-ratio-box(3, 4);
+
+        .cm-teasable__picture-box__content {
+          @include stretch-absolute();
+        }
+      }
+    }
+
+    &highlight {
+      @include breakpoint(sm-and-up) {
+        .col-sm-6:nth-child(1) {
+          width: percentage((8 / 12));
+          .cm-teasable__picture-box {
+            @include aspect-ratio-box(8, 3, $includeGutter: true);
+            .cm-teasable__picture-box__content {
+              @include stretch-absolute();
+            }
+          }
+        }
+
+        .col-sm-6:nth-child(2) {
+          width: percentage((4 / 12));
+        }
+      }
+    }
+
+    &left {
+      .col-sm-4 {
+        .cm-teasable__picture-box {
+          @include aspect-ratio-box(4, 3, $includeGutter: true);
+        }
+
+        &:first-child {
+          .cm-teasable__picture-box {
+            @include aspect-ratio-box(2, 3);
+          }
+
+          @include breakpoint(xs) {
+            .cm-teasable__picture-box {
+              @include aspect-ratio-box(1, 1);
+            }
+          }
+        }
+
+        @include breakpoint(sm-and-up) {
+          &:nth-child(2),
+          &:nth-child(3) {
+            padding-bottom: $cm-grid-gutter-width;
+          }
+        }
+      }
+    }
+
+    &right {
+      .col-sm-4 {
+        .cm-teasable__picture-box {
+          @include aspect-ratio-box(4, 3, $includeGutter: true);
+        }
+
+        &:nth-child(3) {
+          float: right;
+          .cm-teasable__picture-box {
+            @include aspect-ratio-box(2, 3);
+          }
+
+          @include breakpoint(xs) {
+            float: left;
+            .cm-teasable__picture-box {
+              @include aspect-ratio-box(1, 1);
+            }
+          }
+        }
+
+        @include breakpoint(sm-and-up) {
+          &:nth-child(1),
+          &:nth-child(2) {
+            padding-bottom: $cm-grid-gutter-width;
+          }
+        }
+      }
+    }
+
+    &center {
+      .col-sm-4 {
+        .cm-teasable__picture-box {
+          @include aspect-ratio-box(4, 3, $includeGutter: true);
+        }
+
+        &:nth-child(2) {
+          .cm-teasable__picture-box {
+            @include aspect-ratio-box(2, 3);
+          }
+
+          @include breakpoint(xs) {
+            .cm-teasable__picture-box {
+              @include aspect-ratio-box(1, 1);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &productlisting {
+    .cm-category-item .cm-category-item__image {
+      &.cm-teasable__picture-box {
+        @include aspect-ratio-box(20, 31);
+      }
+    }
+    .row.row-grid [class*="col-"] + [class*="col-"] {
+      margin-top: 0;
+    }
+
+    .row.row-grid [class*="col-"] + [class*="col-"] + [class*="col-"] {
+      margin-top: 10px;
+    }
+
+    @include breakpoint(lg) {
+      .row.row-grid [class*="col-lg-"] + [class*="col-lg-"] + [class*="col-lg-"] {
+        margin-top: 0;
+      }
+    }
+
+    @include breakpoint(md) {
+      .row.row-grid [class*="col-md-"] + [class*="col-md-"] + [class*="col-md-"] {
+        margin-top: 0;
+      }
+    }
+
+    @include breakpoint(sm-and-up) {
+      .row.row-grid [class*="col-sm-"] + [class*="col-sm-"] + [class*="col-sm-"] {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+.cm-row > div {
+  &:last-child {
+    padding-bottom: $cm-grid-gutter-width;
+  }
+  &.cm-placement-header {
+    padding-bottom: 0;
+  }
+}
+
+.cm-container {
+  padding-top: $cm-grid-gutter-width;
+  &:first-child {
+    padding-top: 0;
+  }
+}
+
+.row.row-grid {
+  padding-bottom: $cm-grid-gutter-width;
+  &:last-child {
+    padding-bottom: 0;
+  }
+  & [class*="col-"] + [class*="col-"] {
+    margin-top: $cm-grid-gutter-width;
+  }
+
+  @include breakpoint(lg) {
+    & [class*="col-lg-"] + [class*="col-lg-"] {
+      margin-top: 0;
+    }
+  }
+
+  @include breakpoint(md) {
+    & [class*="col-md-"] + [class*="col-md-"] {
+      margin-top: 0;
+    }
+  }
+
+  @include breakpoint(sm-and-up) {
+    & [class*="col-sm-"] + [class*="col-sm-"] {
+      margin-top: 0;
+    }
+  }
+}
+
+.cm-frame {
+  background-color: #a8a8a8;
+  padding: 8px;
+  @include breakpoint(md) {
+    padding: 10px;
+  }
+
+  .cm-frame {
+    background-color: #bfbfbf;
+  }
+
+  &__title {
+    color: #ffffff;
+    font-weight: normal;
+    margin: 0 0 8px;
+
+    @include breakpoint(md) {
+      margin-bottom: 10px;
+      font-size: 2rem;
+    }
+
+    @include breakpoint(sm) {
+      font-size: 1.46rem;
+    }
+
+    @include breakpoint(xs) {
+      font-size: 1.2rem;
+    }
+  }
+
+  & > .cm-teaser {
+    width: auto;
+
+    @include breakpoint(sm) {
+      /* adapt to 4:3 aspect ratio */
+      margin: 0 32px;
+    }
+  }
+
+  &--teaser {
+    padding: 8px;
+    @include breakpoint(md) {
+      padding: 10px;
+    }
+
+    & > :not(:last-child) {
+      @include breakpoint(md) {
+        margin-bottom: 10px;
+      }
+
+      @include breakpoint(xs) {
+        margin-bottom: 8px;
+      }
+    }
+  }
+}

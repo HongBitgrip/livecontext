@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Viewport xmlns:fx="http://ns.adobe.com/mxml/2009"
+          xmlns:exml="http://www.jangaroo.net/exml/0.8"
+          xmlns="exml:ext.config"
+          xmlns:alx="exml:com.coremedia.blueprint.studio.config.analytics">
+  <fx:Script><![CDATA[
+    public static const xtype:String = "com.coremedia.blueprint.studio.config.analytics.multipleAnalyticsUrlButtonsTestView";
+
+    private var config:MultipleAnalyticsUrlButtonsTestView;
+
+    public native function MultipleAnalyticsUrlButtonsTestView(config:MultipleAnalyticsUrlButtonsTestView = null);
+    ]]></fx:Script>
+
+  <items>
+    <alx:ContentProvidingTestContainer itemId="contentContainer">
+      <alx:items>
+        <alx:AnalyticsDeepLinkButtonContainer itemId="alxDeepLinkButtonContainer">
+          <alx:items>
+            <alx:OpenAnalyticsDeepLinkUrlButton serviceName="testService1"/>
+            <alx:OpenAnalyticsDeepLinkUrlButton serviceName="testService2"/>
+            <alx:OpenAnalyticsDeepLinkUrlButton serviceName="testService3"/>
+          </alx:items>
+        </alx:AnalyticsDeepLinkButtonContainer>
+      </alx:items>
+    </alx:ContentProvidingTestContainer>
+  </items>
+
+</Viewport>

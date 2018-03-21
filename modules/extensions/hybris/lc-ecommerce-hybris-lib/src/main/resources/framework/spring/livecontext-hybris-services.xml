@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd">
+
+  <context:annotation-config/>
+  <context:component-scan base-package="com.coremedia.livecontext.ecommerce.hybris.configuration" />
+  <context:component-scan base-package="com.coremedia.livecontext.ecommerce.hybris.event" />
+
+  <import resource="livecontext-hybris-rest-connect.xml"/>
+  <import resource="livecontext-hybris-cache.xml"/>
+  <import resource="classpath:/com/coremedia/cap/multisite/multisite-services.xml"/>
+  <import resource="classpath:/com/coremedia/blueprint/base/links/bpbase-links-services.xml"/>
+  <import resource="classpath:/framework/spring/lc-ecommerce-services.xml"/>
+
+  <bean id="hybrisCommerceBeanFactory" class="com.coremedia.blueprint.base.livecontext.ecommerce.common.SpringCommerceBeanFactory">
+    <property name="storeContextProvider" ref="hybrisStoreContextProvider"/>
+  </bean>
+
+  <!-- === Providers === -->
+  <bean id="hybrisCommerceIdProvider"
+        class="com.coremedia.livecontext.ecommerce.hybris.common.HybrisCommerceIdProvider"/>
+
+  <bean id="hybrisStoreContextProvider" class="com.coremedia.livecontext.ecommerce.hybris.common.HybrisStoreContextProvider">
+    <property name="settingsService" ref="settingsService"/>
+    <property name="sitesService" ref="sitesService"/>
+    <property name="cache" ref="cache"/>
+    <property name="storeConfigResource" ref="hybrisStoreConfigResource"/>
+  </bean>
+
+  <bean id="hybrisUserContextProvider" class="com.coremedia.livecontext.ecommerce.hybris.user.UserContextProviderImpl"/>
+
+  <!-- === Services === -->
+  <bean id="hybrisAbstractCommerceService" abstract="true"
+        class="com.coremedia.livecontext.ecommerce.hybris.common.AbstractHybrisService">
+    <property name="commerceBeanFactory" ref="hybrisCommerceBeanFactory"/>
+    <property name="commerceCache" ref="hybrisCommerceCache"/>
+  </bean>
+
+  <bean id="hybrisCatalogService" parent="hybrisAbstractCommerceService"
+        class="com.coremedia.livecontext.ecommerce.hybris.catalog.CatalogServiceImpl">
+    <property name="catalogResource" ref="hybrisCatalogResource"/>
+    <property name="maxProductSearchResults" value="${livecontext.hybris.productSearch.maxResults}"/>
+  </bean>
+
+  <bean id="hybrisPriceService" parent="hybrisAbstractCommerceService"
+        class="com.coremedia.livecontext.ecommerce.hybris.pricing.PriceServiceImpl">
+    <property name="catalogResource" ref="hybrisCatalogResource"/>
+  </bean>
+
+  <bean id="hybrisSegmentService" parent="hybrisAbstractCommerceService"
+        class="com.coremedia.livecontext.ecommerce.hybris.p13n.SegmentServiceImpl">
+  </bean>
+
+  <bean id="hybrisInvalidationService" parent="hybrisAbstractCommerceService"
+        class="com.coremedia.livecontext.ecommerce.hybris.event.InvalidationServiceImpl">
+    <property name="invalidationResource" ref="hybrisInvalidationResource"/>
+    <property name="maxWaitInMilliseconds" value="${livecontext.hybris.cache.invalidation.maxWaitInMilliseconds}"/>
+    <property name="chunkSize" value="${livecontext.hybris.cache.invalidation.chunkSize}"/>
+  </bean>
+
+  <bean id="hybrisAssetUrlProvider" class="com.coremedia.livecontext.ecommerce.hybris.asset.AssetUrlProviderImpl">
+    <property name="commercePreviewUrl" value="https://${livecontext.apache.hybris.host}"/>
+    <property name="commerceProductionUrl" value=""/>
+    <property name="catalogPathPrefix" value=""/>
+    <property name="sitesService" ref="sitesService"/>
+    <property name="urlPrefixResolver" ref="ruleUrlPrefixResolver"/>
+  </bean>
+
+  <bean id="hybrisPreviewTokenResource"
+        class="com.coremedia.livecontext.ecommerce.hybris.rest.resources.PreviewTokenResource">
+    <property name="connector" ref="hybrisRestConnectorPreviewServices"/>
+  </bean>
+
+  <bean id="hybrisPreviewTokenService" parent="hybrisAbstractCommerceService"
+        class="com.coremedia.livecontext.ecommerce.hybris.preview.PreviewTokenService">
+  </bean>
+
+  <bean id="hybrisStorefrontConnector" class="com.coremedia.blueprint.base.livecontext.service.StoreFrontConnector">
+    <property name="connectionPoolSize" value="200"/>
+    <property name="connectionTimeout" value="10000"/>
+    <property name="socketTimeout" value="30000"/>
+  </bean>
+
+  <bean id="hybrisStoreFrontService" class="com.coremedia.blueprint.base.livecontext.service.StoreFrontService">
+    <property name="storeFrontConnector" ref="hybrisStorefrontConnector"/>
+  </bean>
+
+</beans>

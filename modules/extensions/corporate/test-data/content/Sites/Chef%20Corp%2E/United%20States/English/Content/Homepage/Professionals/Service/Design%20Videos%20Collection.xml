@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMCollection folder="/Sites/Chef Corp./United States/English/Content/Homepage/Professionals/Service" name="Design Videos Collection" xmlns:cmexport="http://www.coremedia.com/2012/cmexport">
+<locale>en-US</locale>
+<master>
+</master>
+<viewtype>
+<link href="../../../../Options/Viewtypes/CMChannel/hero.xml" path="/Sites/Chef%20Corp%2E/United%20States/English/Options/Viewtypes/CMChannel/hero"/>
+</viewtype>
+<linkedSettings>
+</linkedSettings>
+<resourceBundles2>
+</resourceBundles2>
+<segment></segment>
+<title></title>
+<htmlTitle></htmlTitle>
+<keywords></keywords>
+<htmlDescription></htmlDescription>
+<subjectTaxonomy>
+</subjectTaxonomy>
+<locationTaxonomy>
+</locationTaxonomy>
+<contexts>
+</contexts>
+<teaserTitle>Designed by Chef Corp.</teaserTitle>
+<pictures>
+</pictures>
+<related>
+</related>
+<items>
+<link href="../../../../Assets/Videos/Restaurant%20Videos/Sepia%20Restaurant%20Local%20HTML5%20Video.xml" path="/Sites/Chef%20Corp%2E/United%20States/English/Assets/Videos/Restaurant%20Videos/Sepia%20Restaurant%20Local%20HTML5%20Video"/>
+<link href="../../../../Assets/Videos/Restaurant%20Videos/Jacob%27s%20Recipe%20-%20A%20short%20docume7da39ddb.xml" path="/Sites/Chef%20Corp%2E/United%20States/English/Assets/Videos/Restaurant%20Videos/Jacob%27s%20Recipe%20-%20A%20short%20documentary%20Vimeo%20Video"/>
+</items>
+</CMCollection>

@@ -1,0 +1,72 @@
+.#{$cm-quickinfo-prefix} {
+  background-color: $brand-primary;
+  color: #000000;
+  @include breakpoint("sm-and-up") {
+    color: #FFFFFF;
+  }
+
+  &__title {
+    margin-top: 0;
+    font-size: 20px;
+  }
+
+  &__close {
+    width: 24px;
+    height: 24px;
+    background: url("../../img/close-dark.svg") no-repeat center center transparent;
+    @include breakpoint("sm-and-up") {
+      background: url("../../img/close.svg") no-repeat center center transparent;
+    }
+    & .icon-close {
+      display: none;
+    }
+  }
+
+  &__controls {
+    margin: auto;
+    margin-top: 26px;
+    //make sure centering works even if this is an anchor tag:
+    display: table;
+    padding: 10px 15px;
+    @include transparent-button($brand-primary, palette(white));
+    @include breakpoint("sm-and-up") {
+      @include transparent-button(palette(white), palette(grey, darker));
+    }
+  }
+
+  $_arrow-size: 20px;
+  @include breakpoint("sm-and-up") {
+    .content-container {
+      position: relative;
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: -1 * $_arrow-size;
+        margin: auto;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: $_arrow-size $_arrow-size $_arrow-size 0;
+        border-color: transparent $brand-primary transparent transparent;
+      }
+    }
+    &--no-image {
+      .content-container {
+        &:after {
+          content: none;
+        }
+      }
+    }
+  }
+
+  &--no-image {
+    .content-container {
+      @include breakpoint("xs") {
+        background-color: #FFFFFF;
+      }
+    }
+  }
+}

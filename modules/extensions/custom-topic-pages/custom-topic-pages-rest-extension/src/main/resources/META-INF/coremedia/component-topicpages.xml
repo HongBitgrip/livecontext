@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <import resource="classpath:com/coremedia/cap/common/uapi-services.xml"/>
+  <import resource="classpath:META-INF/coremedia/bpbase-studio-rest.xml"/>
+  <import resource="classpath:framework/spring/taxonomies.xml"/>
+
+
+  <bean id="topicpagesResource" class="com.coremedia.blueprint.studio.rest.TopicPagesResource" scope="prototype">
+    <property name="capConnection" ref="connection"/>
+    <property name="configurationService" ref="configurationService"/>
+    <property name="sitesService" ref="sitesService"/>
+    <property name="strategyResolver" ref="strategyResolver"/>
+    <property name="siteConfigPath" value="${studio.siteConfigurationPath}" />
+    <property name="globalConfigPath" value="${studio.globalConfigurationPath}" />
+    <property name="ignoredTaxonomies" value="Asset Download Portal" />
+  </bean>
+
+</beans>

@@ -1,0 +1,67 @@
+$am-text-color: $black !default;
+$am-text-size: 15px !default;
+$am-margin-large: 24px !default;
+$am-margin-medium: 12px !default;
+$am-margin-small: 10px !default;
+
+$am-notification-text-size: 18px !default;
+$am-notification-success-text-color: #3c763d !default;
+$am-notification-success-background-color: #dff0d8 !default;
+$am-notification-success-border-color: #d6e9c6 !default;
+$am-notification-info-text-color: #31708f !default;
+$am-notification-info-background-color: #d9edf7 !default;
+$am-notification-info-border-color: #bce8f1 !default;
+$am-notification-warning-text-color: #8a6d3b !default;
+$am-notification-warning-background-color: #fcf8e3 !default;
+$am-notification-warning-border-color: #faebcc !default;
+$am-notification-error-text-color: #a94442 !default;
+$am-notification-error-background-color: #f2dede !default;
+$am-notification-error-border-color: #ebccd1 !default;
+
+$am-page-number-border: 1px solid $gray !default;
+$am-page-number-text-color: $red !default;
+$am-page-number-text-color-hover: $white !default;
+$am-page-number-text-color-active: $white !default;
+$am-page-number-background-color: $white !default;
+$am-page-number-background-color-hover: $gray !default;
+$am-page-number-background-color-active: $red !default;
+
+$am-breadcrumb-item-link-color: $black !default;
+$am-breadcrumb-item-link-color-hover: $red !default;
+
+$am-button-background-color: $white !default;
+$am-button-border-color: $red !default;
+$am-button-border-width: 2px !default;
+$am-button-text-color: $red !default;
+$am-button-height-circle: 30px !default;
+$am-button-background-color-hover: $red !default;
+$am-button-text-color-hover: $white !default;
+$am-button-text-color-disabled: #cc8888 !default;
+$am-button-border-color-disabled: #cc8888 !default;
+
+$am-breakpoint-extra-small-device-min: 320px !default; // not used for media queries but for min-width of download-portal
+$am-breakpoint-extra-small-device-max: 479px !default;
+$am-breakpoint-small-device-min: $am-breakpoint-extra-small-device-max + 1px !default;
+$am-breakpoint-small-device-max: 599px !default;
+$am-breakpoint-medium-device-min: $am-breakpoint-small-device-max + 1px !default;
+$am-breakpoint-medium-device-max: 1023px !default;
+$am-breakpoint-large-device-min: $am-breakpoint-medium-device-max + 1px !default;
+
+$am-picture-box-badge-height-percentage: 20% !default;
+$am-picture-box-badge-icon-padding: 10% !default;
+$am-picture-box-empty-background-color: $gray !default;
+
+$am-subject-tag-background: $gray !default;
+$am-subject-tag-text-color: $white !default;
+
+$am-input-text-size: 17px !default;
+$am-input-height: 40px !default;
+$am-input-border-width: 1px !default;
+$am-input-border-color: $white !default;
+$am-input-border-color-focus: $red !default;
+
+$am-icon-button-background-color: $red !default;
+$am-icon-button-height: 40px !default;
+
+$am-search-border-color: $gray !default;
+$am-search-submit-width: 70px !default;

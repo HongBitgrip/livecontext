@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMPicture folder="/Sites/Chef Corp./Germany/German/Assets/Pictures/Employees" name="Employee 21132593518 - Bernd Schirmann" xmlns:cmexport="http://www.coremedia.com/2012/cmexport" translationState="up-to-date">
+<locale>de-DE</locale>
+<master>
+<link href="../../../../../United%20States/English/Assets/Pictures/Employees/Employee%2021132593518%20-%20Walter%20Pinkman.xml" path="/Sites/Chef%20Corp%2E/United%20States/English/Assets/Pictures/Employees/Employee%2021132593518%20-%20Walter%20Pinkman"/>
+</master>
+<viewtype>
+</viewtype>
+<localSettings>
+<Struct xmlns="http://www.coremedia.com/2008/struct" xmlns:xlink="http://www.w3.org/1999/xlink">
+<StructProperty Name="focusArea">
+<Struct>
+<StringProperty Name="x1">0.016286644951140065</StringProperty>
+<StringProperty Name="y1">0.019543973941368076</StringProperty>
+<StringProperty Name="x2">0.9837133550488599</StringProperty>
+<StringProperty Name="y2">0.990228013029316</StringProperty>
+</Struct>
+</StructProperty>
+<StructProperty Name="transforms">
+<Struct>
+<StringProperty Name="portrait_ratio1x1">b;a=0;c=1/crop;x=13;y=18;width=774;height=774</StringProperty>
+<StringProperty Name="landscape_ratio4x3">b;a=0;c=1/crop;x=13;y=115;width=774;height=581</StringProperty>
+<StringProperty Name="landscape_ratio16x9">b;a=0;c=1/crop;x=6;y=222;width=782;height=439</StringProperty>
+</Struct>
+</StructProperty>
+<StructProperty Name="relative">
+<Struct>
+<StringProperty Name="portrait_ratio1x1">position;x1=0.016286644951140065;y1=0.02280130293159609;x2=0.9837133550488599;y2=0.990228013029316</StringProperty>
+<StringProperty Name="landscape_ratio4x3">position;x1=0.016286644951140065;y1=0.14332247557003258;x2=0.9837133550488599;y2=0.8697068403908795</StringProperty>
+<StringProperty Name="landscape_ratio16x9">position;x1=0.007556675062972307;y1=0.2770780856423174;x2=0.9848866498740554;y2=0.8261964735516373</StringProperty>
+</Struct>
+</StructProperty>
+<StructProperty Name="isDefault">
+<Struct>
+<StringProperty Name="portrait_ratio1x1">true</StringProperty>
+<StringProperty Name="landscape_ratio4x3">true</StringProperty>
+<StringProperty Name="landscape_ratio16x9">false</StringProperty>
+</Struct>
+</StructProperty>
+<StructProperty Name="reflection">
+<Struct>
+<StringProperty Name="h">false</StringProperty>
+<StringProperty Name="v">false</StringProperty>
+</Struct>
+</StructProperty>
+<StructProperty Name="rotation">
+<Struct>
+<StringProperty Name="crude">0</StringProperty>
+<StringProperty Name="fine">0</StringProperty>
+</Struct>
+</StructProperty>
+<StructProperty Name="coloring">
+<Struct>
+<StringProperty Name="brightness">0</StringProperty>
+<StringProperty Name="contrast">1</StringProperty>
+</Struct>
+</StructProperty>
+</Struct>
+</localSettings>
+<linkedSettings>
+</linkedSettings>
+<resourceBundles2>
+</resourceBundles2>
+<segment></segment>
+<title>Bernd Schirmann</title>
+<htmlTitle></htmlTitle>
+<keywords></keywords>
+<htmlDescription></htmlDescription>
+<subjectTaxonomy>
+</subjectTaxonomy>
+<locationTaxonomy>
+</locationTaxonomy>
+<contexts>
+</contexts>
+<teaserTitle></teaserTitle>
+<pictures>
+</pictures>
+<related>
+</related>
+<alt>Porträt von Bernd Schirmann</alt>
+<copyright>Andrey_Popov/Shutterstock 211325935</copyright>
+<dataUrl></dataUrl>
+<width>800</width>
+<height>800</height>
+<data md5="6519edbed024deb6936cf91a63cda29c" size="474918" href="../../../../../../../__blob/6519edbed024deb6936cf91a63cda29c.blob" mimetype="image/jpeg"/>
+<asset>
+</asset>
+</CMPicture>

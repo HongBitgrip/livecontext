@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.coremedia.blueprint</groupId>
+    <artifactId>cae</artifactId>
+    <version>1-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>cae-live-webapp</artifactId>
+  <packaging>war</packaging>
+
+  <description>Configuration and templates for the CAE that only applies to the live CAE</description>
+
+  <properties>
+    <development-properties.dir>${project.basedir}/../../../workspace-configuration/development-properties/default</development-properties.dir>
+    <logging-properties.dir>${project.basedir}/../../../workspace-configuration/logging</logging-properties.dir>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>cae-live-blueprint-component</artifactId>
+      <version>${project.version}</version>
+      <scope>runtime</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <finalName>blueprint</finalName>
+    <plugins>
+      <!--
+         invoke "mvn tomcat7:run" for running this webapp on http://localhost:42180/blueprint/
+      -->
+      <plugin>
+        <groupId>org.apache.tomcat.maven</groupId>
+        <artifactId>tomcat7-maven-plugin</artifactId>
+        <configuration>
+          <path>/${project.build.finalName}</path>
+          <ajpPort>42109</ajpPort>
+          <port>42180</port>
+          <warSourceDirectory>${project.basedir}/src/main/webapp</warSourceDirectory>
+          <!-- enable Tomcat to reload resources (=templates) while running -->
+          <contextFile>${project.basedir}/src/main/servletengine/tomcat-context.xml</contextFile>
+          <systemProperties>
+            <coremedia.blueprint.project.directory>${project.basedir}/../../../</coremedia.blueprint.project.directory>
+            <propertieslocations>classpath:/cae-live.properties,classpath:/hybris.properties</propertieslocations>
+          </systemProperties>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

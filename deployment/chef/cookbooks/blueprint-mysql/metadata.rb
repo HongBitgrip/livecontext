@@ -1,0 +1,10 @@
+name 'blueprint-mysql'
+maintainer 'The Authors'
+maintainer_email 'you@example.com'
+license 'all_rights'
+description 'Installs/Configures blueprint-mysql'
+long_description 'Installs/Configures blueprint-mysql'
+version '1.0.0'
+
+depends 'mysql', '~> 8.3.1'
+depends 'blueprint-base'

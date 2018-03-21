@@ -1,0 +1,70 @@
+/*
+Footer
+========================================================================================================================
+
+Contains styling definitions for all content types as cm-footer.
+- cm-footer
+*/
+
+.#{$prefix}footer {
+  background: $brand-primary;
+  font-size: $font-size-base;
+  font-weight: bold;
+  overflow: hidden;
+
+  // links width 100% width, top-down
+  &__links {
+    list-style: none;
+    margin: 0;
+    padding: $padding-base-vertical;
+
+    a {
+      display: block;
+      text-align: center;
+      color: palette(white);
+      padding: $padding-base-vertical $padding-base-horizontal;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &:visited {
+        color: palette(grey, lighter);
+      }
+    }
+
+    @include breakpoint(md) {
+      padding: $padding-large-vertical $padding-large-horizontal;
+    }
+  }
+
+  &__more {
+    position: relative;
+    background: palette(grey, darker);
+    color: palette(white);
+    min-height: $logo-size-mobile;
+
+    @include breakpoint(sm-and-up) {
+      height: $logo-size
+    }
+  }
+
+  &__meta {
+    @include clearfix();
+    // calculated padding-top for centering text vertical base on the height.
+    padding: floor(($logo-size-mobile - (font-format(p, mobile-small) * $line-height-base)) / 2) $padding-base-horizontal 0 $padding-base-horizontal;
+    font-size: font-format(p, mobile-small);
+
+    @include breakpoint(sm-and-up) {
+      padding: floor(($logo-size - ($font-size-base * $line-height-base)) / 2) $padding-base-horizontal;
+    }
+  }
+
+  &__name {
+    margin-left: 15px;
+  }
+
+  &__copyright {
+    float: right;
+  }
+}

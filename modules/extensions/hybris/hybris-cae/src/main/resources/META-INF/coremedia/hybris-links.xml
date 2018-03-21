@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd">
+
+  <import resource="classpath:/framework/spring/lc-ecommerce-connection.xml"/>
+  <import resource="classpath:/framework/spring/livecontext-hybris-services.xml"/>
+  <import resource="classpath:/META-INF/coremedia/livecontext-handlers.xml"/>
+
+  <context:component-scan base-package="com.coremedia.livecontext.hybris.links"/>
+
+  <bean id="hybrisPreviewLinkScheme" class="com.coremedia.livecontext.hybris.links.HybrisPreviewLinkScheme">
+    <property name="previewStoreFrontUrl" value="${livecontext.hybris.storeFrontUrl}"/>
+    <property name="hybrisPreviewServiceUrl" value="${livecontext.hybris.previewServiceUrl}"/>
+    <property name="previewTokenService" ref="hybrisPreviewTokenService"/>
+    <property name="commerceLedLinkBuilderHelper" ref="commerceLedLinkBuilderHelper"/>
+  </bean>
+
+  <bean id="hybrisLiveLinkSchemes" class="com.coremedia.livecontext.hybris.links.HybrisLiveLinkSchemes"/>
+
+</beans>

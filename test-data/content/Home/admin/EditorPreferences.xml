@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<EditorPreferences folder="/Home/admin" name="EditorPreferences" xmlns:cmexport="http://www.coremedia.com/2012/cmexport">
+<data>
+<Struct xmlns="http://www.coremedia.com/2008/struct" xmlns:xlink="http://www.w3.org/1999/xlink">
+<StructProperty Name="collection">
+<Struct>
+<StringListProperty Name="savedSearches">
+<String>{"_main":{"searchText":"","contentType":"Document_","mode":"search","view":"list","folder":{"$Ref":"content/1"},"orderBy":"freshness desc","limit":50},"status":{"inProduction":true,"editedByMe":true,"editedByOthers":true,"notEdited":true,"approved":true,"published":true,"deleted":false},"lastEdited":{"lastEditedBy":"me"},"_name":"Last edited"}</String>
+<String>{"_main":{"searchText":"","contentType":"CMArticle","mode":"search","view":"list","folder":{"$Ref":"content/1"},"orderBy":"freshness desc","limit":50},"status":{"inProduction":true,"editedByMe":true,"editedByOthers":true,"notEdited":true,"approved":true,"published":true,"deleted":false},"lastEdited":{"lastEditedBy":"anyone"},"_name":"Articles"}</String>
+<String>{"_main":{"searchText":"","contentType":"CMPicture","mode":"search","view":"thumbnails","folder":{"$Ref":"content/1"},"orderBy":"freshness desc","limit":50},"status":{"inProduction":true,"editedByMe":true,"editedByOthers":true,"notEdited":true,"approved":true,"published":true,"deleted":false},"lastEdited":{"lastEditedBy":"anyone"},"_name":"Pictures"}</String>
+<String>{"_main":{"searchText":"","contentType":"CMChannel","mode":"search","view":"list","folder":{"$Ref":"content/1"},"orderBy":"freshness desc","limit":50},"status":{"inProduction":true,"editedByMe":true,"editedByOthers":true,"notEdited":true,"approved":true,"published":true,"deleted":false},"lastEdited":{"lastEditedBy":"anyone"},"_name":"Pages"}</String>
+</StringListProperty>
+</Struct>
+</StructProperty>
+<StructProperty Name="workarea">
+<Struct>
+<IntProperty Name="activeTabIndex">0</IntProperty>
+</Struct>
+</StructProperty>
+<BooleanProperty Name="showAllTabsInForm">true</BooleanProperty>
+</Struct>
+</data>
+</EditorPreferences>

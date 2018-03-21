@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local:AssetSearchListContainerBase
+        xmlns:fx="http://ns.adobe.com/mxml/2009"
+        xmlns:local="com.coremedia.blueprint.assets.studio.repository.*"
+        xmlns:exml="http://www.jangaroo.net/exml/0.8"
+        xmlns="exml:ext.config"
+        xmlns:editor="exml:com.coremedia.cms.editor.sdk.config"
+        itemId="{ITEM_ID}"
+        activeItemValueExpression="{getActiveViewExpression()}">
+  <fx:Script><![CDATA[
+    import com.coremedia.blueprint.assets.studio.AssetCollectionViewExtension;
+    import com.coremedia.cms.editor.sdk.collectionview.CollectionView;
+    import com.coremedia.cms.editor.sdk.collectionview.CollectionViewConstants;
+    import com.coremedia.cms.editor.sdk.context.ComponentContextManager;
+    import com.coremedia.ui.data.ValueExpression;
+
+    public static const xtype:String = "com.coremedia.blueprint.assets.studio.config.assetSearchListContainer";
+
+    public static const ITEM_ID:String = "assetSearchListContainer";
+
+    private var config:AssetSearchListContainer;
+    private var selectedItemsValueExpression:ValueExpression;
+
+    // called by generated constructor code
+    private function __initialize__(config:AssetSearchListContainer):void {
+      selectedItemsValueExpression = ComponentContextManager.getInstance().getContextExpression(this, CollectionView.SELECTED_SEARCH_ITEMS_VARIABLE_NAME);
+    }
+
+    public native function AssetSearchListContainer(config:AssetSearchListContainer = null);
+    ]]></fx:Script>
+
+  <local:items>
+    <editor:SearchList instanceName="{AssetCollectionViewExtension.INSTANCE_NAME}"
+                       itemId="{CollectionViewConstants.LIST_VIEW}"
+                       selectedItemsValueExpression="{selectedItemsValueExpression}"/>
+    <editor:SearchThumbnails itemId="{CollectionViewConstants.THUMBNAILS_VIEW}"/>
+  </local:items>
+
+</local:AssetSearchListContainerBase>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMFolderProperties folder="/Sites/Chef Corp./Germany/German/Content/Site-Wide/Footer" name="_folderProperties" xmlns:cmexport="http://www.coremedia.com/2012/cmexport" translationState="up-to-date">
+<locale>de-DE</locale>
+<master>
+<link href="../../../../../United%20States/English/Content/Site-Wide/Footer/_folderProperties.xml" path="/Sites/Chef%20Corp%2E/United%20States/English/Content/Site-Wide/Footer/_folderProperties"/>
+</master>
+<contexts>
+<link href="Corporate%20Information%20Page.xml" path="/Sites/Chef%20Corp%2E/Germany/German/Content/Site-Wide/Footer/Corporate%20Information%20Page"/>
+</contexts>
+</CMFolderProperties>

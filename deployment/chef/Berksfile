@@ -1,0 +1,10 @@
+source 'https://supermarket.chef.io'
+
+cwd = File.dirname(__FILE__)
+Dir.glob('*cookbooks').each do |dir|
+  Dir.chdir(File.join(cwd, dir))
+  Dir.glob('*').each do |cookbook_name|
+    cookbook cookbook_name, :path => "#{dir}/#{cookbook_name}" unless cookbook_name == 'chefignore'
+  end
+  Dir.chdir(cwd)
+end

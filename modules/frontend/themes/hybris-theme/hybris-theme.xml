@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<themeDefinition modelVersion="1">
+
+  <name>hybris</name>
+  <description>The Hybris Theme provides a modern, appealing, highly visual theme. It demonstrates the capability
+    to build localizable, multi-national, experience-driven e-Commerce websites. Integration with SAP Hybris Commerce
+    ships out of the box.
+
+    Based on a fully responsive, mobile-first design paradigm, it leverages the Bootstrap grid framework. It
+    scales from mobile via tablet to desktop viewport sizes and uses the CoreMedia Adaptive and Responsive Image
+    Framework to dynamically deliver the right image sizes in the right aspect ratios and crops for each viewport.
+
+    This theme integrates the fragment-based approach seamless into the SAP Hybris Apparel example.
+  </description>
+  <thumbnail>img/theme-preview.jpg</thumbnail>
+
+  <javaScripts>
+    <javaScript disableCompress="true">js/hybris.js</javaScript>
+  </javaScripts>
+
+  <styleSheets>
+    <css disableCompress="true">css/hybris.css</css>
+  </styleSheets>
+
+  <templateSets>
+    <templateSet>templates/hybris-templates.jar</templateSet>
+    <templateSet>templates/bricks-templates.jar</templateSet>
+  </templateSets>
+
+  <resourceBundles>
+    <resourceBundle>l10n/Bricks_en.properties</resourceBundle>
+  </resourceBundles>
+
+</themeDefinition>

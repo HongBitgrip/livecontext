@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <import resource="classpath:/framework/spring/livecontext-cache.xml"/>
+
+  <bean id="hybrisCommerceCache" class="com.coremedia.blueprint.base.livecontext.ecommerce.common.CommerceCache">
+    <property name="cache" ref="cache"/>
+    <!--<property name="enabled" value="false"/>-->
+    <property name="cacheTimesInSeconds">
+      <!--
+        Configure the cache time until invalidation in seconds for each catalog related CacheKey "type"
+      -->
+      <map>
+        <entry key="Product" value="${livecontext.ecommerce.cache.product.time}"/>
+        <entry key="Category" value="${livecontext.ecommerce.cache.category.time}"/>
+      </map>
+    </property>
+    <property name="capacities">
+      <!--
+        Configure the cache capacity for each catalog related CacheKey "type"
+        If the capacity is not set, the item will not be cached (!)
+      -->
+      <map>
+        <entry key="Product" value="${livecontext.ecommerce.cache.product.capacity}"/>
+        <entry key="Category" value="${livecontext.ecommerce.cache.category.capacity}"/>
+      </map>
+    </property>
+  </bean>
+
+</beans>

@@ -1,0 +1,20 @@
+{
+  "name": "@coremedia/js-logger",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "jquery": "3.2.1",
+    "console-polyfill": "0.3.0",
+    "@coremedia/js-utils": "^1.0.0"
+  },
+  "devDependencies": {
+    "babel-preset-env": "1.6.0",
+    "jest": "22.0.4",
+    "jsdoc-to-markdown": "3.0.0"
+  },
+  "scripts": {
+    "apidoc": "jsdoc2md src/*.js > API.md",
+    "test": "jest"
+  },
+  "main": "src/index.js"
+}

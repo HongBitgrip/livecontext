@@ -1,0 +1,51 @@
+// reviews
+.cm-reviews {
+  padding: 0 10px;
+
+  @include breakpoint(md) {
+    padding: 0;
+  }
+
+  .cm-toolbar .cm-button {
+    font-size: 18px;
+    padding: 10px 15px;
+  }
+}
+
+// forms
+.cm-form {
+
+  &__link, .checkbox label a {
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &--userdetails .form-group .help-block{
+    margin: 0 0 5px 10px;
+  }
+
+  &--registration input[type="file"] {
+    margin: 5px 0;
+  }
+
+}
+
+// registration/login
+
+.cm-user {
+  &-chooser {
+    &__profileimage {
+      border-radius: 50%;
+      height: 52px;
+      vertical-align: top;
+      margin: 4px 6px 0 0;
+
+      @include breakpoint(xs) {
+        display: none;
+      }
+    }
+  }
+}

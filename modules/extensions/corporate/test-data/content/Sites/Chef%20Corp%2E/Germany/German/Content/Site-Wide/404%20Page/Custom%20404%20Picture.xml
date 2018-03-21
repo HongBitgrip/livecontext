@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMPicture folder="/Sites/Chef Corp./Germany/German/Content/Site-Wide/404 Page" name="Custom 404 Picture" xmlns:cmexport="http://www.coremedia.com/2012/cmexport" translationState="up-to-date">
+<locale>de-DE</locale>
+<master>
+<link href="../../../../../United%20States/English/Content/Site-Wide/404%20Page/Custom%20404%20Picture.xml" path="/Sites/Chef%20Corp%2E/United%20States/English/Content/Site-Wide/404%20Page/Custom%20404%20Picture"/>
+</master>
+<viewtype>
+</viewtype>
+<localSettings>
+<Struct xmlns="http://www.coremedia.com/2008/struct" xmlns:xlink="http://www.w3.org/1999/xlink">
+<StructProperty Name="focusArea">
+<Struct>
+<StringProperty Name="x1">0</StringProperty>
+<StringProperty Name="y1">0</StringProperty>
+<StringProperty Name="x2">1</StringProperty>
+<StringProperty Name="y2">1</StringProperty>
+</Struct>
+</StructProperty>
+<StructProperty Name="transforms">
+<Struct>
+<StringProperty Name="portrait_ratio1x1">b;a=0;c=1/crop;x=725;y=1539;width=1557;height=1557</StringProperty>
+<StringProperty Name="landscape_ratio4x3">b;a=0;c=1/crop;x=611;y=1725;width=1826;height=1371</StringProperty>
+<StringProperty Name="landscape_ratio16x9">b;a=0;c=1/crop;x=287;y=1695;width=2491;height=1401</StringProperty>
+</Struct>
+</StructProperty>
+<StructProperty Name="relative">
+<Struct>
+<StringProperty Name="portrait_ratio1x1">position;x1=0.23404255319148937;y1=0.49709864603481624;x2=0.7369439071566731;y2=1</StringProperty>
+<StringProperty Name="landscape_ratio4x3">position;x1=0.19729206963249515;y1=0.5570599613152805;x2=0.7872340425531915;y2=1</StringProperty>
+<StringProperty Name="landscape_ratio16x9">position;x1=0.09284332688588008;y1=0.5473887814313346;x2=0.8974854932301741;y2=1</StringProperty>
+</Struct>
+</StructProperty>
+<StructProperty Name="isDefault">
+<Struct>
+<StringProperty Name="portrait_ratio1x1">false</StringProperty>
+<StringProperty Name="landscape_ratio4x3">false</StringProperty>
+<StringProperty Name="landscape_ratio16x9">false</StringProperty>
+</Struct>
+</StructProperty>
+<StructProperty Name="reflection">
+<Struct>
+<StringProperty Name="h">false</StringProperty>
+<StringProperty Name="v">false</StringProperty>
+</Struct>
+</StructProperty>
+<StructProperty Name="rotation">
+<Struct>
+<StringProperty Name="crude">0</StringProperty>
+<StringProperty Name="fine">0</StringProperty>
+</Struct>
+</StructProperty>
+<StructProperty Name="coloring">
+<Struct>
+<StringProperty Name="brightness">0</StringProperty>
+<StringProperty Name="contrast">1</StringProperty>
+</Struct>
+</StructProperty>
+</Struct>
+</localSettings>
+<linkedSettings>
+</linkedSettings>
+<resourceBundles2>
+</resourceBundles2>
+<segment></segment>
+<title>Sorry, nicht gefunden!</title>
+<htmlTitle></htmlTitle>
+<keywords></keywords>
+<htmlDescription></htmlDescription>
+<subjectTaxonomy>
+</subjectTaxonomy>
+<locationTaxonomy>
+</locationTaxonomy>
+<contexts>
+</contexts>
+<teaserTitle></teaserTitle>
+<pictures>
+</pictures>
+<related>
+</related>
+<alt>Bild eines niedlichen Welpen mit einem leeren Futternapf - Lebensmittel nicht gefunden ...</alt>
+<copyright></copyright>
+<dataUrl></dataUrl>
+<width>3096</width>
+<height>3096</height>
+<data md5="c7ab835de0869cb385c278a9651b266e" size="1135358" href="../../../../../../../__blob/c7ab835de0869cb385c278a9651b266e.blob" mimetype="image/jpeg"/>
+<asset>
+</asset>
+</CMPicture>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMTeaser folder="/Sites/Chef Corp./Germany/German/Content/Homepage/Professionals/Product Overview/Cooling and Storage" name="Chef Cold Store Page Superhero Teaser" xmlns:cmexport="http://www.coremedia.com/2012/cmexport" translationState="up-to-date">
+<locale>de-DE</locale>
+<master>
+<link href="../../../../../../../United%20States/English/Content/Homepage/Professionals/Product%20Overview/Cooling%20and%20Storage/Che35c051ee.xml" path="/Sites/Chef%20Corp%2E/United%20States/English/Content/Homepage/Professionals/Product%20Overview/Cooling%20and%20Storage/Chef%20Cold%20Store%20Page%20Superhero%20Teaser"/>
+</master>
+<viewtype>
+</viewtype>
+<localSettings>
+<Struct xmlns="http://www.coremedia.com/2008/struct" xmlns:xlink="http://www.w3.org/1999/xlink">
+<BooleanProperty Name="callToActionDisabled">true</BooleanProperty>
+<StringProperty Name="callToActionCustomText"/>
+</Struct>
+</localSettings>
+<linkedSettings>
+</linkedSettings>
+<resourceBundles2>
+</resourceBundles2>
+<segment></segment>
+<title></title>
+<htmlTitle></htmlTitle>
+<keywords></keywords>
+<htmlDescription></htmlDescription>
+<subjectTaxonomy>
+</subjectTaxonomy>
+<locationTaxonomy>
+</locationTaxonomy>
+<contexts>
+</contexts>
+<teaserTitle>Chef Corp. Kühllager</teaserTitle>
+<teaserText grammarName="coremedia-richtext-1.0"><div xmlns="http://www.coremedia.com/2003/richtext-1.0" xmlns:xlink="http://www.w3.org/1999/xlink"><p>Kälter gehts einfach nicht - da friert sogar der Eisbär und bleibt ganz frisch!</p></div></teaserText>
+<pictures>
+<link href="../../../../../Assets/Pictures/Products/Cooling%20and%20Storage/Polar%20Bear%20on%20Ice%20Picture.xml" path="/Sites/Chef%20Corp%2E/Germany/German/Assets/Pictures/Products/Cooling%20and%20Storage/Polar%20Bear%20on%20Ice%20Picture"/>
+</pictures>
+<related>
+</related>
+<target>
+</target>
+</CMTeaser>

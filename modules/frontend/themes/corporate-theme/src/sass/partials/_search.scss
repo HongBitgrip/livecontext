@@ -1,0 +1,147 @@
+/*
+Search
+========================================================================================================================
+
+Contains styling definitions for search including search field and resultpage.
+- cm-search
+- cm-search--form
+- cm-search--results
+*/
+
+.#{$prefix}search {
+
+  /* resultpage */
+  &--results {
+    padding: 0 $padding-base-vertical;
+  }
+
+  &__headline {
+    margin-top: 0;
+  }
+
+  &__item {
+    padding-bottom: $padding-large-vertical;
+    margin-bottom: $padding-large-vertical;
+    @include clearfix();
+    @include spacer($brand-primary);
+
+    @include breakpoint(sm-and-up) {
+      padding-bottom: 0;
+    }
+  }
+
+  &__picture-box {
+    display: none;
+
+    @include breakpoint(sm-and-up) {
+      display: block;
+      float: left;
+      width: percentage(1/4);
+      margin-right: $padding-base-horizontal;
+      @include aspect-ratio-box(4, 3);
+    }
+  }
+
+  &__picture {
+    @include stretch-absolute();
+  }
+
+  &__caption {
+    h3 {
+      color: $brand-primary;
+      margin: 0;
+      font-weight: 400;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    p {
+      margin: $padding-base-vertical 0 $padding-small-vertical 0;
+    }
+  }
+
+  /* search form */
+  &--form {
+    @include breakpoint(sm-and-up) {
+      margin-top: 2px;
+    }
+  }
+
+  &__input {
+    background: palette(white);
+    width: 99%;
+    margin: 0;
+    padding: 2px 30px 2px 0;
+    border: none;
+    border-bottom: 1px solid palette(grey);
+    border-radius: 1px;
+    color: palette(grey);
+
+    &:focus {
+      border-bottom: 2px solid palette(grey);
+
+      ~ .#{$prefix}search__button {
+        color: palette(grey);
+      }
+    }
+
+    @include breakpoint(sm-and-up) {
+      background: rgba(255, 255, 255, 0.5);
+      width: 115px;
+      padding: 2px 30px 2px $padding-base-vertical;
+      border-bottom: none;
+      transition: all $transition-duration ease(in-out-quad);
+
+      // input field is focused or navigation is openend, background will change to white with some transparency
+      .#{$prefix}header--open &,
+      &:focus,
+      &.focus {
+        width: $search-width;
+        background-color: rgba(255, 255, 255, 0.8);
+        border-bottom: 0;
+      }
+
+      &:focus {
+        background-color: #fff;
+      }
+
+      // if input field is focused and navigation is not openend, background will change to white
+      .#{$prefix}header--open &:focus {
+        background: palette(white);
+      }
+    }
+
+    @include breakpoint(sm) {
+      // input field is smaller for narrow tablet view, since login/registration links where added
+      .#{$prefix}header--open &,
+      &:focus,
+      &.focus {
+        width: $search-small-width;
+      }
+    }
+
+    &::placeholder {
+      font-style: italic;
+      color: palette(grey, light);
+      opacity: 1;
+    }
+  }
+
+  &__button {
+    position: relative;
+    left: -34px;
+    margin: 0 -30px 0 0;
+    width: 28px;
+    height: 28px;
+    background: none;
+    border: none;
+    padding: 0;
+    color: palette(grey, light);
+
+    & > i {
+      top: 2px;
+    }
+  }
+}

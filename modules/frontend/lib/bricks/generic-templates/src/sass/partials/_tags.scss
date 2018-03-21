@@ -1,0 +1,36 @@
+/*
+Tags
+========================================================================================================================
+
+Contains styling definitions for all content types as cm-tag.
+*/
+
+.#{$cm-tag-prefix} {
+  padding: 0 $cm-tag-padding-base-vertical;
+
+  @include breakpoint(md) {
+    padding: 0;
+  }
+
+  &__items {
+    display: inline;
+    list-style: none;
+    vertical-align: top;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    display: inline-block;
+    padding: $cm-tag-padding-small-vertical $cm-tag-padding-base-vertical;
+    background: $cm-tag-item-background-color;
+    margin: 0 $cm-tag-padding-small-vertical $cm-tag-padding-small-vertical $cm-tag-padding-small-vertical;
+    border-color: $cm-tag-item-border-color;
+    border-radius: 5px;
+    color: $cm-tag-item-color;
+
+    & > a {
+      color: $cm-tag-item-color;
+    }
+  }
+}

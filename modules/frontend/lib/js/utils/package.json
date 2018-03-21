@@ -1,0 +1,12 @@
+{
+  "name": "@coremedia/js-utils",
+  "version": "1.0.0",
+  "private": true,
+  "devDependencies": {
+    "jsdoc-to-markdown": "3.0.0"
+  },
+  "scripts": {
+    "apidoc": "jsdoc2md src/*.js > API.md"
+  },
+  "main": "src/index.js"
+}

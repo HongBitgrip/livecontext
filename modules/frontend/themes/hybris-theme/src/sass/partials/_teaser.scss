@@ -1,0 +1,105 @@
+/* default teaser */
+.#{$cm-teasable-prefix} {
+  padding: 0 0 2rem 0;
+
+  &__picture-box {
+    @include aspect-ratio-box(16, 9);
+  }
+
+  &__dimmer {
+    display: none;
+  }
+
+  &__caption {
+    position: relative;
+    top: 0;
+    transform: none;
+    padding: 0;
+    border-top: 1px solid #ccc;
+    margin: 1.5rem 0 0;
+  }
+
+  &__headline {
+    padding: 1rem 0 0.3rem 0;
+    color: $hybris-text;
+    font-size: 2rem;
+
+    & ~ .cm-product-info .cm-product-info__title {
+      display: none;
+    }
+  }
+
+  &__cta {
+    margin: $cm-teaser-margin-bottom 0;
+  }
+
+  .cm-product-info {
+    display: block;
+
+    &__title {
+      padding: 1rem 0 0.3rem 0;
+      .cm-heading4 {
+        font-size: 2rem;
+        color: $hybris-text;
+        text-align: center;
+      }
+    }
+
+    &__pricing {
+      display: block;
+      text-align: center;
+
+      .cm-price--teaser {
+        font-size: 2.4rem;
+        font-weight: 600;
+        padding: 0;
+        color: $hybris-price;
+      }
+    }
+  }
+}
+
+/* teaser in collections */
+.cm-collection {
+  &--tiles-portrait,
+  &--tiles-50-50-landscape,
+  &--tiles-50-50-portrait {
+
+    .#{$cm-teasable-prefix} {
+      &__caption {
+        position: absolute;
+        top: auto;
+        bottom: 2rem;
+        transform: none;
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 0;
+      }
+
+      &__headline {
+        margin: 0;
+        border-top: none;
+        padding: 1rem;
+        font-weight: 600;
+        line-height: 1;
+        text-transform: uppercase;
+
+        @include breakpoint(md) {
+          font-size: 2.4rem;
+        }
+
+        @include breakpoint(lg) {
+          font-size: 3.6rem;
+        }
+      }
+    }
+
+    .row-grid.row {
+      padding-bottom: 0;
+
+      [class*="col-"] + [class*="col-"] {
+        margin-top: 0;
+      }
+    }
+
+  }
+}

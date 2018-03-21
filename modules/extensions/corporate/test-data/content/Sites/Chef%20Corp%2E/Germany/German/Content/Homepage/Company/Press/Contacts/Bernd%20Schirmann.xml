@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMExternalLink folder="/Sites/Chef Corp./Germany/German/Content/Homepage/Company/Press/Contacts" name="Bernd Schirmann" xmlns:cmexport="http://www.coremedia.com/2012/cmexport" translationState="up-to-date">
+<locale>de-DE</locale>
+<master>
+<link href="../../../../../../../United%20States/English/Content/Homepage/Company/Press/Contacts/Walter%20Pinkman.xml" path="/Sites/Chef%20Corp%2E/United%20States/English/Content/Homepage/Company/Press/Contacts/Walter%20Pinkman"/>
+</master>
+<viewtype>
+</viewtype>
+<localSettings>
+<Struct xmlns="http://www.coremedia.com/2008/struct" xmlns:xlink="http://www.w3.org/1999/xlink">
+<BooleanProperty Name="callToActionDisabled">false</BooleanProperty>
+<StringProperty Name="callToActionCustomText">Send E-Mail</StringProperty>
+</Struct>
+</localSettings>
+<linkedSettings>
+</linkedSettings>
+<resourceBundles2>
+</resourceBundles2>
+<segment></segment>
+<title></title>
+<htmlTitle></htmlTitle>
+<keywords></keywords>
+<htmlDescription></htmlDescription>
+<subjectTaxonomy>
+</subjectTaxonomy>
+<locationTaxonomy>
+</locationTaxonomy>
+<contexts>
+</contexts>
+<teaserTitle>Bernd Schirmann</teaserTitle>
+<teaserText grammarName="coremedia-richtext-1.0"><div xmlns="http://www.coremedia.com/2003/richtext-1.0" xmlns:xlink="http://www.w3.org/1999/xlink"><p>Leiter Öffentlichkeitsarbeit</p><p>Tel. +49-40-324-5876-301</p></div></teaserText>
+<pictures>
+<link href="../../../../../Assets/Pictures/Employees/Employee%2021132593518%20-%20Bernd%20Schirmann.xml" path="/Sites/Chef%20Corp%2E/Germany/German/Assets/Pictures/Employees/Employee%2021132593518%20-%20Bernd%20Schirmann"/>
+</pictures>
+<related>
+</related>
+<url>mailto:bernd.schirmann@de.chef-corp.com</url>
+</CMExternalLink>

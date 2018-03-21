@@ -1,0 +1,205 @@
+/*
+Navigation
+=====================================================================================================================
+
+Contains styling definitions for all content types as cm-nav.
+- cm-nav
+- cm-megamenu
+- cm-menu 
+*/
+
+.#{$prefix}nav {
+  &-collapse {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border: 0;
+    background: $brand-primary;
+    z-index: 2; //below header (z-index 3), but above containers (z-index 1)
+
+    @include breakpoint(md) {
+      margin-bottom: 20px;
+    }
+
+    &__gradiant {
+      display: none;
+
+      @include breakpoint(md) {
+        display: block;
+        position: absolute;
+        bottom: -20px;
+        height: 20px;
+        width: 100%;
+        background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjQiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+        background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 100%);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.4)), color-stop(100%, rgba(0, 0, 0, 0)));
+        background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 100%);
+        background: -o-linear-gradient(top, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 100%);
+        background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 100%);
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#66000000', endColorstr='#00000000', GradientType=0);
+      }
+    }
+
+    &.in {
+      @include breakpoint(md) {
+        overflow-y: visible;
+      }
+      & .#{$prefix}megamenu__item {
+        transform: translateY(0px);
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.#{$prefix}megamenu {
+  margin: 0 auto;
+  padding: $logo-size + $search-height + (2*$padding-base-vertical) + $line-height-computed 0 0 0; /* height of header + search + header__items */
+  max-width: $screen-max;
+  text-align: center;
+  overflow-y: auto;
+  height: 100vh;
+
+  @include breakpoint(md) {
+    padding: $logo-size 0 0 0; /* only height of header */
+    overflow-y: inherit;
+    height: auto;
+  }
+
+  & .#{$prefix}megamenu__item {
+    display: inline-block;
+    vertical-align: top;
+    list-style: none;
+    position: relative;
+    padding: $padding-base-horizontal 0;
+    opacity: 0;
+    transform: translateY(-15px);
+    transition: opacity .2s ease(in-out-quad), transform .2s ease(in-out-quad);
+    @include flickeringFix();
+
+    @for $i from 0 through 10 {
+      $counter: $i + 1;
+      &:nth-child(#{$counter}) {
+        $time: 0.1 * $i;
+        transition-delay: #{$time}s;
+      }
+    }
+
+    &:last-child {
+      &:after {
+        display: none;
+      }
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      display: block;
+      margin: auto;
+      bottom: 0;
+      left: $padding-large-vertical;
+      right: $padding-large-vertical;
+      height: 1px;
+      background-color: palette(white);
+    }
+
+    @include breakpoint(md) {
+      padding: $padding-large-horizontal 0;
+
+      &:after {
+        display: none;
+      }
+    }
+  }
+
+  & .#{$prefix}megamenu__title {
+    display: block;
+    font-size: font-format(h2, mobile);
+    line-height: 1.3333;
+    padding: 0;
+    color: palette(white);
+    position: relative;
+
+    &:hover {
+      background-color: transparent;
+    }
+
+    @include breakpoint(sm-and-up) {
+      font-size: font-format(h2);
+    }
+
+    @include breakpoint(md) {
+      display: inline-block;
+
+      &:hover {
+        &:after {
+          opacity: 1;
+          width: 100%;
+        }
+      }
+
+      &:after {
+        content: '';
+        position: relative;
+        display: block;
+        margin: auto;
+        bottom: 0;
+        opacity: 0;
+        width: 0;
+        height: 1px;
+        background-color: palette(white);
+        transition: opacity $transition-duration ease(in-out-quad), width $transition-duration ease(in-out-quad);
+      }
+    }
+  }
+}
+
+.#{$prefix}menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  @include flickeringFix();
+
+  & .#{$prefix}menu__title {
+    display: block;
+    font-size: font-format(h3, mobile);
+    line-height: 1.3333;
+    padding: $padding-small-horizontal 0;
+    color: palette(white);
+    position: relative;
+
+    &:hover {
+      background-color: transparent;
+    }
+
+    @include breakpoint(sm-and-up) {
+      font-size: font-format(h3);
+    }
+
+    @include breakpoint(md) {
+      display: inline-block;
+
+      &:hover {
+        &:after {
+          opacity: 1;
+          width: 100%;
+        }
+      }
+
+      &:after {
+        content: '';
+        position: relative;
+        display: block;
+        margin: auto;
+        bottom: 0;
+        opacity: 0;
+        width: 0;
+        height: 1px;
+        background-color: palette(white);
+        transition: opacity $transition-duration ease(in-out-quad), width $transition-duration ease(in-out-quad);
+      }
+    }
+  }
+}

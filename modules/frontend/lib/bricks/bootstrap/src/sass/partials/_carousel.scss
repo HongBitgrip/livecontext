@@ -1,0 +1,18 @@
+.#{$cm-carousel-prefix} {
+  height: 100%;
+
+  &-inner {
+    height: 100%;
+
+    .item {
+      height: 100%;
+    }
+  }
+
+  &-control {
+    &.left,
+    &.right {
+      background-image: none;
+    }
+  }
+}

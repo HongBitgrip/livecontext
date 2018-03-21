@@ -1,0 +1,10 @@
+{
+  "name": "@coremedia/dependency-check",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "closest-package": "1.0.0",
+    "deepmerge": "1.5.1",
+    "node-sass": "4.7.2"
+  }
+}

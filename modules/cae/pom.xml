@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.coremedia.blueprint</groupId>
+    <artifactId>modules</artifactId>
+    <version>1-SNAPSHOT</version>
+  </parent>
+
+  <packaging>pom</packaging>
+  <artifactId>cae</artifactId>
+
+  <description>All modules related to CAE development</description>
+
+  <properties>
+    <workspace.configuration.dir>../../../workspace-configuration</workspace.configuration.dir>
+  </properties>
+
+  <modules>
+    <module>cae-base-lib</module>
+    <module>contentbeans</module>
+    <module>cae-base-component</module>
+    <module>cae-live-blueprint-component</module>
+    <module>cae-live-webapp</module>
+    <module>cae-preview-blueprint-component</module>
+    <module>cae-preview-webapp</module>
+    <module>cae-performance-test</module>
+    <module>cae-integration-test</module>
+  </modules>
+</project>

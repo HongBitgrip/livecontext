@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMViewtype folder="/Sites/Hybris Apparel/United Kingdom/English/Options/Viewtypes/CMExternalProduct" name="tiles-layout-50-50-landscape" xmlns:cmexport="http://www.coremedia.com/2012/cmexport">
+<locale>en-GB</locale>
+<master>
+</master>
+<description>Displays a collection in 50:50 tiles layout (landscape).</description>
+<layout>tiles-layout-50-50-landscape</layout>
+</CMViewtype>

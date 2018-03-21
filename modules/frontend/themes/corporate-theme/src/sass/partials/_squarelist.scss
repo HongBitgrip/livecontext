@@ -1,0 +1,67 @@
+/*
+Squarelist
+=====================================================================================================================
+
+Contains styling definitions for all content types as cm-squarelist.
+- cm-squarelist
+*/
+
+.#{$prefix}squarelist {
+  margin: 0;
+  padding: $padding-base-vertical $padding-base-horizontal;
+  text-align: center;
+
+  @include breakpoint(sm-and-up) {
+    padding: $padding-large-vertical $padding-large-vertical;
+  }
+
+  &__picture-box {
+    @include aspect-ratio-box(1, 1);
+  }
+
+  &__picture {
+    @include stretch-absolute();
+  }
+
+  &__headline {
+    font-size: font-format(h4, mobile);
+    text-align: center;
+    margin: 0;
+    padding: $padding-base-vertical 0 $padding-small-vertical 0;
+  }
+
+  a:hover {
+    .#{$prefix}squarelist__dimmer {
+      opacity: 0.33;
+    }
+
+    .#{$prefix}squarelist__headline {
+      text-decoration: underline;
+    }
+  }
+
+  &--dimmer {
+    .#{$prefix}squarelist__picture-box:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      background-color: palette(black);
+      transition: opacity $transition-duration ease(in-out-quad);
+    }
+
+    a:hover .#{$prefix}squarelist__picture-box:after {
+      opacity: 0.33;
+    }
+  }
+
+  &__play {
+    @include center-absolute;
+    margin-top: -1em; //  text at the bottom that is included in the calculation of top: 50%;
+
+  }
+
+}

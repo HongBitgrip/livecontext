@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- this file enables Tomcat to reload changed resources (= templates) from the given directories while running. -->
+<Context logEffectiveWebXml="false" sessionCookieName="CM_SESSIONID" useHttpOnly="false" reloadable="true">
+
+  <!--
+    value for Resources#extraResourcePaths MUST NOT contain any separating character other than a ","
+    and MUST be ended after the last character by a " directly !!!
+
+    this will work: extraResourcePaths="/=a,/=b"
+    this will NOT work: extraResourcePaths="/=a,/=b "
+    this will NOT work: extraResourcePaths="/=a, /=b"
+
+    Following modules are always enabled:
+
+    - Blueprint Frontend module including all bricks and themes
+      - Corporate Theme
+      - LiveContext Themes
+    - Elastic Social
+    - LiveContext Elastic Social
+    - Analytics
+    - Personalization
+    - Asset Management
+
+  -->
+  <Resources className="org.apache.naming.resources.VirtualDirContext"
+             extraResourcePaths="/=${project.basedir}/src/main/webapp,/=${project.basedir}/../cae-base-lib/src/main/resources,/=${project.basedir}/../cae-base-lib/src/main/resources/META-INF/resources,/=${project.basedir}/../../frontend/target/resources,/=${project.basedir}/../../extensions/corporate/corporate-cae/src/main/resources,/=${project.basedir}/../../extensions/ecommerce-ibm/lc-cae/src/main/resources,/=${project.basedir}/../../extensions/es/es-cae/src/main/resources,/=${project.basedir}/../../extensions/alx/alx-cae/src/main/resources/META-INF/resources,/=${project.basedir}/../../extensions/lc-es/lc-cae/src/main/resources,/=${project.basedir}/../../extensions/p13n/p13n-preview-cae/src/main/resources/META-INF/resources,/=${project.basedir}/../../extensions/lc-asset/lc-asset-cae-component/src/main/resources/META-INF/resources,/=${project.basedir}/../../extensions/am/am-cae/src/main/resources" />
+
+  <Valve className="org.apache.catalina.valves.RemoteIpValve" protocolHeader="x-forwarded-proto" />
+</Context>

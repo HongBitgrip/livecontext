@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.coremedia.blueprint</groupId>
+    <artifactId>modules</artifactId>
+    <version>1-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>search</artifactId>
+  <packaging>pom</packaging>
+
+  <modules>
+    <module>solr-config</module>
+    <module>caefeeder-live-webapp</module>
+    <module>caefeeder-preview-webapp</module>
+    <module>caefeeder-lib</module>
+    <module>caefeeder-blueprint-component</module>
+    <module>caefeeder-live-blueprint-component</module>
+    <module>caefeeder-preview-blueprint-component</module>
+    <module>content-feeder-blueprint-component</module>
+    <module>content-feeder-webapp</module>
+  </modules>
+</project>
+

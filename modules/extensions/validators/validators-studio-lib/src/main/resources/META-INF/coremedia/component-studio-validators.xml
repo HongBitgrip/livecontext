@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:customize="http://www.coremedia.com/2007/coremedia-spring-beans-customization"
+       xsi:schemaLocation="
+         http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans.xsd
+         http://www.coremedia.com/2007/coremedia-spring-beans-customization
+         http://www.coremedia.com/2007/coremedia-spring-beans-customization.xsd">
+
+  <import resource="classpath:com/coremedia/cap/common/uapi-services.xml"/>
+  <import resource="classpath:com/coremedia/rest/cap/cap-rest-service.xml"/>
+  <import resource="classpath:com/coremedia/mimetype/mimetype-service.xml"/>
+  <import resource="classpath:/com/coremedia/blueprint/base/multisite/bpbase-multisite-services.xml"/>
+  <import resource="classpath:/com/coremedia/blueprint/base/links/bpbase-links-services.xml"/>
+  <import resource="classpath:/com/coremedia/cap/transform/transform-services.xml"/>
+  <import resource="classpath:/com/coremedia/blueprint/base/pagegrid/impl/bpbase-pagegrid-services.xml"/>
+
+
+  <bean id="cmLocalizedValidator" parent="contentTypeValidator">
+    <property name="contentType" value="CMLocalized"/>
+    <property name="validatingSubtypes" value="true"/>
+    <property name="validators">
+      <list>
+        <bean class="com.coremedia.rest.cap.validators.LinkListMaxLengthValidator">
+          <property name="property" value="master"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+
+  <bean id="cmTeaserValidator" parent="contentTypeValidator">
+    <property name="contentType" value="CMTeaser"/>
+    <property name="validatingSubtypes" value="false"/>
+    <property name="validators">
+      <list>
+        <bean class="com.coremedia.rest.cap.validators.StructLinkListMaxLengthValidator">
+          <property name="property" value="targets"/>
+          <property name="listPropertyName" value="links"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+
+  <bean id="cmPictureValidator" parent="contentTypeValidator">
+    <property name="contentType" value="CMPicture"/>
+    <property name="validatingSubtypes" value="true"/>
+    <property name="validators">
+      <list>
+        <bean class="com.coremedia.rest.validators.NotEmptyValidator">
+          <property name="property" value="data"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+
+  <bean id="cmImageMapValidator" parent="contentTypeValidator">
+    <property name="contentType" value="CMImageMap"/>
+    <property name="validatingSubtypes" value="true"/>
+    <property name="validators">
+      <list>
+        <bean class="com.coremedia.rest.cap.validators.LinkListMaxLengthValidator">
+          <property name="property" value="target"/>
+        </bean>
+        <bean class="com.coremedia.rest.validators.NotEmptyValidator">
+          <property name="property" value="target"/>
+          <property name="severity" value="WARN"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+
+  <bean id="cmImageMapAreasValidator" class="com.coremedia.rest.cap.validators.ImageMapAreasValidator">
+    <property name="connection" ref="connection"/>
+    <property name="contentType" value="CMImageMap"/>
+    <property name="validatingSubtypes" value="true"/>
+    <property name="imagePropertyPath" value="pictures.data"/>
+    <property name="structProperty" value="localSettings"/>
+  </bean>
+
+  <bean id="cmImageMapOverlayConfigurationValidator"
+        class="com.coremedia.rest.cap.validators.ImageMapOverlayConfigurationValidator">
+    <property name="connection" ref="connection"/>
+    <property name="contentType" value="CMImageMap"/>
+    <property name="validatingSubtypes" value="true"/>
+    <property name="structProperty" value="localSettings"/>
+  </bean>
+
+  <bean id="cmLinkListValidator" class="com.coremedia.blueprint.base.rest.validators.SelfReferringLinkListValidator">
+    <property name="connection" ref="connection"/>
+    <property name="contentType" value="CMLinkable"/>
+    <property name="validatingSubtypes" value="true"/>
+  </bean>
+
+  <bean id="cmStructLinkListValidator" class="com.coremedia.rest.cap.validators.SelfReferringStructLinkListValidator">
+    <property name="connection" ref="connection"/>
+    <property name="contentType" value="CMLinkable"/>
+    <property name="validatingSubtypes" value="true"/>
+  </bean>
+
+  <bean id="cmQueryListIndexValidator" class="com.coremedia.rest.cap.validators.StructLinkListIndexValidator">
+    <property name="connection" ref="connection"/>
+    <property name="contentType" value="CMQueryList"/>
+    <property name="propertyName" value="extendedItems"/>
+    <property name="listPropertyName" value="links"/>
+    <property name="indexPropertyName" value="index"/>
+    <property name="maxLengthPropertyName" value="limit"/>
+  </bean>
+
+  <bean id="cmChannelValidator" parent="contentTypeValidator">
+    <property name="contentType" value="CMChannel"/>
+    <property name="validatingSubtypes" value="true"/>
+    <property name="validators">
+      <list>
+        <bean class="com.coremedia.rest.validators.NotEmptyValidator">
+          <property name="property" value="title"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+
+  <bean id="cmChannelSegmentValidator" class="com.coremedia.blueprint.base.rest.validators.ChannelSegmentValidator">
+    <property name="connection" ref="connection"/>
+    <property name="contentType" value="CMChannel"/>
+    <property name="urlPathFormattingHelper" ref="urlPathFormattingHelper"/>
+  </bean>
+
+  <bean id="cmChannelRootSegmentValidator"
+        class="com.coremedia.blueprint.base.rest.validators.RootChannelSegmentValidator">
+    <constructor-arg index="0" name="urlPathFormattingHelper" ref="urlPathFormattingHelper"/>
+    <constructor-arg index="1" name="sitesService" ref="sitesService"/>
+    <property name="connection" ref="connection"/>
+    <property name="contentType" value="CMChannel"/>
+    <property name="validatingSubtypes" value="true"/>
+  </bean>
+
+  <bean id="cmArchiveValidator" class="com.coremedia.blueprint.base.rest.validators.ArchiveValidator">
+    <property name="connection" ref="connection"/>
+    <property name="contentType" value="CMTemplateSet"/>
+    <property name="propertyName" value="archive"/>
+  </bean>
+
+  <bean id="cmValidityValidator" class="com.coremedia.blueprint.base.rest.validators.ValidityValidator">
+    <property name="connection" ref="connection"/>
+    <property name="propertyValidFrom" value="validFrom"/>
+    <property name="propertyValidTo" value="validTo"/>
+    <property name="validatingSubtypes" value="true"/>
+  </bean>
+
+  <bean id="cmChannelNavigationValidator"
+        class="com.coremedia.blueprint.base.rest.validators.ChannelNavigationValidator">
+    <property name="connection" ref="connection"/>
+    <property name="contentType" value="CMChannel"/>
+  </bean>
+
+  <bean id="cmNotInNavigationValidator"
+        class="com.coremedia.blueprint.base.rest.validators.ChannelIsPartOfNavigationValidator">
+    <property name="connection" ref="connection"/>
+    <property name="contentType" value="CMChannel"/>
+  </bean>
+
+  <bean class="com.coremedia.blueprint.base.rest.validators.IsPartOfNavigationValidator">
+    <property name="connection" ref="connection"/>
+    <property name="validatingSubtypes" value="true"/>
+    <property name="contentType" value="CMLinkable"/>
+    <property name="contextStrategy" ref="contentContextStrategy" />
+  </bean>
+
+  <bean id="cmChannelReferrerValidator"
+        class="com.coremedia.blueprint.base.rest.validators.ChannelReferrerValidator">
+    <property name="connection" ref="connection"/>
+    <property name="contentType" value="CMChannel"/>
+  </bean>
+
+  <bean id="cmAbstractCodeValidator" class="com.coremedia.blueprint.base.rest.validators.AbstractCodeValidator">
+    <property name="connection" ref="connection"/>
+    <property name="contentType" value="CMAbstractCode"/>
+    <property name="validatingSubtypes" value="true"/>
+  </bean>
+  <!--
+     All Document Types with title property not empty validation
+  -->
+  <bean id="cmArticleValidator" parent="contentTypeValidator">
+    <property name="contentType" value="CMArticle"/>
+    <property name="validatingSubtypes" value="true"/>
+    <property name="validators">
+      <list>
+        <bean class="com.coremedia.rest.validators.NotEmptyValidator">
+          <property name="property" value="title"/>
+        </bean>
+        <bean class="com.coremedia.blueprint.base.rest.validators.NotEmptyMarkupValidator">
+          <property name="property" value="detailText"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+
+  <bean id="masterVersionUpdatedValidator" class="com.coremedia.rest.cap.validators.MasterVersionUpdatedValidator">
+    <property name="connection" ref="connection"/>
+    <property name="sitesService" ref="sitesService"/>
+    <property name="contentType" value="CMLocalized"/>
+    <property name="validatingSubtypes" value="true"/>
+  </bean>
+
+  <bean id="crossSiteLinkValidator" class="com.coremedia.rest.cap.validators.CrossSiteLinkValidator">
+    <property name="connection" ref="connection"/>
+    <property name="sitesService" ref="sitesService"/>
+    <property name="contentType" value="CMLocalized"/>
+    <property name="validatingSubtypes" value="true"/>
+    <property name="excludedProperties" value="placement"/>
+    <property name="defaultSeverity" value="WARN"/>
+    <property name="severityCrossLocale" value="WARN"/>
+    <property name="severityCrossSite" value="WARN"/>
+    <property name="severityCrossSiteLocale" value="WARN"/>
+  </bean>
+
+  <bean id="configurableDeadLinkValidator" class="com.coremedia.blueprint.base.pagegrid.rest.ConfigurableDeadLinkValidator">
+    <property name="connection" ref="connection"/>
+    <property name="excludedProperties" value="placement"/>
+  </bean>
+
+  <customize:replace id="blueprintConfigurableDeadLinkValidator" bean="deadLinkValidator" custom-ref="configurableDeadLinkValidator"/>
+
+  <bean id="placementsValidator" class="com.coremedia.blueprint.base.pagegrid.rest.PlacementsValidator">
+    <property name="connection" ref="connection"/>
+    <property name="sitesService" ref="sitesService"/>
+    <property name="pageGridService" ref="contentBackedPageGridService"/>
+    <property name="contentType" value="CMChannel"/>
+    <property name="validatingSubtypes" value="true"/>
+    <property name="severityCrossLocale" value="WARN"/>
+    <property name="severityCrossSite" value="WARN"/>
+    <property name="severityCrossSiteLocale" value="WARN"/>
+    <property name="severityDeadLink" value="ERROR"/>
+  </bean>
+
+  <bean id="cmAudioValidator" parent="contentTypeValidator">
+    <property name="contentType" value="CMAudio"/>
+    <property name="validatingSubtypes" value="true"/>
+    <property name="validators">
+      <list>
+        <bean class="com.coremedia.rest.validators.NotEmptyValidator">
+          <property name="property" value="title"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+
+  <bean id="cmDownloadValidator" parent="contentTypeValidator">
+    <property name="contentType" value="CMDownload"/>
+    <property name="validatingSubtypes" value="true"/>
+    <property name="validators">
+      <list>
+        <bean class="com.coremedia.rest.validators.NotEmptyValidator">
+          <property name="property" value="title"/>
+        </bean>
+        <bean class="com.coremedia.rest.validators.RegExpValidator">
+          <property name="code" value="FilenameValidator"/>
+          <property name="property" value="filename"/>
+          <property name="regExp" value="^[^\\\\/:*?&quot;&lt;&gt;|]*$"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+
+  <bean id="cmExternalLinkValidator" parent="contentTypeValidator">
+    <property name="contentType" value="CMExternalLink"/>
+    <property name="validatingSubtypes" value="true"/>
+    <property name="validators">
+      <list>
+        <bean class="com.coremedia.rest.validators.NotEmptyValidator">
+          <property name="property" value="url"/>
+        </bean>
+        <bean class="com.coremedia.rest.validators.UrlValidator">
+          <property name="property" value="url"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+
+  <bean id="cmGalleryValidator" parent="contentTypeValidator">
+    <property name="contentType" value="CMGallery"/>
+    <property name="validatingSubtypes" value="true"/>
+    <property name="validators">
+      <list>
+        <bean class="com.coremedia.rest.validators.NotEmptyValidator">
+          <property name="property" value="title"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+
+  <bean id="cmVideoValidator" parent="contentTypeValidator">
+    <property name="contentType" value="CMVideo"/>
+    <property name="validatingSubtypes" value="true"/>
+    <property name="validators">
+      <list>
+        <bean class="com.coremedia.rest.validators.NotEmptyValidator">
+          <property name="property" value="title"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+
+  <bean id="atLeastOneNotEmptyValidator" class="com.coremedia.blueprint.base.rest.validators.AtLeastOneNotEmptyValidator">
+    <property name="connection" ref="connection"/>
+    <property name="contentType" value="CMVideo"/>
+    <property name="validatingSubtypes" value="true"/>
+    <property name="showIssueForProperty" value="data"/>
+    <property name="exactlyOneMustBeSet" value="true"/>
+    <property name="properties">
+      <list>
+        <value>data</value>
+        <value>dataUrl</value>
+      </list>
+    </property>
+  </bean>
+
+  <bean id="cmSiteValidator" class="com.coremedia.rest.cap.validators.SiteNameValidator"
+        parent="contentTypeValidator">
+    <property name="contentType" value="CMSite"/>
+    <property name="validatingSubtypes" value="true"/>
+    <property name="siteModel" ref="siteModel"/>
+  </bean>
+
+  <bean id="cmSpinnerValidator" parent="contentTypeValidator">
+    <property name="contentType" value="CMSpinner"/>
+    <property name="validatingSubtypes" value="true"/>
+    <property name="validators">
+      <list>
+        <bean id="cmSpinnerMinTwoValidator" class="com.coremedia.rest.validators.ListMinLengthValidator">
+          <property name="property" value="sequence"/>
+          <property name="minLength" value="2"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+
+  <bean id="teasablePicturesValidator" class="com.coremedia.blueprint.base.rest.validators.TeasablePicturesValidator">
+    <property name="predicate" ref="teasablePicturesPredicate"/>
+    <property name="connection" ref="connection"/>
+    <property name="type" value="CMTeasable"/>
+  </bean>
+
+
+  <bean id="cmTimelineValidator" class="com.coremedia.blueprint.base.rest.validators.TimelineValidator">
+    <property name="connection" ref="connection"/>
+    <property name="contentType" value="CMVideo"/>
+    <property name="validatingSubtypes" value="false"/>
+  </bean>
+
+  <bean id="imageCropSizeValidator" class="com.coremedia.rest.cap.content.imagevariants.ImageCropSizeValidator">
+    <property name="connection" ref="connection"/>
+    <property name="contentType" value="CMPicture"/>
+    <property name="transformImageService" ref="transformImageService"/>
+    <property name="structProperty" value="localSettings"/>
+    <property name="dataProperty" value="data"/>
+    <property name="transformsStructProperty" value="transforms"/>
+    <property name="imageDimensionExtractor" ref="imageDimensionsExtractor"/>
+    <property name="focusAreaProperty" value="focusArea"/>
+  </bean>
+
+
+</beans>

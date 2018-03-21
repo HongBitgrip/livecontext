@@ -1,0 +1,17 @@
+{
+  "name": "preview-proxy",
+  "chef_type": "role",
+  "json_class": "Chef::Role",
+  "description": "The role for the preview proxy node",
+  "run_list": [
+    "role[base]",
+    "recipe[blueprint-proxy::preview]"
+  ],
+  "env_run_lists": {
+    "development": [
+      "role[base]",
+      "recipe[blueprint-proxy::preview]",
+      "recipe[blueprint-proxy::candy-preview-proxy]"
+    ]
+  }
+}

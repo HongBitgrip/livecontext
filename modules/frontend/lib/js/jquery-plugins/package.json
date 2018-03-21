@@ -1,0 +1,18 @@
+{
+  "name": "@coremedia/js-jquery-plugins",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "jquery": "3.2.1",
+    "@coremedia/js-jquery-utils": "^1.0.0",
+    "@coremedia/js-utils": "^1.0.0",
+    "@coremedia/js-responsive-images": "^1.0.0"
+  },
+  "devDependencies": {
+    "jsdoc-to-markdown": "3.0.0"
+  },
+  "scripts": {
+    "apidoc": "jsdoc2md src/*.js > API.md"
+  },
+  "main": "src/index.js"
+}

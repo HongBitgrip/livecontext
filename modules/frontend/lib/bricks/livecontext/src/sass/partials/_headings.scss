@@ -1,0 +1,136 @@
+/* headings - currently, we do not have a heading1 */
+.cm-heading2 {
+  font-weight: normal;
+  color: #ffffff;
+  @include breakpoint(xs) {
+    font-size: 1.2rem;
+    line-height: 1.46rem;
+  }
+
+  @include breakpoint(sm) {
+    font-size: 1.46rem;
+    line-height: 1.8rem;
+  }
+
+  @include breakpoint(md) {
+    font-size: 2rem;
+    line-height: 2.4rem;
+  }
+}
+
+.cm-heading2--boxed {
+  margin: 0;
+  padding: 0;
+  background-color: #80a3bf;
+  line-height: 130%;
+
+  @include breakpoint(xs) {
+    padding: 0.3rem 0.45rem;
+  }
+
+  @include breakpoint(sm) {
+    padding: 0.36rem 0.54em;
+  }
+
+  @include breakpoint(md) {
+    padding: 0.433333rem 0.93333rem 0.566667rem 0.93333rem;
+  }
+}
+
+.cm-heading3 {
+  font-weight: normal;
+  display: block;
+
+  @include breakpoint(xs) {
+    font-size: 1rem;
+  }
+
+  @include breakpoint(sm) {
+    font-size: 1.125rem;
+  }
+
+  @include breakpoint(md) {
+    font-size: 1.25rem;
+  }
+}
+
+.cm-heading3--boxed {
+  margin: 10px 0 0 0;
+  background-color: #d4d4d4;
+
+  @include breakpoint(xs) {
+    padding: 7px 19px;
+  }
+
+  @include breakpoint(sm) {
+    padding: 10px 25px;
+  }
+
+  @include breakpoint(md) {
+    padding: 7px 13px;
+  }
+}
+
+.cm-heading4 {
+  margin: 0;
+  font-weight: normal;
+  text-align: left;
+  color: #373737;
+
+  @include breakpoint(xs) {
+    font-size: 1rem;
+  }
+
+  @include breakpoint(sm) {
+    font-size: 1.2rem;
+  }
+
+  @include breakpoint(md) {
+    font-size: 1.7rem;
+    line-height: 2rem;
+  }
+}
+
+.cm-heading4--boxed {
+  background-color: #ffffff;
+
+  @include breakpoint(xs) {
+    padding: 0.3rem 0.40rem;
+    line-height: 1.2rem;
+  }
+
+  @include breakpoint(sm) {
+    padding: 0.36rem 0.50em;
+    line-height: 1.6rem;
+  }
+
+  @include breakpoint(md) {
+    padding: 0.5rem 0.7rem;
+  }
+}
+
+.cm-heading5 {
+  font-weight: normal;
+  text-align: left;
+  color: #373737;
+  @include breakpoint(sm) {
+    font-size: 1.3333rem;
+    line-height: 2rem;
+  }
+
+  @include breakpoint(md) {
+    font-size: 1.13333rem;
+    line-height: 2rem;
+  }
+}
+
+.cm-heading5--boxed {
+  background-color: #ffffff;
+  @include breakpoint(sm) {
+    padding: 0.3rem 0.4rem;
+  }
+
+  @include breakpoint(md) {
+    padding: 0.5rem 0.7rem;
+  }
+}

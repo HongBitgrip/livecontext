@@ -1,0 +1,38 @@
+/* image with details (description and copyright) */
+.cm-image-box {
+  &--details {
+    margin-bottom: 1rem;
+  }
+
+  &__copyright {
+    font-size: 0.8rem;
+    padding-right: 0.5rem;
+    line-height: 1.2rem;
+    color: #fff;
+    text-align: right;
+
+    &:before {
+      content: "(\00a9";
+      margin-right: 5px;
+    }
+
+    :after {
+      content: ")";
+    }
+  }
+
+  &__infos {
+    background-color: #80BF8a;
+  }
+
+  &__description {
+    padding: 0.5rem;
+    p {
+      margin: 0;
+    }
+  }
+}
+
+.cm-preview-item .cm-preview-item__container .cm-preview__image {
+  max-width: $cm-preview-width;
+}

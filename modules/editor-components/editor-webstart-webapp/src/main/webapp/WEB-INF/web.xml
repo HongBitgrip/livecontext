@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         version="2.5">
+
+   <display-name>
+        CoreMedia Webstart Editor
+    </display-name>
+    <description>
+        CoreMedia Webstart Editor
+    </description>
+    
+    <servlet>
+        <servlet-name>
+            JnlpDownloadServlet
+        </servlet-name>
+        <servlet-class>
+            jnlp.sample.servlet.JnlpDownloadServlet
+        </servlet-class>
+        
+        <init-param>
+            <param-name>
+                logLevel
+            </param-name>
+            <param-value>
+                DEBUG
+            </param-value>
+        </init-param>
+        
+        <init-param>
+            <param-name>
+                logPath
+            </param-name>
+            <param-value>
+                /logs/jnlpdownloadservlet.log
+            </param-value>
+        </init-param>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>
+            JnlpDownloadServlet
+        </servlet-name>
+        <url-pattern>/webstart/*</url-pattern>
+    </servlet-mapping>
+    
+    <mime-mapping>
+        <extension>
+            jnlp
+        </extension>
+        <mime-type>
+            application/x-java-jnlp-file
+        </mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>
+            jar
+        </extension>
+        <mime-type>
+            application/x-java-archive
+        </mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>
+            jardiff
+        </extension>
+        <mime-type>
+            application/x-java-archive-diff
+        </mime-type>
+    </mime-mapping>
+</web-app>

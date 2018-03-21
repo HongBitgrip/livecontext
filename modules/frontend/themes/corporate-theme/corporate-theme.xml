@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<themeDefinition modelVersion="1">
+
+  <name>corporate</name>
+  <description>The Corporate Theme provides a modern, appealing, highly visual theme. It demonstrates the capability to
+    build localizable, multi-national, non-commerce websites.
+
+    Based on a fully responsive, mobile-first design paradigm, it leverages the Twitter Bootstrap Grid
+    and Design framework for easy customization and adaptation by frontend developers. It scales from mobile via tablet
+    to desktop viewport sizes and uses the CoreMedia Adaptive and Responsive Image Framework to dynamically deliver the
+    right image sizes in the right aspect ratios and crops. The responsive navigation visualizes 3 levels, even though
+    the navigation structure can be arbitrary deeply nested. The floating header and the footer can be configured and
+    re-ordered in content settings.
+  </description>
+  <thumbnail>img/theme-preview.jpg</thumbnail>
+
+  <javaScripts>
+    <javaScript disableCompress="true">js/corporate.js</javaScript>
+  </javaScripts>
+
+  <styleSheets>
+    <css disableCompress="true">css/corporate.css</css>
+  </styleSheets>
+
+  <templateSets>
+    <templateSet>templates/corporate-templates.jar</templateSet>
+    <templateSet>templates/bricks-templates.jar</templateSet>
+  </templateSets>
+
+  <resourceBundles>
+    <resourceBundle>l10n/Corporate_en.properties</resourceBundle>
+    <resourceBundle>l10n/Bricks_en.properties</resourceBundle>
+  </resourceBundles>
+
+</themeDefinition>

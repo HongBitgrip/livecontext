@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMArticle folder="/Sites/Chef Corp./Germany/German/Content/Homepage/Company/Press/Events/Events Items" name="Chef Corp Security Audit Article" xmlns:cmexport="http://www.coremedia.com/2012/cmexport" translationState="up-to-date">
+<locale>de-DE</locale>
+<master>
+<link href="../../../../../../../../United%20States/English/Content/Homepage/Company/Press/Events/Events%20Items/Chef%20Corp%20Security%216ddee1e.xml" path="/Sites/Chef%20Corp%2E/United%20States/English/Content/Homepage/Company/Press/Events/Events%20Items/Chef%20Corp%20Security%20Audit%20Article"/>
+</master>
+<viewtype>
+</viewtype>
+<linkedSettings>
+</linkedSettings>
+<resourceBundles2>
+</resourceBundles2>
+<segment></segment>
+<title>Chef Corp. Sicherheits-Check</title>
+<htmlTitle></htmlTitle>
+<keywords></keywords>
+<htmlDescription></htmlDescription>
+<subjectTaxonomy>
+<link href="../../../../../../../../../../Settings/Taxonomies/Subject/Events.xml" path="/Settings/Taxonomies/Subject/Events"/>
+<link href="../../../../../../../../../../Settings/Taxonomies/Subject/Press.xml" path="/Settings/Taxonomies/Subject/Press"/>
+</subjectTaxonomy>
+<locationTaxonomy>
+</locationTaxonomy>
+<contexts>
+</contexts>
+<teaserTitle></teaserTitle>
+<teaserText grammarName="coremedia-richtext-1.0"><div xmlns="http://www.coremedia.com/2003/richtext-1.0" xmlns:xlink="http://www.w3.org/1999/xlink"><p>Ist Ihre Küche sicher genug? Finden Sie es am 23. Juni heraus.  </p></div></teaserText>
+<detailText grammarName="coremedia-richtext-1.0"><div xmlns="http://www.coremedia.com/2003/richtext-1.0" xmlns:xlink="http://www.w3.org/1999/xlink"><p class="align--left"><img alt="" class="float--left" xlink:actuate="onLoad" xlink:show="embed" xlink:type="simple" xlink:href="coremedia:///cap/resources/../../../../../../Assets/Pictures/Events/Man%20with%20tie%20stuck%20in%20meat%20grinder%20Picture.xml#data" cmexport:path="/Sites/Chef%20Corp%2E/Germany/German/Assets/Pictures/Events/Man%20with%20tie%20stuck%20in%20meat%20grinder%20Picture"/> Ist Ihre Küche sicher genug? Finden Sie heraus, am 23. Juni mit dem Chef Versorgung Security Audit Programm, die helfen, Restaurantbesitzer, einen sicheren Ort, um für ihre Küche und Restaurantpersonal arbeiten werden. Die Einführungsveranstaltung findet in unserem Forschungszentrum in Wilmington, Delaware zu nehmen. Wir werden unsere Gäste auf die grundlegenden Sicherheitsmaßnahmen, die jedes Restaurant ist vom Recht umsetzt einzuführen. Wir werden dann decken einige fortgeschrittene Strategien, die helfen können, Restaurants, um eine effiziente, während sie in Übereinstimmung mit den Regeln und Vorschriften bleiben.</p><p class="align--left">Chef Corp. bietet umfangreiche Sicherheitsüberprüfungen für alle Begleiter. Diese Prüfungen wurden in enger Zusammenarbeit mit der OSHA entwickelt worden und bereiten Restaurants für ihre lokalen Gesundheitsinspektors Kontrolle ohne das Risiko einer Bestrafung.</p><p class="align--left">Teilnehmer der Auftaktveranstaltung am 23. Juni erhalten 10% Rabatt auf alle Prüfungskurse!</p></div></detailText>
+<pictures>
+<link href="../../../../../../Assets/Pictures/Events/Security%20Audit%20Picture.xml" path="/Sites/Chef%20Corp%2E/Germany/German/Assets/Pictures/Events/Security%20Audit%20Picture"/>
+<link href="../../../../../../Assets/Pictures/Events/Man%20with%20tie%20stuck%20in%20meat%20grinder%20Picture.xml" path="/Sites/Chef%20Corp%2E/Germany/German/Assets/Pictures/Events/Man%20with%20tie%20stuck%20in%20meat%20grinder%20Picture"/>
+</pictures>
+<related>
+</related>
+</CMArticle>

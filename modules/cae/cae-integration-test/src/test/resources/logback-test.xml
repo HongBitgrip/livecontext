@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+
+  <!--
+  Available properties: (can be defined with -Dproperty=warn for example)
+
+  - test.log.level (default: debug)
+    Log level for classes in scope of this test.
+
+  - stdout.log.level (default: info)
+    Log level for stdout. Mind that this only applied as filter. So if you want to see any debug output printed to
+    stdout you have to set stdout.log.level to debug as well as root.log.level.
+
+  - spring.log.level (default: warn)
+    If you experience problems with the Spring wiring or Spring setup you might want to adjust this log level.
+
+  - root.log.level (default: warn)
+    Log level for all other classes.
+  -->
+
+  <statusListener class="ch.qos.logback.core.status.OnConsoleStatusListener" />
+
+  <!-- read configuration which can be overridden by system properties -->
+  <variable scope="system"
+            resource="logback-test.properties"/>
+
+  <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%d{yyyy-MM-dd HH:mm:ss} %-7([%level]) %logger - %message%n%xEx{5}</pattern>
+    </encoder>
+    <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+      <level>${config.stdout.log.level}</level>
+    </filter>
+  </appender>
+
+  <appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <file>${config.log.file}</file>
+    <encoder>
+      <pattern>${config.log.pattern}</pattern>
+    </encoder>
+    <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+      <maxIndex>10</maxIndex>
+      <FileNamePattern>${config.log.file}.%i</FileNamePattern>
+    </rollingPolicy>
+    <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+      <MaxFileSize>4MB</MaxFileSize>
+    </triggeringPolicy>
+  </appender>
+
+  <logger name="com.coremedia.blueprint.cae" additivity="false" level="${config.test.log.level}">
+    <appender-ref ref="stdout"/>
+    <appender-ref ref="file"/>
+  </logger>
+
+  <logger name="org.springframework" additivity="false" level="${config.spring.log.level}">
+    <appender-ref ref="stdout"/>
+    <appender-ref ref="file"/>
+  </logger>
+
+  <root level="${config.root.log.level}">
+    <appender-ref ref="file"/>
+  </root>
+
+</configuration>

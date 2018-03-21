@@ -1,0 +1,24 @@
+ProxyPassInterpolateEnv On
+ProxyPreserveHost On
+<%- if @params[:ssl] -%>
+  SSLProxyEngine On
+  RequestHeader set X-Forwarded-Proto "https"
+  SSLProxyEngine On
+  <%- if node['apache']['version'] == '2.4' && !@params[:ssl_proxy_verify] -%>
+    SSLProxyVerify none
+    SSLProxyCheckPeerCN off
+    SSLProxyCheckPeerName off
+  <%- end -%>
+  <%- protocol = 'https' -%>
+<%- else -%>
+  <%- protocol = 'http' -%>
+<%- end -%>
+
+SetEnvIf Remote_Addr "(.*)" devaddr=$1
+ProxyPass /login http://<%= @params[:rest_api_host] ||= node[:fqdn] %>:41080/studio/login
+ProxyPass /logout http://<%= @params[:rest_api_host] ||= node[:fqdn] %>:41080/studio/logout
+ProxyPass /api http://<%= @params[:rest_api_host] ||= node[:fqdn] %>:41080/studio/api
+ProxyPassReverse /api <%= protocol %>://<%= @params[:server_name] %>/studio/api
+ProxyPassReverseCookiePath  /studio  /
+ProxyPassReverseCookieDomain <%= @params[:rest_api_host] ||= node[:fqdn] %>:41080 ${devaddr} interpolate
+ProxyPass / http://${devaddr}:<%= @params[:sencha_port] ||= '1841' %>/ interpolate

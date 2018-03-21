@@ -1,0 +1,77 @@
+/* no extra padding for placements */
+.cm-placement {
+  padding: 0;
+
+  > .cm-container {
+    margin-bottom: 2rem;
+
+    @include breakpoint(sm-and-up) {
+      margin-bottom: 5rem;
+    }
+  }
+}
+
+/* container uses full width of screen, even inside a smaller box */
+.cm-container {
+  &--fullwidth {
+    margin: 0 -10px 2rem -10px;
+
+    @include breakpoint(sm-and-up) {
+      position: relative;
+      width: 100vw;
+      left: 50%;
+      margin: 0 0 5rem -50vw;
+    }
+  }
+
+  &--tiles-landscape {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid $hybris-text;
+  }
+
+  &__headline {
+    position: relative;
+    color: $hybris-text;
+    padding: 0;
+    margin-bottom: 3rem;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1;
+    text-transform: uppercase;
+    text-align: center;
+
+    span {
+      position: relative;
+      background-color: #fff;
+      padding: 0 2rem;
+      z-index: 1;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 1rem;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: $hybris-text;
+    }
+
+    @include breakpoint(md) {
+      font-size: 3.6rem;
+
+      &::before {
+        top: 1.9rem;
+      }
+    }
+  }
+
+  &--default {
+    padding: 0;
+    margin-bottom: 2rem;
+
+    @include breakpoint(sm-and-up) {
+      margin-bottom: 5rem;
+    }
+  }
+}

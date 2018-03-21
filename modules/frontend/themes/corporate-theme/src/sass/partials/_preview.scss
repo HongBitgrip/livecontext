@@ -1,0 +1,41 @@
+// override vh and vw units (on zooming)
+.#{$prefix}container--superhero {
+    max-height: 1024px;
+
+  .#{$prefix}superhero,
+  .#{$prefix}superhero__picture-box {
+    max-height: 100%;
+    max-width: 100%;
+  }
+
+  // avoids wrong height of image and distrubing resizing
+  .#{$prefix}carousel-inner .item {
+    height: 100%;
+  }
+}
+
+// overwrite vh units (on zooming)
+.#{$prefix}container--details {
+  min-height: 0;
+}
+
+// overwrite vh units (on zooming)
+.#{$prefix}gap {
+  max-height: 300px;
+}
+
+.#{$prefix}details--spinner {
+  .#{$prefix}spinner__canvas {
+    border: 1px solid #B7B7B7;
+    padding: 10px;
+    box-shadow: inset 0 0 10px #B7B7B7;
+    background-color: #fff;
+    max-width: 500px;
+    margin: 0;
+  }
+}
+
+// override for the position:relative from the placement highlighting
+.#{$prefix}header.#{$prefix}placement-highlighting-blue {
+  position: fixed;
+}

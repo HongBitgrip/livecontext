@@ -1,0 +1,193 @@
+/* PDP Assets carousel slideshow */
+.cm-slideshow--carousel,
+.cm-slideshow--carousel-chooser {
+  width: auto;
+}
+
+.cm-slideshow--carousel .cycle-slide {
+  width: 100%;
+}
+
+.cm-product-assets {
+  .cm-slideshow--carousel-chooser {
+    .cycle-slide {
+      padding: 2px;
+    }
+
+    .cycle-slide-active {
+      background-color: #CA4200;
+    }
+
+    .cm-teasable {
+      cursor: pointer;
+      &__picture-box {
+        @include aspect-ratio-box(1, 1);
+      }
+      a {
+        // disable any inner links or other functionality, otherwise the slideshow will not work
+        pointer-events: none;
+      }
+    }
+  }
+}
+
+.cm-product-assets {
+  &__picture-box {
+    @include aspect-ratio-box(1, 1);
+  }
+  &__picture, &__video {
+    @include stretch-absolute()
+  }
+
+  // fix CMS-10614
+  .cm-non-adaptive-content {
+    margin-top: 0 !important;
+    width: 100%;
+  }
+}
+
+.cm-lightbox {
+  &--portrait {
+    .cm-product-assets {
+      &__picture-box {
+        @include aspect-ratio-box(3, 4);
+      }
+    }
+  }
+
+  &--landscape {
+    .cm-product-assets {
+      &__picture-box {
+        @include aspect-ratio-box(4, 3);
+      }
+    }
+  }
+}
+
+/* --- collection --------------------------------------------------------------------------------------------------- */
+.cm-collection--slideshow {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+
+  &__slides {
+    z-index: 0;
+  }
+
+  & .cm-collection__item {
+    width: 100%;
+  }
+
+  &__prev,
+  &__next {
+    position: absolute;
+    opacity: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &__prev {
+    left: -38px;
+  }
+
+  &__next {
+    right: -38px;
+  }
+
+  &:hover .cm-collection--slideshow__prev,
+  &:hover .cm-collection--slideshow__next,
+    /* always show prev and next on touch enabled devices */
+  &-touch .cm-collection--slideshow__prev,
+  &-touch .cm-collection--slideshow__next {
+    opacity: 1;
+    transition: all 0.8s 0.2s;
+  }
+
+  &:hover .cm-collection--slideshow__prev,
+    /* always show prev and next on touch enabled devices */
+  &-touch .cm-collection--slideshow__prev {
+    left: 10px;
+  }
+
+  &:hover .cm-collection--slideshow__next,
+    /* always show prev and next on touch enabled devices */
+  &-touch .cm-collection--slideshow__next {
+    right: 10px;
+  }
+}
+
+.cm-direction-arrow {
+  cursor: pointer;
+  color: #373736;
+
+  &.disabled:before {
+    opacity: 0.5;
+  }
+
+  &:before {
+    font-family: 'livecontext-icons';
+    font-size: 40px;
+    text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
+    line-height: 125%;
+    padding: 1px;
+  }
+
+  &--left:before {
+    content: "\e61e";
+  }
+
+  &--right:before {
+    content: "\e61d";
+  }
+}
+
+/** product assets */
+.cm-product-assets__slideshow ~ .cm-product-assets__downloads {
+  margin-top: 20px;
+}
+
+.cm-product-assets-downloads__title {
+  color: #767676;
+}
+
+.cm-product-assets-downloads__list {
+  list-style: square;
+  margin-left: 0;
+  padding-left: 15px;
+}
+
+.cm-product-assets-downloads__title ~ .cm-product-assets-downloads__list {
+  margin-top: 6px;
+}
+
+.cm-product-assets-downloads__item {
+  font-size: 0.8rem;
+}
+
+/** elevateZoom fix */
+.zoomContainer, .zoomLens {
+  z-index: 2;
+}
+
+/* used for positioning and sizing the zoom window */
+.cm-zoom-box {
+  position: absolute;
+  margin: 10px;
+  margin-left: -10px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+}
+
+@include breakpoint(xs) {
+
+  .row.margin-true > .slot4 > .cm-product-assets {
+    margin-right: 5px;
+  }
+
+  .row.margin-true > .slot4 > .cm-product-assets > .cm-product-assets__downloads {
+    margin-left: 5px;
+  }
+}

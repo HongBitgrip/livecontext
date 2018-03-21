@@ -1,0 +1,19 @@
+cae: {}
+caefeeder: {}
+content: {
+  type: zip,
+  classifier: content
+}
+contentfeeder: {}
+editor-lib: {}
+elastic-worker: {}
+preview-cae: {}
+server: {}
+studio: {
+  type: swc
+}
+studio-lib: {}
+user-changes: {
+  type: pom
+}
+workflow-server: {}

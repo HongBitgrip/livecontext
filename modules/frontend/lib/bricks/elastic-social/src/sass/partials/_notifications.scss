@@ -1,0 +1,30 @@
+// notifications
+.#{$cm-notification} {
+  margin: 5px 0;
+
+  //types
+  &--error {
+    color: $cm-notification-color-error;
+  }
+
+  &--warning {
+    color: $cm-notification-color-warning;
+  }
+
+  &--info {
+    color: $cm-notification-color-info;
+  }
+
+  &--success {
+    color: $cm-notification-color-sucess;
+  }
+
+  &--inactive {
+    display: none;
+  }
+
+  //elements
+  &__headline {
+    font-weight: bold;
+  }
+}

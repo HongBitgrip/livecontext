@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMSettings folder="/Sites/Hybris Apparel/United Kingdom/English/Options/Settings" name="ExternalLibraries" xmlns:cmexport="http://www.coremedia.com/2012/cmexport">
+<locale>en-GB</locale>
+<master>
+</master>
+<settings>
+<Struct xmlns="http://www.coremedia.com/2008/struct" xmlns:xlink="http://www.w3.org/1999/xlink">
+<StructListProperty Name="externalLibraries">
+<Struct>
+<IntProperty Name="index">0</IntProperty>
+<StringProperty Name="name">Federation Internationale de Ski</StringProperty>
+<StringProperty Name="dataUrl">http://www.fis-ski.com/freestyle-skiing/halfpipe-slopestyle/news-multimedia/news/rss.xml</StringProperty>
+<StringProperty Name="providerId">rssProvider</StringProperty>
+<StringProperty Name="previewType">html</StringProperty>
+<StringProperty Name="contentType">CMArticle</StringProperty>
+<BooleanProperty Name="markAsRead">true</BooleanProperty>
+</Struct>
+<Struct>
+<IntProperty Name="index">1</IntProperty>
+<StringProperty Name="name">Snowboarder - Youtube</StringProperty>
+<StringProperty Name="dataUrl">https://www.youtube.com/feeds/videos.xml?channel_id=UC_dM286NO7QhuX18nMW0Z9A</StringProperty>
+<StringProperty Name="providerId">youtubeProvider</StringProperty>
+<StringProperty Name="previewType">html</StringProperty>
+<StringProperty Name="contentType">CMVideo</StringProperty>
+<BooleanProperty Name="markAsRead">true</BooleanProperty>
+</Struct>
+<Struct>
+<IntProperty Name="index">2</IntProperty>
+<IntProperty Name="twitter.count">50</IntProperty>
+<StringProperty Name="twitter.searchTerm">speedriding</StringProperty>
+<StringProperty Name="name">Twitter HashTag</StringProperty>
+<StringProperty Name="providerId">twitterProvider</StringProperty>
+<StringProperty Name="previewType">html</StringProperty>
+<StringProperty Name="contentType">CMTeaser</StringProperty>
+<BooleanProperty Name="markAsRead">true</BooleanProperty>
+<StringProperty Name="twitter.consumer.key">Anz1U9qrhcQ8g7rrc2Byjw</StringProperty>
+<StringProperty Name="twitter.consumer.key.secret">5cRPUz54ZOl6bnsfycRn3UkdzVq6B5U8KPY87Fn8o</StringProperty>
+<StringProperty Name="twitter.access.token">914190577-twGk0MhD5vMzSeRNuAefNmbh3JPhuD8AY6KrnXuc</StringProperty>
+<StringProperty Name="twitter.access.token.secret">udYenC4VYFRz7Dh99xEhCXMgqI8pbjs15X0F1yjxA</StringProperty>
+</Struct>
+<Struct>
+<IntProperty Name="index">3</IntProperty>
+<StringProperty Name="name">YouTube - CoreMedia</StringProperty>
+<StringProperty Name="credentialsJson"/>
+<StringProperty Name="channel.id">UCGolQX0D38klvQj3ACENBSw</StringProperty>
+<StringProperty Name="providerId">youTubeVideoProvider</StringProperty>
+<StringProperty Name="previewType">video</StringProperty>
+<StringProperty Name="contentType">CMVideo</StringProperty>
+<BooleanProperty Name="markAsRead">true</BooleanProperty>
+</Struct>
+</StructListProperty>
+</Struct>
+</settings>
+<identifier></identifier>
+</CMSettings>

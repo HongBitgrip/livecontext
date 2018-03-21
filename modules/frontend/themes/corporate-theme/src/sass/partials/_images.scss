@@ -1,0 +1,39 @@
+.#{$cm-image-prefix} {
+  /* alternative image */
+  &--missing {
+    background: url("../../img/logo.svg") no-repeat center center;
+  }
+}
+
+/* images in richtext */
+.#{$prefix}image-box {
+  &--embedded {
+    position: relative;
+    width: 100%;
+    margin: ($line-height-computed / 2) 0;
+
+    @include breakpoint(sm-and-up) {
+
+      /* centered */
+      &.float--none {
+        width: 50%;
+        margin: ($line-height-computed / 2) auto;
+      }
+
+      &.float--left {
+        width: 50%;
+        margin-right: ($line-height-computed / 2);
+      }
+
+      &.float--right {
+        width: 50%;
+        margin-left: ($line-height-computed / 2);
+      }
+    }
+  }
+
+  // set default aspect ratio box to 16:9 for all richtext images
+  &--embedded &__image {
+    @include aspect-ratio-box(16, 9);
+  }
+}

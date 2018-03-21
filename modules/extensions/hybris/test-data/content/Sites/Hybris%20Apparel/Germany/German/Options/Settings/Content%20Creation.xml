@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMSettings folder="/Sites/Hybris Apparel/Germany/German/Options/Settings" name="Content Creation" xmlns:cmexport="http://www.coremedia.com/2012/cmexport" translationState="up-to-date">
+<locale>de-DE</locale>
+<master>
+<link href="../../../../United%20Kingdom/English/Options/Settings/Content%20Creation.xml" path="/Sites/Hybris%20Apparel/United%20Kingdom/English/Options/Settings/Content%20Creation"/>
+</master>
+<settings>
+<Struct xmlns="http://www.coremedia.com/2008/struct" xmlns:xlink="http://www.w3.org/1999/xlink">
+<StructProperty Name="paths">
+<Struct>
+<LinkProperty Name="editorial" LinkType="coremedia:///cap/contenttype/Content_" xlink:href="coremedia:///cap/resources/../../Editorial/" cmexport:path="/Sites/Hybris%20Apparel/Germany/German/Editorial/"/>
+<LinkProperty Name="navigation" LinkType="coremedia:///cap/contenttype/Content_" xlink:href="coremedia:///cap/resources/../../Navigation/" cmexport:path="/Sites/Hybris%20Apparel/Germany/German/Navigation/"/>
+<LinkProperty Name="CMPicture" LinkType="coremedia:///cap/contenttype/Content_" xlink:href="coremedia:///cap/resources/../../Pictures/" cmexport:path="/Sites/Hybris%20Apparel/Germany/German/Pictures/"/>
+<LinkProperty Name="CMVideo" LinkType="coremedia:///cap/contenttype/Content_" xlink:href="coremedia:///cap/resources/../../Videos/" cmexport:path="/Sites/Hybris%20Apparel/Germany/German/Videos/"/>
+</Struct>
+</StructProperty>
+</Struct>
+</settings>
+<identifier></identifier>
+</CMSettings>

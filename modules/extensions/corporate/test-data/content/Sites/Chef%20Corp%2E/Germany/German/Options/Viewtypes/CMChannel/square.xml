@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMViewtype folder="/Sites/Chef Corp./Germany/German/Options/Viewtypes/CMChannel" name="square" xmlns:cmexport="http://www.coremedia.com/2012/cmexport" translationState="up-to-date">
+<locale>de-DE</locale>
+<master>
+<link href="../../../../../United%20States/English/Options/Viewtypes/CMChannel/square.xml" path="/Sites/Chef%20Corp%2E/United%20States/English/Options/Viewtypes/CMChannel/square"/>
+</master>
+<description>Zeigt Inhalt als Quadrat Teaser.</description>
+<icon md5="2771c73ff469d7ca7b2602d3c37db698" size="34147" href="../../../../../../../__blob/2771c73ff469d7ca7b2602d3c37db698.blob" mimetype="image/png"/>
+<layout>square</layout>
+</CMViewtype>

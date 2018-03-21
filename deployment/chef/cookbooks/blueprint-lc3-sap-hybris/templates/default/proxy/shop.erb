@@ -1,0 +1,33 @@
+<%- if @params[:ssl] -%>
+  SSLProxyEngine On
+  <%- if node['apache']['version'] == '2.4' && !@params[:ssl_proxy_verify] -%>
+  SSLProxyVerify none
+  SSLProxyCheckPeerCN off
+  SSLProxyCheckPeerName off
+  <%- end -%>
+<%- end -%>
+
+  ProxyPreserveHost On
+
+  <%- if @params[:headers] -%>
+  # during development it may be convenient to add headers
+  <%- @params[:headers].sort.each do |header| -%>
+  <%= header %>
+  <%- end -%>
+  <%- end -%>
+
+  <%- hybris_protocol =  @params[:ssl] ? 'https' : 'http' -%>
+  <%- hybris_port =  @params[:ssl] ? '9002' : '9001' -%>
+
+  RewriteCond %{REQUEST_FILENAME} !yacceleratorstorefront/
+  RewriteCond %{REQUEST_FILENAME} !medias/
+  RewriteRule .* - [F]
+
+  # Hybris stores  pass through for preview
+  ProxyPass / <%= hybris_protocol %>://<%= @params[:hybris_host] %>:<%= hybris_port %>/ timeout=600 nocanon
+
+
+# Hybris tools pass through
+<%- if @params[:preview] -%>
+<%- end -%>
+

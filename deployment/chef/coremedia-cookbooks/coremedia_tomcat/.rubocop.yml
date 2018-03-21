@@ -1,0 +1,27 @@
+Documentation:
+  Enabled: false
+AlignParameters:
+  Enabled: false
+CyclomaticComplexity:
+  Max: 10
+Encoding:
+  Enabled: false
+HashSyntax:
+  Enabled: false
+LineLength:
+  Enabled: false
+MethodLength:
+  Max: 70
+Style/MethodName:
+  Enabled: false
+Style/FileName:
+  Enabled: false
+# otherwise knife-cookbook-doc style complains
+Style/LeadingCommentSpace:
+  Enabled: false
+Style/SpaceBeforeFirstArg:
+  Enabled: false
+Metrics/AbcSize:
+  Enabled: false
+Lint/HandleExceptions:
+  Enabled: false

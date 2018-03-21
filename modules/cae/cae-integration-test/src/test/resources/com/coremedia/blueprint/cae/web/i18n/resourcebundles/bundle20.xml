@@ -1,0 +1,4 @@
+<Struct xmlns="http://www.coremedia.com/2008/struct">
+  <StringProperty Name="str1">str1fromBundle20</StringProperty>
+  <StringProperty Name="str3">str3fromBundle20</StringProperty>
+</Struct>

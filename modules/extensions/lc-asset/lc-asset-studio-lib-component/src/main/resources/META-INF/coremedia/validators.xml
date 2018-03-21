@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <import resource="classpath:/com/coremedia/cap/common/uapi-services.xml"/>
+  <import resource="classpath:/framework/spring/lc-asset-helpers.xml"/>
+
+  <bean id="spinnerSequenceAssetValidator" class="com.coremedia.livecontext.studio.asset.validators.SpinnerSequenceAssetValidator">
+    <property name="connection" ref="connection"/>
+    <property name="validatingSubtypes" value="true"/>
+    <property name="contentType" value="CMSpinner"/>
+    <property name="assetHelper" ref="assetReadSettingsHelper"/>
+  </bean>
+</beans>

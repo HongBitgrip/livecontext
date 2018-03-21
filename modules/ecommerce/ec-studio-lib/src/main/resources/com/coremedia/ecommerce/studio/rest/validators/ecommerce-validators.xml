@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+  <import resource="classpath:/com/coremedia/rest/cap/cap-rest-service.xml"/>
+
+  <bean id="cmProductValidator" parent="contentTypeValidator">
+    <property name="contentType" value="CMProduct"/>
+    <property name="validators">
+      <list>
+        <bean class="com.coremedia.rest.validators.NotEmptyValidator">
+          <property name="property" value="productCode"/>
+        </bean>
+        <bean class="com.coremedia.rest.validators.RegExpValidator">
+          <property name="regExp" value="[^:/\s]*"/>
+          <property name="property" value="productCode"/>
+        </bean>
+        <bean class="com.coremedia.rest.validators.NotEmptyValidator">
+          <property name="property" value="productName"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+</beans>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMSettings folder="/Sites/Chef Corp./Germany/German/Options/Settings" name="First Item as Header" xmlns:cmexport="http://www.coremedia.com/2012/cmexport" translationState="up-to-date">
+<locale>de-DE</locale>
+<master>
+<link href="../../../../United%20States/English/Options/Settings/First%20Item%20as%20Header.xml" path="/Sites/Chef%20Corp%2E/United%20States/English/Options/Settings/First%20Item%20as%20Header"/>
+</master>
+<settings>
+<Struct xmlns="http://www.coremedia.com/2008/struct" xmlns:xlink="http://www.w3.org/1999/xlink">
+<BooleanProperty Name="firstItemAsHeader">true</BooleanProperty>
+</Struct>
+</settings>
+<identifier></identifier>
+</CMSettings>

@@ -1,0 +1,52 @@
+<%- @params[:parent_params].keys.each { |k| @params[k] = @params[:parent_params][k] } -%>
+<% if node['apache']['version'] != '2.4' -%>
+  NameVirtualHost *:<%= @params[:port] %>
+<% end -%>
+<VirtualHost *:<%= @params[:port] || node['apache']['listen_ports'].first %> >
+  ServerName <%= @params[:server_name] %>
+  <% unless @params[:server_aliases].nil? || @params[:server_aliases].empty? -%>
+  ServerAlias <%= @params[:server_aliases].join " " %>
+  <% end -%>
+
+  <%- unless @params[:custom_conf].nil? || @params[:custom_conf].empty? -%>
+  <%- @params[:custom_conf].each do |custom| %>
+  <%= custom %>
+  <%- end -%>
+  <%- end -%>
+
+  <%- unless @params[:rewrite_template].nil? -%>
+  #####################
+  ###    Rewrite    ###
+  #####################
+  RewriteEngine On
+  <%= render @params[:rewrite_template], :cookbook => @params[:rewrite_template_cookbook] -%>
+
+  <%- if node['apache']['version'] != '2.4' -%>
+  RewriteLog <%= node['apache']['log_dir'] %>/<%= @application_name %>-rewrite.log
+  RewriteLogLevel <%= @params[:rewrite_log_level].nil? ? 0 : @params[:rewrite_log_level] %>
+  <%- end -%>
+  <%- end -%>
+
+  <%- unless @params[:proxy_template].nil? %>
+  #####################
+  ###    Proxy      ###
+  #####################
+  <%= render @params[:proxy_template], :cookbook => @params[:proxy_template_cookbook] -%>
+  <%- end %>
+
+  #####################
+  ###    Logging    ###
+  #####################
+  <%- if node['apache']['version'] == '2.4' -%>
+  LogLevel <%= @params[:apache_log_level].nil? ? 'warn' : @params[:apache_log_level] %> rewrite:<%= @params[:rewrite_log_level].nil? ? 'trace1' : @params[:rewrite_log_level] %>
+  <%- else -%>
+  LogLevel <%= @params[:apache_log_level].nil? ? 'warn' : @params[:apache_log_level] %>
+  <%- end -%>
+  ErrorLog <%= node['apache']['log_dir'] %>/<%= @application_name %>-error.log
+  CustomLog <%= node['apache']['log_dir'] %>/<%= @application_name %>-access.log combined
+
+  <%- if @params[:ssl] -%>
+  SSLEngine  On
+  <%- end %>
+
+</VirtualHost>

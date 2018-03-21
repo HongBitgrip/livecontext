@@ -1,0 +1,23 @@
+@include breakpoint(pt) {
+
+  html, body {
+    width: 210mm;
+    height: 297mm;
+  }
+
+  a[href]:after {
+    display: none;
+  }
+
+  abbr[title]:after {
+    display: none;
+  }
+
+  .#{$prefix}button {
+    border: none;
+  }
+
+  .#{$prefix}container--gap {
+    border: none;
+  }
+}

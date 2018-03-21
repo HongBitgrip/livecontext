@@ -1,0 +1,148 @@
+//styles
+.#{$cm-details-prefix} {
+  padding-bottom: $cm-details-padding-large-horizontal;
+  max-width: 1200px;
+  margin: 0 auto $cm-details-margin-large-horizontal auto;
+
+  @include breakpoint(sm-and-up) {
+    padding-bottom: 0;
+  }
+
+  &__headline {
+    margin-top: 0;
+    margin-bottom: $cm-details-padding-large-vertical;
+    padding: 0 $cm-details-padding-base-vertical;
+
+    @include breakpoint(md) {
+      padding: 0;
+    }
+  }
+
+  &__medias {
+    margin-bottom: $cm-details-padding-large-vertical;
+
+    // spinner
+    .cm-spinner__canvas {
+      border: 1px solid $cm-details-text-color;
+      padding: $cm-details-padding-base-vertical (((($cm-details-padding-base-vertical*2))*16/9)-2)/2; //to keep the aspect ratio
+      box-shadow: inset 0 0 $cm-details-padding-base-vertical $cm-details-text-color;
+      background-color: #fff;
+      margin: 0;
+
+      @include breakpoint(md) {
+        padding: $cm-details-padding-base-vertical (((($cm-details-padding-base-vertical*2)+2)*5/2)-2)/2; //to keep the aspect ratio
+      }
+    }
+  }
+
+  /* wider box on desktop */
+  &__media-box {
+    @include aspect-ratio-box(16, 9);
+
+    @include breakpoint(md) {
+      @include aspect-ratio-box(5, 2);
+    }
+  }
+
+  /* always 16x9 for videos */
+  &__video-box {
+    @include aspect-ratio-box(16, 9);
+  }
+
+  &__media {
+    @include stretch-absolute();
+  }
+
+  /* don't stretch videos, differenct background with centered fitted video */
+  &__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+  }
+
+  &__caption {
+    position: relative;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0;
+    text-shadow: none;
+    text-align: left;
+
+    .cm-caption__title {
+      color: $cm-details-text-color;
+      padding-top: 7px;
+    }
+
+    .cm-caption__text {
+      color: $cm-details-text-color;
+    }
+  }
+
+  &__text,
+  &__code {
+    padding: 0 $cm-details-padding-base-vertical;
+
+    @include breakpoint(md) {
+      padding: 0;
+    }
+  }
+
+  &__date {
+    margin-top: $cm-details-padding-base-vertical;
+    text-align: right;
+    color: $cm-details-text-color;
+    padding: 0 $cm-details-padding-base-vertical;
+
+    @include breakpoint(md) {
+      padding: 0;
+    }
+  }
+
+  // product detail page
+  &--product {
+    .cm-details__caption {
+      visibility: hidden;
+    }
+  }
+}
+
+.cm-downloads {
+  padding: 0 $cm-details-padding-base-vertical;
+  margin-bottom: $cm-details-padding-large-vertical;
+
+  @include breakpoint(md) {
+    padding: 0;
+  }
+
+  &__items {
+    list-style: none;
+    margin: 0;
+    padding-left: $cm-details-padding-base-vertical;
+  }
+
+  &__item {
+    line-height: 2;
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    span {
+      color: $cm-details-text-color;
+      padding-left: $cm-details-padding-base-vertical;
+    }
+  }
+}
+
+.cm-related {
+  padding: 0 $cm-details-padding-base-vertical;
+  margin-bottom: $cm-details-padding-large-horizontal;
+
+  @include breakpoint(md) {
+    padding: 0;
+  }
+}

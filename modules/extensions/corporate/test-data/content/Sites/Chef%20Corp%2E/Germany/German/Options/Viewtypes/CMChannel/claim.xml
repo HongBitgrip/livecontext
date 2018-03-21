@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMViewtype folder="/Sites/Chef Corp./Germany/German/Options/Viewtypes/CMChannel" name="claim" xmlns:cmexport="http://www.coremedia.com/2012/cmexport" translationState="up-to-date">
+<locale>de-DE</locale>
+<master>
+<link href="../../../../../United%20States/English/Options/Viewtypes/CMChannel/claim.xml" path="/Sites/Chef%20Corp%2E/United%20States/English/Options/Viewtypes/CMChannel/claim"/>
+</master>
+<description>Zeigt Inhalt als Anspruch Erklärung.</description>
+<icon md5="3359a02f59a2b0ce080fae6576a7ec07" size="34147" href="../../../../../../../__blob/3359a02f59a2b0ce080fae6576a7ec07.blob" mimetype="image/png"/>
+<layout>claim</layout>
+</CMViewtype>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMViewtype folder="/Sites/Hybris Apparel/Germany/German/Options/Viewtypes/CMExternalProduct" name="superhero" xmlns:cmexport="http://www.coremedia.com/2012/cmexport" translationState="up-to-date">
+<locale>de-DE</locale>
+<master>
+<link href="../../../../../United%20Kingdom/English/Options/Viewtypes/CMExternalProduct/superhero.xml" path="/Sites/Hybris%20Apparel/United%20Kingdom/English/Options/Viewtypes/CMExternalProduct/superhero"/>
+</master>
+<description></description>
+<layout>superhero</layout>
+</CMViewtype>

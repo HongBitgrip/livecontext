@@ -1,0 +1,247 @@
+/*
+Header
+========================================================================================================================
+
+Contains styling definitions for all content types as cm-header.
+- cm-header
+- cm-header--open
+- cm-header--scrolled
+- cm-breadcrumb
+*/
+
+.#{$prefix}header {
+  $_line-width: 40px;
+  position: fixed;
+  width: 100%;
+  z-index: 3; //above all default containers (z-index 1) and navigation (z-index 2)
+  border: none;
+  height: $logo-size-mobile;
+  transition: background $transition-duration ease(in-out-quad);
+  margin-top: -$top-clearance-mobile;
+
+  @include breakpoint(sm-and-up) {
+    height: $logo-size;
+    margin-top: -$top-clearance;
+  }
+
+  &__search {
+    display: none; // hide search on mobile
+    position: absolute;
+    top: $logo-size-mobile;
+    width: 100%;
+    height: $search-height;
+    padding: $padding-base-horizontal $padding-base-horizontal 0 $padding-base-horizontal;
+    background-color: palette(white);
+
+    @include breakpoint(sm-and-up) {
+      position: relative;
+      float: right;
+      top: 0;
+      width: auto;
+      height: auto;
+      margin: $padding-base-horizontal $padding-base-horizontal 0 0;
+      padding: 0;
+      background-color: transparent;
+      z-index: 2;
+    }
+
+    @include breakpoint(md) {
+      display: block; // show search on desktop
+    }
+  }
+
+  // show search in open navigation
+  &--open &__search {
+    display: block;
+  }
+
+  /* button fixed top right */
+  &__button {
+    margin: $padding-base-horizontal - 5px $padding-base-horizontal 0 0;
+    padding: 0;
+    cursor: pointer;
+    border: none;
+    height: 31px;
+
+    @include breakpoint(sm-and-up) {
+      margin: $padding-base-horizontal $padding-base-horizontal 0 0;
+    }
+
+    @include breakpoint(md) {
+      opacity: 0.8;
+      transition: opacity $transition-duration ease(in-out-quad);
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &.navbar-toggle {
+      .icon-bar {
+        display: none;
+      }
+
+      span:nth-child(2) {
+        background-color: transparent;
+        display: block;
+        margin: 0;
+        width: $_line-width;
+        height: 5px;
+        border-radius: 1px;
+        position: relative;
+
+        &:before,
+        &:after {
+          display: block;
+          width: $_line-width;
+          height: 5px;
+          background-color: palette(white);
+          border-radius: 1px;
+          position: absolute;
+          left: 0;
+          content: '';
+          transition: top .2s ease(in-out-quad), transform .2s .2s ease(in-out-quad);
+        }
+
+        &:before {
+          top: 0;
+          transform: rotate3d(0, 0, 1, 45deg);
+        }
+
+        &:after {
+          top: 0;
+          transform: rotate3d(0, 0, 1, -45deg);
+        }
+      }
+    }
+
+    &.navbar-toggle.collapsed {
+
+      span:nth-child(2) {
+        background-color: palette(white);
+
+        &:before,
+        &:after {
+          transition: top .2s .2s ease(in-out-quad), transform .2s ease(in-out-quad);
+        }
+
+        &:before {
+          top: -10px;
+          transform: rotate3d(0, 0, 0, 0deg);
+        }
+
+        &:after {
+          top: 10px;
+          transform: rotate3d(0, 0, 0, 0deg);
+        }
+      }
+
+      &:hover {
+        span:nth-child(2) {
+          &:before {
+            top: -13px;
+          }
+
+          &:after {
+            top: 13px;
+          }
+        }
+      }
+    }
+  }
+
+  /* items fixed top right next to button */
+  &__items {
+    position: absolute;
+    top: $logo-size-mobile + $search-height; // + height of searchbar
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-color: palette(white);
+    color: palette(grey);
+
+    > li {
+      position: relative;
+      display: inline-block;
+      padding: $padding-base-vertical $padding-base-horizontal;
+      text-transform: uppercase;
+
+      a {
+        color: palette(grey);
+        display: block;
+
+        &:hover {
+          color: $brand-primary;
+        }
+      }
+    }
+
+    @include breakpoint(sm-and-up) {
+      top: 0;
+      left: auto;
+      right: $padding-base-horizontal + $search-width + $padding-base-horizontal + $padding-base-horizontal; //paddings + search + navbutton
+      line-height: $logo-size;
+      background-color: transparent;
+      color: palette(white);
+
+      > li {
+        padding: 0 $padding-base-horizontal;
+
+        a {
+          color: palette(white);
+        }
+      }
+    }
+
+    @include breakpoint(sm) {
+      right: $padding-base-horizontal + $search-small-width + $padding-base-horizontal + $padding-base-horizontal; //override for narrow tablet view, since login/registration links where added
+    }
+  }
+
+  &--without-search {
+    .#{$prefix}header__items {
+      @include breakpoint(sm-and-up) {
+        right: 40px + $padding-base-horizontal;
+      }
+    }
+  }
+}
+
+/* breadcrumb fixed top left next to logo */
+.#{$prefix}breadcrumb {
+  display: none;
+
+  @include breakpoint(sm-and-up) {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: $logo-size+2*$padding-base-horizontal;
+    right: 200px;
+    margin: 0;
+    line-height: $logo-size;
+    white-space: nowrap;
+    overflow: hidden;
+
+    &__item a {
+      color: palette(white);
+    }
+
+    &__item a:hover {
+      color: palette(red, lighter);
+    }
+
+    & > li + li::before {
+      content: ">\00a0"; /* overwrite bootstrap, cause of libsass double escaping */
+    }
+  }
+
+  @include breakpoint(sm) {
+    right: 70px;
+  }
+
+  &--outer {
+    height: auto !important; /* overwrite bootstrap javascript inline height */
+  }
+}

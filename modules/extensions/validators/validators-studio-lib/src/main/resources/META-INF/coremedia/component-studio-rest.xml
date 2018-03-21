@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+         http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans.xsd
+         http://www.springframework.org/schema/util
+         http://www.springframework.org/schema/util/spring-util.xsd
+         http://www.springframework.org/schema/context
+         http://www.springframework.org/schema/context/spring-context.xsd">
+
+  <import resource="classpath:com/coremedia/cap/common/uapi-services.xml"/>
+  <import resource="classpath:com/coremedia/rest/cap/cap-rest-service.xml"/>
+  <import resource="classpath:com/coremedia/mimetype/mimetype-service.xml"/>
+  <import resource="classpath:/com/coremedia/blueprint/base/multisite/bpbase-multisite-services.xml"/>
+  <import resource="classpath:/com/coremedia/blueprint/base/links/bpbase-links-services.xml"/>
+  <import resource="classpath:/com/coremedia/cap/transform/transform-services.xml"/>
+  <import resource="classpath:/com/coremedia/blueprint/base/pagegrid/impl/bpbase-pagegrid-services.xml"/>
+  <import resource="classpath:META-INF/coremedia/bpbase-studio-rest.xml"/>
+
+  <context:component-scan base-package="com.coremedia.blueprint.themeimporter.configuration" />
+  <context:component-scan base-package="com.coremedia.blueprint.coderesources.configuration" />
+
+  <bean id="pictureBlobInterceptor" class="com.coremedia.rest.cap.content.interceptors.PictureBlobInterceptor">
+    <property name="type" value="CMPicture"/>
+    <property name="imageProperty" value="data"/>
+    <property name="imageParser" ref="imageTransformerInputAdapter"/>
+  </bean>
+
+  <bean id="channelWriteInterceptor" class="com.coremedia.blueprint.base.rest.intercept.ChannelWriteInterceptor">
+    <property name="type" value="CMLinkable"/>
+    <property name="interceptingSubtypes" value="true"/>
+    <property name="propertyName" value="segment"/>
+    <property name="urlPathFormattingHelper" ref="urlPathFormattingHelper"/>
+  </bean>
+
+  <bean id="siteWriteInterceptor" class="com.coremedia.blueprint.base.rest.intercept.SiteWriteInterceptor">
+    <property name="type" value="CMSite"/>
+    <property name="siteModel" ref="siteModel"/>
+  </bean>
+
+  <bean id="callToActionConfigurationPropertyInferrer"
+        class="com.coremedia.blueprint.base.rest.propertyinferrer.CallToActionConfigurationPropertyInferrer">
+    <property name="type" value="CMTeasable"/>
+    <property name="applicableToSubtypes" value="true"/>
+  </bean>
+
+
+  <bean id="teasablePicturesPredicate" class="com.coremedia.rest.cap.validation.ContentTypePredicate">
+    <property name="contentRepository" ref="contentRepository"/>
+    <property name="excludeTypes" ref="teasablePicturesPredicateExcludeTypes"/>
+    <property name="excludeSubtypes" ref="teasablePicturesPredicateExcludeSubtypes"/>
+    <property name="includeTypes" ref="teasablePicturesPredicateIncludeTypes"/>
+    <property name="includeSubtypes" ref="teasablePicturesPredicateIncludeSubtypes"/>
+  </bean>
+
+  <util:list id="teasablePicturesPredicateExcludeTypes"/>
+  <util:list id="teasablePicturesPredicateExcludeSubtypes">
+    <value>CMArticle</value>
+  </util:list>
+  <util:list id="teasablePicturesPredicateIncludeTypes"/>
+  <util:list id="teasablePicturesPredicateIncludeSubtypes">
+    <value>CMTeasable</value>
+  </util:list>
+
+  <bean id="imageVariantsPropertiesInferrer"
+        class="com.coremedia.rest.cap.content.imagevariants.ImageVariantsPropertiesInferrer">
+    <property name="transformImageService" ref="transformImageService"/>
+    <property name="connection" ref="connection"/>
+    <property name="structProperty" value="localSettings"/>
+    <property name="dataProperty" value="data"/>
+    <property name="type" value="CMPicture"/>
+    <property name="applicableToSubtypes" value="true"/>
+  </bean>
+
+  <bean id="notSearchablePropertiesInferrer"
+        class="com.coremedia.rest.cap.differencing.ZeroDefaultValuePropertyInferrer">
+    <property name="type" value="CMTeasable"/>
+    <property name="applicableToSubtypes" value="true"/>
+    <property name="property" value="notSearchable"/>
+  </bean>
+
+  <bean id="hiddenPropertiesInferrer"
+        class="com.coremedia.rest.cap.differencing.ZeroDefaultValuePropertyInferrer">
+    <property name="type" value="CMNavigation"/>
+    <property name="applicableToSubtypes" value="true"/>
+    <property name="property" value="hidden"/>
+  </bean>
+
+  <bean id="hiddenInSitemapPropertiesInferrer"
+        class="com.coremedia.rest.cap.differencing.ZeroDefaultValuePropertyInferrer">
+    <property name="type" value="CMNavigation"/>
+    <property name="applicableToSubtypes" value="true"/>
+    <property name="property" value="hiddenInSitemap"/>
+  </bean>
+
+  <bean id="inHeadPropertiesInferrer"
+        class="com.coremedia.rest.cap.differencing.ZeroDefaultValuePropertyInferrer">
+    <property name="type" value="CMJavaScript"/>
+    <property name="applicableToSubtypes" value="true"/>
+    <property name="property" value="inHead"/>
+  </bean>
+
+  <bean id="ieReleavedPropertiesInferrer"
+        class="com.coremedia.rest.cap.differencing.ZeroDefaultValuePropertyInferrer">
+    <property name="type" value="CMAbstractCode"/>
+    <property name="applicableToSubtypes" value="true"/>
+    <property name="property" value="ieRevealed"/>
+  </bean>
+
+  <!-- deprecated:
+     We will be removing the compression of code from the CAE as the frontend workspace provides options to compress
+     the code before it is uploaded to the content repository. When the compression is removed this property does not
+     have any effect.
+    -->
+  <bean id="disableCompressPropertiesInferrer"
+        class="com.coremedia.rest.cap.differencing.ZeroDefaultValuePropertyInferrer">
+    <property name="type" value="CMAbstractCode"/>
+    <property name="applicableToSubtypes" value="true"/>
+    <property name="property" value="disableCompress"/>
+  </bean>
+
+
+  <bean id="pictureUploadInterceptor" class="com.coremedia.blueprint.studio.rest.intercept.PictureUploadInterceptor">
+    <property name="type" value="CMPicture"/>
+    <property name="imageProperty" value="data"/>
+    <property name="maxDimension" value="4000"/>
+    <property name="blobTransformer" ref="blobTransformer"/>
+    <property name="extractor" ref="imageDimensionsExtractor"/>
+  </bean>
+
+  <bean id="themeUploadInterceptor" class="com.coremedia.blueprint.studio.rest.intercept.ThemeUploadInterceptor">
+    <property name="type" value="CMDownload"/>
+    <property name="dataProperty" value="data"/>
+    <property name="themeImporter" ref="themeImporter"/>
+  </bean>
+
+  <bean id="blobFilenameWriteInterceptor"
+        class="com.coremedia.blueprint.studio.rest.intercept.BlobFilenameWriteInterceptor">
+    <property name="type" value="CMDownload"/>
+    <property name="blobProperty" value="data"/>
+    <property name="filenameProperty" value="filename"/>
+  </bean>
+
+  <!--
+    Makes the theme upload configuration available on client at
+    editorContext.getConfiguration().themeUpload
+  -->
+  <bean id="themeUploadConfigurationPublisher" class="com.coremedia.rest.cap.configuration.ConfigurationPublisher">
+    <property name="name" value="themeUpload"/>
+    <property name="configuration" ref="themeUploadConfiguration"/>
+  </bean>
+
+  <!-- asset management configuration -->
+  <bean id="themeUploadConfiguration" class="com.coremedia.blueprint.studio.rest.intercept.ThemeConfiguration">
+    <property name="developerGroups" value="${themeImporter.themeDeveloperGroups:}"/>
+  </bean>
+
+  <bean id="wordUploadInterceptor" class="com.coremedia.blueprint.studio.rest.intercept.WordUploadInterceptor">
+    <property name="type" value="CMArticle"/>
+    <property name="priority" value="1"/>
+    <property name="repository" ref="contentRepository"/>
+  </bean>
+
+</beans>

@@ -1,0 +1,80 @@
+/*
+Medialist
+=====================================================================================================================
+
+Contains styling definitions for all content types as cm-medialist.
+- cm-medialist
+*/
+
+.#{$prefix}medialist {
+  $p: &; // parent
+  padding: 0 $padding-base-horizontal $padding-base-horizontal 0;
+  margin: 0;
+  @include clearfix;
+
+  @include breakpoint(sm-and-up) {
+    padding: 0 $padding-large-vertical $padding-large-vertical 0;
+  }
+
+  &__picture-box {
+    float: left; // remember play-button
+    width: percentage(1/3);
+    @include aspect-ratio-box(1, 1);
+  }
+  &--video {
+    #{$p}__wrapper {
+      float: left; // remember play-button
+      width: percentage(1/3);
+      position: relative;
+    }
+    #{$p}__picture-box {
+      float: none;
+      width: 100%;
+      @include aspect-ratio-box(1, 1);
+    }
+  }
+
+  &__picture {
+    @include stretch-absolute();
+  }
+
+  &__caption {
+    float: left;
+    width: percentage(2/3);
+    padding: 0 0 0 $padding-base-vertical;
+  }
+
+  &__headline:hover {
+    text-decoration: underline;
+  }
+
+  &__time {
+    display: block;
+    line-height: 1;
+    color: $brand-primary;
+    padding-bottom: $padding-small-horizontal;
+  }
+
+  &__headline {
+    margin: 0;
+    padding-bottom: $padding-small-horizontal;
+
+    // CMS-4644
+    overflow: hidden;
+    text-overflow: ellipsis;
+    hyphens: auto;
+  }
+
+  &__text {
+    margin: 0;
+  }
+
+  &__play {
+    @include center-absolute;
+    max-width: 60%; // make play-button scale able and make sure it is not larger than the image
+
+    @include breakpoint(sm-and-up) {
+      transform: translate(52%, 52%);
+    }
+  }
+}

@@ -1,0 +1,10 @@
+// Set variable to configure _teaser.scss from default-templates brick.
+// Have a look the _teaser.scss for all available variables.
+
+$cm-teasable-prefix: "cm-square";
+$cm-teasable-headline-color: palette(white);
+$cm-teasable-dimmer-background-color: palette(black);
+$cm-teasable-picture-background-color: palette(red, light);
+$cm-teasable-padding-base-horizontal: $padding-base-horizontal;
+$cm-teasable-padding-large-vertical: $padding-large-vertical;
+$cm-teasable-padding-large-horizontal: $padding-large-horizontal;

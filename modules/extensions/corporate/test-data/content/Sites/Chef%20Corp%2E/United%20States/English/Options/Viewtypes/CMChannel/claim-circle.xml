@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMViewtype folder="/Sites/Chef Corp./United States/English/Options/Viewtypes/CMChannel" name="claim-circle" xmlns:cmexport="http://www.coremedia.com/2012/cmexport">
+<locale>en-US</locale>
+<master>
+</master>
+<description>Displays content as a claim statement with a round picture.</description>
+<icon md5="782cf0032ce32381f7975a342680dd0b" size="34147" href="../../../../../../../__blob/782cf0032ce32381f7975a342680dd0b.blob" mimetype="image/png"/>
+<layout>claim-circle</layout>
+</CMViewtype>

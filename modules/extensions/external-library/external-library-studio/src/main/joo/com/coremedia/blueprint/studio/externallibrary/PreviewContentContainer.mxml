@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local:PreviewContentContainerBase
+        xmlns:fx="http://ns.adobe.com/mxml/2009"
+        xmlns="exml:ext.config"
+        xmlns:local="com.coremedia.blueprint.studio.externallibrary.*"
+        scrollable="true"
+        shrinkWrap="true"
+        ui="{ContainerSkin.GRID_200.getSkin()}">
+  <fx:Metadata>
+    [ResourceBundle('com.coremedia.blueprint.studio.ExternalLibraryStudioPlugin')]
+  </fx:Metadata>
+  <fx:Script><![CDATA[
+    import com.coremedia.ui.skins.ContainerSkin;
+    import com.coremedia.ui.skins.DisplayFieldSkin;
+
+    public static const PREVIEW_DATA_ITEM_ID:String = 'preview-content-data';
+    public static const PREVIEW_ACTION_ITEM_ID:String = 'preview-content-action';
+
+    private var config:PreviewContentContainer;
+
+    public native function PreviewContentContainer(config:PreviewContentContainer = null);
+    ]]></fx:Script>
+
+  <local:layout>
+    <layout_Fit/>
+  </local:layout>
+  <local:items>
+    <Container hidden="{!isPreviewHidden(config.combinedVE)}">
+      <items>
+        <!--TITLE-->
+        <DisplayField ui="{DisplayFieldSkin.ITALIC.getSkin()}"
+                      value="{resourceManager.getString('com.coremedia.blueprint.studio.ExternalLibraryStudioPlugin', 'ExternalLibraryWindow_preview_no_selection')}"/>
+      </items>
+    </Container>
+    <Container hidden="{isPreviewHidden(config.combinedVE)}">
+      <items>
+        <!--TITLE-->
+        <DisplayField ui="{DisplayFieldSkin.BOLD.getSkin()}"
+                      value="{getContent('name', config.combinedVE)}"
+                      htmlEncode="true"/>
+
+        <!-- HTML or VIDEO DATA-->
+        <Box html="{getHTMLorVideoContent(config.combinedVE)}"/>
+
+        <!--MEDIA URL-->
+        <DisplayField value="{resolveMediaHTML(config.combinedVE)}"
+                      hidden="{resolveMediaHTML(config.combinedVE).length == 0}"
+                      style="border:1px red solid"/>
+
+        <!--SOURCE-->
+        <DisplayField
+                fieldLabel="{resourceManager.getString('com.coremedia.blueprint.studio.ExternalLibraryStudioPlugin', 'Preview_data_source')}"
+                style="word-break: break-all;"
+                value="{getDataContent('name', config.combinedVE)}"
+                htmlEncode="true"/>
+
+        <!--URL-->
+        <DisplayField ui="{DisplayFieldSkin.ITALIC.getSkin()}"
+                      style="word-break: break-all;"
+                      fieldLabel="{resourceManager.getString('com.coremedia.blueprint.studio.ExternalLibraryStudioPlugin', 'Preview_data_url')}"
+                      value="{getContent('downloadUrl', config.combinedVE)}"
+                      htmlEncode="true"/>
+        <!--DATE-->
+        <DisplayField ui="{DisplayFieldSkin.ITALIC.getSkin()}"
+                      value="{getContent('createdAt', config.combinedVE)}"
+                      htmlEncode="true"/>
+      </items>
+
+    </Container>
+  </local:items>
+</local:PreviewContentContainerBase>

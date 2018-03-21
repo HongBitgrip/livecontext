@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMProduct folder="/Sites/Chef Corp./Germany/German/Products/Blenders and Food Processors" name="Browne BL300 Blender Product" xmlns:cmexport="http://www.coremedia.com/2012/cmexport" translationState="up-to-date">
+<locale>de-DE</locale>
+<master>
+<link href="../../../../United%20States/English/Products/Blenders%20and%20Food%20Processors/Browne%20BL300%20Blender%20Product.xml" path="/Sites/Chef%20Corp%2E/United%20States/English/Products/Blenders%20and%20Food%20Processors/Browne%20BL300%20Blender%20Product"/>
+</master>
+<viewtype>
+</viewtype>
+<localSettings>
+<Struct xmlns="http://www.coremedia.com/2008/struct" xmlns:xlink="http://www.w3.org/1999/xlink">
+<BooleanProperty Name="callToActionDisabled">false</BooleanProperty>
+<StringProperty Name="callToActionCustomText">Mehr Produktinformation</StringProperty>
+</Struct>
+</localSettings>
+<linkedSettings>
+</linkedSettings>
+<resourceBundles2>
+</resourceBundles2>
+<segment>browne-bl300-blender</segment>
+<title></title>
+<htmlTitle></htmlTitle>
+<keywords></keywords>
+<htmlDescription></htmlDescription>
+<subjectTaxonomy>
+<link href="../../../../../../Settings/Taxonomies/Subject/Professionals.xml" path="/Settings/Taxonomies/Subject/Professionals"/>
+</subjectTaxonomy>
+<locationTaxonomy>
+</locationTaxonomy>
+<contexts>
+<link href="Blenders%20and%20Food%20Processors.xml" path="/Sites/Chef%20Corp%2E/Germany/German/Products/Blenders%20and%20Food%20Processors/Blenders%20and%20Food%20Processors"/>
+</contexts>
+<teaserTitle>Professionelle Küchenmaschinen müssen hohe Anforderungen erfüllen. Unsere Geräte eignen sich für die anspruchsvollsten Restaurantküchen.  </teaserTitle>
+<detailText grammarName="coremedia-richtext-1.0"><div xmlns="http://www.coremedia.com/2003/richtext-1.0" xmlns:xlink="http://www.w3.org/1999/xlink"><p>Professionelle Küchenmaschinen müssen hohe Anforderungen erfüllen. Unsere Geräte eignen sich für die anspruchsvollsten Restaurantküchen und sind stark genug um die härtesten Zutaten fein zu pürieren - von Mäusen bis hin zu Elefanten. </p></div></detailText>
+<pictures>
+<link href="../../Assets/Pictures/Products/Blenders/PC_BROWNE_BL400_BLENDER%20Frontshot.xml" path="/Sites/Chef%20Corp%2E/Germany/German/Assets/Pictures/Products/Blenders/PC_BROWNE_BL400_BLENDER%20Frontshot"/>
+</pictures>
+<related>
+<link href="Browne%20BL1300%20Blender%20Product.xml" path="/Sites/Chef%20Corp%2E/Germany/German/Products/Blenders%20and%20Food%20Processors/Browne%20BL1300%20Blender%20Product"/>
+<link href="Browne%20BL700%20Blender%20Product.xml" path="/Sites/Chef%20Corp%2E/Germany/German/Products/Blenders%20and%20Food%20Processors/Browne%20BL700%20Blender%20Product"/>
+</related>
+<downloads>
+</downloads>
+<productCode>CC-BBL-300</productCode>
+<productName>Browne BL300 Blender</productName>
+</CMProduct>

@@ -1,0 +1,19 @@
+{
+  "name": "management",
+  "chef_type": "role",
+  "json_class": "Chef::Role",
+  "description": "The role for the management node",
+  "run_list": [
+    "role[base]",
+    "recipe[blueprint-tomcat::content-management-server]",
+    "recipe[blueprint-tools::content-management-server-tools]",
+    "recipe[blueprint-tools::theme-importer-tools]",
+    "recipe[blueprint-tomcat::workflow-server]",
+    "recipe[blueprint-tools::workflow-server-tools]",
+    "recipe[blueprint-tomcat::content-feeder]",
+    "recipe[blueprint-tomcat::user-changes]",
+    "recipe[blueprint-tomcat::elastic-worker]",
+    "recipe[blueprint-tomcat::caefeeder-preview]",
+    "recipe[blueprint-tools::caefeeder-preview-tools]"
+  ]
+}

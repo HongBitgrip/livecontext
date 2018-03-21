@@ -1,0 +1,116 @@
+.#{$cm-imagemap-prefix} {
+  @include clearfix;
+
+  &__wrapper {
+    position: relative;
+    overflow: hidden;
+  }
+
+  // the fallback is 4x3 aspect ratio. this should be overwritten by a theme or view
+  &__picture-box:not(.cm-hero__picture-box) {
+    @include aspect-ratio-box(4, 3);
+  }
+
+  &__picture {
+    user-select: none;
+  }
+
+  //hotzone will center the icon or text. top and left will be calculated by JS
+  &__hotzone {
+    position: absolute;
+    z-index: 2;
+    border: 0;
+    padding: 0;
+    display: block;
+    transform: translate(-50%, -50%);
+
+    &--icon {
+      width: $cm-imagemap-hotzone-icon-size;
+      height: $cm-imagemap-hotzone-icon-size;
+      background: transparent url("../../img/imagemap-icon.svg") no-repeat center center;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    &:hover.#{$cm-imagemap-prefix}__hotzone--icon,
+    &--hover.#{$cm-imagemap-prefix}__hotzone--icon {
+      background-image: url("../../img/imagemap-icon-hover.svg");
+    }
+
+    &--active.#{$cm-imagemap-prefix}__hotzone--icon {
+      background-image: url("../../img/imagemap-icon-hover.svg");
+    }
+  }
+
+  // quickinfos are centered over the imagemap
+  @if $cm-imagemap-quickinfo-as-overlay {
+    &__quickinfo {
+      z-index: 4;
+      @include breakpoint("xs") {
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        height: $cm-imagemap-mobile-overlay-size-in-percent;
+        width: $cm-imagemap-mobile-overlay-size-in-percent;
+        position: absolute;
+
+        & .content-container {
+          position: absolute;
+          left:0;
+          right:0;
+          bottom:0;
+          background-color: $cm-imagemap-mobile-quickinfo-overlay-color;
+        }
+      }
+      @include breakpoint("sm-and-up") {
+        @include center-absolute();
+      }
+    }
+  }
+
+  @if $cm-imagemap-dimm-imagemap-on-quickinfo {
+    &__areas--active:after {
+      content: "";
+      display: block;
+      background-color: $cm-imagemap-dimm-imagemap-on-quickinfo-color;
+      height: 100%;
+      width: 100%;
+      z-index: 2;
+      top: 0;
+      position: absolute;
+    }
+  }
+}
+
+// Text-Overlay (part of ImageMap feature)
+.#{$cm-imagemap-overlay-prefix} {
+  &--theme-dark &__link {
+    color: $cm-imagemap-overlay-color-dark;
+    background-color: transparent;
+    padding: $cm-imagemap-overlay-padding;
+    display: block;
+  }
+
+  &--theme-light &__link {
+    color: $cm-imagemap-overlay-color-light;
+    background-color: transparent;
+    padding: $cm-imagemap-overlay-padding;
+    display: block;
+  }
+
+  &--theme-light-on-dark &__link {
+    color: $cm-imagemap-overlay-color-light;
+    background-color: black;
+    padding: $cm-imagemap-overlay-padding;
+    display: block;
+  }
+
+  &--theme-dark-on-light &__link {
+    color: $cm-imagemap-overlay-color-dark;
+    background-color: white;
+    padding: $cm-imagemap-overlay-padding;
+    display: block;
+  }
+}

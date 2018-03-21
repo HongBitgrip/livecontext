@@ -1,0 +1,33 @@
+//default styles
+.#{$cm-image-prefix} {
+
+  // responsive image, use width of outer container
+  &--responsive {
+    vertical-align: middle;
+    width: 100%;
+    @include stretch-absolute();
+  }
+
+  // lazy loading, show spinner
+  &--loading {
+    background: $cm-image-loading-background url("../../img/loader_big.gif") no-repeat center center;
+    color: transparent; // hide alt text
+  }
+
+  // alternative image
+  &--missing {
+    background: $cm-image-missing-background;
+    background-size: 50%;
+  }
+
+  // alternative background color without logo image
+  &--blank {
+    background: $cm-image-blank-background;
+    background-size: 50%;
+  }
+}
+
+//legacy @deprecated
+.cm-aspect-ratio-box {
+  @include aspect-ratio-box(1, 1);
+}

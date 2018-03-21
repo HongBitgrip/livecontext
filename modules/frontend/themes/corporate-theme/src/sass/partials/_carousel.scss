@@ -1,0 +1,86 @@
+/*
+Carousel
+========================================================================================================================
+
+Contains styling definitions for all content types as cm-carousel.
+- cm-carousel
+- cm-carousel-control
+*/
+
+.#{$cm-carousel-prefix} {
+
+  // controls top right on mobile
+  &__control {
+    display: inline-block;
+    margin: 0;
+    background-color: rgba(palette(black), 0.5);
+    color: palette(white);
+    line-height: $carousel-height;
+    position: absolute;
+    right: $padding-base-vertical;
+    top: $padding-base-vertical;
+
+    // controls bottom right (for default teaser)
+    @include breakpoint(sm-and-up) {
+      top: auto;
+      right: $padding-base-vertical;
+      bottom: $padding-base-vertical;
+      left: auto;
+    }
+
+    &--hero,
+    &--superhero {
+      top: inherit;
+      bottom: $padding-base-vertical;
+      z-index: 2; //controls should be above other items
+    }
+
+    &--details {
+      top: 10px;
+      bottom: inherit;
+    }
+  }
+
+  // controls bottom left (for default teaser)
+  &--alternative &__control {
+    @include breakpoint(sm-and-up) {
+      top: auto;
+      right: auto;
+      bottom: $padding-base-vertical;
+      left: $padding-base-vertical;
+    }
+  }
+  // hack for position the icons in the controller
+  & span.glyphicon {
+    top: 3px;
+  }
+
+  &__pagination {
+    -webkit-tap-highlight-color: transparent;
+    display: inline-block;
+    margin: 0;
+    width: 50px;
+    text-align: center;
+  }
+
+  &-control {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    border-radius: 0;
+    cursor: pointer;
+    width: $carousel-height;
+    text-indent: 0;
+    font-size: $font-size-base;
+    opacity: 1;
+    text-shadow: none;
+
+    &:hover {
+      color: rgba(palette(white), 0.8);
+    }
+  }
+
+  .cm-image--responsive {
+    color: transparent; // hide alt text
+  }
+}

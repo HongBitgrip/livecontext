@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMChannel folder="/Sites/Chef Corp./Germany/German/Content/Site-Wide/Integration/External Embedding" name="Embedding Demo Page" xmlns:cmexport="http://www.coremedia.com/2012/cmexport" translationState="up-to-date">
+<locale>de-DE</locale>
+<master>
+<link href="../../../../../../United%20States/English/Content/Site-Wide/Integration/External%20Embedding/Embedding%20Demo%20Page.xml" path="/Sites/Chef%20Corp%2E/United%20States/English/Content/Site-Wide/Integration/External%20Embedding/Embedding%20Demo%20Page"/>
+</master>
+<viewtype>
+</viewtype>
+<linkedSettings>
+</linkedSettings>
+<resourceBundles2>
+</resourceBundles2>
+<segment>embedding-test</segment>
+<title>Einbindung von Drittanbieter-Diensten</title>
+<htmlTitle></htmlTitle>
+<keywords></keywords>
+<htmlDescription>Explore the HTML embed feature of the CoreMedia Corporate Blueprint.</htmlDescription>
+<subjectTaxonomy>
+</subjectTaxonomy>
+<locationTaxonomy>
+</locationTaxonomy>
+<contexts>
+</contexts>
+<teaserTitle></teaserTitle>
+<pictures>
+</pictures>
+<related>
+</related>
+<children>
+</children>
+<hidden>1</hidden>
+<hiddenInSitemap>1</hiddenInSitemap>
+<javaScript>
+</javaScript>
+<css>
+</css>
+<theme>
+</theme>
+<placement>
+<Struct xmlns="http://www.coremedia.com/2008/struct" xmlns:xlink="http://www.w3.org/1999/xlink">
+<StructProperty Name="placements_2">
+<Struct>
+<LinkProperty Name="layout" LinkType="coremedia:///cap/contenttype/Document_" xlink:href="coremedia:///cap/resources/../../../../Options/Settings/Pagegrid/Layouts/PagegridNavigation.xml" cmexport:path="/Sites/Chef%20Corp%2E/Germany/German/Options/Settings/Pagegrid/Layouts/PagegridNavigation"/>
+<StructProperty Name="placements">
+<Struct>
+</Struct>
+</StructProperty>
+</Struct>
+</StructProperty>
+<StructListProperty Name="placements">
+<Struct>
+<LinkListProperty Name="items" LinkType="coremedia:///cap/contenttype/CMTeasable">
+<Link xlink:href="coremedia:///cap/resources/Google%20Calendar%20HTML%20Fragment.xml" cmexport:path="/Sites/Chef%20Corp%2E/Germany/German/Content/Site-Wide/Integration/External%20Embedding/Google%20Calendar%20HTML%20Fragment"/>
+<Link xlink:href="coremedia:///cap/resources/Google%20Forms%20HTML%20Fragment.xml" cmexport:path="/Sites/Chef%20Corp%2E/Germany/German/Content/Site-Wide/Integration/External%20Embedding/Google%20Forms%20HTML%20Fragment"/>
+<Link xlink:href="coremedia:///cap/resources/SurveyMonkey%20%20Embedded%20Survey27a06ee8.xml" cmexport:path="/Sites/Chef%20Corp%2E/Germany/German/Content/Site-Wide/Integration/External%20Embedding/SurveyMonkey%20%20Embedded%20Survey%20%20HTML%20Fragment"/>
+<Link xlink:href="coremedia:///cap/resources/Pinterest%20Basic%20JS%20%20HTML%20Fragment.xml" cmexport:path="/Sites/Chef%20Corp%2E/Germany/German/Content/Site-Wide/Integration/External%20Embedding/Pinterest%20Basic%20JS%20%20HTML%20Fragment"/>
+<Link xlink:href="coremedia:///cap/resources/Pinterest%20USA%20%20HTML%20Fragment.xml" cmexport:path="/Sites/Chef%20Corp%2E/Germany/German/Content/Site-Wide/Integration/External%20Embedding/Pinterest%20USA%20%20HTML%20Fragment"/>
+<Link xlink:href="coremedia:///cap/resources/Twitter%20Feed%20%20HTML%20Fragment.xml" cmexport:path="/Sites/Chef%20Corp%2E/Germany/German/Content/Site-Wide/Integration/External%20Embedding/Twitter%20Feed%20%20HTML%20Fragment"/>
+</LinkListProperty>
+<LinkProperty Name="section" LinkType="coremedia:///cap/contenttype/CMSymbol" xlink:href="coremedia:///cap/resources/../../../../Options/Settings/Pagegrid/Placements/main.xml" cmexport:path="/Sites/Chef%20Corp%2E/Germany/German/Options/Settings/Pagegrid/Placements/main"/>
+</Struct>
+<Struct>
+<LinkListProperty Name="items" LinkType="coremedia:///cap/contenttype/CMTeasable">
+<Link xlink:href="coremedia:///cap/resources/Google%20Tag%20Manager%20-%20Chef%27f845ae3.xml" cmexport:path="/Sites/Chef%20Corp%2E/Germany/German/Content/Site-Wide/Integration/External%20Embedding/Google%20Tag%20Manager%20-%20Chef%20Corp%2E%20USA%20HTML%20Fragment"/>
+<Link xlink:href="coremedia:///cap/resources/../../External%20HTML%20Fragments/Optimizely%20JS%20%20HTML%20Fragment.xml" cmexport:path="/Sites/Chef%20Corp%2E/Germany/German/Content/Site-Wide/External%20HTML%20Fragments/Optimizely%20JS%20%20HTML%20Fragment"/>
+</LinkListProperty>
+<LinkProperty Name="section" LinkType="coremedia:///cap/contenttype/CMSymbol" xlink:href="coremedia:///cap/resources/../../../../Options/Settings/Pagegrid/Placements/above.xml" cmexport:path="/Sites/Chef%20Corp%2E/Germany/German/Options/Settings/Pagegrid/Placements/above"/>
+</Struct>
+</StructListProperty>
+</Struct>
+</placement>
+<header>
+</header>
+<footer>
+</footer>
+</CMChannel>

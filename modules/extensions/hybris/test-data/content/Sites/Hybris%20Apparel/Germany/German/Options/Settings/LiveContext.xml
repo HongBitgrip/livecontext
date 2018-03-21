@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMSettings folder="/Sites/Hybris Apparel/Germany/German/Options/Settings" name="LiveContext" xmlns:cmexport="http://www.coremedia.com/2012/cmexport" translationState="up-to-date">
+<locale>de-DE</locale>
+<master>
+<link href="../../../../United%20Kingdom/English/Options/Settings/LiveContext.xml" path="/Sites/Hybris%20Apparel/United%20Kingdom/English/Options/Settings/LiveContext"/>
+</master>
+<settings>
+<Struct xmlns="http://www.coremedia.com/2008/struct" xmlns:xlink="http://www.w3.org/1999/xlink">
+<BooleanProperty Name="livecontext.manageNavigation">true</BooleanProperty>
+<StringProperty Name="livecontext.connectionId">hybris1</StringProperty>
+<BooleanProperty Name="livecontext.policy.commerce-product-links">true</BooleanProperty>
+<BooleanProperty Name="livecontext.policy.commerce-category-links">true</BooleanProperty>
+<BooleanProperty Name="livecontext.policy.commerce-page-links">true</BooleanProperty>
+<StructProperty Name="livecontext.store.config">
+<Struct>
+<StringProperty Name="config.id">apparel</StringProperty>
+<StringProperty Name="store.name">Apparel-Catalog</StringProperty>
+<StringProperty Name="store.id">apparel-de</StringProperty>
+<StringProperty Name="catalog.id">apparelProductCatalog</StringProperty>
+<StringProperty Name="currency">EUR</StringProperty>
+</Struct>
+</StructProperty>
+</Struct>
+</settings>
+<identifier></identifier>
+</CMSettings>

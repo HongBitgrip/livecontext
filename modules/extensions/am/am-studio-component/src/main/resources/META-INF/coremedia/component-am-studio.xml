@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <import resource="classpath:META-INF/coremedia/bpbase-studio-rest.xml"/>
+  <import resource="classpath:com/coremedia/cap/common/uapi-services.xml"/>
+
+  <!--
+    A write interceptor that reacts to writes on asset blob properties (renditions)
+    by storing parsed rendition metadata.
+    -->
+  <bean id="updateAssetMetadataWriteInterceptor" class="com.coremedia.blueprint.assets.intercept.UpdateAssetMetadataWriteInterceptor">
+    <!-- the name of the root asset type -->
+    <property name="type" value="AMAsset"/>
+    <!-- true to make sure the interceptor applies to all asset types -->
+    <property name="interceptingSubtypes" value="true"/>
+    <!-- the name of struct property storing asset metadata -->
+    <property name="metadataProperty" value="metadata"/>
+    <!-- the name of the blob property storing the rendition from which metadata is extracted, typically the original rendition -->
+    <property name="metadataSourceProperty" value="original"/>
+  </bean>
+
+  <!--
+    A write interceptor that reacts to writes on pictures that link to a picture asset.
+    The picture asset metadata are extracted and provided for subsequent interceptors
+  -->
+  <bean id="updatePictureMetadataWriteInterceptor" class="com.coremedia.blueprint.assets.intercept.LinkedAssetMetadataExtractorInterceptor">
+    <!-- Ensure that this interceptor is executed before all the others. Its kind of a pre processor that only provides context. -->
+    <property name="priority" value="-1"/>
+    <!-- the name of the root asset type -->
+    <property name="type" value="CMPicture"/>
+    <!-- true to make sure the interceptor applies to all asset types -->
+    <property name="interceptingSubtypes" value="true"/>
+    <!-- the name of asset struct property storing asset metadata -->
+    <property name="assetMetadataProperty" value="metadata"/>
+    <!-- the name of the link property from CMPicture to asset -->
+    <property name="assetLinkProperty" value="asset"/>
+    <!-- the type of the linked asset for which metadata should be extracted -->
+    <property name="linkedAssetType" value="AMPictureAsset"/>
+  </bean>
+
+  <!--
+    A write interceptor that reacts to writes on videos that link to a video asset.
+    The video asset metadata are extracted and provided for subsequent interceptors
+  -->
+  <bean id="updateVideoMetadataWriteInterceptor" class="com.coremedia.blueprint.assets.intercept.LinkedAssetMetadataExtractorInterceptor">
+    <!-- Ensure that this interceptor is executed before all the others. Its kind of a pre processor that only provides context. -->
+    <property name="priority" value="-1"/>
+    <!-- the name of the root asset type -->
+    <property name="type" value="CMVideo"/>
+    <!-- true to make sure the interceptor applies to all asset types -->
+    <property name="interceptingSubtypes" value="true"/>
+    <!-- the name of asset struct property storing asset metadata -->
+    <property name="assetMetadataProperty" value="metadata"/>
+    <!-- the name of the link property from CMVideo to asset -->
+    <property name="assetLinkProperty" value="asset"/>
+    <!-- the type of the linked asset for which metadata should be extracted -->
+    <property name="linkedAssetType" value="AMVideoAsset"/>
+  </bean>
+
+  <!--
+    Validator for AMAsset content.
+  -->
+  <bean id="amAssetValidator" class="com.coremedia.rest.cap.validation.ContentTypeValidator">
+    <property name="connection" ref="connection"/>
+    <property name="contentType" value="AMAsset"/>
+    <property name="validatingSubtypes" value="true"/>
+    <property name="validators">
+      <list>
+        <!--
+          Validator for AMAsset metadata struct.
+        -->
+        <bean class="com.coremedia.blueprint.assets.studio.validation.AssetMetadataValidator">
+          <property name="metadataProperty" value="metadata"/>
+          <property name="configurationService" ref="configurationService"/>
+          <property name="assetManagementConfiguration" ref="assetManagementConfiguration"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+
+  <!--
+    Makes the asset management configuration available on client at
+    editorContext.getConfiguration().assetManagement
+  -->
+  <bean id="assetManagementConfigurationPublisher" class="com.coremedia.rest.cap.configuration.ConfigurationPublisher">
+    <property name="name" value="assetManagement"/>
+    <property name="configuration" ref="assetManagementConfiguration"/>
+  </bean>
+
+  <!-- asset management configuration -->
+  <bean id="assetManagementConfiguration" class="com.coremedia.blueprint.assets.studio.AssetManagementConfiguration">
+    <property name="settingsDocument" value="${studio.assets.settingsDocument:AssetManagement}"/>
+  </bean>
+</beans>

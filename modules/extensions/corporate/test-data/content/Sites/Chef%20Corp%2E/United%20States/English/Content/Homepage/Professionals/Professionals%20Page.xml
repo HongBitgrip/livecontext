@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMChannel folder="/Sites/Chef Corp./United States/English/Content/Homepage/Professionals" name="Professionals Page" xmlns:cmexport="http://www.coremedia.com/2012/cmexport">
+<locale>en-US</locale>
+<master>
+</master>
+<viewtype>
+</viewtype>
+<localSettings>
+<Struct xmlns="http://www.coremedia.com/2008/struct" xmlns:xlink="http://www.w3.org/1999/xlink">
+</Struct>
+</localSettings>
+<linkedSettings>
+</linkedSettings>
+<resourceBundles2>
+</resourceBundles2>
+<segment>for-professionals</segment>
+<title>For Professionals</title>
+<htmlTitle></htmlTitle>
+<keywords></keywords>
+<htmlDescription>Chef Corp. delivers expert solutions for kitchen professionals world-wide</htmlDescription>
+<subjectTaxonomy>
+<link href="../../../../../../../Settings/Taxonomies/Subject/Professionals.xml" path="/Settings/Taxonomies/Subject/Professionals"/>
+</subjectTaxonomy>
+<locationTaxonomy>
+</locationTaxonomy>
+<contexts>
+</contexts>
+<teaserTitle>For Professionals</teaserTitle>
+<pictures>
+<link href="../../../Assets/Pictures/Company/About%20Us%20-%20Chefs%20in%20the%20kitchen%20Picture.xml" path="/Sites/Chef%20Corp%2E/United%20States/English/Assets/Pictures/Company/About%20Us%20-%20Chefs%20in%20the%20kitchen%20Picture"/>
+</pictures>
+<related>
+</related>
+<children>
+<link href="Product%20Overview/Products%20Overview%20Page.xml" path="/Sites/Chef%20Corp%2E/United%20States/English/Content/Homepage/Professionals/Product%20Overview/Products%20Overview%20Page"/>
+<link href="Aurora%20B2B/Aurora%20B2B%20Page.xml" path="/Sites/Chef%20Corp%2E/United%20States/English/Content/Homepage/Professionals/Aurora%20B2B/Aurora%20B2B%20Page"/>
+<link href="Service/Services%20Page.xml" path="/Sites/Chef%20Corp%2E/United%20States/English/Content/Homepage/Professionals/Service/Services%20Page"/>
+</children>
+<javaScript>
+</javaScript>
+<css>
+</css>
+<theme>
+</theme>
+<placement>
+<Struct xmlns="http://www.coremedia.com/2008/struct" xmlns:xlink="http://www.w3.org/1999/xlink">
+<StructProperty Name="placements_2">
+<Struct>
+<LinkProperty Name="layout" LinkType="coremedia:///cap/contenttype/Document_" xlink:href="coremedia:///cap/resources/../../../Options/Settings/Pagegrid/Layouts/Hero%20Page.xml" cmexport:path="/Sites/Chef%20Corp%2E/United%20States/English/Options/Settings/Pagegrid/Layouts/Hero%20Page"/>
+<StructProperty Name="placements">
+<Struct>
+</Struct>
+</StructProperty>
+</Struct>
+</StructProperty>
+<StructListProperty Name="placements">
+<Struct>
+<LinkListProperty Name="items" LinkType="coremedia:///cap/contenttype/CMTeasable">
+<Link xlink:href="coremedia:///cap/resources/Product%20Overview/Products%20Overview%20Page.xml" cmexport:path="/Sites/Chef%20Corp%2E/United%20States/English/Content/Homepage/Professionals/Product%20Overview/Products%20Overview%20Page"/>
+<Link xlink:href="coremedia:///cap/resources/Aurora%20B2B/Aurora%20B2B%20Page.xml" cmexport:path="/Sites/Chef%20Corp%2E/United%20States/English/Content/Homepage/Professionals/Aurora%20B2B/Aurora%20B2B%20Page"/>
+<Link xlink:href="coremedia:///cap/resources/Service/Services%20Page.xml" cmexport:path="/Sites/Chef%20Corp%2E/United%20States/English/Content/Homepage/Professionals/Service/Services%20Page"/>
+</LinkListProperty>
+<LinkProperty Name="section" LinkType="coremedia:///cap/contenttype/CMSymbol" xlink:href="coremedia:///cap/resources/../../../Options/Settings/Pagegrid/Placements/main.xml" cmexport:path="/Sites/Chef%20Corp%2E/United%20States/English/Options/Settings/Pagegrid/Placements/main"/>
+</Struct>
+<Struct>
+<LinkListProperty Name="items" LinkType="coremedia:///cap/contenttype/CMTeasable">
+<Link xlink:href="coremedia:///cap/resources/For%20Professionals%20Intro%20Article.xml" cmexport:path="/Sites/Chef%20Corp%2E/United%20States/English/Content/Homepage/Professionals/For%20Professionals%20Intro%20Article"/>
+</LinkListProperty>
+<LinkProperty Name="viewtype" LinkType="coremedia:///cap/contenttype/CMViewtype" xlink:href="coremedia:///cap/resources/../../../Options/Viewtypes/CMChannel/full-details.xml" cmexport:path="/Sites/Chef%20Corp%2E/United%20States/English/Options/Viewtypes/CMChannel/full-details"/>
+<LinkProperty Name="section" LinkType="coremedia:///cap/contenttype/CMSymbol" xlink:href="coremedia:///cap/resources/../../../Options/Settings/Pagegrid/Placements/above.xml" cmexport:path="/Sites/Chef%20Corp%2E/United%20States/English/Options/Settings/Pagegrid/Placements/above"/>
+</Struct>
+<Struct>
+<LinkListProperty Name="items" LinkType="coremedia:///cap/contenttype/CMTeasable">
+<Link xlink:href="coremedia:///cap/resources/For%20Professionals%20Teaser.xml" cmexport:path="/Sites/Chef%20Corp%2E/United%20States/English/Content/Homepage/Professionals/For%20Professionals%20Teaser"/>
+<Link xlink:href="coremedia:///cap/resources/../Our%20Products.xml" cmexport:path="/Sites/Chef%20Corp%2E/United%20States/English/Content/Homepage/Our%20Products"/>
+</LinkListProperty>
+<LinkProperty Name="viewtype" LinkType="coremedia:///cap/contenttype/CMViewtype" xlink:href="coremedia:///cap/resources/../../../Options/Viewtypes/CMChannel/hero.xml" cmexport:path="/Sites/Chef%20Corp%2E/United%20States/English/Options/Viewtypes/CMChannel/hero"/>
+<LinkProperty Name="section" LinkType="coremedia:///cap/contenttype/CMSymbol" xlink:href="coremedia:///cap/resources/../../../Options/Settings/Pagegrid/Placements/hero.xml" cmexport:path="/Sites/Chef%20Corp%2E/United%20States/English/Options/Settings/Pagegrid/Placements/hero"/>
+</Struct>
+<Struct>
+<LinkListProperty Name="items" LinkType="coremedia:///cap/contenttype/CMTeasable">
+<Link xlink:href="coremedia:///cap/resources/../../Site-Wide/External%20HTML%20Fragments/AddThis%20Social%20Sharing%20HTafde1194.xml" cmexport:path="/Sites/Chef%20Corp%2E/United%20States/English/Content/Site-Wide/External%20HTML%20Fragments/AddThis%20Social%20Sharing%20HTML%20Fragment"/>
+</LinkListProperty>
+<LinkProperty Name="section" LinkType="coremedia:///cap/contenttype/CMSymbol" xlink:href="coremedia:///cap/resources/../../../Options/Settings/Pagegrid/Placements/below.xml" cmexport:path="/Sites/Chef%20Corp%2E/United%20States/English/Options/Settings/Pagegrid/Placements/below"/>
+</Struct>
+</StructListProperty>
+</Struct>
+</placement>
+<header>
+</header>
+<footer>
+</footer>
+</CMChannel>

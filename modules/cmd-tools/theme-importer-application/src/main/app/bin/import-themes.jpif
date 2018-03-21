@@ -1,0 +1,5 @@
+# Java main class to call:
+JAVA_MAIN_CLASS=com.coremedia.blueprint.themeimporter.client.ThemeImporterClient
+
+# arguments to pass to Java virtual machine:
+JAVA_VM_ARGS="$JAVA_VM_ARGS -Dlogback.configurationFile=./properties/corem/import-themes-logback.xml"

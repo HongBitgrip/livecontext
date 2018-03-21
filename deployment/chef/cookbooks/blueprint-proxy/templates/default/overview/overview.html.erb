@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8"/>
+  <%- title = 'CoreMedia CMS' -%>
+  <title><%= title %></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="robots" content="noindex, nofollow"/>
+  <link rel="stylesheet" href="assets/overview.css">
+</head>
+<body id="top">
+<div class="cm-grid container">
+
+  <%- host = node['blueprint']['hostname'] -%>
+  <%= render "overview/header-partial.erb", :cookbook => 'blueprint-proxy', :variables => { :host => host, :title => title } %>
+
+  <div class="cm-row row">
+    <div id="main" class="cm-container">
+      <article class="cm-details">
+
+        <h2>Sites</h2>
+        <table>
+          <thead>
+          <tr>
+            <th>Preview</th>
+            <th>Live</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>
+              <%- if node['blueprint']['proxy']['virtual_host']['preview'] -%>
+                  <%- node['blueprint']['proxy']['virtual_host']['preview']['server_aliases'].each do |server_alias| %>
+                    <a href="https://<%= server_alias %>" target="_blank"><%= server_alias %></a>
+                  <%- end %>
+              <%- end %>
+            </td>
+            <td>
+              <%- if node['blueprint']['proxy']['virtual_host']['delivery'] -%>
+                  <%- node['blueprint']['proxy']['virtual_host']['delivery']['sites'].keys.each do |site| %>
+                    <a href="https://<%= node['blueprint']['proxy']['virtual_host']['delivery']['sites'][site]['server_name'] %>" target="_blank"><%= site %></a>
+                  <%- end %>
+              <%- end %>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+
+        <h2>Management Interfaces</h2>
+        <ul>
+          <li><a href="https://studio.<%= host %>" target="_blank">CoreMedia Studio</a></li>
+        </ul>
+
+        <%= render 'other-links',
+                   :source => @other_links_source ? @other_links_source : 'overview/other-links-partial.erb',
+                   :cookbook => @other_links_cookbook ? @other_links_cookbook : 'blueprint-proxy',
+                   :variables => { :host => host }
+        %>
+
+        <h2>Development URLs</h2>
+        <p>
+          If you deployed the test system using the chef <em>development</em> environment, you will automatically get extra apache
+          virtual hosts installed. These <em>candy</em> hosts provide some dev-sugar to sweeten up your daily work.
+        </p>
+        <p>
+          A <em>candy</em> host returns the favor, i.e. it redirects the callers request to the caller itself. This allows
+          the developer to start his webapps using the maven tomcat plugin and work with portless https URLs, without having
+          the need to start and configure any reverse proxy such as apache or nginx.
+        </p>
+
+        <ul>
+          <li><a href="https://candy-studio.<%= host %>" target="_blank">Candy Studio</a></li>
+          <li><a href="https://candy-preview.<%= host %>" target="_blank">Candy Preview</a></li>
+        </ul>
+
+        <%= render "overview/candy-profiles-partial.erb", :cookbook => 'blueprint-proxy', :variables => { :host => host } %>
+
+        <p>Enjoy!</p>
+      </article>
+    </div>
+  </div>
+
+  <%= render "overview/footer-partial.erb", :cookbook => 'blueprint-proxy' %>
+
+</div>
+</body>
+</html>

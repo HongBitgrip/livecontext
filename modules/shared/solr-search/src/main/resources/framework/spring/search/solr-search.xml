@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+  <description>
+    Search specific bean definitions
+  </description>
+
+  <context:property-placeholder location="classpath:/framework/spring/search/solr-search-defaults.properties"
+                                ignore-unresolvable="true" local-override="false"/>
+
+  <!-- import bean "contentRepository" -->
+  <import resource="classpath:/com/coremedia/cae/uapi-services.xml"/>
+  <!-- import bean "solrClient" -->
+  <import resource="classpath:com/coremedia/search/solr/client/coremedia-solr-client.xml"/>
+
+  <bean class="org.springframework.beans.factory.config.ListFactoryBean" id="solrSearchFilters">
+    <property name="sourceList">
+      <list/>
+    </property>
+  </bean>
+
+  <bean id="solrSearchQueryBuilder" class="com.coremedia.blueprint.cae.search.solr.SolrSearchQueryBuilder">
+    <property name="preview" value="${cae.is.preview}"/>
+    <property name="searchFilterProviders" ref="solrSearchFilters"/>
+  </bean>
+
+  <bean id="resultFactory" class="com.coremedia.blueprint.cae.search.solr.SolrSearchResultFactory">
+    <property name="contentRepository" ref="contentRepository"/>
+    <property name="solrClient" ref="solrClient"/>
+    <property name="collection" value="${solr.collection.cae}"/>
+    <property name="queryBuilder" ref="solrSearchQueryBuilder"/>
+    <property name="representationMapper" ref="representationMapper"/>
+  </bean>
+
+  <bean id="representationMapper" class="com.coremedia.blueprint.id.ContentRepresentationMapper">
+    <property name="idProvider" ref="idProvider"/>
+  </bean>
+
+  <bean id="segmentResolver" class="com.coremedia.blueprint.cae.search.solr.SolrSegmentResolver">
+    <property name="searchResultFactory" ref="resultFactory"/>
+    <property name="cacheForSeconds" value="10"/>
+  </bean>
+
+  <bean id="solrCacheCapacityConfigurer" class="com.coremedia.cache.CacheCapacityConfigurer" init-method="init">
+    <property name="cache" ref="cache"/>
+    <property name="capacities">
+      <map>
+        <!--
+          every CacheKey implementation must return a String constant in #cacheclass. ("java.lang.Object" is the default
+           if #cacheclass is not overwritten)
+
+          This constant *must* be configured with a capacity, otherwise the CacheKey will not be cached (!)
+        -->
+        <entry key="com.coremedia.blueprint.cae.search.solr.SolrQueryCacheKey" value="100"/>
+      </map>
+    </property>
+  </bean>
+
+</beans>

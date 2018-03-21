@@ -1,0 +1,91 @@
+/* =====================================================================================================================
+   Notification classes
+   Contains styling definitions for notifications.
+   ================================================================================================================== */
+
+/* box */
+.cm-notification {
+  position: relative;
+  padding: 10px 25px 10px 35px;
+  min-height: 20px;
+  color: #cccccc;
+  line-height: 20px;
+
+  /* title */
+  &__headline {
+    font-weight: bold;
+  }
+
+  /* icon */
+  &:before {
+    position: absolute;
+    margin: -1px 0 0 -35px;
+    font-size: 24px;
+    font-family: 'livecontext-icons';
+    cursor: default;
+  }
+
+  &--error {
+    color: #e30615;
+    &:before {
+      content: "\e60e";
+    }
+  }
+
+  &--warning {
+    color: #ee9234;
+    &:before {
+      content: "\e611";
+    }
+  }
+
+  &--info {
+    color: #4681c5;
+    &:before {
+      content: "\e60d";
+    }
+  }
+
+  &--success {
+    color: #5cb565;
+    &:before {
+      content: "\e60f";
+    }
+  }
+
+  /* dismiss-button */
+  &__dismiss:before {
+    position: absolute;
+    top: 2px;
+    right: 5px;
+    color: rgba(0, 0, 0, 0.75);
+    content: "\e610";
+    font-size: 12px;
+    font-family: 'livecontext-icons';
+    cursor: pointer;
+  }
+
+  /* dismiss in error alert */
+  &--error &__dismiss:before {
+    color: rgba(255, 255, 255, 1);
+  }
+
+  &--inactive {
+    display: none;
+  }
+}
+
+.cm-popup {
+  position: absolute;
+  z-index: 99;
+}
+
+.cm-popup,
+.cm-popup .cm-popup--active {
+  visibility: hidden;
+}
+
+.cm-popup--active,
+.cm-popup--active .cm-popup--active {
+  visibility: visible;
+}

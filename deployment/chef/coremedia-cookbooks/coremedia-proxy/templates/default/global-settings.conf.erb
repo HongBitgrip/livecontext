@@ -1,0 +1,33 @@
+# ------------------------------------------------------------------------------
+# | Server software information                                                |
+# ------------------------------------------------------------------------------
+
+# Avoid displaying the exact Apache version number, the description of the
+# generic OS-type and the information about Apache's compiled-in modules.
+
+ServerTokens Prod
+
+
+<Proxy *>
+<%- if node['apache']['version'] == '2.4' -%>
+  Require all granted
+<%- else -%>
+  Order Deny,Allow
+  Allow from all
+<%- end -%>
+</Proxy>
+
+
+# Block access to backup and source files.
+# These files may be left by some text editors and can pose a great security
+# danger when anyone has access to them.
+
+<FilesMatch "(^#.*#|\.(bak|config|dist|fla|inc|ini|log|psd|sh|sql|sw[op])|~)$">
+<%- if node['apache']['version'] == '2.4' -%>
+  Require all denied
+<%- else -%>
+  Order allow,deny
+  Deny from all
+  Satisfy All
+<%- end -%>
+</FilesMatch>

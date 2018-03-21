@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:customize="http://www.coremedia.com/2007/coremedia-spring-beans-customization"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd http://www.coremedia.com/2007/coremedia-spring-beans-customization http://www.coremedia.com/2007/coremedia-spring-beans-customization.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+  <context:component-scan base-package="com.coremedia.ecommerce.studio.rest"/>
+
+  <import resource="classpath:/framework/spring/lc-ecommerce-connection.xml"/>
+  <import resource="classpath:/framework/spring/lc-ecommerce-services.xml"/>
+  <import resource="classpath:/com/coremedia/cap/multisite/multisite-services.xml"/>
+  <import resource="classpath:/com/coremedia/ecommerce/studio/rest/validators/ecommerce-validators.xml"/>
+
+  <bean id="abstractCatalogResource" abstract="true" class="com.coremedia.ecommerce.studio.rest.AbstractCatalogResource"/>
+
+  <bean id="productVariantResource" parent="abstractCatalogResource" class="com.coremedia.ecommerce.studio.rest.ProductVariantResource" scope="prototype"/>
+  <bean id="productResource" parent="abstractCatalogResource" class="com.coremedia.ecommerce.studio.rest.ProductResource" scope="prototype"/>
+  <bean id="categoryResource" parent="abstractCatalogResource" class="com.coremedia.ecommerce.studio.rest.CategoryResource" scope="prototype"/>
+  <bean id="marketingspotResource" parent="abstractCatalogResource" class="com.coremedia.ecommerce.studio.rest.MarketingSpotResource" scope="prototype"/>
+  <bean id="segmentResource" parent="abstractCatalogResource" class="com.coremedia.ecommerce.studio.rest.SegmentResource" scope="prototype"/>
+  <bean id="contractResource" parent="abstractCatalogResource" class="com.coremedia.ecommerce.studio.rest.ContractResource" scope="prototype"/>
+  <bean id="workspaceResource" parent="abstractCatalogResource" class="com.coremedia.ecommerce.studio.rest.WorkspaceResource" scope="prototype"/>
+  <bean id="marketingResource" parent="abstractCatalogResource" class="com.coremedia.ecommerce.studio.rest.MarketingResource" scope="prototype"/>
+  <bean id="segmentsResource" parent="abstractCatalogResource" class="com.coremedia.ecommerce.studio.rest.SegmentsResource" scope="prototype"/>
+  <bean id="contractsResource" parent="abstractCatalogResource" class="com.coremedia.ecommerce.studio.rest.ContractsResource" scope="prototype"/>
+  <bean id="storeResource" parent="abstractCatalogResource" class="com.coremedia.ecommerce.studio.rest.StoreResource" scope="prototype"/>
+  <bean id="catalogResource" parent="abstractCatalogResource" class="com.coremedia.ecommerce.studio.rest.CatalogResource" scope="prototype"/>
+  <bean id="workspacesResource" parent="abstractCatalogResource" class="com.coremedia.ecommerce.studio.rest.WorkspacesResource" scope="prototype"/>
+  <bean id="facetsResource" parent="abstractCatalogResource" class="com.coremedia.ecommerce.studio.rest.FacetsResource" scope="prototype"/>
+
+  <bean id="catalogConfig" class="com.coremedia.ecommerce.studio.rest.CatalogServiceResource" scope="prototype"/>
+
+  <bean class="com.coremedia.ecommerce.studio.rest.filter.EcStudioFilters"/>
+
+  <customize:append id="commerceExceptionMapperConfigurer" bean="jerseyConfigPropertyPackages"
+                    custom-value="com.coremedia.ecommerce.studio.rest.exception"/>
+</beans>

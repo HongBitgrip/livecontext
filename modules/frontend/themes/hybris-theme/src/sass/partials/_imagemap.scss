@@ -1,0 +1,37 @@
+//imagemaps
+.#{$cm-imagemap-prefix} {
+
+  // do not show the more info button
+  &__button-group {
+    display: none;
+  }
+}
+
+
+.cm-quickinfo {
+  &--imagemap {
+    .cm-quickinfo__title {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      transform: translateY(180px);
+    }
+
+    &.cm-quickinfo--no-image {
+      .cm-quickinfo__title {
+        position: static;
+        transform: none;
+      }
+    }
+
+    .cm-quickinfo__price {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      margin: 0;
+      transform: translateY(240px);
+    }
+  }
+}

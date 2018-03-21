@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMArticle folder="/Sites/Chef Corp./Germany/German/Content/Homepage/Company/Press/Events/Events Items" name="Chef Corp New HQ Opening Party Article" xmlns:cmexport="http://www.coremedia.com/2012/cmexport" translationState="up-to-date">
+<locale>de-DE</locale>
+<master>
+<link href="../../../../../../../../United%20States/English/Content/Homepage/Company/Press/Events/Events%20Items/Chef%20Corp%20New%20HQ%2111e0b1e.xml" path="/Sites/Chef%20Corp%2E/United%20States/English/Content/Homepage/Company/Press/Events/Events%20Items/Chef%20Corp%20New%20HQ%20Opening%20Party%20Article"/>
+</master>
+<viewtype>
+</viewtype>
+<localSettings>
+<Struct xmlns="http://www.coremedia.com/2008/struct" xmlns:xlink="http://www.w3.org/1999/xlink">
+<BooleanProperty Name="callToActionDisabled">false</BooleanProperty>
+<StringProperty Name="callToActionCustomText"/>
+</Struct>
+</localSettings>
+<linkedSettings>
+</linkedSettings>
+<resourceBundles2>
+</resourceBundles2>
+<segment></segment>
+<title>Chef Corp. Büro-Eröffnungsparty</title>
+<htmlTitle></htmlTitle>
+<keywords></keywords>
+<htmlDescription></htmlDescription>
+<subjectTaxonomy>
+<link href="../../../../../../../../../../Settings/Taxonomies/Subject/Events.xml" path="/Settings/Taxonomies/Subject/Events"/>
+<link href="../../../../../../../../../../Settings/Taxonomies/Subject/Press.xml" path="/Settings/Taxonomies/Subject/Press"/>
+</subjectTaxonomy>
+<locationTaxonomy>
+</locationTaxonomy>
+<contexts>
+</contexts>
+<teaserTitle>Büro-Eröffnungsparty</teaserTitle>
+<teaserText grammarName="coremedia-richtext-1.0"><div xmlns="http://www.coremedia.com/2003/richtext-1.0" xmlns:xlink="http://www.w3.org/1999/xlink"><p>Chef Corp. feiert die Eröffnung unseres neuen Büros in Chicago mit einer  großen Party am 15. Juni. Treffen Sie Starköche persönlich.</p></div></teaserText>
+<detailText grammarName="coremedia-richtext-1.0"><div xmlns="http://www.coremedia.com/2003/richtext-1.0" xmlns:xlink="http://www.w3.org/1999/xlink"><p/><p>Chef Corp. wird die Eröffnung unseres neuen Verwaltungsgebäude in Downtown Chicago mit einer großen Party feiern. Die Starköche Jamie Bourdain und Oliver Anthony werden unsere Gäste mit ihren berühmten kulinarischen Kreationen beeindrucken, die sie in unserem Live-Show-Küche zubereiten. Verpassen Sie nicht den herrlichen Blick von unserer Aussichtsterrasse am Dach - und genießen Sie entspannt den Sonnenuntergang mit Drinks aus unserer gut ausgestatteten Bar, die Ihnen der Michelin 3-Sterne "Cocktail-Meister" Aaron Spangler serviert.</p></div></detailText>
+<pictures>
+<link href="../../../../../../Assets/Pictures/News/Chef%20Corp%2E%20New%20HQ%20in%20Downtown%20Chicago%20%20Picture.xml" path="/Sites/Chef%20Corp%2E/Germany/German/Assets/Pictures/News/Chef%20Corp%2E%20New%20HQ%20in%20Downtown%20Chicago%20%20Picture"/>
+</pictures>
+<related>
+</related>
+</CMArticle>

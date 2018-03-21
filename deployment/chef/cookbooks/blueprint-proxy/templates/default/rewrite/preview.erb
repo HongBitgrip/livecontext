@@ -1,0 +1,15 @@
+<%- if @params[:servlet_context] != @params[:live_servlet_context] -%>
+  RewriteRule ^/<%= @params[:live_servlet_context] %>/(.*) /<%= @params[:servlet_context] %>/$1 [R=302,L]
+<%- end -%>
+  # Internal services, served only by Tomcat. Deny external invocation.
+  RewriteRule ^/internal/(.*) - [F,PT,L]
+
+  RewriteRule ^/<%= @params[:servlet_context] %>/+servlet/+internal/(.*) - [F,PT,L]
+
+<%- if @params[:default_site] %>
+  # robots.txt
+  RewriteRule ^/robots.txt /<%= @params[:servlet_context] %>/servlet/service/robots/<%= @params[:default_site] %> [PT,L]
+
+  # Send empty URL to default site home page
+  RewriteRule ^/$ /<%= @params[:servlet_context] %>/servlet/<%= @params[:default_site] %> [R=302,L]
+<%- end %>

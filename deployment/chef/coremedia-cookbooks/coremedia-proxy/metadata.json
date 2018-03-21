@@ -1,0 +1,54 @@
+{
+  "name": "coremedia-proxy",
+  "description": "Installs/Configures coremedia-proxy",
+  "long_description": "# Description\n\nThis is a wrapper cookbook for the apache2 cookbook with a library cookbook style. The cookbook sets up a webserver\n(apache httpd) and provides you with convenience definitions to set up virtual host configurations.\n# Requirements\n\n## Platform:\n\n* redhat\n* centos\n* amazon\n\n## Cookbooks:\n\n* apache2 (~> 3.2.0)\n* chef-sugar (~> 3.0)\n\n# Attributes\n\n*No attributes defined*\n\n# Recipes\n\n* [coremedia-proxy::default](#coremedia-proxydefault) - This recipe installs Apache HTTPD and installs modules as well as configuring global settings.\n* [coremedia-proxy::ssl](#coremedia-proxyssl) - This recipe installs Apache HTTPD and installs modules as well as configuring global settings.\n\n## coremedia-proxy::default\n\nThis recipe installs Apache HTTPD and installs modules as well as configuring global settings.\n\n## coremedia-proxy::ssl\n\nThis recipe installs Apache HTTPD and installs modules as well as configuring global settings. It also configures mod_ssl.\n\n# Definitions\n\n* [coremedia_proxy_webapp](#coremedia_proxy_webapp) - This definition creates an opinionated virtual host setup.\n\n## coremedia_proxy_webapp\n\nThis definition creates an opinionated virtual host setup. The setup consists of three different templates that are setup\nto render one virtual host configuration file. The base template is configuable using the `virtual_host_template` parameter and\nthe default should work with most standard CoreMedia webapps. Within this template a `rewrite_template` and a `proxy_template`\nare rendered as partial templates. The `proxy_template` has a default, whereas the `rewrite_template` does not.\n\nEach template parameter has a sibling parameter to configure the cookbook the template comes from. Because the `rewrite_template`\nis to be expected to reside in the cookbook from which you use the definition its `cookbook` sibling parameter has no default so you don't\nneed to define this parameter in most cases too. The `virtual_host_template` passes all parameter you set on this definition to the\nproxy and rewrite templates so you can access all parameters you set to this definition via the `params[:<parameter name]` hash.\n\nIn the parameter list below all parameter, the default template in which they are used is noted. If thats the case and you use your own templates,\nyou can omit them.\n\nDO NOT SET ONE OF THE FOLLOWING PARAMETER:\n\n* `ssl`\n* `parent_params`\n\n### Parameters\n\n- name: The name of the virtual host config file..\n- virtual_host_template: The template to render the virtual host config frame. Defaults to `virtual-host.erb`..\n- virtual_host_template_cookbook: The cookbook from which to load the virtual host template. Defaults to this cookbook..\n- proxy_template: The path of the proxy configuration template. Defaults to `proxy/servlet.erb`..\n- proxy_template_cookbook: The cookbook from which to load the proxy template. Defaults to this cookbook..\n- rewrite_template: The path to the rewrite rules for this virtual host. Defaults to `rewrite/<name param>`..\n- rewrite_template_cookbook: The cookbook from which to load the rewrite template. Defaults to the cookbook that declares this definition..\n- enable_ssl: A flag to disable SSL configuration and rendering of ssl virtual hosts. Defaults to true.. Defaults to: true\n- server_name: The name for the virtual host. Defaults to the name of the definition. (in default virtual_host_template).\n- server_aliases: An array of aliases for the virtual host. (in default virtual_host_template) (optional).\n- rewrite_log_level: The log level for the rewrite engine. (in default virtual_host_template) (optional).\n- apache_log_level: The log level for the virtual host. (in default virtual_host_template) (optional).\n- custom_conf: An optional array of custom directives. (in default virtual_host_template) (optional).\n- protocol: The protocol to talk with the servlet container (`ajp` | `http` | `https` ) defaults to `http`. (in default proxy_template) (optional).\n- default_servlet: The default servlet to route requests to. For coremedia Spring based webapps, set this to `servlet`. (in default proxy_template) (optional).\n- servlet_context: The webapps context path. This definition assumes all webapps in one cluster use the same context path. (in default proxy_template).. Defaults to:\n- cluster: A hash containing the balancer member configuration. (in default proxy_template) See cluster configuration section for more information.  (in default proxy_template).\n\n### Cluster configuration\nThe cluster parameter defines a map with the following structure, where `CLUSTER NAME` is an arbitrary string and all keys must be of type String and not Symbols:\n\n```ruby\n{ '<CLUSTER NAME' => {\n  'host' => '<SERVLET CONTAINER HOST>',\n  'port' => '<SERVLET CONTAINER PORT>',\n  'params' => {\n    '<KEY>' => '<VALUE>',\n    ...\n  },\n  ...\n}\n```\n\n### Examples\n\n```ruby\ncoremedia_proxy_webapp 'my.server.com' do\n  server_aliases %w(alias.my.server.com)\n  servlet_context 'myapp'\n  cluster('default' => { 'host' => 'localhost', 'port' => '8080' })\n          'other' => { 'host' => 'otherhost.server.com', 'port' => '8080' })\nend\n```\n# Author\n\nAuthor:: Felix Simmendinger (<felix.simmendinger@coremedia.com>)\n\nAuthor:: Daniel Zabel (<daniel.zabel@coremedia.com>)\n",
+  "maintainer": "Felix Simmendinger",
+  "maintainer_email": "felix.simmendinger@coremedia.com",
+  "license": "Copyright (C) 2015-2017, CoreMedia AG proprietary License, all rights reserved.",
+  "platforms": {
+    "redhat": ">= 0.0.0",
+    "centos": ">= 0.0.0",
+    "amazon": ">= 0.0.0"
+  },
+  "dependencies": {
+    "apache2": "~> 3.2.0",
+    "chef-sugar": "~> 3.0"
+  },
+  "recommendations": {
+
+  },
+  "suggestions": {
+
+  },
+  "conflicting": {
+
+  },
+  "providing": {
+
+  },
+  "replacing": {
+
+  },
+  "attributes": {
+
+  },
+  "groupings": {
+
+  },
+  "recipes": {
+
+  },
+  "version": "0.3.5",
+  "source_url": "https://github.com/coremedia-contributions/coremedia-proxy-cookbook",
+  "issues_url": "https://support.coremedia.com",
+  "privacy": false,
+  "chef_versions": [
+
+  ],
+  "ohai_versions": [
+
+  ],
+  "gems": [
+
+  ]
+}

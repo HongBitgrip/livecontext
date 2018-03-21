@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMViewtype folder="/Sites/Chef Corp./United States/English/Options/Viewtypes/CMChannel" name="squarelist" xmlns:cmexport="http://www.coremedia.com/2012/cmexport">
+<locale>en-US</locale>
+<master>
+</master>
+<description>Displays multiple items as a list with small preview images.</description>
+<icon md5="c4c56fc121ad642253f72766358238ce" size="34147" href="../../../../../../../__blob/c4c56fc121ad642253f72766358238ce.blob" mimetype="image/png"/>
+<layout>squarelist</layout>
+</CMViewtype>

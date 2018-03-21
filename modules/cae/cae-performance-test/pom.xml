@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.coremedia.blueprint</groupId>
+    <artifactId>cae</artifactId>
+    <version>1-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>cae-performance-test</artifactId>
+  <packaging>pom</packaging>
+
+  <description>
+    A JMeter performance test example for a Blueprint webapp.
+
+    Invoke the test via "mvn verify -Pperformance" and find the result files below target/jmeter-result afterwards.
+  </description>
+
+
+  <properties>
+    <!--
+      settings that point to the "cae-preview-webapp" if run from within the workspace.
+
+      This is just an example to show how the plugins work together.
+
+      Performance tests typically run against CAE Live Webapps on appropriate (live) hardware from a remote machine
+    -->
+    <webapp.protocol>http</webapp.protocol>
+    <webapp.host>localhost</webapp.host>
+    <webapp.port>40980</webapp.port>
+    <webapp.uris>${project.basedir}/src/test/jmeter/urilist.txt</webapp.uris>
+  </properties>
+
+
+  <profiles>
+
+    <profile>
+
+      <!--
+        plugin executions in separate profile so that a simple "mvn package / install" does not execute a performance test.
+      -->
+
+      <id>performance</id>
+
+      <build>
+        <plugins>
+
+          <!--
+            ============== Execute JMeter =================
+          -->
+          <plugin>
+            <groupId>com.lazerycode.jmeter</groupId>
+            <artifactId>jmeter-maven-plugin</artifactId>
+            <executions>
+
+              <!--
+                 1.) Perform a short warmup which triggers JSP compilation etc
+
+                 Note: Test results of this execution will be overwritten by the next execution because
+                 the file "test.jmx" is reused and the result file name is computed from this file name.
+                 Will be fixed soon.
+              -->
+              <execution>
+                <id>warmup</id>
+                <phase>integration-test</phase>
+                <goals>
+                  <goal>jmeter</goal>
+                </goals>
+                <configuration>
+                  <!-- include testplan -->
+                  <testFilesIncluded>
+                    <include>test.jmx</include>
+                  </testFilesIncluded>
+
+                  <!-- properties will be used in the test plan -->
+                  <propertiesUser>
+                    <threadgroup00.name>warmup</threadgroup00.name>
+                    <!-- number of threads to use -->
+                    <threadgroup00.numberOfThreads>5</threadgroup00.numberOfThreads>
+                    <!-- delay of the test in seconds -->
+                    <threadgroup00.scheduledDelay>30</threadgroup00.scheduledDelay>
+                    <!-- duration of the test in seconds -->
+                    <threadgroup00.scheduledDuration>120</threadgroup00.scheduledDuration>
+                    <!-- how long till all threads are up and running in seconds -->
+                    <threadgroup00.rampUp>1</threadgroup00.rampUp>
+                    <!-- target throughput of all threads of the group per minute -->
+                    <threadgroup00.throughput>1000000000</threadgroup00.throughput>
+                    <!-- file containing a list of uris to be used for the test -->
+                    <threadgroup00.dataFile>${webapp.uris}</threadgroup00.dataFile>
+                  </propertiesUser>
+
+                </configuration>
+              </execution>
+
+              <!--
+                2.) Perform the test
+              -->
+              <execution>
+                <id>test</id>
+                <phase>integration-test</phase>
+                <goals>
+                  <goal>jmeter</goal>
+                </goals>
+                <configuration>
+
+                  <!-- include testplan -->
+                  <testFilesIncluded>
+                    <include>test.jmx</include>
+                  </testFilesIncluded>
+
+                  <!-- properties will be used in the test plan -->
+                  <propertiesUser>
+                    <!-- A new user which accesses all URLs -->
+                    <threadgroup00.name>performancetest</threadgroup00.name>
+                    <!-- number of threads to use -->
+                    <threadgroup00.numberOfThreads>10</threadgroup00.numberOfThreads>
+                    <!-- delay of the test in seconds -->
+                    <threadgroup00.scheduledDelay>0</threadgroup00.scheduledDelay>
+                    <!-- duration of the test in seconds -->
+                    <threadgroup00.scheduledDuration>600</threadgroup00.scheduledDuration>
+                    <!-- how long till all threads are up and running in seconds -->
+                    <threadgroup00.rampUp>1</threadgroup00.rampUp>
+                    <!-- target throughput of all threads of the group per minute -->
+                    <threadgroup00.throughput>1000000000</threadgroup00.throughput>
+                    <!-- file containing a list of uris to be used for the test -->
+                    <threadgroup00.dataFile>${webapp.uris}</threadgroup00.dataFile>
+                  </propertiesUser>
+                </configuration>
+              </execution>
+
+            </executions>
+
+            <!--
+              General configuration for all executions
+            -->
+            <configuration>
+              <!-- do not add timestamp to test results filename. -->
+              <testResultsTimestamp>false</testResultsTimestamp>
+              <!-- do not fail build if there are errors during the test (e.g. 404, 500, ...) -->
+              <ignoreResultFailures>true</ignoreResultFailures>
+
+              <propertiesUser>
+                <protocol>${webapp.protocol}</protocol>
+                <server>${webapp.host}</server>
+                <port>${webapp.port}</port>
+              </propertiesUser>
+            </configuration>
+
+          </plugin>
+
+          <!--
+            ============== Analyze JMeter Results =================
+          -->
+          <plugin>
+            <groupId>com.lazerycode.jmeter</groupId>
+            <artifactId>jmeter-analysis-maven-plugin</artifactId>
+            <executions>
+
+              <execution>
+                <id>analyze-test</id>
+                <phase>post-integration-test</phase>
+                <goals>
+                  <goal>analyze</goal>
+                </goals>
+                <configuration>
+                  <!-- JMeter result file -->
+                  <source>${project.build.directory}/jmeter/results/test*.jtl</source>
+
+                  <!-- place where the result files are stored -->
+                  <targetDirectory>${project.build.directory}/jmeter-results</targetDirectory>
+
+                  <!-- produce chart pictures -->
+                  <generateCharts>true</generateCharts>
+
+                  <!-- produce detailed reports -->
+                  <generateCSVs>true</generateCSVs>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+
+        </plugins>
+
+      </build>
+    </profile>
+  </profiles>
+
+</project>

@@ -1,0 +1,138 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <!--
+      You will need to change the groupId in all modules
+      A global search&replace will do the job !
+  -->
+  <groupId>com.coremedia.blueprint</groupId>
+  <artifactId>blueprint</artifactId>
+  <version>1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>CoreMedia CMS Blueprint</name>
+
+  <organization>
+    <name>Blueprint</name>
+  </organization>
+
+  <properties>
+    <!--
+     | set this property in any reactor module, e.g. a module that has a modules element, so that it points to
+     | the correct path relative to the submodules.
+    -->
+    <workspace.configuration.dir>../workspace-configuration</workspace.configuration.dir>
+    <development-properties.dir>${workspace.configuration.dir}/development-properties</development-properties.dir>
+    <logging-properties.dir>${workspace.configuration.dir}/logging</logging-properties.dir>
+
+    <customer>Blueprint</customer>
+
+    <!-- Some values for the ThemeImporter exec-maven-plugin configuration -->
+    <theme-importer.argument.folder>-Dthemes_folder=${project.build.directory}/themes</theme-importer.argument.folder>
+    <theme-importer.argument.export-path>-Dexport_path=${project.build.directory}/content</theme-importer.argument.export-path>
+    <theme-importer.argument.runner>com.coremedia.blueprint.themeimporter.client.ThemeImporterRunner</theme-importer.argument.runner>
+
+  </properties>
+
+  <profiles>
+    <profile>
+      <id>deployment-archive</id>
+      <!--
+       | This profile creates the deployment archive containing the chef setup, the deployment artifacts
+       | (webapps, tools and some jars) and the content.
+       -->
+      <modules>
+        <module>deployment</module>
+      </modules>
+    </profile>
+  </profiles>
+
+  <modules>
+    <module>blueprint-parent</module>
+    <module>modules</module>
+    <module>test-data</module>
+    <module>deployment</module>
+  </modules>
+
+  <prerequisites>
+    <maven>3.1</maven>
+  </prerequisites>
+
+  <scm>
+    <connection>scm:git:git@github.com:CoreMedia/cms.git</connection>
+    <developerConnection>scm:git:git@github.com:CoreMedia/cms.git</developerConnection>
+    <tag>HEAD</tag>
+  </scm>
+
+  <distributionManagement>
+    <snapshotRepository>
+      <id>localfs</id>
+      <url>file://${project.basedir}/target</url>
+    </snapshotRepository>
+    <repository>
+      <id>coremedia.external.releases</id>
+      <url>https://repository.coremedia.com/nexus/service/local/staging/deploy/maven2</url>
+    </repository>
+    <site>
+      <id>localsite</id>
+      <url>file://${project.basedir}/target/site-deploy</url>
+    </site>
+  </distributionManagement>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>com.coremedia.maven</groupId>
+        <artifactId>coremedia-application-maven-plugin</artifactId>
+        <version>2.7.10</version>
+        <extensions>true</extensions>
+      </plugin>
+    </plugins>
+  </build>
+
+  <reporting>
+    <excludeDefaults>true</excludeDefaults>
+  </reporting>
+
+  <repositories>
+    <repository>
+      <id>coremedia.external.livecontext.releases</id>
+      <name>CoreMedia CMS</name>
+      <url>https://repository.coremedia.com/nexus/content/repositories/livecontext-releases/</url>
+      <layout>default</layout>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+    <repository>
+      <id>coremedia.external.releases</id>
+      <name>CoreMedia CMS</name>
+      <url>https://repository.coremedia.com/nexus/content/groups/cms/</url>
+      <layout>default</layout>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <id>coremedia.external.livecontext.releases</id>
+      <name>CoreMedia CMS</name>
+      <url>https://repository.coremedia.com/nexus/content/repositories/livecontext-releases/</url>
+      <layout>default</layout>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </pluginRepository>
+    <pluginRepository>
+      <id>coremedia.external.releases</id>
+      <name>CoreMedia CMS</name>
+      <url>https://repository.coremedia.com/nexus/content/groups/cms/</url>
+      <layout>default</layout>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </pluginRepository>
+  </pluginRepositories>
+
+</project>

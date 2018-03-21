@@ -1,0 +1,59 @@
+<jnlp spec="$jnlpSpec" codebase="$$codebase" context="$$context" href="$$name">
+    <information>
+        <title>CoreMedia Editor</title>
+        <vendor>CoreMedia</vendor>
+        <homepage href="http://www.coremedia.com"/>
+        <description>CoreMedia Editor Webstart Webapp</description>
+        <icon href="$$codebase/images/CMLogo128x128.png"/>
+        <offline-allowed/>
+        <shortcut><menu submenu="CoreMedia Editor"/></shortcut>
+    </information>
+
+    <security>
+        <all-permissions/>
+    </security>
+
+    <resources>
+        <java version="1.6+" initial-heap-size="512m" max-heap-size="1024m"/>
+        <!--
+          Nearly all system properties (except those listed in
+          http://docs.oracle.com/javase/6/docs/technotes/guides/javaws/developersguide/syntax.html#resources )
+          must be prefixed with "javaws." or "jnlp." here, otherwise they may
+          (depends on the Java version, break between 7u40 and 7u45)
+          not be promoted to the application.  Properties prefixed with the
+          more specific prefix "javaws.coremedia." (e.g. "javaws.coremedia.foo.bar")
+          are also provided by their actual names (e.g. "foo.bar") in the application.
+        -->
+        <property name="javaws.coremedia.coremedia.javaworkaround.class" value="hox.corem.editor.Java7u25Workaround"/>
+        <property name="javaws.coremedia.coremedia.javaworkaround.java7u25.versions" value="1.6.0_51,1.7.0_25"/>
+        <property name="javaws.coremedia.coremedia.configpath" value="$$codebaseproperties/"/>
+        <property name="javaws.coremedia.java.security.policy" value="$$codebaseproperties/policy/editor.policy"/>
+        <property name="javaws.coremedia.com.sun.CORBA.legacy.connection.ORBSocketFactoryClass" value="@SITE_MANAGER_ORB_SOCKET_FACTORY@"/>
+        <property name="javaws.coremedia.com.coremedia.corba.SSLClientSocketFactory.clearTextPort" value="@SITE_MANAGER_CLEAR_TEXT_PORTS@"/>
+        <property name="javaws.coremedia.com.coremedia.corba.SSLClientSocketFactory.sslPort" value="@SITE_MANAGER_SSL_PORTS@"/>
+        <property name="javaws.coremedia.com.coremedia.corba.SSLClientSocketFactory.keystore" value="$$codebaseproperties/corem/@SITE_MANAGER_SSL_KEYSTORE_FILENAME@"/>
+        <property name="javaws.coremedia.com.coremedia.corba.SSLClientSocketFactory.passphrase" value="@SITE_MANAGER_SSL_PASSPHRASE@"/>
+        <property name="javaws.coremedia.logback.configurationFile" value="$$codebaseproperties/corem/editor-logback.xml"/>
+
+$dependencies
+
+    </resources>
+
+    <resources os="Mac\ OS\ X">
+        <!-- The following settings require that you have enabled Mac System Look and Feel (aka Aqua) in editor.xml -->
+        <property name="javaws.coremedia.apple.laf.useScreenMenuBar" value="true"/>
+        <property name="javaws.coremedia.apple.awt.graphics.UseQuartz" value="true"/>
+        <property name="javaws.coremedia.com.apple.mrj.application.apple.menu.about.name" value="CoreMedia Editor"/>
+    </resources>
+
+    <resources arch="x86" os="Windows">
+        <nativelib href="nativelib/ShellExecute_dll.jar"/>
+        <nativelib href="nativelib/bridge2java_dll.jar"/>
+        <!-- Disable Java SE 6 Update 10 feature that freezes Editor on some machines -->
+        <property name="sun.java2d.d3d" value="false"/>
+    </resources>
+
+
+    <application-desc main-class="$mainClass"/>
+    <component-desc/>
+</jnlp>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMViewtype folder="/Sites/Chef Corp./Germany/German/Options/Viewtypes/CMChannel" name="claim-circle" xmlns:cmexport="http://www.coremedia.com/2012/cmexport" translationState="up-to-date">
+<locale>de-DE</locale>
+<master>
+<link href="../../../../../United%20States/English/Options/Viewtypes/CMChannel/claim-circle.xml" path="/Sites/Chef%20Corp%2E/United%20States/English/Options/Viewtypes/CMChannel/claim-circle"/>
+</master>
+<description>Zeigt Inhalt als Anspruch Aussage mit einem runden Bild.</description>
+<icon md5="782cf0032ce32381f7975a342680dd0b" size="34147" href="../../../../../../../__blob/782cf0032ce32381f7975a342680dd0b.blob" mimetype="image/png"/>
+<layout>claim-circle</layout>
+</CMViewtype>

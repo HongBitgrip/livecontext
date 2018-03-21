@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMViewtype folder="/Sites/Chef Corp./United States/English/Options/Viewtypes/CMChannel" name="carousel" xmlns:cmexport="http://www.coremedia.com/2012/cmexport">
+<locale>en-US</locale>
+<master>
+</master>
+<description>Displays multiple items in a sliding carousel.</description>
+<icon md5="bdd06839662df2fda3f939a0a3fa5c2a" size="34147" href="../../../../../../../__blob/bdd06839662df2fda3f939a0a3fa5c2a.blob" mimetype="image/png"/>
+<layout>carousel</layout>
+</CMViewtype>

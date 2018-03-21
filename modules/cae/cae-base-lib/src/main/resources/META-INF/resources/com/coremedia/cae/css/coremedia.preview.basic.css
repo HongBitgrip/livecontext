@@ -1,0 +1,99 @@
+/*! CoreMedia Studio - Styles for Preview */
+
+.cm-page-preview {
+  background: none transparent; /* same color as Studio frame */
+  margin: 0;
+  padding: 0;
+  height: auto; /* reset 100% height by themes to avoid scrollbars caused by margin of items */
+}
+
+/* fragmented item */
+.cm-preview-item {
+  margin-top: 2px;
+}
+
+/* studio look like buttons in fragment preview */
+.cm-page-preview .toggle-button {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADNJREFUeNpiYBgFgxPIA/F7IP6PBb+HyhME+lgMeQ8VJxogG0KyZmRD7pOreRTQCwAEGABc9hDJtWMwowAAAABJRU5ErkJggg==') 6px center no-repeat #C8C6C6;
+}
+
+.cm-page-preview .toggle-button.toggle-off {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADFJREFUeNpiYBgF+IA8pQa8B2J9Sgz4T6kh/yk15D8Svj9gLqAoDCiOBfkRkt4BAgwACLgQycQ7s9wAAAAASUVORK5CYII=');
+}
+
+.cm-page-preview .toggle-container-off {
+  display: none;
+}
+
+/* headline */
+.cm-preview-item__headline {
+  display: block;
+  padding: 4px 6px 4px 24px;
+  font: 700 12px/32px 'Roboto', 'Segoe UI', 'Trebuchet MS', 'Lucida Grande', 'Helvetica', sans-serif;
+  color: #000;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.cm-preview-item__headline:hover,
+.cm-preview-item__headline:focus,
+.cm-preview-item__headline:active {
+  color: #000;
+  text-decoration: none;
+}
+
+/* content */
+.cm-preview-item__container {
+  display: block;
+  max-width: 1200px;
+  padding: 20px;
+}
+
+.cm-preview-content {
+  padding: 15px;
+  background-color: #ffffff;
+  transition: box-shadow 0.25s;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.6);
+}
+
+.cm-preview-missing-key {
+  font-weight: bold;
+  background-color: #e74c3c;
+}
+
+/* images */
+.cm-preview__image .cm-image {
+  position: relative; /* reset responsive image */
+  /* at least show the spinning icon of the background (32x32) */
+  display: inline-block;
+  min-width: 35px;
+  min-height: 35px;
+}
+
+/* display developer-mode symbol on top right */
+.cm-preview-developer-mode {
+  position: fixed;
+  top: 70px;
+  right: 0;
+  z-index: 999;
+  background-color: #e74c3c;
+  padding: 7px 9px;
+  border-radius: 5px 0 0 5px;
+  cursor: default;
+}
+
+.cm-preview-developer-mode:hover {
+  background-color: #892F25;
+  transition: background-color 0.3s ease-out;
+}
+
+.cm-preview-developer-mode__icon {
+  display: block;
+  background: url("theme-icon.svg") left center no-repeat;
+  width: 24px;
+  height: 24px;
+}
+
+.cm-preview-developer-mode__icon span {
+  display: none;
+}

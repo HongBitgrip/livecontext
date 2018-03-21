@@ -1,0 +1,10 @@
+@import "~@coremedia/sass-utils/src/partials";
+@import "~@coremedia/brick-dynamic-include/src/sass/partials";
+
+@import "partials/utils/mixins";
+@import "partials/components/general";
+@import "partials/components/notification";
+@import "partials/components/teaser";
+@import "partials/components/overview";
+@import "partials/components/asset-details";
+@import "partials/components/download-collection";

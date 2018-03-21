@@ -1,0 +1,207 @@
+/*
+Gap
+========================================================================================================================
+
+Contains styling definitions for all content types as cm-gap.
+- cm-gap
+- cm-gap--mini
+*/
+
+.#{$prefix}gap {
+  width: 100%;
+  height: 33vh;
+  overflow: hidden;
+  position: relative;
+
+  &:hover {
+    a .#{$prefix}gap__dimmer {
+      opacity: 0.33;
+    }
+  }
+
+  &__embed {
+    display: block;
+    position: relative;
+    overflow: hidden;
+
+    @include aspect-ratio-box(1, 1);
+
+    @include breakpoint ('sm') {
+      @include aspect-ratio-box(4, 3);
+    }
+
+    @include breakpoint ('md') {
+      @include aspect-ratio-box(16, 9);
+    }
+  }
+
+  &__embed-item {
+    @include stretch-absolute();
+  }
+
+  &__picture-box {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  &__picture {
+    position: absolute;
+    height: 100%;
+    background: none; /* no loading spinner */
+
+    &.#{$prefix}picture-missing-box {
+      background-color: $brand-primary;
+    }
+  }
+
+  &__dimmer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background-color: palette(black);
+    transition: opacity $transition-duration ease, transform $transition-duration ease;
+  }
+
+  &__caption {
+    @include caption(0);
+    padding-top: $padding-large-horizontal;
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 100%);
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 100%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 100%);
+  }
+
+  &__cta,
+  &__text,
+  &__headline {
+    color: palette(white);
+    margin-top: 0;
+    margin-bottom: $padding-large-horizontal;
+  }
+
+  a &__headline {
+    &:hover {
+      & > span {
+        &:before {
+          width: 150px;
+          transform: translate3d(-10px, 0, 0);
+        }
+
+        &:after {
+          width: 150px;
+          transform: translate3d(10px, 0, 0);
+        }
+      }
+
+      .#{$prefix}gap__arrow {
+        transform: translate3d(5px, 0, 0);
+      }
+    }
+  }
+
+  &__headline {
+
+    & > span {
+      position: relative;
+      display: inline-block;
+      @include flickeringFix();
+
+      &:before,
+      &:after {
+        display: none;
+        content: '';
+        position: absolute;
+        top: ($font-size-h2*$line-height-base)/2; //centered vertically
+        height: 1px;
+        width: 0;
+        background-color: palette(white);
+        transition: width $transition-duration ease(in-out-quad), transform $transition-duration ease(in-out-quad);
+
+        @include breakpoint(md) {
+          display: inherit;
+        }
+      }
+
+      &:before {
+        right: 100%;
+        margin-right: 10px;
+      }
+
+      &:after {
+        left: 100%;
+        margin-left: 10px;
+      }
+    }
+  }
+
+  &__arrow {
+    background-size: contain;
+    background: url("../../img/arrow-white.svg") no-repeat;
+    display: inline-block;
+    margin-left: 5px;
+    width: 18px;
+    height: 18px;
+    position: relative;
+    bottom: -2px;
+
+    @include breakpoint(sm-and-up) {
+      margin-left: 10px;
+      width: 38px;
+      height: 38px;
+      bottom: -4px;
+      transition: transform $transition-duration ease(in-out-quad);
+    }
+  }
+
+  &--mini {
+    &__wrapper {
+      position: relative;
+    }
+
+    &__picture {
+      background: $brand-primary;
+      @include stretch-absolute();
+    }
+
+    &__picture-box {
+      @include aspect-ratio-box(16, 9);
+    }
+
+    &__dimmer {
+      @include stretch-absolute();
+      opacity: 0.7;
+      background: -webkit-linear-gradient(bottom, rgb(13, 16, 16), rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0) 90%, rgba(13, 16, 16, 0.47) 100%);
+      background: -moz-linear-gradient(bottom, #0d1010, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0) 90%, rgba(13, 16, 16, 0.47) 100%);
+      background: linear-gradient(to top, rgb(13, 16, 16), rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0) 90%, rgba(13, 16, 16, 0.47) 100%);
+    }
+
+    &__caption {
+      @include caption(8%);
+    }
+
+    &__headline {
+      font-size: font-format(h2, mobile);
+      color: palette(white);
+      text-shadow: 0 0 1px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.3);
+      margin-top: 0;
+      margin-bottom: $padding-base-horizontal;
+
+      @include breakpoint(sm-and-up) {
+        font-size: font-format(h2);
+        margin-bottom: $padding-large-horizontal;
+      }
+    }
+
+    &__text {
+      margin: $line-height-computed 0;
+      padding: 0 $padding-base-vertical;
+
+      @include breakpoint(md) {
+        padding: 0;
+      }
+    }
+  }
+}

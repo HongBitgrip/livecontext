@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <!--This spring import is necessary, otherwise the ec module won't be loaded in a corporate only environment -->
+  <import resource="classpath:/framework/spring/bpbase-ec-cms-connection.xml"/>
+  <import resource="classpath:/com/coremedia/blueprint/ecommerce/segments/ecommerce-segments.xml"/>
+  <import resource="classpath:/framework/spring/bpbase-ec-cms-commercebeans.xml"/>
+  <import resource="catalog-validation.xml"/>
+
+  <!-- import bean "contentRepository" -->
+  <import resource="classpath:/com/coremedia/cap/common/uapi-services.xml"/>
+  <!-- import bean "cmsProductCodeIndex" and "cmsCatalogTypes" -->
+  <import resource="classpath:/framework/spring/bpbase-ec-cms-content-catalog-codes.xml"/>
+  <!-- import bean "sitesService" -->
+  <import resource="classpath:/com/coremedia/cap/multisite/multisite-services.xml"/>
+
+  <bean id="cmsCatalogUniqueProductCodeValidator"
+        class="com.coremedia.blueprint.base.rest.validators.UniqueInSiteStringValidator">
+    <constructor-arg index="0" name="contentRepository" ref="contentRepository"/>
+    <constructor-arg index="1" name="contentType" value="#{cmsCatalogTypes.getProductContentType()}"/>
+    <constructor-arg index="2" name="property" value="#{cmsCatalogTypes.getProductCodeProperty()}"/>
+    <constructor-arg index="3" name="lookupFunction" value="#{cmsProductCodeIndex.createContentsByValueFunction()}"/>
+    <constructor-arg index="4" name="sitesService" ref="sitesService"/>
+    <property name="validatingSubtypes" value="true"/>
+  </bean>
+
+  <bean class="com.coremedia.catalog.studio.lib.validators.RootCategoryInvalidationSource">
+    <property name="capacity" value="${studio.rest.eventsCache.capacity:100}"/>
+  </bean>
+
+</beans>

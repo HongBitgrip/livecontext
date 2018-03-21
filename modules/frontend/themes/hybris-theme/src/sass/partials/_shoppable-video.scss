@@ -1,0 +1,75 @@
+.#{$cm-shoppable-prefix} {
+  .cm-teasable {
+    &__caption {
+      position: absolute;
+      top: auto;
+      bottom: 2rem;
+      transform: none;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 0;
+    }
+
+    &__headline {
+      padding: 1rem;
+      margin: 0;
+      color: $hybris-text;
+      font-size: 2rem;
+      font-weight: 600;
+      line-height: 1;
+      text-transform: uppercase;
+
+      @include breakpoint(md) {
+        font-size: 2.4rem;
+      }
+
+      @include breakpoint(lg) {
+        font-size: 3.6rem;
+      }
+    }
+  }
+
+  .cm-video {
+    max-width: 100%;
+  }
+
+  &__teasers {
+    border: 1px solid #ccc;
+  }
+}
+
+.cm-quickinfo {
+  &--shoppable {
+    display: grid;
+    grid-template-rows: auto auto auto 1fr auto;
+    grid-template-columns: 1fr;
+
+    .cm-quickinfo__picture-link {
+      grid-row: 1
+    }
+
+    .cm-quickinfo__title {
+      grid-row: 2;
+      margin: 1.5rem 0 0 0;
+      padding: 0;
+    }
+
+    .cm-quickinfo__text {
+      display: none;
+      grid-row: 3;
+
+      @include breakpoint(lg) {
+        display: block;
+        margin: 1rem 2rem;
+      }
+    }
+
+    .cm-quickinfo__price {
+      grid-row: 4;
+    }
+
+    .cm-quickinfo__controls {
+      grid-row: 5;
+      align-self: center;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "blueprint": {
+    "hostname": "CMS_HOST",
+    "loopback_hostname": "localhost",
+    "maven_repository_url": "file://localhost/tmp/maven-repo",
+    "webapps":{
+      "content-management-server": {
+        "application.properties": {
+          "cap.server.license": "properties/corem/license.zip"
+        }
+      },
+      "master-live-server": {
+        "application.properties": {
+          "cap.server.license": "properties/corem/license.zip"
+        }
+      }
+    },
+    "dev": {
+      "content": {
+        "content_zip": "file://localhost/tmp/content-users.zip"
+      }
+    }
+  },
+  "run_list": [
+    "role[mysql]",
+    "role[mongodb]",
+    "role[solr]",
+    "role[cms-9-config]",
+    "role[management]",
+    "role[publication]",
+    "role[preview]",
+    "role[preview-proxy]",
+    "role[studio]",
+    "role[studio-proxy]",
+    "role[delivery]",
+    "role[cms-9-delivery-proxy]",
+    "recipe[blueprint-cms-9::overview]",
+    "recipe[blueprint-dev-tooling::content]"
+  ]
+}

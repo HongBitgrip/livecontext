@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMArticle folder="/Sites/Chef Corp./Germany/German/Content/Homepage/Company/About" name="Management Board Article" xmlns:cmexport="http://www.coremedia.com/2012/cmexport" translationState="up-to-date">
+<locale>de-DE</locale>
+<master>
+<link href="../../../../../../United%20States/English/Content/Homepage/Company/About/Management%20Board%20Article.xml" path="/Sites/Chef%20Corp%2E/United%20States/English/Content/Homepage/Company/About/Management%20Board%20Article"/>
+</master>
+<viewtype>
+</viewtype>
+<localSettings>
+<Struct xmlns="http://www.coremedia.com/2008/struct" xmlns:xlink="http://www.w3.org/1999/xlink">
+<BooleanProperty Name="callToActionDisabled">false</BooleanProperty>
+<StringProperty Name="callToActionCustomText">Den Vorstand kennenlernen</StringProperty>
+</Struct>
+</localSettings>
+<linkedSettings>
+</linkedSettings>
+<resourceBundles2>
+</resourceBundles2>
+<segment></segment>
+<title>Unsere Chefs.</title>
+<htmlTitle></htmlTitle>
+<keywords></keywords>
+<htmlDescription></htmlDescription>
+<subjectTaxonomy>
+</subjectTaxonomy>
+<locationTaxonomy>
+</locationTaxonomy>
+<contexts>
+</contexts>
+<teaserTitle></teaserTitle>
+<teaserText grammarName="coremedia-richtext-1.0"><div xmlns="http://www.coremedia.com/2003/richtext-1.0" xmlns:xlink="http://www.w3.org/1999/xlink"><p>Mit guter Führung an die Spitze des Markts.</p></div></teaserText>
+<detailText grammarName="coremedia-richtext-1.0"><div xmlns="http://www.coremedia.com/2003/richtext-1.0" xmlns:xlink="http://www.w3.org/1999/xlink"><p>Der Vorstand leitet das Unternehmen in eigener Verantwortung und arbeitet eng mit dem Gesellschafterausschuss und Aufsichtsrat zusammen - zum Wohle unseres Unternehmens.</p><p/><p class="p--heading-3">Christian Margolis - CEO</p><p><img alt="" xlink:actuate="onLoad" xlink:show="embed" xlink:type="simple" xlink:href="coremedia:///cap/resources/../../../../Assets/Pictures/Management%20Board/Portraits/Christian%20Margolis%20%28CEO%29%20Picture.xml#data" cmexport:path="/Sites/Chef%20Corp%2E/Germany/German/Assets/Pictures/Management%20Board/Portraits/Christian%20Margolis%20%28CEO%29%20Picture"/> Geboren 1971 in Ottawa, Kanada, wurde Christian Margolis am 1. April 2008 Mitglied unseres Vorstands. Zuvor hatte er bereits seit 2002 als Leiter der Konstruktionsabteilung gearbeitet.</p><p>Christian Margolis hat Betriebswirtschaft  an der Yale University studiert. Von 1999 bis 2002 war er Produktmanager bei der Giganto Corp.</p><p class="p--heading-3">Jack Beneke - CFO</p><p><img alt="" xlink:actuate="onLoad" xlink:show="embed" xlink:type="simple" xlink:href="coremedia:///cap/resources/../../../../Assets/Pictures/Management%20Board/Portraits/Jack%20Beneke%20%28CFO%29%20Picture.xml#data" cmexport:path="/Sites/Chef%20Corp%2E/Germany/German/Assets/Pictures/Management%20Board/Portraits/Jack%20Beneke%20%28CFO%29%20Picture"/> Jack Beneke, geboren 1960 in Albuquerque, New Mexico, trat dem Vorstand am 1. Juli 2009 bei. Zuvor hatte er als Landesbezirksleiter bei Wells Fargo gearbeitet.</p><p>Jack Beneke hat Betriebswirtschaft an der Princeton University studiert.</p><p class="p--heading-3">Gretchen Cantillo - VP Marketing</p><p><img alt="" xlink:actuate="onLoad" xlink:show="embed" xlink:type="simple" xlink:href="coremedia:///cap/resources/../../../../Assets/Pictures/Management%20Board/Portraits/Gretchen%20Cantillo%20%28VP%20Marketing%225e83354.xml#data" cmexport:path="/Sites/Chef%20Corp%2E/Germany/German/Assets/Pictures/Management%20Board/Portraits/Gretchen%20Cantillo%20%28VP%20Marketing%29%20Picture"/> Geboren 1981 in Chicago, Illinois, trat  Gretchen Cantillo am 1. Januar 2014 als jüngstes Mitglied in unserer Firmengeschichte dem Vorstand der Chef Corp. bei. Sie hatte zuvor bereits seit 2012 als Teamleiterin in der Marketingabteilung von Chef Corp. gearbeitet.</p><p>Gretchen Cantillo hat Marketing an der Columbia University studiert, wo sie von unserer Personalabteilung entdeckt und angeworben wurde.</p><p class="p--heading-3">Sonya Schwartz - VP Human Resources</p><p><img alt="" xlink:actuate="onLoad" xlink:show="embed" xlink:type="simple" xlink:href="coremedia:///cap/resources/../../../../Assets/Pictures/Management%20Board/Portraits/Sonya%20Schwartz%20%28VP%20HR%29%20Picture.xml#data" cmexport:path="/Sites/Chef%20Corp%2E/Germany/German/Assets/Pictures/Management%20Board/Portraits/Sonya%20Schwartz%20%28VP%20HR%29%20Picture"/> Geboren 1973 in Sacramento, Kalifornien, wurde Sonya Schwartz am 1. November 2011 Vorstandsmitglied. Zuvor arbeitete Sonya Schwartz als regionale Personalleiterin für Yum! Brands.</p><p>Sonya Schwartz hat Psychologie an der Dartmouth University studiert.</p></div></detailText>
+<pictures>
+<link href="../../../../Assets/Pictures/Management%20Board/Group%20Shots/Management%20Board%20Close-Up%20Picture.xml" path="/Sites/Chef%20Corp%2E/Germany/German/Assets/Pictures/Management%20Board/Group%20Shots/Management%20Board%20Close-Up%20Picture"/>
+</pictures>
+<related>
+</related>
+</CMArticle>

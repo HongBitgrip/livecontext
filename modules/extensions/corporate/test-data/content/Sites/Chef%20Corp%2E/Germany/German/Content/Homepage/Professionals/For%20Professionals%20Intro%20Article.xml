@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMArticle folder="/Sites/Chef Corp./Germany/German/Content/Homepage/Professionals" name="For Professionals Intro Article" xmlns:cmexport="http://www.coremedia.com/2012/cmexport" translationState="up-to-date">
+<locale>de-DE</locale>
+<master>
+<link href="../../../../../United%20States/English/Content/Homepage/Professionals/For%20Professionals%20Intro%20Article.xml" path="/Sites/Chef%20Corp%2E/United%20States/English/Content/Homepage/Professionals/For%20Professionals%20Intro%20Article"/>
+</master>
+<viewtype>
+</viewtype>
+<localSettings>
+<Struct xmlns="http://www.coremedia.com/2008/struct" xmlns:xlink="http://www.w3.org/1999/xlink">
+<BooleanProperty Name="callToActionDisabled">false</BooleanProperty>
+<StringProperty Name="callToActionCustomText"/>
+</Struct>
+</localSettings>
+<linkedSettings>
+</linkedSettings>
+<resourceBundles2>
+</resourceBundles2>
+<segment></segment>
+<title>Premiumpartner der Spitzengastronomie</title>
+<htmlTitle></htmlTitle>
+<keywords></keywords>
+<htmlDescription></htmlDescription>
+<subjectTaxonomy>
+</subjectTaxonomy>
+<locationTaxonomy>
+</locationTaxonomy>
+<contexts>
+</contexts>
+<teaserTitle></teaserTitle>
+<teaserText grammarName="coremedia-richtext-1.0"><div xmlns="http://www.coremedia.com/2003/richtext-1.0" xmlns:xlink="http://www.w3.org/1999/xlink"><p>Seit der Gründung 1999 wuchs Chef Corp. zum führenden Anbieter von Produkten und Dienstleistungen für Restaurants der Spitzenklasse.</p></div></teaserText>
+<detailText grammarName="coremedia-richtext-1.0"><div xmlns="http://www.coremedia.com/2003/richtext-1.0" xmlns:xlink="http://www.w3.org/1999/xlink"><p dir="ltr">Seit der Gründung in den USA 1999 wuchs die Chef Corp. zum weltweit führenden Anbieter von Produkten und Dienstleistungen für gehobene Restaurants. Von Großgeräten bis zum Experten-Küchendesign, von der Lieferung bis hin zu Services wie Finanzierung stehen bei uns die Kunden stets im Mittelpunkt und erhalten die persönliche Aufmerksamkeit, die sie verdienen.</p></div></detailText>
+<pictures>
+</pictures>
+<related>
+</related>
+</CMArticle>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMArticle folder="/Sites/Chef Corp./Germany/German/Content/Homepage/Professionals/Aurora B2B" name="Aurora B2B Article" xmlns:cmexport="http://www.coremedia.com/2012/cmexport" translationState="up-to-date">
+<locale>de-DE</locale>
+<master>
+<link href="../../../../../../United%20States/English/Content/Homepage/Professionals/Aurora%20B2B/Aurora%20B2B%20Article.xml" path="/Sites/Chef%20Corp%2E/United%20States/English/Content/Homepage/Professionals/Aurora%20B2B/Aurora%20B2B%20Article"/>
+</master>
+<viewtype>
+</viewtype>
+<localSettings>
+<Struct xmlns="http://www.coremedia.com/2008/struct" xmlns:xlink="http://www.w3.org/1999/xlink">
+<BooleanProperty Name="callToActionDisabled">false</BooleanProperty>
+<StringProperty Name="callToActionCustomText">Jetzt kaufen</StringProperty>
+</Struct>
+</localSettings>
+<linkedSettings>
+</linkedSettings>
+<resourceBundles2>
+</resourceBundles2>
+<segment></segment>
+<title>Aurora B2B Shop</title>
+<htmlTitle></htmlTitle>
+<keywords></keywords>
+<htmlDescription></htmlDescription>
+<subjectTaxonomy>
+<link href="../../../../../../../../Settings/Taxonomies/Subject/Professionals.xml" path="/Settings/Taxonomies/Subject/Professionals"/>
+</subjectTaxonomy>
+<locationTaxonomy>
+</locationTaxonomy>
+<contexts>
+</contexts>
+<teaserTitle>Aurora B2B Shop</teaserTitle>
+<teaserText grammarName="coremedia-richtext-1.0"><div xmlns="http://www.coremedia.com/2003/richtext-1.0" xmlns:xlink="http://www.w3.org/1999/xlink"><p>Ersatzteile, Dekoration und Beleuchtung.  </p></div></teaserText>
+<detailText grammarName="coremedia-richtext-1.0"><div xmlns="http://www.coremedia.com/2003/richtext-1.0" xmlns:xlink="http://www.w3.org/1999/xlink"><p class="p--heading-2">Ersatzteile für Küchengeräte und Dekorationsideen für Ihr Restaurant</p><p>Seit 1999 kennen und vertrauen mehr als 125.000 Kunden <em>Chef Corp.</em> als führendem Anbieter von praktisch allem, was in der professionellen Gastronomie benötigt wird. Wir bieten allen unseren Kunden Expertenlösungen mit der persönlichen Aufmerksamkeit, die sie verdienen.</p><p>Wir bei Chef Corp. haben unseren ersten Internet-Auftritt 2001 in Form einer Corporate Website gelauncht, die unser Unternehmen beschreibt und unsere Produkte und Dienstleistungen (wie bspw. Küchenplanung) vorstellt. Sie können nur offline und persönlich über einen Account Manager bezogen werden.</p><p>Im Jahr 2009 eröffneten wir unseren B2B-Bereich in der Aurora Online-Shopping Mall, wo wir Ersatzteile für unsere Küchengeräte sowie Restaurantbeleuchtung, die leicht transportiert werden kann, anbieten.</p><p>Seit 2014 nutzen wir die <a xlink:show="new" xlink:type="simple" xlink:href="coremedia:///cap/resources/../../../Site-Wide/External%20Links/CoreMedia%208%20Digital%20Experience%20Platform%20E402051ed.xml" cmexport:path="/Sites/Chef%20Corp%2E/Germany/German/Content/Site-Wide/External%20Links/CoreMedia%208%20Digital%20Experience%20Platform%20External%20Link">Coremedia 8 Digital Experience-Plattform</a> , um das B2B-Shopping-Erlebnis durch wertvollen Content wie Einkaufsratgeber, Produktdatenblätter, fesselnde Produktbilder und inspirierende Galerien sowie Artikel über Designideen für Restaurants zu verbessern.</p><p>Durch den Einsatz von Coremedia Studio konnten wir den Aufwand für die Wartung unseres Contents auf der B2B-Website drastisch reduzieren und waren in der Lage, mehr und bessere Inhalte hinzuzufügen, ohne die Zahl unserer Redakteure zu erhöhen.</p><p>Wir haben gesehen, wie sehr sich unsere Konversionsraten und Umsatzzahlen gesteigert haben, nachdem wir unseren Shop mit wertvollem Content zu einem echten Erlebnis gemacht haben, das unsere Kunden darin bestätigt, unsere Produkte zu kaufen.</p></div></detailText>
+<pictures>
+<link href="../../../../Assets/Pictures/Products/LED%20Color%20Lightstrip%20Picture.xml" path="/Sites/Chef%20Corp%2E/Germany/German/Assets/Pictures/Products/LED%20Color%20Lightstrip%20Picture"/>
+</pictures>
+<related>
+</related>
+</CMArticle>

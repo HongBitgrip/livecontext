@@ -1,0 +1,19 @@
+{
+  "name": "@coremedia/brick-footer",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@coremedia/sass-utils": "^1.0.0",
+    "@coremedia/brick-bootstrap": "^1.0.0"
+  },
+  "devDependencies": {
+    "jsdoc-to-markdown": "3.0.0"
+  },
+  "scripts": {
+    "apidoc": "jsdoc2md src/js/*.js > API.md"
+  },
+  "main": "src/js/index.js",
+  "coremedia": {
+    "type": "brick"
+  }
+}

@@ -1,0 +1,28 @@
+!tape
+name: hy_testGetCategory
+interactions:
+- recorded: 2016-11-29T15:19:02.750Z
+  request:
+    method: GET
+    uri: http://hybrishost:9001/ws410/rest/catalogs/apparelProductCatalog/catalogversions/Staged/categories/40500
+    headers:
+      Accept: application/json
+      Accept-Encoding: gzip,deflate
+      Accept-Language: en
+      Authorization: Basic YWRtaW46bmltZGE=
+      Content-Type: application/json
+      Host: hybrishost:9001
+      Proxy-Connection: Keep-Alive
+      User-Agent: Apache-HttpClient/4.3.2 (java 1.5)
+  response:
+    status: 200
+    headers:
+      Content-Type: application/json;charset=UTF-8
+      Date: Tue, 29 Nov 2016 15:19:02 GMT
+      ETag: '"-1924766757"'
+      Last-Modified: Wed, 16 Nov 2016 18:26:01 GMT
+      Server: Apache-Coyote/1.1
+      Set-Cookie: _hybris.tenantID_=""; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/, JSESSIONID=154AA8A82893F4B994B7D56340EFDD47; Path=/ws410/; HttpOnly
+      X-Frame-Options: SAMEORIGIN
+    body: '{"@code":"40500","@pk":"8796111700110","@uri":"http://hybrishost:9001/ws410/rest/catalogs/apparelProductCatalog/catalogversions/Staged/categories/40500","comments":null,"creationtime":"2016-11-16T18:25:59.112Z","modifiedtime":"2016-11-16T18:26:01.481Z","allSubcategories":null,"allSupercategories":{"category":[{"@code":"categories","@pk":"8796099674254","@uri":"http://hybrishost:9001/ws410/rest/catalogs/apparelProductCatalog/catalogversions/Staged/categories/categories"},{"@code":"40000","@pk":"8796111667342","@uri":"http://hybrishost:9001/ws410/rest/catalogs/apparelProductCatalog/catalogversions/Staged/categories/40000"}]},"allowedPrincipals":{"principal":{"@type":"userGroupDTO","@uid":"customergroup","@pk":"8796093120517","@uri":"http://hybrishost:9001/ws410/rest/usergroups/customergroup"}},"catalogVersion":{"@version":"Staged","@pk":"8796093284953","@uri":"http://hybrishost:9001/ws410/rest/catalogs/apparelProductCatalog/catalogversions/Staged"},"categories":null,"categoryFeatureComponents":null,"data_sheet":null,"detail":null,"linkComponents":null,"logo":null,"medias":null,"name":"Boots
+      Accessories","normal":null,"others":null,"productCarouselComponents":null,"productListComponents":null,"products":null,"promotions":null,"restrictions":null,"supercategories":{"category":{"@code":"40000","@pk":"8796111667342","@uri":"http://hybrishost:9001/ws410/rest/catalogs/apparelProductCatalog/catalogversions/Staged/categories/40000"}},"thumbnails":null}'

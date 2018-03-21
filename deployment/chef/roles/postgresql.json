@@ -1,0 +1,24 @@
+{
+  "name": "postgresql",
+  "chef_type": "role",
+  "json_class": "Chef::Role",
+  "description": "The role for a postgresql node",
+  "run_list": [
+    "role[base]",
+    "recipe[blueprint-postgresql::server]"
+  ],
+  "env_run_lists": {
+    "kitchen": [
+      "role[base]",
+      "recipe[blueprint-postgresql::server]",
+      "recipe[blueprint-postgresql::_single-node]",
+      "recipe[blueprint-dev-tooling::databases]"
+    ],
+    "development": [
+      "role[base]",
+      "recipe[blueprint-postgresql::server]",
+      "recipe[blueprint-postgresql::_single-node]",
+      "recipe[blueprint-dev-tooling::databases]"
+    ]
+  }
+}

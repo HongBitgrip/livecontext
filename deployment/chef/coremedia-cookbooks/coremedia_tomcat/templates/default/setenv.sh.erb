@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+<% if @java_home -%>
+JAVA_HOME=<%= @java_home %>
+export JAVA_HOME
+<% end -%>
+CATALINA_OPTS="$CATALINA_OPTS -Xmx<%= @heap %>"
+CATALINA_OPTS="$CATALINA_OPTS -XX:MaxPermSize=<%= @perm %>"
+CATALINA_OPTS="$CATALINA_OPTS -Xss256k"
+
+## tell Tomcat to release the BodyContent buffer when BodyContentImpl.clear() is called.
+CATALINA_OPTS="$CATALINA_OPTS -Dorg.apache.jasper.runtime.BodyContentImpl.LIMIT_BUFFER=true"
+
+CATALINA_OPTS="$CATALINA_OPTS -XX:+CMSClassUnloadingEnabled"
+
+## successful name lookups from the name service should not be cached
+CATALINA_OPTS="$CATALINA_OPTS -Dsun.net.inetaddr.ttl=0"
+
+CATALINA_OPTS="$CATALINA_OPTS -Djava.security.egd=file:/dev/./urandom"
+
+CATALINA_OPTS="$CATALINA_OPTS <%= @catalina_opts %>"
+
+<% if !@debug -%>#<% end -%>CATALINA_OPTS="$CATALINA_OPTS <%= @debug_opts %>"
+
+<%- if @jmx_remote  -%>
+CATALINA_OPTS="$CATALINA_OPTS -Djava.rmi.server.hostname=<%= @jmx_remote_server_name %>"
+CATALINA_OPTS="$CATALINA_OPTS -Dcom.sun.management.jmxremote"
+CATALINA_OPTS="$CATALINA_OPTS -Dcom.sun.management.jmxremote.authenticate=<%= @jmx_remote_authenticate %>"
+CATALINA_OPTS="$CATALINA_OPTS -Dcom.sun.management.jmxremote.ssl=<%= @jmx_remote_ssl %>"
+CATALINA_OPTS="$CATALINA_OPTS -Dcom.sun.management.jmxremote.password.file=$CATALINA_HOME/../jmxremote.password"
+CATALINA_OPTS="$CATALINA_OPTS -Dcom.sun.management.jmxremote.access.file=$CATALINA_HOME/../jmxremote.access"
+<%- end  -%>
+export CATALINA_OPTS

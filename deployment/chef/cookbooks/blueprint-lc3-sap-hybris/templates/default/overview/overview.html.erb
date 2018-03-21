@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8"/>
+  <%- title = 'CoreMedia LiveContext 3 for SAP Hybris' -%>
+  <title><%= title %></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="robots" content="noindex, nofollow"/>
+  <link rel="stylesheet" href="assets/overview.css">
+</head>
+<body id="top">
+<div class="cm-grid container">
+
+  <%- host = node['blueprint']['hostname'] -%>
+  <%= render "overview/header-partial.erb", :cookbook => 'blueprint-proxy', :variables => { :host => host, :title => title } %>
+
+  <%- hybris_host = node['blueprint']['lc3-sap-hybris']['host'] -%>
+  <div class="cm-row row">
+    <div id="main" class="cm-container">
+      <article class="cm-details">
+
+        <h2>Sites</h2>
+        <table>
+          <thead>
+          <tr>
+            <th></th>
+            <th>Preview</th>
+            <th>Live</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>Apparel</td>
+            <td>
+              <a href="https://shop-preview-apparel.<%= host %>/yacceleratorstorefront/?site=apparel-uk&clear=true" target="_blank">English</a>,
+              <a href="https://shop-preview-apparel.<%= host %>/yacceleratorstorefront/?site=apparel-de&clear=true" target="_blank">German</a>
+            </td>
+            <td>
+              <a href="https://shop-apparel.<%= host %>/yacceleratorstorefront/?site=apparel-uk&clear=true" target="_blank">English</a>,
+              <a href="https://shop-apparel.<%= host %>/yacceleratorstorefront/?site=apparel-de&clear=true" target="_blank">German</a>
+            </td>
+          </tr>
+          <tr>
+            <td>Chef Corp. Corporate</td>
+            <td>
+              <a href="https://preview.<%= host %>/corporate" target="_blank">English</a>,
+              <a href="https://preview.<%= host %>/corporate-de-de" target="_blank">German</a>
+            </td>
+            <td>
+              <a href="https://corporate.<%= host %>/corporate" target="_blank">English</a>,
+              <a href="https://corporate.<%= host %>/corporate-de-de" target="_blank">German</a>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+
+        <h2>Management Interfaces</h2>
+        <ul>
+          <li><a href="https://studio.<%= host %>" target="_blank">CoreMedia Studio</a></li>
+          <li><a href="https://<%= hybris_host %>:9002" target="_blank">Hybris Adminstration Console</a></li>
+          <li><a href="https://<%= hybris_host %>:9002/hmc" target="_blank">Hybris Management Console</a></li>
+          <li><a href="https://<%= hybris_host %>:9002/mcc" target="_blank">Hybris Commerce Cockpit (Overview)</a></li>
+          <li><a href="https://<%= hybris_host %>:9002/cmscockpit/login.zul" target="_blank">Hybris WCMS Cockpit</a></li>
+          <li><a href="https://<%= hybris_host %>:9002/productcockpit/login.zul" target="_blank">Hybris Product Cockpit</a></li>
+        </ul>
+
+        <%= render 'other-links',
+                   :source => @other_links_source ? @other_links_source : 'overview/other-links-partial.erb',
+                   :cookbook => @other_links_cookbook ? @other_links_cookbook : 'blueprint-proxy',
+                   :variables => { :host => host }
+        %>
+
+        <h2>Development URLs</h2>
+        <p>
+          If you deployed the test system using the chef <code>development</code> environment, you will automatically get extra apache
+          virtual hosts installed. These <em>candy</em> hosts provide some dev-sugar to sweeten up your daily work.
+        </p>
+        <p>
+          A <em>candy</em> host returns the favor, i.e. it redirects the callers request to the caller itself. This allows
+          the developer to start his webapps using the maven tomcat plugin and work with portless https URLs, without having
+          the need to start and configure any reverse proxy such as apache or nginx.
+        </p>
+
+        <ul>
+          <li><a href="https://candy-studio.<%= host %>" target="_blank">Candy Studio</a></li>
+          <li><a href="https://candy-preview.<%= host %>" target="_blank">Candy Preview</a></li>
+          <li><a href="https://candy-shop-preview-apparel.<%= host %>/yacceleratorstorefront/?site=apparel-uk" target="_blank">Candy Apparel Site (UK English)</a></li>
+        </ul>
+
+        <%= render "overview/candy-profiles-partial.erb", :cookbook => 'blueprint-proxy', :variables => { :host => host } %>
+
+        <p>Enjoy!</p>
+      </article>
+    </div>
+  </div>
+
+  <%= render "overview/footer-partial.erb", :cookbook => 'blueprint-proxy' %>
+
+</div>
+</body>
+</html>

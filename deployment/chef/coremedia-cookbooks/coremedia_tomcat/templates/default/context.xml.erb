@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Context
+<%- if @doc_base -%>
+  docBase="<%= @doc_base %>"
+<%- end -%>
+<%- if @display_name -%>
+  displayName="<%= @display_name %>"
+<%- end -%>
+failCtxIfServletStartFails="true"
+<%- if @session_cookie_name -%>
+sessionCookieName="<%= @session_cookie_name %>"
+<%- end -%>
+>
+
+<!-- Default set of monitored resources -->
+  <WatchedResource>WEB-INF/web.xml</WatchedResource>
+<%- if @env_entries && !@env_entries.empty? -%>
+<%- @env_entries.keys.sort.each do |entry_name| -%>
+  <Environment name="<%= entry_name %>"
+               description="<%= @env_entries[entry_name]['description'].nil? ? "no description" : @env_entries[entry_name]['description'].to_s %>"
+               value="<%= @env_entries[entry_name]['value'].to_s %>"
+               type="<%= @env_entries[entry_name]['type'].nil? ? "java.lang.String" : @env_entries[entry_name]['type'].to_s %>"
+               override="false"/>
+<%- end -%>
+<%- end -%>
+
+<%- if @resource_links && !@resource_links.empty? -%>
+<%-@resource_links.keys.sort.each do |entry_name| -%>
+  <ResourceLink name="<%= entry_name %>"
+               global="<%= @resource_links[entry_name]['global'] %>"
+               type="<%=@resource_links[entry_name]['type'].nil? ? "java.lang.String" :@resource_links[entry_name]['type'].to_s %>"/>
+<%- end -%>
+<%- end -%>
+
+<%- if @listener && !@listener.empty? %>
+<%- @listener.keys.sort.each do |listener| -%>
+  <Listener
+  <%- @listener[listener].keys.sort.each do |listener_attr| -%>
+    <%= listener_attr.to_s %>="<%= @listener[listener][listener_attr].to_s %>"
+  <%- end-%>
+  />
+<%- end %>
+<%- end %>
+
+<%- if @parameter && !@parameter.empty? %>
+<%- @parameter.keys.sort.each do |param| -%>
+  <Parameter name="<%= param %>" value="<%= @parameter[param] %>" override="false"/>
+<%- end %>
+<%- end %>
+
+</Context>

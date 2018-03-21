@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMSettings folder="/Sites/Chef Corp./Germany/German/Options/Settings" name="Content Creation" xmlns:cmexport="http://www.coremedia.com/2012/cmexport" translationState="up-to-date">
+<locale>de-DE</locale>
+<master>
+<link href="../../../../United%20States/English/Options/Settings/Content%20Creation.xml" path="/Sites/Chef%20Corp%2E/United%20States/English/Options/Settings/Content%20Creation"/>
+</master>
+<settings>
+<Struct xmlns="http://www.coremedia.com/2008/struct" xmlns:xlink="http://www.w3.org/1999/xlink">
+<StructProperty Name="paths">
+<Struct>
+<LinkProperty Name="editorial" LinkType="coremedia:///cap/contenttype/Content_" xlink:href="coremedia:///cap/resources/../../Content/" cmexport:path="/Sites/Chef%20Corp%2E/Germany/German/Content/"/>
+<LinkProperty Name="navigation" LinkType="coremedia:///cap/contenttype/Content_" xlink:href="coremedia:///cap/resources/../../Content/" cmexport:path="/Sites/Chef%20Corp%2E/Germany/German/Content/"/>
+<LinkProperty Name="CMArticle" LinkType="coremedia:///cap/contenttype/Content_" xlink:href="coremedia:///cap/resources/../../Content/" cmexport:path="/Sites/Chef%20Corp%2E/Germany/German/Content/"/>
+<LinkProperty Name="CMTeaser" LinkType="coremedia:///cap/contenttype/Content_" xlink:href="coremedia:///cap/resources/../../Content/" cmexport:path="/Sites/Chef%20Corp%2E/Germany/German/Content/"/>
+<LinkProperty Name="CMPicture" LinkType="coremedia:///cap/contenttype/Content_" xlink:href="coremedia:///cap/resources/../../Assets/Pictures/" cmexport:path="/Sites/Chef%20Corp%2E/Germany/German/Assets/Pictures/"/>
+<LinkProperty Name="CMVideo" LinkType="coremedia:///cap/contenttype/Content_" xlink:href="coremedia:///cap/resources/../../Assets/Videos/" cmexport:path="/Sites/Chef%20Corp%2E/Germany/German/Assets/Videos/"/>
+<LinkProperty Name="CMDownload" LinkType="coremedia:///cap/contenttype/Content_" xlink:href="coremedia:///cap/resources/../../Assets/Downloads/" cmexport:path="/Sites/Chef%20Corp%2E/Germany/German/Assets/Downloads/"/>
+<LinkProperty Name="CMQueryList" LinkType="coremedia:///cap/contenttype/Content_" xlink:href="coremedia:///cap/resources/../../Content/" cmexport:path="/Sites/Chef%20Corp%2E/Germany/German/Content/"/>
+<LinkProperty Name="CMCollection" LinkType="coremedia:///cap/contenttype/Content_" xlink:href="coremedia:///cap/resources/../../Content/" cmexport:path="/Sites/Chef%20Corp%2E/Germany/German/Content/"/>
+<LinkProperty Name="CMGallery" LinkType="coremedia:///cap/contenttype/Content_" xlink:href="coremedia:///cap/resources/../../Content/" cmexport:path="/Sites/Chef%20Corp%2E/Germany/German/Content/"/>
+<LinkProperty Name="CMChannel" LinkType="coremedia:///cap/contenttype/Content_" xlink:href="coremedia:///cap/resources/../../Content/" cmexport:path="/Sites/Chef%20Corp%2E/Germany/German/Content/"/>
+</Struct>
+</StructProperty>
+</Struct>
+</settings>
+<identifier></identifier>
+</CMSettings>

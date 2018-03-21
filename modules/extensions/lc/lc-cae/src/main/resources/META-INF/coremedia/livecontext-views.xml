@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:customize="http://www.coremedia.com/2007/coremedia-spring-beans-customization"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.coremedia.com/2007/coremedia-spring-beans-customization http://www.coremedia.com/2007/coremedia-spring-beans-customization.xsd">
+
+  <description>
+    View registration.
+  </description>
+
+  <import resource="classpath:/com/coremedia/cae/view-freemarker-services.xml"/>
+  <import resource="classpath:/framework/spring/blueprint-views.xml"/>
+  <import resource="classpath:/META-INF/coremedia/lc-services.xml"/>
+
+  <customize:append id="addDynamicPredicates" bean="dynamicIncludePredicates">
+    <list>
+      <bean id="cartPredicate" class="com.coremedia.livecontext.view.CartDynamicIncludePredicate"/>
+      <bean id="availabilityInfoDynamicIncludePredicate" class="com.coremedia.livecontext.product.ProductAvailabilityDynamicIncludePredicate"/>
+      <bean id="marketingSpotIncludePredicate" class="com.coremedia.livecontext.marketingspot.CMMarketingSpotDynamicIncludePredicate"/>
+      <bean id="productAssetsPredicate" class="com.coremedia.livecontext.asset.ProductAssetsDynamicIncludePredicate"/>
+    </list>
+  </customize:append>
+
+  <customize:append id="livecontextFreemarkerSharedVariablesCustomizer" bean="freemarkerSharedVariables">
+    <map>
+      <entry key="liveContextFreemarkerFacade" value-ref="liveContextFreemarkerFacade"/>
+      <entry key="liveContextLoginFreemarkerFacade" value-ref="liveContextLoginFreemarkerFacade"/>
+    </map>
+  </customize:append>
+
+  <bean id="liveContextFreemarkerFacade" class="com.coremedia.livecontext.web.taglib.LiveContextFreemarkerFacade">
+    <property name="secureScheme" value="${livecontext.secure.scheme:https}" />
+    <property name="liveContextNavigationFactory" ref="liveContextNavigationFactory"/>
+    <property name="categoryAugmentationService" ref="categoryAugmentationService"/>
+    <property name="productAugmentationService" ref="productAugmentationService"/>
+    <property name="sitesService" ref="sitesService"/>
+  </bean>
+
+  <bean id="liveContextLoginFreemarkerFacade" class="com.coremedia.livecontext.web.taglib.LiveContextLoginFreemarkerFacade">
+  </bean>
+
+</beans>

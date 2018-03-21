@@ -1,0 +1,16 @@
+{
+  "name": "@coremedia/js-magnific-popup",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "jquery": "3.2.1",
+    "magnific-popup": "1.1.0"
+  },
+  "devDependencies": {
+    "jsdoc-to-markdown": "3.0.0"
+  },
+  "scripts": {
+    "apidoc": "jsdoc2md src/*.js > API.md"
+  },
+  "main": "src/index.js"
+}

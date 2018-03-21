@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMSettings folder="/Sites/Chef Corp./United States/English/Options/Settings" name="SearchConfiguration" xmlns:cmexport="http://www.coremedia.com/2012/cmexport">
+<locale>en-US</locale>
+<master>
+</master>
+<settings>
+<Struct xmlns="http://www.coremedia.com/2008/struct" xmlns:xlink="http://www.w3.org/1999/xlink">
+<LinkProperty Name="searchChannel" LinkType="coremedia:///cap/contenttype/Content_" xlink:href="coremedia:///cap/resources/../../Content/Homepage/SearchResultPage.xml" cmexport:path="/Sites/Chef%20Corp%2E/United%20States/English/Content/Homepage/SearchResultPage"/>
+<LinkProperty Name="searchAction" LinkType="coremedia:///cap/contenttype/CMAction" xlink:href="coremedia:///cap/resources/Actions/SearchAction.xml" cmexport:path="/Sites/Chef%20Corp%2E/United%20States/English/Options/Settings/Actions/SearchAction"/>
+<IntProperty Name="search.result.hitsPerPage">50</IntProperty>
+<StringListProperty Name="search.doctypeselect">
+<String>CMArticle</String>
+<String>CMAudio</String>
+<String>CMCategory</String>
+<String>CMChannel</String>
+<String>CMDownload</String>
+<String>CMGallery</String>
+<String>CMProduct</String>
+<String>CMSitemap</String>
+<String>CMVideo</String>
+</StringListProperty>
+<StringProperty Name="caefeederSiteConfiguration">corporate</StringProperty>
+</Struct>
+</settings>
+<identifier></identifier>
+</CMSettings>

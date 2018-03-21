@@ -1,0 +1,27 @@
+// Overwrites for Hybris
+.carousel-component {
+  .carousel .item {
+    .item-name {
+      font-weight: 500;
+      text-transform: none;
+
+      &::before {
+        content: '';
+      }
+    }
+
+  }
+
+  @include breakpoint(md) {
+    &:first-child {
+      border-bottom: 1px solid $hybris-text;
+      margin: 1rem 0 5rem;
+      padding-bottom: 3rem;
+    }
+  }
+}
+
+// Used for "Best Selling Products" on start page
+.container > .row > div > div:first-child .carousel-component {
+  margin-top: 5rem;
+}

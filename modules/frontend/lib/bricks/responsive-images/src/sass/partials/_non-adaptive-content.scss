@@ -1,0 +1,15 @@
+.cm-non-adaptive-content {
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+
+  &-wrapper {
+    overflow: hidden;
+  }
+
+  /* variant fitting to parent height */
+  &--fit-height {
+    height: 100%;
+    width: auto;
+  }
+}

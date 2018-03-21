@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <import resource="classpath:com/coremedia/cap/common/uapi-services.xml"/>
+  <import resource="classpath:com/coremedia/rest/cap/cap-rest-service.xml"/>
+  <import resource="classpath:framework/spring/taxonomies.xml"/>
+
+  <bean id="taxonomies" class="com.coremedia.blueprint.studio.rest.taxonomies.TaxonomyResource" scope="prototype">
+    <property name="strategyResolver" ref="strategyResolver"/>
+    <property name="semanticStrategies" ref="semanticServiceStrategies"/>
+  </bean>
+
+</beans>

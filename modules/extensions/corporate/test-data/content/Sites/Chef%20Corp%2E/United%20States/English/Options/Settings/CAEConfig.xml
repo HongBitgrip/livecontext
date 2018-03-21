@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMSettings folder="/Sites/Chef Corp./United States/English/Options/Settings" name="CAEConfig" xmlns:cmexport="http://www.coremedia.com/2012/cmexport">
+<locale>en-US</locale>
+<master>
+</master>
+<masterVersion>0</masterVersion>
+<settings>
+<Struct xmlns="http://www.coremedia.com/2008/struct" xmlns:xlink="http://www.w3.org/1999/xlink">
+<IntProperty Name="teaser.max.length">140</IntProperty>
+<IntProperty Name="text.max.length">450</IntProperty>
+<IntProperty Name="claim.max.length">115</IntProperty>
+<IntProperty Name="hero.max.length">140</IntProperty>
+<IntProperty Name="superhero.max.length">140</IntProperty>
+<IntProperty Name="square.max.length">140</IntProperty>
+<BooleanProperty Name="breadcrumbHideLastElement">true</BooleanProperty>
+<StringProperty Name="sitemapOrgConfiguration">corporate</StringProperty>
+</Struct>
+</settings>
+<identifier></identifier>
+</CMSettings>

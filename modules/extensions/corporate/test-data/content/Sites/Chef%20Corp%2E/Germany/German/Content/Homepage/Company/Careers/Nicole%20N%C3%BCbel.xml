@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMExternalLink folder="/Sites/Chef Corp./Germany/German/Content/Homepage/Company/Careers" name="Nicole Nübel" xmlns:cmexport="http://www.coremedia.com/2012/cmexport" translationState="up-to-date">
+<locale>de-DE</locale>
+<master>
+<link href="../../../../../../United%20States/English/Content/Homepage/Company/Careers/Lydia%20Alquist.xml" path="/Sites/Chef%20Corp%2E/United%20States/English/Content/Homepage/Company/Careers/Lydia%20Alquist"/>
+</master>
+<viewtype>
+</viewtype>
+<localSettings>
+<Struct xmlns="http://www.coremedia.com/2008/struct" xmlns:xlink="http://www.w3.org/1999/xlink">
+<BooleanProperty Name="callToActionDisabled">false</BooleanProperty>
+<StringProperty Name="callToActionCustomText">Send E-Mail</StringProperty>
+</Struct>
+</localSettings>
+<linkedSettings>
+</linkedSettings>
+<resourceBundles2>
+</resourceBundles2>
+<segment></segment>
+<title></title>
+<htmlTitle></htmlTitle>
+<keywords></keywords>
+<htmlDescription></htmlDescription>
+<subjectTaxonomy>
+</subjectTaxonomy>
+<locationTaxonomy>
+</locationTaxonomy>
+<contexts>
+</contexts>
+<teaserTitle>Dr. Nicole Nübel</teaserTitle>
+<teaserText grammarName="coremedia-richtext-1.0"><div xmlns="http://www.coremedia.com/2003/richtext-1.0" xmlns:xlink="http://www.w3.org/1999/xlink"><p>Leiterin Recruiting</p><p>Tel. +49-40-324-5876-501</p></div></teaserText>
+<pictures>
+<link href="../../../../Assets/Pictures/Employees/Employee%2021132593533%20-%20Nicole%20N%C3%BCbel.xml" path="/Sites/Chef%20Corp%2E/Germany/German/Assets/Pictures/Employees/Employee%2021132593533%20-%20Nicole%20N%C3%BCbel"/>
+</pictures>
+<related>
+</related>
+<url>mailto:nicole.nuebel@de.chef-corp.com</url>
+</CMExternalLink>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <title>CoreMedia - External Studio Preview</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/preview.css">
+  <script src="scripts/jquery-1.12.4.min.js"></script>
+  <script src="scripts/preview.js"></script>
+</head>
+
+<body>
+<div class="preview-toolbar">
+  <div class="preview-name">
+    <label id="previewName" for="previewUrl"></label>
+  </div>
+  <div class="preview-url">
+    <input type="text" id="previewUrl" name="url" value=""/>
+  </div>
+  <div class="preview-button">
+    <button type="button" id="reloadButton" title="Reload">
+      <span>Reload</span>
+    </button>
+  </div>
+</div>
+<div class="preview-frame">
+  <iframe id="previewFrame" src="loading.html">Your browser doesn't support iframes.</iframe>
+</div>
+</body>
+</html>

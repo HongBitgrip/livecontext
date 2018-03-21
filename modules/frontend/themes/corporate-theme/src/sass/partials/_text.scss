@@ -1,0 +1,45 @@
+/*
+Text
+========================================================================================================================
+
+Contains styling definitions for all content types as cm-text.
+- cm-text
+*/
+
+.#{$prefix}text {
+  border: none;
+  text-align: center;
+  margin: 0;
+  height: 100%;
+  padding: $padding-large-horizontal $padding-base-horizontal;
+
+  @include breakpoint(sm-and-up) {
+    padding-left: 6%;
+    padding-right: 6%;
+    padding-bottom: $padding-large-horizontal+48px; //  + button height
+  }
+
+  @include spacer(palette(grey, light));
+
+  &__headline {
+    color: $brand-primary;
+    padding-bottom: $padding-large-vertical;
+    margin: 0;
+
+    a > &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  // position the button
+  &__cta {
+    margin-top: $padding-large-vertical;
+
+    @include breakpoint(sm-and-up) {
+      position: absolute;
+      bottom: 30px;
+      right: 50%;
+      transform: translateX(50%);
+    }
+  }
+}

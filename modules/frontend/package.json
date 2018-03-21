@@ -1,0 +1,28 @@
+{
+  "name": "@coremedia/frontend",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "test": "lerna run test",
+    "build": "lerna run build",
+    "create-theme": "node ./lib/tools/cm-cli/bin/cm-cli.js create-theme",
+    "apidoc": "lerna run apidoc"
+  },
+  "workspaces": [
+    "lib/bricks/*",
+    "lib/js/*",
+    "lib/sass/*",
+    "lib/tools/*",
+    "themes/*"
+  ],
+  "engines": {
+    "node": ">=8"
+  },
+  "dependencies": {
+    "lerna": "2.7.2"
+  },
+  "coremedia": {
+    "type": "workspace",
+    "version": "1801.2"
+  }
+}

@@ -1,0 +1,4 @@
+<Struct xmlns="http://www.coremedia.com/2008/struct">
+  <StringProperty Name="locale">localeFromBundle_en_gb_europe</StringProperty>
+  <StringProperty Name="str3">str3</StringProperty>
+</Struct>

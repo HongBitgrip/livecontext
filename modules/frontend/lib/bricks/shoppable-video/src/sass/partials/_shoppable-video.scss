@@ -1,0 +1,91 @@
+// shoppable videos
+.#{$cm-shoppable-prefix} {
+
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+
+  &__video,
+  &__content {
+    flex: 1;
+  }
+
+  /* hide shoppable video teasers by default */
+  &__teasers {
+    display: none;
+  }
+
+  &__teaser {
+    height: 100%;
+  }
+
+  &__content {
+    &.cm-aspect-ratio-box {
+      @include aspect-ratio-box(16, 9);
+    }
+  }
+
+  &__player {
+    &.cm-aspect-ratio-box {
+      @include aspect-ratio-box(16, 9);
+    }
+    .cm-aspect-ratio-box__content {
+      @include center-absolute();
+    }
+  }
+
+  @include breakpoint(md) {
+    &__video,
+    &__content {
+      flex: 3;
+      margin-right: 10px;
+    }
+
+    &__teasers {
+      display: block;
+      flex: 1;
+      margin-left: 10px;
+    }
+
+    &__teaser {
+      box-sizing: border-box;
+      display: none;
+      background: $cm-shoppable-teaser-background-color;
+      overflow: hidden; // just in case there is more text
+    }
+
+    &__default {
+      display: block;
+    }
+
+    .cm-teasable__play.cm-hidden + .cm-teasable__caption {
+      display: none;
+    }
+  }
+}
+
+.cm-quickinfo {
+  &--shoppable {
+    flex-direction: column;
+    visibility: visible;
+    width: 100%;
+    height: inherit;
+    color: $cm-shoppable-teaser-quickinfo-color;
+    background: transparent;
+    box-shadow: none;
+
+    .cm-quickinfo__title {
+      font-size: 1.25rem;
+      color: $cm-shoppable-teaser-quickinfo-color;
+      margin: 0.5rem;
+    }
+
+    .cm-quickinfo__close {
+      display: none;
+    }
+
+    .cm-quickinfo__offerprice {
+      color: $cm-shoppable-teaser-specialprice-color;
+    }
+  }
+}

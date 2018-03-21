@@ -1,0 +1,87 @@
+/*
+Claim
+========================================================================================================================
+
+Contains styling definitions for all content types as cm-claim.
+- cm-claim
+*/
+
+.#{$prefix}claim {
+  border: none;
+  margin: 0;
+  text-align: center;
+
+  &:hover {
+    a .#{$prefix}claim__headline {
+      transform: translate3d(0, 5px, 0);
+      & > span {
+        &:after {
+          opacity: 1;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  @include spacer($brand-primary);
+
+  &__picture-box {
+    margin-left: auto;
+    margin-right: auto;
+    width: 55%;
+    @include aspect-ratio-box(1, 1);
+  }
+
+  &--circle &__picture-box {
+    // so the border doesn't flicker when hovering tranformation on other modules.
+    transform: translate3d(0, 0, 0);
+    border-radius: 50%;
+  }
+
+  &__picture {
+    @include stretch-absolute();
+  }
+
+  &__headline {
+    transition: transform $transition-duration ease(in-out-quad);
+    & > span {
+      display: inline-block;
+      @include flickeringFix(true);
+
+      &:after {
+        content: '';
+        position: relative;
+        display: block;
+        bottom: 0;
+        margin: auto;
+        width: 0;
+        opacity: 0;
+        height: 1px;
+        background-color: palette(black);
+        transition: opacity $transition-duration ease(in-out-quad), width $transition-duration ease(in-out-quad);
+      }
+    }
+  }
+
+  &__arrow {
+    background: url("../../img/arrow-black.svg") no-repeat;
+    background-size: contain;
+    display: inline-block;
+    position: relative;
+    margin-left: 5px;
+    width: 18px;
+    height: 18px;
+    bottom: -1px;
+  }
+
+  &__popup-opener {
+    display: block;
+    position: relative;
+  }
+
+  &__play {
+    @include center-absolute;
+    max-width: 25%; // make play-button scale able and make sure it is not larger than the image
+  }
+
+}

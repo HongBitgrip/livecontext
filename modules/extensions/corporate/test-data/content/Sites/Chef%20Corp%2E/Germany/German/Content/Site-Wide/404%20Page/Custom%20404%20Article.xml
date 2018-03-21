@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMArticle folder="/Sites/Chef Corp./Germany/German/Content/Site-Wide/404 Page" name="Custom 404 Article" xmlns:cmexport="http://www.coremedia.com/2012/cmexport" translationState="up-to-date">
+<locale>de-DE</locale>
+<master>
+<link href="../../../../../United%20States/English/Content/Site-Wide/404%20Page/Custom%20404%20Article.xml" path="/Sites/Chef%20Corp%2E/United%20States/English/Content/Site-Wide/404%20Page/Custom%20404%20Article"/>
+</master>
+<viewtype>
+</viewtype>
+<linkedSettings>
+</linkedSettings>
+<resourceBundles2>
+</resourceBundles2>
+<segment></segment>
+<title>404 Not Found ... Entschuldigung!</title>
+<htmlTitle></htmlTitle>
+<keywords></keywords>
+<htmlDescription></htmlDescription>
+<subjectTaxonomy>
+</subjectTaxonomy>
+<locationTaxonomy>
+</locationTaxonomy>
+<contexts>
+</contexts>
+<teaserTitle></teaserTitle>
+<teaserText grammarName="coremedia-richtext-1.0"><div xmlns="http://www.coremedia.com/2003/richtext-1.0" xmlns:xlink="http://www.w3.org/1999/xlink"><p>Es tut uns leid, dass Sie diese Seite sehen - das hätte nicht passieren dürfen. Vielleicht interessieren Sie sich für die folgenden anderen Inhalte, die wir zu bieten haben?  </p></div></teaserText>
+<detailText grammarName="coremedia-richtext-1.0"><div xmlns="http://www.coremedia.com/2003/richtext-1.0" xmlns:xlink="http://www.w3.org/1999/xlink"><p> Es tut uns leid, dass Sie diese Seite sehen - das hätte nicht passieren dürfen. <br/></p> <p> Vielleicht interessieren Sie sich für die folgenden anderen Inhalte, die wir zu bieten haben? </p> </div></detailText>
+<pictures>
+</pictures>
+<related>
+</related>
+</CMArticle>

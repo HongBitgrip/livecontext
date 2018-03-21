@@ -1,0 +1,66 @@
+/*
+Placeholder
+=====================================================================================================================
+
+Contains styling definitions for all placeholders.
+- cm-placeholder
+- cm-placeholder--category
+- cm-language-chooser
+*/
+
+.#{$prefix}placeholder {
+  margin: 0;
+
+  &--category {
+    padding: 0 $padding-base-vertical;
+
+    @include breakpoint(md) {
+      padding: 0;
+    }
+  }
+
+  &__headline {
+    font-size: font-format(h3, mobile);
+
+    @include breakpoint(sm-and-up) {
+      font-size: font-format(h3);
+    }
+  }
+}
+
+/* language chooser */
+.#{$prefix}language-chooser {
+
+  &__button {
+    cursor: pointer;
+  }
+
+  &__icon {
+    font-size: 10px;
+  }
+
+  &__items {
+    list-style: none;
+    position: absolute;
+    top: 2*$padding-base-vertical+$line-height-computed;
+    left: 0;
+    right: 0;
+    padding: 0;
+    background-color: palette(white);
+  }
+
+  &__item {
+    padding: $padding-base-vertical $padding-base-horizontal;
+  }
+
+  @include breakpoint(sm-and-up) {
+    &__items {
+      top: $logo-size;
+      background-color: $header-color-bg;
+    }
+
+    &__item {
+      padding: 0 $padding-base-horizontal;
+    }
+  }
+}

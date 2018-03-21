@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMViewtype folder="/Sites/Chef Corp./United States/English/Options/Viewtypes/CMChannel" name="hero" xmlns:cmexport="http://www.coremedia.com/2012/cmexport">
+<locale>en-US</locale>
+<master>
+</master>
+<description>Displays content as a hero banner.</description>
+<icon md5="3c8dfb4e80fd9ec28c7144e21e36328e" size="34147" href="../../../../../../../__blob/3c8dfb4e80fd9ec28c7144e21e36328e.blob" mimetype="image/png"/>
+<layout>hero</layout>
+</CMViewtype>

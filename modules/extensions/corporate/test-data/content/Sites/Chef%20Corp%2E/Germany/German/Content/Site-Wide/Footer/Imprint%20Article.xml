@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMArticle folder="/Sites/Chef Corp./Germany/German/Content/Site-Wide/Footer" name="Imprint Article" xmlns:cmexport="http://www.coremedia.com/2012/cmexport" translationState="up-to-date">
+<locale>de-DE</locale>
+<master>
+<link href="../../../../../United%20States/English/Content/Site-Wide/Footer/Imprint%20Article.xml" path="/Sites/Chef%20Corp%2E/United%20States/English/Content/Site-Wide/Footer/Imprint%20Article"/>
+</master>
+<viewtype>
+</viewtype>
+<linkedSettings>
+</linkedSettings>
+<resourceBundles2>
+</resourceBundles2>
+<segment>imprint</segment>
+<title>Impressum</title>
+<htmlTitle></htmlTitle>
+<keywords>Coremedia Impressum</keywords>
+<htmlDescription></htmlDescription>
+<subjectTaxonomy>
+</subjectTaxonomy>
+<locationTaxonomy>
+</locationTaxonomy>
+<contexts>
+</contexts>
+<teaserTitle>Impressum</teaserTitle>
+<teaserText grammarName="coremedia-richtext-1.0"><div xmlns="http://www.coremedia.com/2003/richtext-1.0" xmlns:xlink="http://www.w3.org/1999/xlink"><p> Dies ist eine Demo-Website für die Coremedia 8 Digital Experience-Plattform von Coremedia </p> </div></teaserText>
+<detailText grammarName="coremedia-richtext-1.0"><div xmlns="http://www.coremedia.com/2003/richtext-1.0" xmlns:xlink="http://www.w3.org/1999/xlink"><p>Dies ist eine Demo-Website für die<br/></p><p class="p--heading-2"><a xlink:show="replace" xlink:type="simple" xlink:href="coremedia:///cap/resources/../External%20Links/CoreMedia%208%20Digital%20Experience%20Platform%20E402051ed.xml" cmexport:path="/Sites/Chef%20Corp%2E/Germany/German/Content/Site-Wide/External%20Links/CoreMedia%208%20Digital%20Experience%20Platform%20External%20Link">Coremedia 8 Digital Experience Platform</a></p><p>der Coremedia AG.</p><p><br/></p><table><tbody><tr valign="top"><td colspan="1" rowspan="1"><p>Hamburg, Deutschland<br/><strong>Coremedia AG</strong></p><p>Ludwig-Erhard-Straße 18<br/>20459 Hamburg<br/>Deutschland<br/></p><p><a xlink:href="http://tel:+49.40.3255.870" xlink:show="replace" xlink:type="simple">+49.40.325.5870</a><br/><a xlink:href="mailto:info@coremedia.com" xlink:show="replace" xlink:type="simple">info@coremedia.com</a></p></td><td colspan="1" rowspan="1"><p>San Francisco, USA<br/><strong>Coremedia Corporation,</strong></p><p>114 Sansome Street, Suite 1300<br/>San Francisco, CA 94104<br/>United States of America</p><p><a xlink:href="http://tel:+1.415.371.0400" xlink:show="replace" xlink:type="simple">+1.415.371.0400</a><br/><a xlink:href="mailto:usa-info@coremedia.com" xlink:show="replace" xlink:type="simple">usa-info@coremedia.com</a></p></td></tr></tbody></table><p><strong>Eingetragen im Handelsregister Hamburg unter der Nummer</strong><br/>HR B 76277</p><p><strong>Vertreter:</strong> Sören Stamer, Dr. Klemens Kleiminger </p><p><strong>Umsatzsteuer-Identifikationsnummer</strong><br/>DE 179 733 607</p><p><strong>Provider nach dem Teledienstegesetz (TDG):</strong><br/>Coremedia AG, Ludwig-Erhard-Straße 18, 20459 Hamburg</p><p><br/></p><p>Alle Bilder wurden von der Coremedia AG unter Copyright von <strong><a xlink:href="http://www.shutterstock.com" xlink:show="new" xlink:type="simple">Shutterstock</a> </strong>lizensiert, sofern nichts anderes angegeben ist. Eine Redistribution der Bild-Inhalte ist ohne gesonderte Lizensierung nicht erlaubt.</p><p>Alle <a xlink:show="replace" xlink:type="simple" xlink:href="coremedia:///cap/resources/../Integration/External%20Embedding/Embedding%20Demo%20Page.xml" cmexport:path="/Sites/Chef%20Corp%2E/Germany/German/Content/Site-Wide/Integration/External%20Embedding/Embedding%20Demo%20Page"><strong>eingebetteten Drittanbieter-Dienste</strong></a> müssen möglicherweise separat lizenziert werden.</p></div></detailText>
+<pictures>
+</pictures>
+<notSearchable>1</notSearchable>
+<related>
+</related>
+</CMArticle>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMVideo folder="/Sites/Chef Corp./United States/English/Assets/Videos/Restaurant Videos" name="Jacob's Recipe - A short documentary Vimeo Video" xmlns:cmexport="http://www.coremedia.com/2012/cmexport">
+<locale>en-US</locale>
+<master>
+</master>
+<viewtype>
+</viewtype>
+<localSettings>
+<Struct xmlns="http://www.coremedia.com/2008/struct" xmlns:xlink="http://www.w3.org/1999/xlink">
+<BooleanProperty Name="callToActionDisabled">false</BooleanProperty>
+<StringProperty Name="callToActionCustomText">Watch The Video</StringProperty>
+</Struct>
+</localSettings>
+<linkedSettings>
+</linkedSettings>
+<resourceBundles2>
+</resourceBundles2>
+<segment>video-bocca-di-lupo-restaurant-london</segment>
+<title>Bocca di Lupo - Jacob's Recipe</title>
+<htmlTitle></htmlTitle>
+<keywords></keywords>
+<htmlDescription></htmlDescription>
+<subjectTaxonomy>
+</subjectTaxonomy>
+<locationTaxonomy>
+</locationTaxonomy>
+<contexts>
+</contexts>
+<teaserTitle>Bocca di Lupo</teaserTitle>
+<teaserText grammarName="coremedia-richtext-1.0"><div xmlns="http://www.coremedia.com/2003/richtext-1.0" xmlns:xlink="http://www.w3.org/1999/xlink"><p>Discover another masterpiece of Chef Corp.'s design team.</p></div></teaserText>
+<detailText grammarName="coremedia-richtext-1.0"><div xmlns="http://www.coremedia.com/2003/richtext-1.0" xmlns:xlink="http://www.w3.org/1999/xlink"><p>Jacob Kenedy opened his dream restaurant Bocca di Lupo with his business partner, Victor Hugo in 2008. The restaurant has since received various awards and accolades for its stripped-down, honest regional Italian cuisine. In this short documentary, you can <a xlink:show="replace" xlink:type="simple" xlink:href="coremedia:///cap/resources/Jacob%27s%20Recipe%20-%20A%20short%20docume37591d11.xml" cmexport:path="/Sites/Chef%20Corp%2E/United%20States/English/Assets/Videos/Restaurant%20Videos/Jacob%27s%20Recipe%20-%20A%20short%20documentary%20Gallery">take a closer look at the restaurant and kitchen design</a> that was supplied by Chef Corp.</p><p>Source: <a xlink:href="http://player.vimeo.com/video/48364381" xlink:show="replace" xlink:type="simple">Vimeo</a></p></div></detailText>
+<pictures>
+<link href="Jacob%27s%20Recipe%20-%20A%20short%20docume122efede.xml" path="/Sites/Chef%20Corp%2E/United%20States/English/Assets/Videos/Restaurant%20Videos/Jacob%27s%20Recipe%20-%20A%20short%20documentary%20Pictures/Jacobs%20Recipe%2015%20Picture"/>
+</pictures>
+<related>
+</related>
+<alt>Jacob's Recipe - A short documentary</alt>
+<copyright>Copyright: Ginger Studio/Vimeo CC-BY-SA 3.0</copyright>
+<dataUrl>//vimeo.com/48364381</dataUrl>
+<asset>
+</asset>
+</CMVideo>

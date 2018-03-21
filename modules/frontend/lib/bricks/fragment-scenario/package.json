@@ -1,0 +1,15 @@
+{
+  "name": "@coremedia/brick-fragment-scenario",
+  "version": "1.0.0",
+  "private": true,
+  "devDependencies": {
+    "jsdoc-to-markdown": "3.0.0"
+  },
+  "scripts": {
+    "apidoc": "jsdoc2md src/js/*.js > API.md"
+  },
+  "main": "src/js/index.js",
+  "coremedia": {
+    "type": "brick"
+  }
+}
